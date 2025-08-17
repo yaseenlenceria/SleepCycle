@@ -3,6 +3,7 @@ import { useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { EnhancedTimePicker } from '@/components/enhanced-time-picker';
 import { EnhancedSleepResults } from '@/components/enhanced-sleep-results';
+import { UserProfileForm } from '@/components/user-profile-form';
 import { NapCalculator } from '@/components/nap-calculator';
 import { SleepTracker } from '@/components/sleep-tracker';
 import { AgeCalculator } from '@/components/age-calculator';
@@ -31,6 +32,7 @@ export default function SleepCalculator() {
   const [isCalculating, setIsCalculating] = useState(false);
   const [sleepNowTimes, setSleepNowTimes] = useState<SleepTime[]>([]);
   const [showSleepNowResults, setShowSleepNowResults] = useState(false);
+  const [userProfile, setUserProfile] = useState<{age: number; sex: 'male' | 'female'} | null>(null);
 
   // Scroll to top on page load and set SEO meta
   useEffect(() => {
@@ -261,6 +263,8 @@ export default function SleepCalculator() {
               type="bedtime"
               selectedTime={showBedtimeResults ? selectedTimeString : undefined}
               isLoading={isCalculating}
+              userAge={userProfile?.age}
+              userSex={userProfile?.sex}
             />
           </div>
         )}
@@ -318,6 +322,8 @@ export default function SleepCalculator() {
               type="wakeup"
               selectedTime={showWakeupResults ? "If I sleep now" : showSleepNowResults ? "Sleep Now" : undefined}
               isLoading={isCalculating}
+              userAge={userProfile?.age}
+              userSex={userProfile?.sex}
             />
           </div>
         )}
@@ -349,6 +355,14 @@ export default function SleepCalculator() {
             <BabyNapCalculator />
           </div>
         )}
+
+        {/* User Profile Form for Personalized Recommendations */}
+        <div className="mt-12">
+          <UserProfileForm 
+            onProfileSet={setUserProfile}
+            initialProfile={userProfile || undefined}
+          />
+        </div>
 
         {/* Enhanced Educational Content */}
         <div className="bg-gradient-to-br from-white via-blue-50 to-indigo-50 bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8 mt-12">

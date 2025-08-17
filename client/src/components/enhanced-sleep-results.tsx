@@ -3,7 +3,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { SleepTime } from '@/lib/sleep-calculations';
-import { Clock, Moon, Star, Zap, Brain, Heart, CheckCircle, ArrowRight } from 'lucide-react';
+import { 
+  assessSleepQuality, 
+  getPersonalizedHealthRecommendations, 
+  calculateSleepHours,
+  SleepAssessment,
+  HealthRecommendation 
+} from '@/lib/health-api';
+import { Clock, Moon, Star, Zap, Brain, Heart, CheckCircle, ArrowRight, AlertTriangle, TrendingUp, Shield, Info } from 'lucide-react';
 import { LoadingAnimation } from './loading-animation';
 
 interface EnhancedSleepResultsProps {
@@ -11,16 +18,23 @@ interface EnhancedSleepResultsProps {
   type: 'bedtime' | 'wakeup';
   selectedTime?: string;
   isLoading?: boolean;
+  userAge?: number;
+  userSex?: 'male' | 'female';
 }
 
 export function EnhancedSleepResults({ 
   times, 
   type, 
   selectedTime,
-  isLoading = false 
+  isLoading = false,
+  userAge = 30,
+  userSex = 'male'
 }: EnhancedSleepResultsProps) {
   const [showResults, setShowResults] = useState(false);
   const [animatedCards, setAnimatedCards] = useState<boolean[]>([]);
+  const [sleepAssessment, setSleepAssessment] = useState<SleepAssessment | null>(null);
+  const [healthRecommendations, setHealthRecommendations] = useState<HealthRecommendation[]>([]);
+  const [showHealthInsights, setShowHealthInsights] = useState(false);
 
   useEffect(() => {
     if (times.length > 0 && !isLoading) {
@@ -37,12 +51,43 @@ export function EnhancedSleepResults({
             });
           }, index * 150);
         });
+        
+        // Generate health assessment for the optimal sleep option (first result)
+        if (times[0] && selectedTime) {
+          generateHealthAssessment();
+        }
       }, 500);
     } else {
       setShowResults(false);
       setAnimatedCards([]);
+      setSleepAssessment(null);
+      setHealthRecommendations([]);
     }
   }, [times, isLoading]);
+
+  const generateHealthAssessment = async () => {
+    if (!times[0] || !selectedTime) return;
+
+    try {
+      // Calculate sleep hours for the optimal option
+      const bedtime = type === 'bedtime' ? times[0].time : selectedTime;
+      const wakeTime = type === 'wakeup' ? times[0].time : selectedTime;
+      const sleepHours = calculateSleepHours(bedtime, wakeTime);
+
+      // Generate assessment
+      const assessment = assessSleepQuality(sleepHours, userAge, userSex, bedtime, wakeTime);
+      setSleepAssessment(assessment);
+
+      // Fetch personalized health recommendations
+      const recommendations = await getPersonalizedHealthRecommendations({
+        age: userAge,
+        sex: userSex
+      });
+      setHealthRecommendations(recommendations);
+    } catch (error) {
+      console.error('Error generating health assessment:', error);
+    }
+  };
 
   const getQualityColor = (quality: string) => {
     switch (quality) {
@@ -181,6 +226,183 @@ export function EnhancedSleepResults({
           </Card>
         ))}
       </div>
+
+      {/* Health Assessment Section */}
+      {sleepAssessment && (
+        <Card className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border-2 border-blue-200 shadow-xl">
+          <CardHeader className="pb-4">
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                <TrendingUp className="text-blue-600" size={24} />
+                Personalized Sleep Health Assessment
+              </CardTitle>
+              <Badge 
+                className={`${getQualityColor(sleepAssessment.quality)} border px-3 py-1 font-bold`}
+                data-testid="sleep-quality-badge"
+              >
+                {sleepAssessment.quality.charAt(0).toUpperCase() + sleepAssessment.quality.slice(1)}
+              </Badge>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {/* Assessment Overview */}
+            <div className="bg-white rounded-xl p-4 border border-blue-100">
+              <div className="flex items-start gap-3">
+                <div className="bg-blue-100 rounded-full p-2 mt-1">
+                  <Brain className="text-blue-600" size={20} />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-semibold text-gray-800 mb-2">Sleep Quality Analysis</h4>
+                  <p className="text-gray-700 leading-relaxed">{sleepAssessment.feedback}</p>
+                  <div className="mt-3 flex items-center gap-4 text-sm">
+                    <span className="text-gray-600">
+                      <strong>Your Sleep:</strong> {sleepAssessment.hoursSlept.toFixed(1)}h
+                    </span>
+                    <span className="text-gray-600">
+                      <strong>Recommended:</strong> {sleepAssessment.recommendedHours}h
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Benefits Section */}
+            {sleepAssessment.benefits.length > 0 && (
+              <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+                <div className="flex items-start gap-3">
+                  <div className="bg-green-100 rounded-full p-2 mt-1">
+                    <CheckCircle className="text-green-600" size={20} />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-gray-800 mb-3">Health Benefits You'll Experience</h4>
+                    <div className="grid gap-2">
+                      {sleepAssessment.benefits.map((benefit, index) => (
+                        <div key={index} className="flex items-center gap-2 text-sm text-gray-700">
+                          <CheckCircle className="text-green-500 flex-shrink-0" size={16} />
+                          {benefit}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Risk Factors Section */}
+            {sleepAssessment.riskFactors.length > 0 && (
+              <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
+                <div className="flex items-start gap-3">
+                  <div className="bg-amber-100 rounded-full p-2 mt-1">
+                    <AlertTriangle className="text-amber-600" size={20} />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-gray-800 mb-3">Health Considerations</h4>
+                    <div className="grid gap-2">
+                      {sleepAssessment.riskFactors.map((risk, index) => (
+                        <div key={index} className="flex items-center gap-2 text-sm text-gray-700">
+                          <AlertTriangle className="text-amber-500 flex-shrink-0" size={16} />
+                          {risk}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Personalized Tips */}
+            <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
+              <div className="flex items-start gap-3">
+                <div className="bg-blue-100 rounded-full p-2 mt-1">
+                  <Shield className="text-blue-600" size={20} />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-semibold text-gray-800 mb-3">Evidence-Based Sleep Tips</h4>
+                  <div className="grid gap-2">
+                    {sleepAssessment.tips.slice(0, 5).map((tip, index) => (
+                      <div key={index} className="flex items-start gap-2 text-sm text-gray-700">
+                        <Zap className="text-blue-500 flex-shrink-0 mt-0.5" size={14} />
+                        {tip}
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {!showHealthInsights && sleepAssessment.tips.length > 5 && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setShowHealthInsights(true)}
+                      className="mt-3 text-blue-600 border-blue-300 hover:bg-blue-100"
+                    >
+                      Show More Tips & Professional Recommendations
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Extended Health Recommendations */}
+            {showHealthInsights && (
+              <div className="space-y-4 animate-fade-in">
+                {/* Remaining Tips */}
+                {sleepAssessment.tips.length > 5 && (
+                  <div className="bg-purple-50 rounded-xl p-4 border border-purple-200">
+                    <h4 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                      <Heart className="text-purple-600" size={18} />
+                      Additional Sleep Optimization Tips
+                    </h4>
+                    <div className="grid gap-2">
+                      {sleepAssessment.tips.slice(5).map((tip, index) => (
+                        <div key={index} className="flex items-start gap-2 text-sm text-gray-700">
+                          <Star className="text-purple-500 flex-shrink-0 mt-0.5" size={14} />
+                          {tip}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Professional Health Recommendations */}
+                {healthRecommendations.length > 0 && (
+                  <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-200">
+                    <h4 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                      <Info className="text-indigo-600" size={18} />
+                      Professional Health Recommendations
+                    </h4>
+                    <div className="space-y-3">
+                      {healthRecommendations.map((rec, index) => (
+                        <div key={index} className="bg-white rounded-lg p-3 border border-indigo-100">
+                          <h5 className="font-medium text-gray-800 mb-1">{rec.title}</h5>
+                          <p className="text-sm text-gray-600 mb-2">{rec.description}</p>
+                          <div className="flex items-center justify-between">
+                            <Badge variant="outline" className="text-xs">
+                              {rec.category}
+                            </Badge>
+                            {rec.link && (
+                              <a 
+                                href={rec.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-indigo-600 hover:text-indigo-800 text-xs flex items-center gap-1"
+                              >
+                                Learn More <ArrowRight size={12} />
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-3 text-xs text-gray-500 flex items-center gap-1">
+                      <Info size={12} />
+                      Recommendations from U.S. Department of Health & Human Services
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      )}
 
       {/* Sleep Tips */}
       <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6">
