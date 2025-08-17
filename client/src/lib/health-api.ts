@@ -292,16 +292,37 @@ export async function getPersonalizedHealthRecommendations(
   return recommendations;
 }
 
-// Calculate sleep hours from time strings
+// Calculate sleep hours from time strings with proper AM/PM parsing
 export function calculateSleepHours(bedtime: string, wakeTime: string): number {
-  const bed = new Date(`2024-01-01 ${bedtime}`);
-  let wake = new Date(`2024-01-01 ${wakeTime}`);
+  // Parse bedtime
+  const bedParsed = parseTimeString(bedtime);
+  const bedDate = new Date();
+  bedDate.setHours(bedParsed.hour, bedParsed.minute, 0, 0);
+  
+  // Parse wake time
+  const wakeParsed = parseTimeString(wakeTime);
+  let wakeDate = new Date();
+  wakeDate.setHours(wakeParsed.hour, wakeParsed.minute, 0, 0);
   
   // If wake time is earlier than bedtime, it's the next day
-  if (wake <= bed) {
-    wake = new Date(`2024-01-02 ${wakeTime}`);
+  if (wakeDate <= bedDate) {
+    wakeDate.setDate(wakeDate.getDate() + 1);
   }
   
-  const diffMs = wake.getTime() - bed.getTime();
+  const diffMs = wakeDate.getTime() - bedDate.getTime();
   return diffMs / (1000 * 60 * 60); // Convert to hours
+}
+
+// Helper function to parse time strings with AM/PM
+function parseTimeString(timeStr: string): { hour: number; minute: number } {
+  const [time, period] = timeStr.split(' ');
+  const [hourStr, minuteStr] = time.split(':');
+  let hour = parseInt(hourStr);
+  const minute = parseInt(minuteStr);
+  
+  // Convert to 24-hour format
+  if (period === 'PM' && hour !== 12) hour += 12;
+  if (period === 'AM' && hour === 12) hour = 0;
+  
+  return { hour, minute };
 }

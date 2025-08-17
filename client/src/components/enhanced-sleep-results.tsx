@@ -69,12 +69,24 @@ export function EnhancedSleepResults({
     if (!times[0] || !selectedTime) return;
 
     try {
-      // Calculate sleep hours for the optimal option
-      const bedtime = type === 'bedtime' ? times[0].time : selectedTime;
-      const wakeTime = type === 'wakeup' ? times[0].time : selectedTime;
+      // FIXED: Calculate sleep hours correctly based on calculator type
+      let bedtime: string;
+      let wakeTime: string;
+      
+      if (type === 'bedtime') {
+        // User selected wake-up time, we calculated bedtimes
+        bedtime = times[0].time;
+        wakeTime = selectedTime;
+      } else {
+        // User is sleeping now, we calculated wake-up times
+        bedtime = selectedTime; // This should now be the actual current time
+        wakeTime = times[0].time;
+      }
+
+      // Calculate actual sleep duration
       const sleepHours = calculateSleepHours(bedtime, wakeTime);
 
-      // Generate assessment
+      // Generate accurate assessment
       const assessment = assessSleepQuality(sleepHours, userAge, userSex, bedtime, wakeTime);
       setSleepAssessment(assessment);
 

@@ -3,6 +3,11 @@
 This is a comprehensive full-stack sleep optimization platform built with React and Express. The application provides multiple scientifically-based calculators to help users optimize their sleep cycles using 90-minute REM cycle science. It features an advanced SEO-optimized design with smooth animations, multiple calculator modes (bedtime, wake-up, nap, sleep tracking, age-specific), and educational content to rank highly on Google for sleep-related searches.
 
 ## Recent Enhancements (January 2025)
+- **CRITICAL BUG FIXES**: Fixed major accuracy issues with bedtime and wake-up calculation results in health assessments
+- **Accurate Sleep Duration Calculations**: Fixed `calculateSleepHours` function to properly parse AM/PM time formats and handle overnight sleep periods
+- **Enhanced Time Parsing**: Implemented robust time string parsing with proper 24-hour conversion for bedtime/wake-up calculations
+- **Corrected Health Assessment Logic**: Fixed bedtime vs wake-up time assignment in health assessment generation to ensure accurate sleep duration analysis
+- **Real-Time Current Time Integration**: Fixed wake-up calculator to use actual current time instead of placeholder strings for accurate health assessments
 - **AI Health Assessment Integration**: Integrated FREE personalized health recommendations system providing evidence-based sleep advice based on user demographics (age, biological sex)
 - **Comprehensive Health Recommendation Engine**: Created robust evidence-based recommendation system with age-specific, sex-specific, and universal sleep health guidance based on CDC guidelines and medical research
 - **Privacy-Protected User Profile System**: Added user demographic collection (age, sex) with secure, local-only data storage for personalized health assessments

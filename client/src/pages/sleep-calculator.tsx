@@ -320,7 +320,7 @@ export default function SleepCalculator() {
             <EnhancedSleepResults
               times={showWakeupResults ? wakeupTimes : sleepNowTimes}
               type="wakeup"
-              selectedTime={showWakeupResults ? "If I sleep now" : showSleepNowResults ? "Sleep Now" : undefined}
+              selectedTime={showWakeupResults ? currentTime : showSleepNowResults ? currentTime : undefined}
               isLoading={isCalculating}
               userAge={userProfile?.age}
               userSex={userProfile?.sex}
