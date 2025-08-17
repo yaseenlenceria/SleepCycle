@@ -40,6 +40,7 @@ export function Footer() {
             <div>
               <h4 className="font-bold text-gray-800 mb-4">Legal & Support</h4>
               <ul className="space-y-2 text-sm">
+                <li><Link href="/age-calculator" className="text-sleep-blue-600 hover:text-sleep-blue-700">Age Calculator</Link></li>
                 <li><Link href="/more-resources" className="text-sleep-blue-600 hover:text-sleep-blue-700">More Resources</Link></li>
                 <li><Link href="/privacy-policy" className="text-sleep-blue-600 hover:text-sleep-blue-700">Privacy Policy</Link></li>
                 <li><Link href="/terms-of-service" className="text-sleep-blue-600 hover:text-sleep-blue-700">Terms of Service</Link></li>

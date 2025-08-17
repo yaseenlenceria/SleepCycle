@@ -3,6 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { lazy } from "react";
 import SleepCalculator from "@/pages/sleep-calculator";
 import TermsOfService from "@/pages/terms-of-service";
 import PrivacyPolicy from "@/pages/privacy-policy";
@@ -12,6 +13,8 @@ import Help from "@/pages/help";
 import SleepScience from "@/pages/sleep-science";
 import MoreResources from "@/pages/more-resources";
 import NotFound from "@/pages/not-found";
+
+const AgeCalculator = lazy(() => import('./pages/age-calculator'));
 
 function Router() {
   return (
@@ -24,6 +27,7 @@ function Router() {
       <Route path="/help" component={Help} />
       <Route path="/sleep-science" component={SleepScience} />
       <Route path="/more-resources" component={MoreResources} />
+      <Route path="/age-calculator" component={AgeCalculator} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
