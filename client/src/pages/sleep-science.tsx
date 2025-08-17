@@ -36,13 +36,13 @@ export default function SleepScience() {
             <div className="bg-gradient-to-br from-sleep-blue-50 to-sleep-purple-50 rounded-xl p-8 mb-8">
               <div className="flex items-center mb-6">
                 <Clock className="text-sleep-blue-600 mr-4" size={40} />
-                <h2 className="text-2xl font-bold text-gray-800">90 Minute Sleep Cycles</h2>
+                <h2 className="text-2xl font-bold text-gray-800">REM and Non-REM Sleep Cycles</h2>
               </div>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-4">The Science Behind Sleep Cycles</h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    Sleep occurs in approximately 90-minute cycles, during which your brain progresses through distinct stages:
+                    The sleep cycle oscillates between non-REM and REM sleep over periods averaging 90 minutes (ranging 70-120 minutes). Your brain progresses through distinct stages during each cycle:
                   </p>
                   <ul className="space-y-2 text-gray-700">
                     <li>• <strong>Stage 1 (5%):</strong> Light sleep transition</li>
@@ -320,6 +320,112 @@ export default function SleepScience() {
               </Link>
             </div>
           </div>
+          {/* Comprehensive Sleep Science Section */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-8 mb-8">
+              <div className="flex items-center mb-6">
+                <Brain className="text-indigo-600 mr-4" size={40} />
+                <h2 className="text-2xl font-bold text-gray-800">Complete Sleep Science Guide</h2>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">REM vs Non-REM Sleep</h3>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    During sleep, the brain expends significantly less energy than when awake, particularly during non-REM sleep. The body typically cycles between non-REM and REM sleep over periods averaging 90 minutes, occurring 4-6 times per night.
+                  </p>
+                  <div className="bg-white rounded-lg p-4 mb-4">
+                    <h4 className="font-semibold text-gray-800 mb-2">Non-REM Sleep</h4>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• Begins with light sleep, progresses to slow-wave (deep) sleep</li>
+                      <li>• Body temperature and heart rate fall</li>
+                      <li>• Brain restores ATP (energy storage molecules)</li>
+                      <li>• Growth hormone is released during slow-wave sleep</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white rounded-lg p-4">
+                    <h4 className="font-semibold text-gray-800 mb-2">REM Sleep</h4>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• Named for rapid eye movements during this stage</li>
+                      <li>• Virtual paralysis of the body occurs</li>
+                      <li>• Dreams and nightmares typically occur</li>
+                      <li>• Critical for emotional processing and memory</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Sleep Quality Measurement</h3>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Sleep quality is measured by the degree of difficulty falling asleep, staying asleep, and the number of times you wake up per night. It's also measured subjectively by how rested you feel upon waking.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="bg-white rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-800 mb-2">Good Sleep Quality Indicators</h4>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Fall asleep within 15-20 minutes</li>
+                        <li>• Stay asleep throughout the night</li>
+                        <li>• Wake up feeling refreshed and alert</li>
+                        <li>• No daytime sleepiness or dysfunction</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-800 mb-2">Optimal Sleep Timing</h4>
+                      <p className="text-sm text-gray-600">
+                        The timing of sleep must balance the maximum concentration of melatonin and minimum core body temperature occurring after the middle of sleep, before awakening.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* CDC Sleep Recommendations Table */}
+              <div className="mb-8">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">CDC Recommended Sleep Duration by Age</h3>
+                <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
+                    <div className="space-y-2">
+                      <div className="font-semibold text-gray-800 border-b pb-1">Infants</div>
+                      <div className="text-sm text-gray-600">0–3 months: 14–17 hours</div>
+                      <div className="text-sm text-gray-600">4–12 months: 12–16 hours (including naps)</div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="font-semibold text-gray-800 border-b pb-1">Children</div>
+                      <div className="text-sm text-gray-600">1–2 years: 11–14 hours (including naps)</div>
+                      <div className="text-sm text-gray-600">3–5 years: 10–13 hours (including naps)</div>
+                      <div className="text-sm text-gray-600">6–12 years: 9–12 hours</div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="font-semibold text-gray-800 border-b pb-1">Teens & Adults</div>
+                      <div className="text-sm text-gray-600">13–18 years: 8–10 hours</div>
+                      <div className="text-sm text-gray-600">18–60 years: 7+ hours per night</div>
+                      <div className="text-sm text-gray-600">61–64 years: 7–9 hours</div>
+                      <div className="text-sm text-gray-600">65+ years: 7–8 hours</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">Key Sleep Facts</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-gray-800 mb-2">Circadian Rhythm</h4>
+                    <p className="text-sm text-gray-600 mb-3">
+                      Sleep timing is based on hormonal signals from the circadian clock, which exhibits regular rhythm corresponding to outside signals (night/day) that can persist even without external cues.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800 mb-2">Individual Variation</h4>
+                    <p className="text-sm text-gray-600 mb-3">
+                      Sleep needs vary largely based on age and individual factors. A person who sleeps adequately should experience no daytime sleepiness or dysfunction. Research shows 6-7 hours per night correlates with positive health outcomes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </main>
 

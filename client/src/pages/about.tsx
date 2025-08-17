@@ -35,7 +35,7 @@ export default function About() {
             <div>
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Our Mission</h2>
               <p className="text-gray-700 leading-relaxed mb-6">
-                At <a href="https://sleepcycle.io" className="text-sleep-blue-600 hover:text-sleep-blue-700">SleepCycle.io</a>, we're dedicated to helping millions of people achieve better sleep through science-based tools. Our comprehensive sleep cycle calculator helps you find the perfect bedtime and wake-up times using proven 90-minute sleep cycle research.
+                At <a href="https://sleepcycle.io" className="text-sleep-blue-600 hover:text-sleep-blue-700">SleepCycle.io</a>, we're dedicated to helping millions of people achieve better sleep through science-based tools. Our comprehensive sleep cycle calculator helps you find the perfect bedtime and wake-up times using proven REM and non-REM sleep cycle research.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 Whether you're looking for the optimal nap duration, trying to establish a healthy baby sleep schedule, or simply want to calculate how much sleep you got last night, our tools are designed to make sleep optimization accessible to everyone.

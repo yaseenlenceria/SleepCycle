@@ -7,11 +7,11 @@ import { User, Clock, Brain, Moon, Zap } from 'lucide-react';
 export default function SleepCyclesAdultsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Adult Sleep Cycles - SleepCycle.io #1 App for 90-Minute Sleep Cycle Mastery";
+    document.title = "Adult Sleep Cycles - SleepCycle.io #1 App for REM & Non-REM Sleep Mastery";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 adult sleep cycle calculator. Master 90-minute patterns, optimize REM sleep & circadian rhythms. Scientific approach to perfect sleep timing.');
+      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 adult sleep cycle calculator. Master REM and non-REM patterns, optimize sleep quality & circadian rhythms. Scientific approach to perfect sleep timing.');
     }
   }, []);
 
@@ -26,10 +26,10 @@ export default function SleepCyclesAdultsPage() {
             Sleep Cycles for Adults
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            Optimize your sleep with scientific understanding of adult sleep cycles. Learn about 90-minute REM patterns, sleep stages, and how to wake up feeling refreshed every morning.
+            Optimize your sleep with scientific understanding of adult sleep cycles. Learn about REM and non-REM patterns, sleep stages, and how to wake up feeling refreshed every morning.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-            <span>🧠 90-Minute Cycles</span>
+            <span>🧠 REM & Non-REM Cycles</span>
             <span>😴 Sleep Stages</span>
             <span>⚡ Energy Optimization</span>
             <span>🎯 Wake Time Strategy</span>
@@ -83,9 +83,9 @@ export default function SleepCyclesAdultsPage() {
             </CardHeader>
             <CardContent className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-4">The 90-Minute Sleep Cycle</h3>
+                <h3 className="text-xl font-semibold mb-4">REM and Non-REM Sleep Cycles</h3>
                 <p className="text-gray-600 mb-6">
-                  Adult sleep follows predictable 90-minute cycles, moving through four distinct stages. Understanding these stages helps you time your sleep and wake times for maximum energy and alertness.
+                  Sleep cycles between non-REM and REM sleep over periods averaging 90 minutes (ranging 70-120 minutes). The body typically experiences 4-6 complete cycles per night, with each stage serving crucial functions for physical and mental restoration.
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -150,7 +150,7 @@ export default function SleepCyclesAdultsPage() {
                   <h4 className="font-semibold text-green-800 mb-2">Young Adults (18-25 years)</h4>
                   <ul className="text-gray-600 space-y-1">
                     <li>• <strong>Recommended:</strong> 7-9 hours per night</li>
-                    <li>• <strong>Sleep Cycles:</strong> 4-6 complete 90-minute cycles</li>
+                    <li>• <strong>Sleep Cycles:</strong> 4-6 complete cycles (averaging 90 minutes each)</li>
                     <li>• <strong>Deep Sleep:</strong> 20-25% of total sleep</li>
                     <li>• <strong>REM Sleep:</strong> 20-25% of total sleep</li>
                     <li>• <strong>Recovery:</strong> Faster recovery from sleep debt</li>

@@ -1,0 +1,73 @@
+Sleep Cycle Calculator
+Use this calculator to compute what time to go to bed or get up to wake up refreshed between sleep cycles. Click the settings to change sleep cycle length or the time you take to fall asleep for your specific situation.
+
+I want to	
+ 	
+6
+ : 
+0
+ 
+AM
+  
+ 	  Settings
+
+Sleep Length Calculator
+Use this calculator to compute what time to wake up or go to bed to get a given number of hours of sleep. Use the Hours Calculator if you would like to find out the number of hours slept when you know what times you woke up and went to bed. When counting, please deduct the time taken to fall asleep, which can be very different for different people.
+
+I want to	
+ 	
+6
+ : 
+0
+ 
+AM
+  
+I want to sleep for
+ 	
+7
+hours   
+30
+minutes
+ 	 
+
+Sleep describes a recurring state in which the body and mind are at rest, reducing muscle activity, interaction with surroundings, and the ability to react to stimuli. The ability to react to stimuli is one of the distinguishing factors between the states of sleep and wakefulness. For the purposes of this page, sleep will primarily be discussed as it relates to humans.
+
+Sleep cycles
+The sleep cycle can be defined as the oscillation between non-REM (rapid eye movement) and REM sleep, which will both be discussed below.
+
+Sleep timing is largely based on hormonal signals from the circadian clock. The circadian clock exhibits a regular rhythm that corresponds to outside signals (such as night/day) that can persist even if the outside signals suddenly disappear. An example of this is jet lag, where the body's circadian rhythm is affected due to rapid long-distance travel, which results in the traveler being maladjusted to the local time. The traveler then feels that it is either later or earlier than what their body is used to, affecting their sleep.
+
+Ideally, a person's sleep cycle follows the circadian clock, but sleep can be affected by numerous factors such as light, social timing (when others are awake, when work is required, etc.), naps, genetics, and more.
+
+REM and non-REM sleep
+During sleep, the brain expends significantly less energy than it does when a person is awake, particularly during non-REM (rapid eye movement) sleep. REM sleep is a type of sleep characterized by a number of aspects, including the eye movements it is named for, virtual paralysis of the body, and the occurrence of dreams. Non-REM and REM sleep are two categories of sleep that are vastly different.
+
+Typically, the body cycles between non-REM and REM sleep over a period of 90 minutes on average, and should occur 4-6 times in a good night's sleep. Non-REM sleep begins, eventually moving into slow-wave sleep, or deep sleep. During this period, body temperature and heart rate fall, and the brain uses far less energy, while restoring its supply of adenosine triphosphate (ATP), a molecule used for the storage and transport of energy. During slow-wave sleep, growth hormone is also secreted, which is particularly important for human development.
+
+REM sleep typically comprises a smaller proportion of sleep time, and is most known for being when dreams or nightmares usually occur. Deprivation of REM sleep can result in anxiety, irritability, hallucinations, and difficulty concentrating. Studies have shown that when the body is deprived of REM sleep, subsequent sleep will involve the body increasing the number of attempts to go into REM sleep, as well as increases in the amount of time spent in REM sleep compared to periods of no sleep deprivation. This is referred to as a REM rebound, and is consistent with the belief that REM sleep is necessary for the body. REM sleep, its effects, and its necessity are still not fully understood, and though it is typically considered an important and necessary aspect of sleep, in some cases, deprivation of REM sleep can have transient positive effects.
+
+Sleep quality
+Sleep quality can be measured in terms of the degree of difficulty a person has to fall asleep and to stay asleep, as well as the number of times a person typically wakes up in a single night. It can also be measured more subjectively in terms of how rested a person feels upon waking.
+
+Having poor sleep quality disrupts the sleep cycle and the transitions between the various stages of sleep. In order to have good sleep quality, the need to sleep must be balanced against the circadian element of sleep. Ideally, the timing of sleep must be balanced such that the maximum concentration of the hormone melatonin and the minimum core body temperature occur after the middle of the sleep episode, and before awakening.
+
+How much sleep do I need?
+Sleep is far from perfectly understood, and the amount of sleep a person needs can vary largely based on certain metrics, such as age, as well as entirely individually. A person who sleeps an adequate amount should experience no daytime sleepiness or dysfunction.
+
+Very generally, researchers have found that achieving 6-7 hours of sleep per night correlates with a number of positive health outcomes, but there are also many other factors that may affect these outcomes.
+
+As a person ages, they tend to sleep less, with newborns sleeping for significantly longer hours than adults. This discrepancy decreases with age, and the sleep requirements become more similar to that of adults starting around the age of 5.
+
+Below are the CDCs recommendations for the number of hours a person should sleep based on age.
+
+
+Age Group	Recommended Hours of Sleep Per Day
+0–3 months	14–17 hours
+4–12 months	12–16 hours per 24 hours (including naps)
+1–2 years	11–14 hours per 24 hours (including naps)
+3–5 years	10–13 hours per 24 hours (including naps)
+6–12 years	9–12 hours per 24 hours
+13–18 years	8–10 hours per 24 hours
+18–60 years	7 or more hours per night
+61–64 years	7–9 hours
+65 years and older	7–8 hours
