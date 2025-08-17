@@ -3,6 +3,9 @@
 This is a comprehensive full-stack sleep optimization platform built with React and Express. The application provides multiple scientifically-based calculators to help users optimize their sleep cycles using 90-minute REM cycle science. It features an advanced SEO-optimized design with smooth animations, multiple calculator modes (bedtime, wake-up, nap, sleep tracking, age-specific), and educational content to rank highly on Google for sleep-related searches.
 
 ## Recent Enhancements (January 2025)
+- **Beautiful Scroll Time Picker**: Implemented iOS-style scroll-based time selection replacing dropdowns across all calculators
+- **More Resources Page**: Added competitor comparison with sleepytime.cc and sleepcalculator.com, showcasing unique features
+- **Mobile-Responsive Calculators**: All calculator buttons and cards now properly sized for mobile devices
 - **Unified Component Architecture**: Created reusable Header and Footer components used across all pages
 - **Scroll-to-Top Navigation**: Implemented proper page scrolling behavior on route changes
 - **Sleep Science Hub**: Comprehensive educational page covering 90-minute cycles, REM optimization, circadian rhythms, age-specific needs, and sleep quality analysis

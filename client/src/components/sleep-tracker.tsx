@@ -1,13 +1,10 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { TimePicker } from '@/components/time-picker';
-import { MobileOptimizedPicker } from '@/components/mobile-optimized-picker';
+import { ScrollTimePicker } from '@/components/scroll-time-picker';
 import { calculateSleepDuration, SleepData } from '@/lib/sleep-calculations';
 import { BarChart3, Clock, TrendingUp, Award } from 'lucide-react';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 export function SleepTracker() {
-  const isMobile = useIsMobile();
   const [bedtimeHour, setBedtimeHour] = useState('10');
   const [bedtimeMinute, setBedtimeMinute] = useState('30');
   const [bedtimePeriod, setBedtimePeriod] = useState('PM');
@@ -66,31 +63,17 @@ export function SleepTracker() {
           <h4 className="text-base md:text-lg font-semibold text-gray-800 text-center">
             When did you go to bed?
           </h4>
-          {isMobile ? (
-            <MobileOptimizedPicker
-              hour={bedtimeHour}
-              minute={bedtimeMinute}
-              period={bedtimePeriod}
-              onTimeChange={(h, m, p) => {
-                setBedtimeHour(h);
-                setBedtimeMinute(m);
-                setBedtimePeriod(p);
-                setShowResults(false);
-              }}
-            />
-          ) : (
-            <TimePicker
-              hour={bedtimeHour}
-              minute={bedtimeMinute}
-              period={bedtimePeriod}
-              onTimeChange={(h, m, p) => {
-                setBedtimeHour(h);
-                setBedtimeMinute(m);
-                setBedtimePeriod(p);
-                setShowResults(false);
-              }}
-            />
-          )}
+          <ScrollTimePicker
+            hour={bedtimeHour}
+            minute={bedtimeMinute}
+            period={bedtimePeriod}
+            onTimeChange={(h, m, p) => {
+              setBedtimeHour(h);
+              setBedtimeMinute(m);
+              setBedtimePeriod(p);
+              setShowResults(false);
+            }}
+          />
         </div>
 
         {/* Wake-up Picker */}
@@ -98,31 +81,17 @@ export function SleepTracker() {
           <h4 className="text-base md:text-lg font-semibold text-gray-800 text-center">
             When did you wake up?
           </h4>
-          {isMobile ? (
-            <MobileOptimizedPicker
-              hour={wakeHour}
-              minute={wakeMinute}
-              period={wakePeriod}
-              onTimeChange={(h, m, p) => {
-                setWakeHour(h);
-                setWakeMinute(m);
-                setWakePeriod(p);
-                setShowResults(false);
-              }}
-            />
-          ) : (
-            <TimePicker
-              hour={wakeHour}
-              minute={wakeMinute}
-              period={wakePeriod}
-              onTimeChange={(h, m, p) => {
-                setWakeHour(h);
-                setWakeMinute(m);
-                setWakePeriod(p);
-                setShowResults(false);
-              }}
-            />
-          )}
+          <ScrollTimePicker
+            hour={wakeHour}
+            minute={wakeMinute}
+            period={wakePeriod}
+            onTimeChange={(h, m, p) => {
+              setWakeHour(h);
+              setWakeMinute(m);
+              setWakePeriod(p);
+              setShowResults(false);
+            }}
+          />
         </div>
       </div>
 
@@ -131,9 +100,8 @@ export function SleepTracker() {
           onClick={handleCalculate}
           className="bg-gradient-to-r from-sleep-blue-600 to-sleep-purple-600 hover:from-sleep-blue-700 hover:to-sleep-purple-700 text-white px-6 md:px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm md:text-base w-full md:w-auto"
         >
-          <BarChart3 className="mr-2" size={isMobile ? 18 : 20} />
-          <span className="hidden sm:inline">Analyze My Sleep</span>
-          <span className="sm:hidden">Analyze Sleep</span>
+          <BarChart3 className="mr-2" size={20} />
+          Analyze My Sleep
         </Button>
       </div>
 
