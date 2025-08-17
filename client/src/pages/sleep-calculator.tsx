@@ -7,6 +7,8 @@ import { NapCalculator } from '@/components/nap-calculator';
 import { SleepTracker } from '@/components/sleep-tracker';
 import { AgeCalculator } from '@/components/age-calculator';
 import { BabyNapCalculator } from '@/components/baby-nap-calculator';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 import { calculateBedtimes, calculateWakeUpTimes, getCurrentTime, SleepTime } from '@/lib/sleep-calculations';
 import { Bed, Sun, Clock, Heart, Coffee, BarChart3, Users, Calculator, Moon, Star, Baby, Smartphone } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -56,23 +58,7 @@ export default function SleepCalculator() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 animate-gradient">
-      {/* Header */}
-      <header className="bg-white bg-opacity-90 backdrop-blur-md shadow-lg border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-6">
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-3">
-              <Moon className="text-sleep-blue-600 mr-3 sleep-float" size={32} />
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-sleep-blue-800 to-sleep-purple-600 bg-clip-text text-transparent">
-                Sleep Cycle Calculator
-              </h1>
-              <Star className="text-sleep-purple-600 ml-3 sleep-pulse" size={28} />
-            </div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Scientifically optimize your sleep with our comprehensive suite of calculators based on 90-minute sleep cycles
-            </p>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Enhanced Mobile-First Mode Toggle */}
@@ -378,97 +364,7 @@ export default function SleepCalculator() {
         </div>
       </main>
 
-      {/* Enhanced Footer with FAQ for SEO */}
-      <footer className="bg-gradient-to-r from-gray-100 to-blue-50 border-t border-gray-200 mt-16">
-        <div className="max-w-6xl mx-auto px-4 py-12">
-          {/* FAQ Section for SEO */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">
-              Frequently Asked Questions About Sleep Cycles
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h4 className="font-bold text-gray-800 mb-2">How many sleep cycles do I need?</h4>
-                <p className="text-gray-600 text-sm">Most adults need 5-6 complete sleep cycles per night, which equals 7.5-9 hours of sleep. Use our age calculator for personalized recommendations.</p>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h4 className="font-bold text-gray-800 mb-2">What is the scientifically best time to sleep?</h4>
-                <p className="text-gray-600 text-sm">Research shows 10:00-11:00 PM is optimal for most adults, aligning with natural circadian rhythms and allowing 7-9 hours before morning wake times.</p>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h4 className="font-bold text-gray-800 mb-2">How do I calculate how much sleep I got?</h4>
-                <p className="text-gray-600 text-sm">Use our sleep tracker to input your bedtime and wake time. It calculates total sleep duration, number of cycles, and sleep efficiency.</p>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h4 className="font-bold text-gray-800 mb-2">What's the best nap duration for adults?</h4>
-                <p className="text-gray-600 text-sm">20 minutes for quick energy, 60 minutes for cognitive benefits, or 90 minutes for a full sleep cycle. Our adult nap calculator helps you choose the optimal duration.</p>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h4 className="font-bold text-gray-800 mb-2">How to calculate baby nap times?</h4>
-                <p className="text-gray-600 text-sm">Baby nap schedules depend on age: newborns need 4+ naps, while toddlers transition to 1-2 naps. Use our baby nap calculator for age-specific schedules.</p>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h4 className="font-bold text-gray-800 mb-2">What is a 90-minute sleep cycle calculator?</h4>
-                <p className="text-gray-600 text-sm">A 90-minute sleep cycle calculator helps you time sleep and wake periods to complete full sleep cycles, preventing grogginess from waking during deep sleep.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-200 pt-8">
-            {/* Enhanced Footer with Internal Links */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <h4 className="font-bold text-gray-800 mb-4">Sleep Calculators</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="#bedtime" className="text-sleep-blue-600 hover:text-sleep-blue-700">Bedtime Calculator</a></li>
-                  <li><a href="#wakeup" className="text-sleep-blue-600 hover:text-sleep-blue-700">Wake-up Time Calculator</a></li>
-                  <li><a href="#nap" className="text-sleep-blue-600 hover:text-sleep-blue-700">Nap Calculator for Adults</a></li>
-                  <li><a href="#baby" className="text-sleep-blue-600 hover:text-sleep-blue-700">Baby Nap Calculator</a></li>
-                  <li><a href="#tracker" className="text-sleep-blue-600 hover:text-sleep-blue-700">Sleep Duration Tracker</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-800 mb-4">Sleep Science</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><span className="text-gray-600">90 Minute Sleep Cycles</span></li>
-                  <li><span className="text-gray-600">REM Sleep Optimization</span></li>
-                  <li><span className="text-gray-600">Circadian Rhythm Tips</span></li>
-                  <li><span className="text-gray-600">Age-Specific Recommendations</span></li>
-                  <li><span className="text-gray-600">Sleep Quality Analysis</span></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-800 mb-4">Quick Links</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="/about" className="text-sleep-blue-600 hover:text-sleep-blue-700">About SleepCycle.io</a></li>
-                  <li><a href="/" className="text-sleep-blue-600 hover:text-sleep-blue-700">Sleep Calculator Home</a></li>
-                  <li><span className="text-gray-600">How Much Sleep Did I Get?</span></li>
-                  <li><span className="text-gray-600">Best Time to Sleep</span></li>
-                  <li><span className="text-gray-600">Optimal Nap Duration</span></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-800 mb-4">Legal & Support</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="/privacy-policy" className="text-sleep-blue-600 hover:text-sleep-blue-700">Privacy Policy</a></li>
-                  <li><a href="/terms-of-service" className="text-sleep-blue-600 hover:text-sleep-blue-700">Terms of Service</a></li>
-                  <li><span className="text-gray-600">Contact Support</span></li>
-                  <li><span className="text-gray-600">Help & FAQ</span></li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="text-center border-t border-gray-200 pt-6">
-              <p className="text-gray-600 text-sm mb-2">
-                © 2025 <a href="https://sleepcycle.io" className="text-sleep-blue-600 hover:text-sleep-blue-700">SleepCycle.io</a> - Your trusted sleep optimization platform.
-              </p>
-              <p className="text-gray-500 text-xs leading-relaxed">
-                Free sleep cycle calculator | 90 minute sleep cycle calculator | Nap calculator for adults | Baby nap calculator | How much sleep did I get tracker | Scientifically best time to sleep | Bedtime calculator | Wake up time calculator
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

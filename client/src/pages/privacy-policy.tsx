@@ -1,25 +1,12 @@
 import { Link } from 'wouter';
 import { ArrowLeft, Shield } from 'lucide-react';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-sleep-blue-50 via-sleep-purple-50 to-pink-50">
-      {/* Header */}
-      <header className="bg-white bg-opacity-95 backdrop-blur-md shadow-lg sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center space-x-3">
-              <ArrowLeft className="text-sleep-blue-600" size={24} />
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-sleep-blue-500 to-sleep-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">S</span>
-                </div>
-                <span className="text-xl font-bold text-gray-800">SleepCycle.io</span>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
@@ -110,6 +97,8 @@ export default function PrivacyPolicy() {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }
