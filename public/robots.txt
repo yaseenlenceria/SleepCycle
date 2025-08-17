@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Important pages for SEO
+Allow: /about
+Allow: /privacy-policy
+Allow: /terms-of-service
+
+# Sitemap location
+Sitemap: https://sleepcycle.io/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
