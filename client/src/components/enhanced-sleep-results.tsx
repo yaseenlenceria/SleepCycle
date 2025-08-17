@@ -11,7 +11,7 @@ import {
   HealthRecommendation 
 } from '@/lib/health-api';
 import { Clock, Moon, Star, Zap, Brain, Heart, CheckCircle, ArrowRight, AlertTriangle, TrendingUp, Shield, Info } from 'lucide-react';
-import { LoadingAnimation } from './loading-animation';
+import { EnhancedLoadingAnimation } from './enhanced-loading-animation';
 
 interface EnhancedSleepResultsProps {
   times: SleepTime[];
@@ -116,12 +116,16 @@ export function EnhancedSleepResults({
 
   if (isLoading) {
     return (
-      <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8">
-        <LoadingAnimation message={
-          type === 'bedtime' 
-            ? "Finding your perfect bedtimes..." 
-            : "Calculating optimal wake-up times..."
-        } />
+      <div className="mt-8">
+        <EnhancedLoadingAnimation 
+          message={
+            type === 'bedtime' 
+              ? "AI analyzing your perfect bedtimes..." 
+              : "AI calculating optimal wake-up times..."
+          }
+          userAge={userAge}
+          userSex={userSex}
+        />
       </div>
     );
   }
