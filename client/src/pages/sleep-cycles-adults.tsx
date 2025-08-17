@@ -7,11 +7,11 @@ import { User, Clock, Brain, Moon, Zap } from 'lucide-react';
 export default function SleepCyclesAdultsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Cycles for Adults - Complete Guide to Adult Sleep Patterns | SleepCycle.io";
+    document.title = "Adult Sleep Cycles - SleepCycle.io #1 App for 90-Minute Sleep Cycle Mastery";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Master adult sleep cycles with our complete guide. Learn about 90-minute REM cycles, optimal sleep duration, and how to improve sleep quality for adults 18-65+.');
+      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 adult sleep cycle calculator. Master 90-minute patterns, optimize REM sleep & circadian rhythms. Scientific approach to perfect sleep timing.');
     }
   }, []);
 

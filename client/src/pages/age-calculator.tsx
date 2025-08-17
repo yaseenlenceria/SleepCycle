@@ -19,6 +19,12 @@ export default function AgeCalculatorPage() {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "Age Calculator - SleepCycle.io #1 App for Exact Age & Life Statistics";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'SleepCycle.io offers the #1 age calculator app. Calculate exact age in years, months, days, zodiac signs & life statistics. Free precise age calculation tool.');
+    }
   }, []);
 
   const calculateAge = () => {

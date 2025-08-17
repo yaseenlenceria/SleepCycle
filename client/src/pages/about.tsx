@@ -7,6 +7,12 @@ import { useEffect } from 'react';
 export default function About() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "About SleepCycle.io - #1 Sleep Cycle Calculator App for Better Sleep";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Learn about SleepCycle.io, the #1 sleep cycle calculator app. Discover our mission to optimize sleep using scientific 90-minute cycles & expert sleep guidance.');
+    }
   }, []);
 
   return (

@@ -7,11 +7,11 @@ import { Coffee, Clock, Zap, Sun, Battery } from 'lucide-react';
 export default function SleepCyclesNapsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Cycles for Naps - Ultimate Guide to Power Napping | SleepCycle.io";
+    document.title = "Nap Calculator - SleepCycle.io #1 App for Perfect Power Naps & Strategic Rest";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Master the art of napping with our complete guide. Learn optimal nap duration, timing, and how to avoid sleep inertia for maximum energy boost.');
+      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 nap calculator app. Master power napping, optimal nap durations & strategic rest timing. Perfect naps for energy boost & productivity.');
     }
   }, []);
 

@@ -7,11 +7,11 @@ import { Users, Clock, Bed, Moon, AlertTriangle } from 'lucide-react';
 export default function SleepCycles2YearOldsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Cycles for 2 Year Olds - Complete Toddler Sleep Guide | SleepCycle.io";
+    document.title = "2 Year Old Sleep - SleepCycle.io #1 App for Sleep Regression & Big Kid Bed";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', '2-year-old sleep guide: nap transitions, big kid bed, sleep regressions, and bedtime battles. Expert advice for better toddler sleep.');
+      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 app for 2-year-old sleep. Master sleep regression, big kid bed transition & bedtime battles. Expert toddler sleep guidance & solutions.');
     }
   }, []);
 

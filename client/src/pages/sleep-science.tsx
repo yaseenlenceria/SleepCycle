@@ -7,6 +7,12 @@ import { useEffect } from 'react';
 export default function SleepScience() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "Sleep Science Hub - SleepCycle.io #1 App for Scientific Sleep Education";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 sleep science educational app. Learn REM cycles, circadian rhythms, sleep stages & optimization backed by scientific research.');
+    }
   }, []);
 
   return (

@@ -31,9 +31,15 @@ export default function SleepCalculator() {
   const [showBedtimeResults, setShowBedtimeResults] = useState(false);
   const [showWakeupResults, setShowWakeupResults] = useState(false);
 
-  // Scroll to top on page load
+  // Scroll to top on page load and set SEO meta
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "Sleep Cycle Calculator - SleepCycle.io #1 App for 90-Minute Sleep Cycles";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 sleep cycle calculator app. Master bedtime, wake-up times, naps & sleep tracking with scientific 90-minute cycles. Free sleep optimization tool.');
+    }
   }, []);
 
   // Update tab from URL

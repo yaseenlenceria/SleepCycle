@@ -7,11 +7,11 @@ import { Baby, Clock, Moon, Sun, Calendar } from 'lucide-react';
 export default function SleepCycles4MonthOldPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Cycles for 4 Month Old Babies - Complete Guide | SleepCycle.io";
+    document.title = "4 Month Sleep Regression - SleepCycle.io #1 App for 4-Month-Old Baby Sleep";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', '4-month-old sleep guide: schedules, cycles, regression tips, and healthy sleep habits. Expert advice for better baby sleep at 4 months.');
+      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 app for 4-month sleep regression. Master 4-month-old sleep schedules, training readiness & developmental milestones. Expert baby sleep guide.');
     }
   }, []);
 

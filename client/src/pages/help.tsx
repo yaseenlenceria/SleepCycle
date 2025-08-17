@@ -7,6 +7,12 @@ import { useEffect } from 'react';
 export default function Help() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "Help & FAQ - SleepCycle.io #1 Sleep Calculator App Support & Guides";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Get help with SleepCycle.io, the #1 sleep calculator app. FAQ, guides & support for bedtime calculator, nap optimization & sleep cycle mastery.');
+    }
   }, []);
 
   return (

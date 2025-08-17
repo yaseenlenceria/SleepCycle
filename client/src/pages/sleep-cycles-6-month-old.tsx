@@ -7,11 +7,11 @@ import { Baby, Clock, Moon, Sun, Utensils } from 'lucide-react';
 export default function SleepCycles6MonthOldPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Cycles for 6 Month Old Babies - Complete Guide | SleepCycle.io";
+    document.title = "6 Month Baby Sleep - SleepCycle.io #1 App for Sleep Training & Solid Foods";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', '6-month-old sleep guide: schedules, sleep training, solid foods impact, and healthy habits. Expert advice for 6-month baby sleep.');
+      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 app for 6-month baby sleep. Master sleep training, solid foods impact & 6-month schedules. Expert guide for sleep development.');
     }
   }, []);
 

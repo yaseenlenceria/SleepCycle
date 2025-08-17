@@ -7,6 +7,12 @@ import { useEffect } from 'react';
 export default function Contact() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "Contact Support - SleepCycle.io #1 Sleep Calculator App Customer Service";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Contact SleepCycle.io customer support. Get help with the #1 sleep calculator app, report issues, or reach out to our expert sleep optimization team.');
+    }
   }, []);
 
   return (

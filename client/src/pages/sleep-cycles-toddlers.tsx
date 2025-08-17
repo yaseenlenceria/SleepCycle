@@ -7,11 +7,11 @@ import { Users, Clock, Bed, Sun, Moon } from 'lucide-react';
 export default function SleepCyclesToddlersPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Cycles for Toddlers (1-3 Years) - Complete Guide | SleepCycle.io";
+    document.title = "Toddler Sleep Cycles - SleepCycle.io #1 App for Ages 1-3 Sleep Schedules";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Complete toddler sleep guide: cycles, schedules, nap transitions, and bedtime struggles. Expert advice for better sleep ages 1-3 years.');
+      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 toddler sleep app. Master sleep cycles, nap transitions & bedtime routines for ages 1-3. Expert guidance for healthy toddler sleep habits.');
     }
   }, []);
 

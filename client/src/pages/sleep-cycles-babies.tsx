@@ -7,11 +7,11 @@ import { Baby, Clock, Moon, Sun, Heart } from 'lucide-react';
 export default function SleepCyclesBabiesPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Cycles for Babies - Complete Guide to Baby Sleep Patterns | SleepCycle.io";
+    document.title = "Baby Sleep Cycles - SleepCycle.io #1 App for Baby Sleep Patterns & Schedules";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Complete guide to baby sleep cycles, patterns, and schedules. Learn optimal sleep duration for newborns, infants, and babies 0-12 months with expert tips.');
+      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 baby sleep app. Master baby sleep cycles, patterns & schedules for 0-12 months. Expert guide for newborn sleep, naps & safe sleep practices.');
     }
   }, []);
 

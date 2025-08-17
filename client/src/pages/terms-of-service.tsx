@@ -7,6 +7,12 @@ import { useEffect } from 'react';
 export default function TermsOfService() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "Terms of Service - SleepCycle.io #1 Sleep Calculator App Legal Terms";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Read SleepCycle.io Terms of Service for the #1 sleep cycle calculator app. Legal terms, user agreements & service policies for sleep optimization platform.');
+    }
   }, []);
 
   return (

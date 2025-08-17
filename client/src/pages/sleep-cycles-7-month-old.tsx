@@ -7,11 +7,11 @@ import { Baby, Clock, Moon, ArrowUp, Zap } from 'lucide-react';
 export default function SleepCycles7MonthOldPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Cycles for 7 Month Old Babies - Complete Guide | SleepCycle.io";
+    document.title = "7 Month Baby Sleep - SleepCycle.io #1 App for Crawling & 2-Nap Schedules";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', '7-month-old sleep guide: crawling impacts, 2-nap schedules, sleep training progress, and developmental milestones. Expert baby sleep advice.');
+      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 app for 7-month baby sleep. Master crawling impacts, 2-nap schedules & sleep training progress. Expert developmental sleep guidance.');
     }
   }, []);
 
