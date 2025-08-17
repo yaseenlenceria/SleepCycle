@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
-import { TimePicker } from '@/components/time-picker';
-import { MobileOptimizedPicker } from '@/components/mobile-optimized-picker';
-
-import { SleepResults } from '@/components/sleep-results';
+import { EnhancedTimePicker } from '@/components/enhanced-time-picker';
+import { EnhancedSleepResults } from '@/components/enhanced-sleep-results';
 import { NapCalculator } from '@/components/nap-calculator';
 import { SleepTracker } from '@/components/sleep-tracker';
 import { AgeCalculator } from '@/components/age-calculator';
@@ -30,6 +28,9 @@ export default function SleepCalculator() {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
   const [showBedtimeResults, setShowBedtimeResults] = useState(false);
   const [showWakeupResults, setShowWakeupResults] = useState(false);
+  const [isCalculating, setIsCalculating] = useState(false);
+  const [sleepNowTimes, setSleepNowTimes] = useState<SleepTime[]>([]);
+  const [showSleepNowResults, setShowSleepNowResults] = useState(false);
 
   // Scroll to top on page load and set SEO meta
   useEffect(() => {
@@ -66,16 +67,40 @@ export default function SleepCalculator() {
   };
 
   const handleCalculateBedtime = () => {
-    const selectedTime = `${hour}:${minute} ${period}`;
-    const results = calculateBedtimes(selectedTime);
-    setBedtimes(results);
-    setShowBedtimeResults(true);
+    setIsCalculating(true);
+    setShowBedtimeResults(false);
+    
+    setTimeout(() => {
+      const selectedTime = `${hour}:${minute} ${period}`;
+      const results = calculateBedtimes(selectedTime);
+      setBedtimes(results);
+      setIsCalculating(false);
+      setShowBedtimeResults(true);
+    }, 1500); // Show loading animation for 1.5 seconds
   };
 
   const handleCalculateWakeup = () => {
-    const results = calculateWakeUpTimes();
-    setWakeupTimes(results);
-    setShowWakeupResults(true);
+    setIsCalculating(true);
+    setShowWakeupResults(false);
+    
+    setTimeout(() => {
+      const results = calculateWakeUpTimes();
+      setWakeupTimes(results);
+      setIsCalculating(false);
+      setShowWakeupResults(true);
+    }, 1500);
+  };
+
+  const handleSleepNow = () => {
+    setIsCalculating(true);
+    setShowSleepNowResults(false);
+    
+    setTimeout(() => {
+      const results = calculateWakeUpTimes();
+      setSleepNowTimes(results);
+      setIsCalculating(false);
+      setShowSleepNowResults(true);
+    }, 1500);
   };
 
   const selectedTimeString = `${hour}:${minute} ${period}`;
@@ -208,21 +233,14 @@ export default function SleepCalculator() {
               </div>
 
               <div className="flex justify-center">
-                {isMobile ? (
-                  <MobileOptimizedPicker
-                    hour={hour}
-                    minute={minute}
-                    period={period}
-                    onTimeChange={handleTimeChange}
-                  />
-                ) : (
-                  <TimePicker
-                    hour={hour}
-                    minute={minute}
-                    period={period}
-                    onTimeChange={handleTimeChange}
-                  />
-                )}
+                <EnhancedTimePicker
+                  hour={hour}
+                  minute={minute}
+                  period={period}
+                  onTimeChange={handleTimeChange}
+                  label="I will wake up at..."
+                  icon={<Sun size={20} />}
+                />
               </div>
 
               <div className="text-center mt-8">
@@ -238,15 +256,12 @@ export default function SleepCalculator() {
               </div>
             </div>
 
-            {showBedtimeResults && (
-              <div className="animate-in slide-in-from-bottom-5 duration-700">
-                <SleepResults
-                  results={bedtimes}
-                  mode="bedtime"
-                  selectedTime={selectedTimeString}
-                />
-              </div>
-            )}
+            <EnhancedSleepResults
+              times={bedtimes}
+              type="bedtime"
+              selectedTime={showBedtimeResults ? selectedTimeString : undefined}
+              isLoading={isCalculating}
+            />
           </div>
         )}
 
@@ -273,7 +288,7 @@ export default function SleepCalculator() {
                 </div>
               </div>
 
-              <div className="text-center">
+              <div className="text-center space-y-6">
                 <Button
                   onClick={handleCalculateWakeup}
                   className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
@@ -282,17 +297,28 @@ export default function SleepCalculator() {
                   <Sun className="mr-3" size={20} />
                   Calculate Wake-Up Times
                 </Button>
+
+                <div className="text-center">
+                  <div className="text-lg font-semibold text-gray-700 mb-2">Or</div>
+                  <Button
+                    onClick={handleSleepNow}
+                    variant="outline"
+                    className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white border-0 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    data-testid="button-sleep-now"
+                  >
+                    <Moon className="mr-2" size={18} />
+                    Sleep Now
+                  </Button>
+                </div>
               </div>
             </div>
 
-            {showWakeupResults && (
-              <div className="animate-in slide-in-from-bottom-5 duration-700">
-                <SleepResults
-                  results={wakeupTimes}
-                  mode="wakeup"
-                />
-              </div>
-            )}
+            <EnhancedSleepResults
+              times={showWakeupResults ? wakeupTimes : sleepNowTimes}
+              type="wakeup"
+              selectedTime={showWakeupResults ? "If I sleep now" : showSleepNowResults ? "Sleep Now" : undefined}
+              isLoading={isCalculating}
+            />
           </div>
         )}
 
