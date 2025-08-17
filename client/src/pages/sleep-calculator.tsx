@@ -2,11 +2,14 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { TimePicker } from '@/components/time-picker';
 import { SleepResults } from '@/components/sleep-results';
+import { NapCalculator } from '@/components/nap-calculator';
+import { SleepTracker } from '@/components/sleep-tracker';
+import { AgeCalculator } from '@/components/age-calculator';
 import { calculateBedtimes, calculateWakeUpTimes, getCurrentTime, SleepTime } from '@/lib/sleep-calculations';
-import { Bed, Sun, Clock, Heart } from 'lucide-react';
+import { Bed, Sun, Clock, Heart, Coffee, BarChart3, Users, Calculator, Moon, Star } from 'lucide-react';
 
 export default function SleepCalculator() {
-  const [activeTab, setActiveTab] = useState<'bedtime' | 'wakeup'>('bedtime');
+  const [activeTab, setActiveTab] = useState<'bedtime' | 'wakeup' | 'nap' | 'tracker' | 'age'>('bedtime');
   const [hour, setHour] = useState('6');
   const [minute, setMinute] = useState('30');
   const [period, setPeriod] = useState('AM');
@@ -48,22 +51,30 @@ export default function SleepCalculator() {
   const selectedTimeString = `${hour}:${minute} ${period}`;
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 animate-gradient">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 py-6">
+      <header className="bg-white bg-opacity-90 backdrop-blur-md shadow-lg border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-sleep-blue-800 mb-2">UK Celebrants</h1>
-            <h2 className="text-lg font-medium text-gray-700">Sleep Cycle Calculator</h2>
+            <div className="flex items-center justify-center mb-3">
+              <Moon className="text-sleep-blue-600 mr-3 sleep-float" size={32} />
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-sleep-blue-800 to-sleep-purple-600 bg-clip-text text-transparent">
+                Sleep Cycle Calculator
+              </h1>
+              <Star className="text-sleep-purple-600 ml-3 sleep-pulse" size={28} />
+            </div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Scientifically optimize your sleep with our comprehensive suite of calculators based on 90-minute sleep cycles
+            </p>
           </div>
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
-        {/* Mode Toggle */}
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <main className="max-w-6xl mx-auto px-4 py-8">
+        {/* Enhanced Mode Toggle */}
+        <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-6 mb-8 sleep-glow">
           <div className="flex justify-center mb-6">
-            <div className="bg-gray-100 rounded-lg p-1 flex">
+            <div className="bg-gray-100 rounded-xl p-2 flex flex-wrap gap-2 justify-center">
               <Button
                 variant={activeTab === 'bedtime' ? 'default' : 'ghost'}
                 onClick={() => {
@@ -71,15 +82,15 @@ export default function SleepCalculator() {
                   setShowBedtimeResults(false);
                   setShowWakeupResults(false);
                 }}
-                className={`px-6 py-3 rounded-md font-medium transition-all duration-200 ${
+                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
                   activeTab === 'bedtime'
-                    ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700'
+                    ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
                     : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
                 }`}
                 data-testid="tab-bedtime"
               >
                 <Bed className="mr-2" size={18} />
-                Calculate Bedtime
+                Bedtime Calculator
               </Button>
               <Button
                 variant={activeTab === 'wakeup' ? 'default' : 'ghost'}
@@ -88,15 +99,54 @@ export default function SleepCalculator() {
                   setShowBedtimeResults(false);
                   setShowWakeupResults(false);
                 }}
-                className={`px-6 py-3 rounded-md font-medium transition-all duration-200 ${
+                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
                   activeTab === 'wakeup'
-                    ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700'
+                    ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
                     : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
                 }`}
                 data-testid="tab-wakeup"
               >
                 <Sun className="mr-2" size={18} />
-                Calculate Wake-up Time
+                Wake-up Calculator
+              </Button>
+              <Button
+                variant={activeTab === 'nap' ? 'default' : 'ghost'}
+                onClick={() => setActiveTab('nap')}
+                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                  activeTab === 'nap'
+                    ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
+                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
+                }`}
+                data-testid="tab-nap"
+              >
+                <Coffee className="mr-2" size={18} />
+                Nap Calculator
+              </Button>
+              <Button
+                variant={activeTab === 'tracker' ? 'default' : 'ghost'}
+                onClick={() => setActiveTab('tracker')}
+                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                  activeTab === 'tracker'
+                    ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
+                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
+                }`}
+                data-testid="tab-tracker"
+              >
+                <BarChart3 className="mr-2" size={18} />
+                Sleep Tracker
+              </Button>
+              <Button
+                variant={activeTab === 'age' ? 'default' : 'ghost'}
+                onClick={() => setActiveTab('age')}
+                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                  activeTab === 'age'
+                    ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
+                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
+                }`}
+                data-testid="tab-age"
+              >
+                <Users className="mr-2" size={18} />
+                Age Calculator
               </Button>
             </div>
           </div>
@@ -104,14 +154,14 @@ export default function SleepCalculator() {
 
         {/* Bedtime Calculator */}
         {activeTab === 'bedtime' && (
-          <div className="space-y-8">
-            <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="space-y-8 animate-in slide-in-from-right-5 duration-500">
+            <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8">
               <div className="text-center mb-8">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  What time do you want to wake up?
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">
+                  Optimal Bedtime Calculator
                 </h3>
-                <p className="text-gray-600">
-                  Select your desired wake-up time using the time picker below
+                <p className="text-gray-600 max-w-lg mx-auto">
+                  Select your desired wake-up time and we'll calculate the perfect bedtimes for 90-minute sleep cycles
                 </p>
               </div>
 
@@ -124,46 +174,48 @@ export default function SleepCalculator() {
                 />
               </div>
 
-              <div className="text-center mt-6">
+              <div className="text-center mt-8">
                 <Button
                   onClick={handleCalculateBedtime}
-                  className="bg-sleep-blue-600 hover:bg-sleep-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-md"
+                  className="bg-gradient-to-r from-sleep-blue-600 to-sleep-purple-600 hover:from-sleep-blue-700 hover:to-sleep-purple-700 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                   data-testid="button-calculate-bedtime"
                 >
-                  <Clock className="mr-2" size={18} />
-                  Calculate Bedtime
+                  <Calculator className="mr-3" size={20} />
+                  Calculate Optimal Bedtimes
                 </Button>
               </div>
             </div>
 
             {showBedtimeResults && (
-              <SleepResults
-                results={bedtimes}
-                mode="bedtime"
-                selectedTime={selectedTimeString}
-              />
+              <div className="animate-in slide-in-from-bottom-5 duration-700">
+                <SleepResults
+                  results={bedtimes}
+                  mode="bedtime"
+                  selectedTime={selectedTimeString}
+                />
+              </div>
             )}
           </div>
         )}
 
         {/* Wake-up Calculator */}
         {activeTab === 'wakeup' && (
-          <div className="space-y-8">
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  Going to Sleep Now?
+          <div className="space-y-8 animate-in slide-in-from-right-5 duration-500">
+            <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">
+                  Wake-Up Time Calculator
                 </h3>
-                <p className="text-gray-600">
-                  If you go to sleep right now, here are the optimal wake-up times
+                <p className="text-gray-600 max-w-lg mx-auto">
+                  Going to sleep now? Find the scientifically best times to wake up refreshed
                 </p>
               </div>
 
-              <div className="text-center mb-6">
-                <div className="inline-flex items-center bg-gray-100 rounded-lg px-6 py-3">
-                  <Clock className="text-gray-600 mr-2" size={20} />
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-indigo-100 rounded-xl px-8 py-4 shadow-md">
+                  <Clock className="text-blue-600 mr-3 sleep-pulse" size={24} />
                   <span className="text-lg font-semibold text-gray-800">Current time: </span>
-                  <span className="text-lg font-bold text-sleep-blue-600 ml-2" data-testid="current-time">
+                  <span className="text-xl font-bold text-sleep-blue-600 ml-3" data-testid="current-time">
                     {currentTime}
                   </span>
                 </div>
@@ -172,70 +224,148 @@ export default function SleepCalculator() {
               <div className="text-center">
                 <Button
                   onClick={handleCalculateWakeup}
-                  className="bg-sleep-blue-600 hover:bg-sleep-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-md"
+                  className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                   data-testid="button-calculate-wakeup"
                 >
-                  <Clock className="mr-2" size={18} />
-                  Calculate Wake-up Times
+                  <Sun className="mr-3" size={20} />
+                  Calculate Wake-Up Times
                 </Button>
               </div>
             </div>
 
             {showWakeupResults && (
-              <SleepResults
-                results={wakeupTimes}
-                mode="wakeup"
-              />
+              <div className="animate-in slide-in-from-bottom-5 duration-700">
+                <SleepResults
+                  results={wakeupTimes}
+                  mode="wakeup"
+                />
+              </div>
             )}
           </div>
         )}
 
-        {/* Educational Content */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mt-8">
-          <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">
-            Understanding Sleep Cycles
+        {/* Nap Calculator */}
+        {activeTab === 'nap' && (
+          <div className="animate-in slide-in-from-right-5 duration-500">
+            <NapCalculator />
+          </div>
+        )}
+
+        {/* Sleep Tracker */}
+        {activeTab === 'tracker' && (
+          <div className="animate-in slide-in-from-right-5 duration-500">
+            <SleepTracker />
+          </div>
+        )}
+
+        {/* Age Calculator */}
+        {activeTab === 'age' && (
+          <div className="animate-in slide-in-from-right-5 duration-500">
+            <AgeCalculator />
+          </div>
+        )}
+
+        {/* Enhanced Educational Content */}
+        <div className="bg-gradient-to-br from-white via-blue-50 to-indigo-50 bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8 mt-12">
+          <h3 className="text-3xl font-bold text-center bg-gradient-to-r from-sleep-blue-800 to-sleep-purple-600 bg-clip-text text-transparent mb-8">
+            The Science of Sleep Cycles
           </h3>
           
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="bg-sleep-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Clock className="text-sleep-blue-600" size={24} />
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-sleep-blue-100 to-sleep-blue-200 rounded-2xl w-20 h-20 flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg sleep-float">
+                <Clock className="text-sleep-blue-600" size={32} />
               </div>
-              <h4 className="font-semibold text-gray-800 mb-2">90-Minute Cycles</h4>
-              <p className="text-gray-600 text-sm">
+              <h4 className="text-xl font-bold text-gray-800 mb-3">90-Minute Cycles</h4>
+              <p className="text-gray-600 leading-relaxed">
                 Each sleep cycle lasts approximately 90 minutes, consisting of light sleep, 
-                deep sleep, and REM sleep stages.
+                deep sleep, and REM sleep stages. Waking up between cycles helps you feel refreshed.
               </p>
             </div>
             
-            <div className="text-center">
-              <div className="bg-sleep-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Bed className="text-sleep-purple-600" size={24} />
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-sleep-purple-100 to-sleep-purple-200 rounded-2xl w-20 h-20 flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg sleep-float">
+                <Bed className="text-sleep-purple-600" size={32} />
               </div>
-              <h4 className="font-semibold text-gray-800 mb-2">15-Minute Buffer</h4>
-              <p className="text-gray-600 text-sm">
+              <h4 className="text-xl font-bold text-gray-800 mb-3">15-Minute Buffer</h4>
+              <p className="text-gray-600 leading-relaxed">
                 The average person takes about 15 minutes to fall asleep, which is factored 
-                into our calculations.
+                into our calculations for accurate bedtime recommendations.
               </p>
             </div>
             
-            <div className="text-center">
-              <div className="bg-teal-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Heart className="text-teal-600" size={24} />
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-teal-100 to-emerald-200 rounded-2xl w-20 h-20 flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg sleep-float">
+                <Heart className="text-teal-600" size={32} />
               </div>
-              <h4 className="font-semibold text-gray-800 mb-2">5-6 Cycles Ideal</h4>
-              <p className="text-gray-600 text-sm">
-                Most adults need 5-6 complete sleep cycles (7.5-9 hours) for optimal rest and recovery.
+              <h4 className="text-xl font-bold text-gray-800 mb-3">5-6 Cycles Ideal</h4>
+              <p className="text-gray-600 leading-relaxed">
+                Most adults need 5-6 complete sleep cycles (7.5-9 hours) for optimal rest, recovery, 
+                and cognitive performance.
               </p>
+            </div>
+          </div>
+
+          {/* SEO-focused content section */}
+          <div className="mt-12 grid md:grid-cols-2 gap-8">
+            <div className="bg-white bg-opacity-70 rounded-xl p-6">
+              <h4 className="text-lg font-bold text-gray-800 mb-4">Why Sleep Cycles Matter</h4>
+              <ul className="space-y-2 text-gray-600">
+                <li>• <strong>Memory Consolidation:</strong> Deep sleep helps transfer memories from short-term to long-term storage</li>
+                <li>• <strong>Physical Recovery:</strong> Growth hormone is released during deep sleep stages</li>
+                <li>• <strong>Brain Detoxification:</strong> The glymphatic system clears metabolic waste during sleep</li>
+                <li>• <strong>Emotional Regulation:</strong> REM sleep helps process emotions and stress</li>
+              </ul>
+            </div>
+            <div className="bg-white bg-opacity-70 rounded-xl p-6">
+              <h4 className="text-lg font-bold text-gray-800 mb-4">Scientifically Best Sleep Times</h4>
+              <ul className="space-y-2 text-gray-600">
+                <li>• <strong>Bedtime:</strong> Between 10:00 PM - 11:00 PM aligns with natural circadian rhythms</li>
+                <li>• <strong>Wake Time:</strong> 6:00 AM - 7:00 AM maximizes morning light exposure</li>
+                <li>• <strong>Consistency:</strong> Same sleep/wake times daily strengthen your body clock</li>
+                <li>• <strong>Temperature:</strong> Core body temperature drops 1-2°F during optimal sleep</li>
+              </ul>
             </div>
           </div>
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-100 border-t border-gray-200 mt-16">
-        <div className="max-w-4xl mx-auto px-4 py-8 text-center">
-          <p className="text-gray-600 text-sm">© 2024 UK Celebrants. Sleep well, wake refreshed.</p>
+      {/* Enhanced Footer with FAQ for SEO */}
+      <footer className="bg-gradient-to-r from-gray-100 to-blue-50 border-t border-gray-200 mt-16">
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          {/* FAQ Section for SEO */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">
+              Frequently Asked Questions About Sleep Cycles
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <h4 className="font-bold text-gray-800 mb-2">How many sleep cycles do I need?</h4>
+                <p className="text-gray-600 text-sm">Most adults need 5-6 complete sleep cycles per night, which equals 7.5-9 hours of sleep. Use our age calculator for personalized recommendations.</p>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <h4 className="font-bold text-gray-800 mb-2">What is the scientifically best time to sleep?</h4>
+                <p className="text-gray-600 text-sm">Research shows 10:00-11:00 PM is optimal for most adults, aligning with natural circadian rhythms and allowing 7-9 hours before morning wake times.</p>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <h4 className="font-bold text-gray-800 mb-2">How do I calculate how much sleep I got?</h4>
+                <p className="text-gray-600 text-sm">Use our sleep tracker to input your bedtime and wake time. It calculates total sleep duration, number of cycles, and sleep efficiency.</p>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <h4 className="font-bold text-gray-800 mb-2">What's the best nap duration?</h4>
+                <p className="text-gray-600 text-sm">20 minutes for quick energy, 60 minutes for cognitive benefits, or 90 minutes for a full sleep cycle. Our nap calculator helps you choose.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center border-t border-gray-200 pt-8">
+            <p className="text-gray-600 text-sm mb-2">
+              © 2025 UK Celebrants Sleep Calculator. Optimize your sleep scientifically.
+            </p>
+            <p className="text-gray-500 text-xs">
+              Free sleep cycle calculator | Bedtime calculator | Nap calculator | Sleep duration tracker
+            </p>
+          </div>
         </div>
       </footer>
     </div>

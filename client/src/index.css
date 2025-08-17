@@ -54,6 +54,7 @@
   /* Sleep-specific color variables */
   --sleep-blue-50: hsl(214 100% 97%);
   --sleep-blue-100: hsl(214 95% 93%);
+  --sleep-blue-200: hsl(214 85% 88%);
   --sleep-blue-500: hsl(217 91% 60%);
   --sleep-blue-600: hsl(221 83% 53%);
   --sleep-blue-700: hsl(224 76% 48%);
@@ -154,6 +155,7 @@
   .bg-sleep-purple-700 { background-color: var(--sleep-purple-700); }
   
   .border-sleep-blue-100 { border-color: var(--sleep-blue-100); }
+  .border-sleep-blue-200 { border-color: var(--sleep-blue-200); }
   .border-sleep-blue-500 { border-color: var(--sleep-blue-500); }
   
   .focus\:ring-sleep-blue-500:focus { 
@@ -162,4 +164,52 @@
   }
   
   .hover\:bg-sleep-blue-700:hover { background-color: var(--sleep-blue-700); }
+
+  /* Smooth animations for sleep-themed components */
+  .sleep-float {
+    animation: sleep-float 6s ease-in-out infinite;
+  }
+  
+  .sleep-pulse {
+    animation: sleep-pulse 3s ease-in-out infinite;
+  }
+  
+  .sleep-glow {
+    animation: sleep-glow 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes sleep-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes sleep-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  
+  @keyframes sleep-glow {
+    from { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+    to { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
+  }
+
+  /* Gradient animations */
+  .animate-gradient {
+    background-size: 400% 400%;
+    animation: gradient-shift 8s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Staggered animations for results */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
 }
