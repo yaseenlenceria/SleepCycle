@@ -3,7 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { lazy } from "react";
+import { Suspense } from "react";
 import SleepCalculator from "@/pages/sleep-calculator";
 import TermsOfService from "@/pages/terms-of-service";
 import PrivacyPolicy from "@/pages/privacy-policy";
@@ -13,17 +13,16 @@ import Help from "@/pages/help";
 import SleepScience from "@/pages/sleep-science";
 import MoreResources from "@/pages/more-resources";
 import NotFound from "@/pages/not-found";
-
-const AgeCalculator = lazy(() => import('./pages/age-calculator'));
-const SleepCyclesBabies = lazy(() => import('./pages/sleep-cycles-babies'));
-const SleepCyclesAdults = lazy(() => import('./pages/sleep-cycles-adults'));
-const SleepCyclesNaps = lazy(() => import('./pages/sleep-cycles-naps'));
-const SleepCycles4MonthOld = lazy(() => import('./pages/sleep-cycles-4-month-old'));
-const SleepCyclesToddlers = lazy(() => import('./pages/sleep-cycles-toddlers'));
-const SleepCyclesNewborns = lazy(() => import('./pages/sleep-cycles-newborns'));
-const SleepCycles6MonthOld = lazy(() => import('./pages/sleep-cycles-6-month-old'));
-const SleepCycles7MonthOld = lazy(() => import('./pages/sleep-cycles-7-month-old'));
-const SleepCycles2YearOlds = lazy(() => import('./pages/sleep-cycles-2-year-olds'));
+import AgeCalculator from '@/pages/age-calculator';
+import SleepCyclesBabies from '@/pages/sleep-cycles-babies';
+import SleepCyclesAdults from '@/pages/sleep-cycles-adults';
+import SleepCyclesNaps from '@/pages/sleep-cycles-naps';
+import SleepCycles4MonthOld from '@/pages/sleep-cycles-4-month-old';
+import SleepCyclesToddlers from '@/pages/sleep-cycles-toddlers';
+import SleepCyclesNewborns from '@/pages/sleep-cycles-newborns';
+import SleepCycles6MonthOld from '@/pages/sleep-cycles-6-month-old';
+import SleepCycles7MonthOld from '@/pages/sleep-cycles-7-month-old';
+import SleepCycles2YearOlds from '@/pages/sleep-cycles-2-year-olds';
 
 function Router() {
   return (
