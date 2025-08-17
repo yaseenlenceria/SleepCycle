@@ -12,29 +12,29 @@ export function Footer() {
               <ul className="space-y-2 text-sm">
                 <li><Link href="/?tab=bedtime" className="text-sleep-blue-600 hover:text-sleep-blue-700">Bedtime Calculator</Link></li>
                 <li><Link href="/?tab=wakeup" className="text-sleep-blue-600 hover:text-sleep-blue-700">Wake-up Time Calculator</Link></li>
-                <li><Link href="/?tab=nap" className="text-sleep-blue-600 hover:text-sleep-blue-700">Nap Calculator for Adults</Link></li>
-                <li><Link href="/?tab=baby" className="text-sleep-blue-600 hover:text-sleep-blue-700">Baby Nap Calculator</Link></li>
+                <li><Link href="/sleep-cycles-naps" className="text-sleep-blue-600 hover:text-sleep-blue-700">Nap Calculator for Adults</Link></li>
+                <li><Link href="/sleep-cycles-babies" className="text-sleep-blue-600 hover:text-sleep-blue-700">Baby Sleep Cycles</Link></li>
                 <li><Link href="/?tab=tracker" className="text-sleep-blue-600 hover:text-sleep-blue-700">Sleep Duration Tracker</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-gray-800 mb-4">Sleep Science</h4>
+              <h4 className="font-bold text-gray-800 mb-4">Sleep by Age</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/sleep-science#90-minute" className="text-sleep-blue-600 hover:text-sleep-blue-700">90 Minute Sleep Cycles</Link></li>
-                <li><Link href="/sleep-science#rem" className="text-sleep-blue-600 hover:text-sleep-blue-700">REM Sleep Optimization</Link></li>
-                <li><Link href="/sleep-science#circadian" className="text-sleep-blue-600 hover:text-sleep-blue-700">Circadian Rhythm Tips</Link></li>
-                <li><Link href="/sleep-science#age-specific" className="text-sleep-blue-600 hover:text-sleep-blue-700">Age-Specific Recommendations</Link></li>
-                <li><Link href="/sleep-science#quality" className="text-sleep-blue-600 hover:text-sleep-blue-700">Sleep Quality Analysis</Link></li>
+                <li><Link href="/sleep-cycles-newborns" className="text-sleep-blue-600 hover:text-sleep-blue-700">Newborn Sleep Cycles</Link></li>
+                <li><Link href="/sleep-cycles-4-month-old" className="text-sleep-blue-600 hover:text-sleep-blue-700">4 Month Old Sleep</Link></li>
+                <li><Link href="/sleep-cycles-6-month-old" className="text-sleep-blue-600 hover:text-sleep-blue-700">6 Month Old Sleep</Link></li>
+                <li><Link href="/sleep-cycles-7-month-old" className="text-sleep-blue-600 hover:text-sleep-blue-700">7 Month Old Sleep</Link></li>
+                <li><Link href="/sleep-cycles-toddlers" className="text-sleep-blue-600 hover:text-sleep-blue-700">Toddler Sleep Cycles</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-gray-800 mb-4">Quick Links</h4>
+              <h4 className="font-bold text-gray-800 mb-4">More Sleep Guides</h4>
               <ul className="space-y-2 text-sm">
+                <li><Link href="/sleep-cycles-adults" className="text-sleep-blue-600 hover:text-sleep-blue-700">Adult Sleep Cycles</Link></li>
+                <li><Link href="/sleep-cycles-2-year-olds" className="text-sleep-blue-600 hover:text-sleep-blue-700">2 Year Old Sleep</Link></li>
+                <li><Link href="/sleep-science" className="text-sleep-blue-600 hover:text-sleep-blue-700">Sleep Science</Link></li>
                 <li><Link href="/about" className="text-sleep-blue-600 hover:text-sleep-blue-700">About SleepCycle.io</Link></li>
-                <li><Link href="/" className="text-sleep-blue-600 hover:text-sleep-blue-700">Sleep Calculator Home</Link></li>
                 <li><Link href="/help" className="text-sleep-blue-600 hover:text-sleep-blue-700">Help & FAQ</Link></li>
-                <li><span className="text-gray-600">Best Time to Sleep</span></li>
-                <li><span className="text-gray-600">Optimal Nap Duration</span></li>
               </ul>
             </div>
             <div>
