@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { TimePicker } from '@/components/time-picker';
+import { MobileOptimizedPicker } from '@/components/mobile-optimized-picker';
 import { SleepResults } from '@/components/sleep-results';
 import { NapCalculator } from '@/components/nap-calculator';
 import { SleepTracker } from '@/components/sleep-tracker';
 import { AgeCalculator } from '@/components/age-calculator';
+import { BabyNapCalculator } from '@/components/baby-nap-calculator';
 import { calculateBedtimes, calculateWakeUpTimes, getCurrentTime, SleepTime } from '@/lib/sleep-calculations';
-import { Bed, Sun, Clock, Heart, Coffee, BarChart3, Users, Calculator, Moon, Star } from 'lucide-react';
+import { Bed, Sun, Clock, Heart, Coffee, BarChart3, Users, Calculator, Moon, Star, Baby, Smartphone } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 export default function SleepCalculator() {
-  const [activeTab, setActiveTab] = useState<'bedtime' | 'wakeup' | 'nap' | 'tracker' | 'age'>('bedtime');
+  const [activeTab, setActiveTab] = useState<'bedtime' | 'wakeup' | 'nap' | 'tracker' | 'age' | 'baby'>('bedtime');
+  const isMobile = useIsMobile();
   const [hour, setHour] = useState('6');
   const [minute, setMinute] = useState('30');
   const [period, setPeriod] = useState('AM');
@@ -71,83 +75,111 @@ export default function SleepCalculator() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-8">
-        {/* Enhanced Mode Toggle */}
-        <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-6 mb-8 sleep-glow">
+        {/* Enhanced Mobile-First Mode Toggle */}
+        <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-4 md:p-6 mb-8 sleep-glow">
           <div className="flex justify-center mb-6">
-            <div className="bg-gray-100 rounded-xl p-2 flex flex-wrap gap-2 justify-center">
-              <Button
-                variant={activeTab === 'bedtime' ? 'default' : 'ghost'}
-                onClick={() => {
-                  setActiveTab('bedtime');
-                  setShowBedtimeResults(false);
-                  setShowWakeupResults(false);
-                }}
-                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
-                  activeTab === 'bedtime'
-                    ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
-                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
-                }`}
-                data-testid="tab-bedtime"
-              >
-                <Bed className="mr-2" size={18} />
-                Bedtime Calculator
-              </Button>
-              <Button
-                variant={activeTab === 'wakeup' ? 'default' : 'ghost'}
-                onClick={() => {
-                  setActiveTab('wakeup');
-                  setShowBedtimeResults(false);
-                  setShowWakeupResults(false);
-                }}
-                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
-                  activeTab === 'wakeup'
-                    ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
-                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
-                }`}
-                data-testid="tab-wakeup"
-              >
-                <Sun className="mr-2" size={18} />
-                Wake-up Calculator
-              </Button>
-              <Button
-                variant={activeTab === 'nap' ? 'default' : 'ghost'}
-                onClick={() => setActiveTab('nap')}
-                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
-                  activeTab === 'nap'
-                    ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
-                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
-                }`}
-                data-testid="tab-nap"
-              >
-                <Coffee className="mr-2" size={18} />
-                Nap Calculator
-              </Button>
-              <Button
-                variant={activeTab === 'tracker' ? 'default' : 'ghost'}
-                onClick={() => setActiveTab('tracker')}
-                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
-                  activeTab === 'tracker'
-                    ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
-                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
-                }`}
-                data-testid="tab-tracker"
-              >
-                <BarChart3 className="mr-2" size={18} />
-                Sleep Tracker
-              </Button>
-              <Button
-                variant={activeTab === 'age' ? 'default' : 'ghost'}
-                onClick={() => setActiveTab('age')}
-                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
-                  activeTab === 'age'
-                    ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
-                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
-                }`}
-                data-testid="tab-age"
-              >
-                <Users className="mr-2" size={18} />
-                Age Calculator
-              </Button>
+            <div className="bg-gray-100 rounded-xl p-2 w-full max-w-4xl">
+              {/* Mobile: Grid Layout */}
+              <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 justify-center">
+                <Button
+                  variant={activeTab === 'bedtime' ? 'default' : 'ghost'}
+                  onClick={() => {
+                    setActiveTab('bedtime');
+                    setShowBedtimeResults(false);
+                    setShowWakeupResults(false);
+                  }}
+                  className={`px-3 py-4 md:px-4 md:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                    activeTab === 'bedtime'
+                      ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
+                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
+                  }`}
+                  data-testid="tab-bedtime"
+                >
+                  <div className="flex flex-col md:flex-row items-center">
+                    <Bed className="mb-1 md:mb-0 md:mr-2" size={isMobile ? 20 : 18} />
+                    <span className="text-xs md:text-sm">Bedtime</span>
+                  </div>
+                </Button>
+                <Button
+                  variant={activeTab === 'wakeup' ? 'default' : 'ghost'}
+                  onClick={() => {
+                    setActiveTab('wakeup');
+                    setShowBedtimeResults(false);
+                    setShowWakeupResults(false);
+                  }}
+                  className={`px-3 py-4 md:px-4 md:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                    activeTab === 'wakeup'
+                      ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
+                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
+                  }`}
+                  data-testid="tab-wakeup"
+                >
+                  <div className="flex flex-col md:flex-row items-center">
+                    <Sun className="mb-1 md:mb-0 md:mr-2" size={isMobile ? 20 : 18} />
+                    <span className="text-xs md:text-sm">Wake-up</span>
+                  </div>
+                </Button>
+                <Button
+                  variant={activeTab === 'nap' ? 'default' : 'ghost'}
+                  onClick={() => setActiveTab('nap')}
+                  className={`px-3 py-4 md:px-4 md:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                    activeTab === 'nap'
+                      ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
+                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
+                  }`}
+                  data-testid="tab-nap"
+                >
+                  <div className="flex flex-col md:flex-row items-center">
+                    <Coffee className="mb-1 md:mb-0 md:mr-2" size={isMobile ? 20 : 18} />
+                    <span className="text-xs md:text-sm">Nap</span>
+                  </div>
+                </Button>
+                <Button
+                  variant={activeTab === 'baby' ? 'default' : 'ghost'}
+                  onClick={() => setActiveTab('baby')}
+                  className={`px-3 py-4 md:px-4 md:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                    activeTab === 'baby'
+                      ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
+                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
+                  }`}
+                  data-testid="tab-baby"
+                >
+                  <div className="flex flex-col md:flex-row items-center">
+                    <Baby className="mb-1 md:mb-0 md:mr-2" size={isMobile ? 20 : 18} />
+                    <span className="text-xs md:text-sm">Baby</span>
+                  </div>
+                </Button>
+                <Button
+                  variant={activeTab === 'tracker' ? 'default' : 'ghost'}
+                  onClick={() => setActiveTab('tracker')}
+                  className={`px-3 py-4 md:px-4 md:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                    activeTab === 'tracker'
+                      ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
+                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
+                  }`}
+                  data-testid="tab-tracker"
+                >
+                  <div className="flex flex-col md:flex-row items-center">
+                    <BarChart3 className="mb-1 md:mb-0 md:mr-2" size={isMobile ? 20 : 18} />
+                    <span className="text-xs md:text-sm">Tracker</span>
+                  </div>
+                </Button>
+                <Button
+                  variant={activeTab === 'age' ? 'default' : 'ghost'}
+                  onClick={() => setActiveTab('age')}
+                  className={`px-3 py-4 md:px-4 md:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                    activeTab === 'age'
+                      ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
+                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
+                  }`}
+                  data-testid="tab-age"
+                >
+                  <div className="flex flex-col md:flex-row items-center">
+                    <Users className="mb-1 md:mb-0 md:mr-2" size={isMobile ? 20 : 18} />
+                    <span className="text-xs md:text-sm">Age</span>
+                  </div>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -166,12 +198,21 @@ export default function SleepCalculator() {
               </div>
 
               <div className="flex justify-center">
-                <TimePicker
-                  hour={hour}
-                  minute={minute}
-                  period={period}
-                  onTimeChange={handleTimeChange}
-                />
+                {isMobile ? (
+                  <MobileOptimizedPicker
+                    hour={hour}
+                    minute={minute}
+                    period={period}
+                    onTimeChange={handleTimeChange}
+                  />
+                ) : (
+                  <TimePicker
+                    hour={hour}
+                    minute={minute}
+                    period={period}
+                    onTimeChange={handleTimeChange}
+                  />
+                )}
               </div>
 
               <div className="text-center mt-8">
@@ -265,6 +306,13 @@ export default function SleepCalculator() {
           </div>
         )}
 
+        {/* Baby Nap Calculator */}
+        {activeTab === 'baby' && (
+          <div className="animate-in slide-in-from-right-5 duration-500">
+            <BabyNapCalculator />
+          </div>
+        )}
+
         {/* Enhanced Educational Content */}
         <div className="bg-gradient-to-br from-white via-blue-50 to-indigo-50 bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8 mt-12">
           <h3 className="text-3xl font-bold text-center bg-gradient-to-r from-sleep-blue-800 to-sleep-purple-600 bg-clip-text text-transparent mb-8">
@@ -338,7 +386,7 @@ export default function SleepCalculator() {
             <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">
               Frequently Asked Questions About Sleep Cycles
             </h3>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <h4 className="font-bold text-gray-800 mb-2">How many sleep cycles do I need?</h4>
                 <p className="text-gray-600 text-sm">Most adults need 5-6 complete sleep cycles per night, which equals 7.5-9 hours of sleep. Use our age calculator for personalized recommendations.</p>
@@ -352,8 +400,16 @@ export default function SleepCalculator() {
                 <p className="text-gray-600 text-sm">Use our sleep tracker to input your bedtime and wake time. It calculates total sleep duration, number of cycles, and sleep efficiency.</p>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h4 className="font-bold text-gray-800 mb-2">What's the best nap duration?</h4>
-                <p className="text-gray-600 text-sm">20 minutes for quick energy, 60 minutes for cognitive benefits, or 90 minutes for a full sleep cycle. Our nap calculator helps you choose.</p>
+                <h4 className="font-bold text-gray-800 mb-2">What's the best nap duration for adults?</h4>
+                <p className="text-gray-600 text-sm">20 minutes for quick energy, 60 minutes for cognitive benefits, or 90 minutes for a full sleep cycle. Our adult nap calculator helps you choose the optimal duration.</p>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <h4 className="font-bold text-gray-800 mb-2">How to calculate baby nap times?</h4>
+                <p className="text-gray-600 text-sm">Baby nap schedules depend on age: newborns need 4+ naps, while toddlers transition to 1-2 naps. Use our baby nap calculator for age-specific schedules.</p>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <h4 className="font-bold text-gray-800 mb-2">What is a 90-minute sleep cycle calculator?</h4>
+                <p className="text-gray-600 text-sm">A 90-minute sleep cycle calculator helps you time sleep and wake periods to complete full sleep cycles, preventing grogginess from waking during deep sleep.</p>
               </div>
             </div>
           </div>
@@ -363,7 +419,7 @@ export default function SleepCalculator() {
               © 2025 UK Celebrants Sleep Calculator. Optimize your sleep scientifically.
             </p>
             <p className="text-gray-500 text-xs">
-              Free sleep cycle calculator | Bedtime calculator | Nap calculator | Sleep duration tracker
+              Free sleep cycle calculator | 90 minute sleep cycle calculator | Nap calculator for adults | Baby nap calculator | How much sleep did I get tracker | Scientifically best time to sleep
             </p>
           </div>
         </div>
