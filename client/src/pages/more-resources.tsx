@@ -7,11 +7,11 @@ import { useEffect } from 'react';
 export default function MoreResources() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Resources - SleepCycle.io #1 App Compared to sleepytime.cc & Competitors";
+    document.title = "Sleep Resources - Sleep Cycle: The World's Best Sleep App vs sleepytime.cc & Competitors";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Compare SleepCycle.io #1 sleep calculator vs sleepytime.cc & sleepcalculator.com. Why our app is better for sleep optimization with advanced features.');
+      metaDescription.setAttribute('content', 'Compare Sleep Cycle vs sleepytime.cc & sleepcalculator.com. Why our app is better using sound analysis, 4 billion sleep sessions, and 13 years of science.');
     }
   }, []);
 

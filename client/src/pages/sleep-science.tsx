@@ -7,11 +7,11 @@ import { useEffect } from 'react';
 export default function SleepScience() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Science Hub - SleepCycle.io #1 App for Scientific Sleep Education";
+    document.title = "Sleep Science - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Ideal Bedtime & Wake Up Times";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 sleep science educational app. Learn REM cycles, circadian rhythms, sleep stages & optimization backed by scientific research.');
+      metaDescription.setAttribute('content', 'Sleep Cycle uses sound analysis, 4 billion sleep sessions, and 13 years of science to educate millions. Learn REM cycles, circadian rhythms, and sleep optimization backed by research.');
     }
   }, []);
 

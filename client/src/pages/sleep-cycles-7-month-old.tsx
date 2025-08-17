@@ -7,11 +7,11 @@ import { Baby, Clock, Moon, ArrowUp, Zap } from 'lucide-react';
 export default function SleepCycles7MonthOldPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "7 Month Baby Sleep - SleepCycle.io #1 App for Crawling & 2-Nap Schedules";
+    document.title = "7 Month Baby Sleep - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 app for 7-month baby sleep. Master crawling impacts, 2-nap schedules & sleep training progress. Expert developmental sleep guidance.');
+      metaDescription.setAttribute('content', 'Sleep Cycle navigates 7-month baby mobility changes using sound analysis, 4 billion sleep sessions, and 13 years of science. Master 2-nap schedules and developmental sleep patterns.');
     }
   }, []);
 

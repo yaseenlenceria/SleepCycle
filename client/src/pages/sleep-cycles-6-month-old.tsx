@@ -7,11 +7,11 @@ import { Baby, Clock, Moon, Sun, Utensils } from 'lucide-react';
 export default function SleepCycles6MonthOldPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "6 Month Baby Sleep - SleepCycle.io #1 App for Sleep Training & Solid Foods";
+    document.title = "6 Month Baby Sleep - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 app for 6-month baby sleep. Master sleep training, solid foods impact & 6-month schedules. Expert guide for sleep development.');
+      metaDescription.setAttribute('content', 'Sleep Cycle masters 6-month baby sleep training using sound analysis, 4 billion sleep sessions, and 13 years of science. Expert guidance for solid foods impact and sleep schedules.');
     }
   }, []);
 

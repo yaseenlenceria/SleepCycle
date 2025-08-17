@@ -7,11 +7,11 @@ import { Heart, Clock, Baby, Moon, AlertCircle } from 'lucide-react';
 export default function SleepCyclesNewbornsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Newborn Sleep Cycles - SleepCycle.io #1 App for 0-3 Month Baby Sleep Guide";
+    document.title = "Newborn Sleep Cycles - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 newborn sleep app. Master 0-3 month sleep cycles, safe sleep practices & feeding schedules. Essential guide for new parents.');
+      metaDescription.setAttribute('content', 'Sleep Cycle guides new parents through 0-3 month sleep cycles using sound analysis, 4 billion sleep sessions, and 13 years of science. Master newborn sleep patterns and safe practices.');
     }
   }, []);
 

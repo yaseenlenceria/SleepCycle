@@ -7,11 +7,11 @@ import { useEffect } from 'react';
 export default function Help() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Help & FAQ - SleepCycle.io #1 Sleep Calculator App Support & Guides";
+    document.title = "Help & FAQ - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Get help with SleepCycle.io, the #1 sleep calculator app. FAQ, guides & support for bedtime calculator, nap optimization & sleep cycle mastery.');
+      metaDescription.setAttribute('content', 'Get help with Sleep Cycle, the world\'s best sleep app. FAQ, guides & support using sound analysis, 4 billion sleep sessions, and 13 years of science.');
     }
   }, []);
 

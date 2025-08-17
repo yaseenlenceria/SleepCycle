@@ -7,11 +7,11 @@ import { Users, Clock, Bed, Sun, Moon } from 'lucide-react';
 export default function SleepCyclesToddlersPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Toddler Sleep Cycles - SleepCycle.io #1 App for Ages 1-3 Sleep Schedules";
+    document.title = "Toddler Sleep Cycles - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 toddler sleep app. Master sleep cycles, nap transitions & bedtime routines for ages 1-3. Expert guidance for healthy toddler sleep habits.');
+      metaDescription.setAttribute('content', 'Sleep Cycle masters toddler sleep patterns using sound analysis, 4 billion sleep sessions, and 13 years of science. Expert guidance for ages 1-3 nap transitions and bedtime routines.');
     }
   }, []);
 

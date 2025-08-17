@@ -7,11 +7,11 @@ import { Users, Clock, Bed, Moon, AlertTriangle } from 'lucide-react';
 export default function SleepCycles2YearOldsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "2 Year Old Sleep - SleepCycle.io #1 App for Sleep Regression & Big Kid Bed";
+    document.title = "2 Year Old Sleep - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 app for 2-year-old sleep. Master sleep regression, big kid bed transition & bedtime battles. Expert toddler sleep guidance & solutions.');
+      metaDescription.setAttribute('content', 'Sleep Cycle solves 2-year-old sleep challenges using sound analysis, 4 billion sleep sessions, and 13 years of science. Master sleep regression and big kid bed transitions.');
     }
   }, []);
 

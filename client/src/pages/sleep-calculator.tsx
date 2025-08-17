@@ -34,11 +34,11 @@ export default function SleepCalculator() {
   // Scroll to top on page load and set SEO meta
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Cycle Calculator - SleepCycle.io #1 App for REM & Non-REM Sleep Cycles";
+    document.title = "Sleep Cycle — The World's Best Sleep App | Sleep Calculator: Ideal Bedtime & Wake Up Times";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 sleep cycle calculator app. Master bedtime, wake-up times, naps & sleep tracking with scientific REM and non-REM cycles. Free sleep optimization tool.');
+      metaDescription.setAttribute('content', 'Track and improve your sleep with Sleep Cycle. The app uses sound analysis, 4 billion sleep sessions, and 13 years of science to help millions sleep better. Find your ideal bedtime and wake up times.');
     }
   }, []);
 

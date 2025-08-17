@@ -7,11 +7,11 @@ import { useEffect } from 'react';
 export default function PrivacyPolicy() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Privacy Policy - SleepCycle.io #1 Sleep Calculator App Data Protection";
+    document.title = "Privacy Policy - Sleep Cycle: The World's Best Sleep App | GDPR Compliant Sleep Calculator";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'SleepCycle.io Privacy Policy for the #1 sleep calculator app. GDPR-compliant data protection, privacy practices & user information security.');
+      metaDescription.setAttribute('content', 'Sleep Cycle Privacy Policy. GDPR compliant privacy protection for the world\'s best sleep app using sound analysis, 4 billion sleep sessions, and 13 years of science.');
     }
   }, []);
 

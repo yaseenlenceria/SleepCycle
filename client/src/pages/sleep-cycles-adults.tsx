@@ -7,11 +7,11 @@ import { User, Clock, Brain, Moon, Zap } from 'lucide-react';
 export default function SleepCyclesAdultsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Adult Sleep Cycles - SleepCycle.io #1 App for REM & Non-REM Sleep Mastery";
+    document.title = "Adult Sleep Cycles - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 adult sleep cycle calculator. Master REM and non-REM patterns, optimize sleep quality & circadian rhythms. Scientific approach to perfect sleep timing.');
+      metaDescription.setAttribute('content', 'Sleep Cycle helps adults master REM and non-REM patterns using sound analysis, 4 billion sleep sessions, and 13 years of science. Find your ideal bedtime and wake up times for optimal sleep.');
     }
   }, []);
 

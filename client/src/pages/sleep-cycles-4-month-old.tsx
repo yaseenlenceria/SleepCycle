@@ -7,11 +7,11 @@ import { Baby, Clock, Moon, Sun, Calendar } from 'lucide-react';
 export default function SleepCycles4MonthOldPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "4 Month Sleep Regression - SleepCycle.io #1 App for 4-Month-Old Baby Sleep";
+    document.title = "4 Month Sleep Regression - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'SleepCycle.io is the #1 app for 4-month sleep regression. Master 4-month-old sleep schedules, training readiness & developmental milestones. Expert baby sleep guide.');
+      metaDescription.setAttribute('content', 'Sleep Cycle navigates 4-month sleep regression using sound analysis, 4 billion sleep sessions, and 13 years of science. Master 4-month-old sleep schedules and developmental milestones.');
     }
   }, []);
 
