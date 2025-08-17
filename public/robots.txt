@@ -1,13 +1,32 @@
 User-agent: *
 Allow: /
 
-# Important pages for SEO
-Allow: /about
-Allow: /privacy-policy
-Allow: /terms-of-service
-
-# Sitemap location
+# Sitemap
 Sitemap: https://sleepcycle.io/sitemap.xml
 
-# Crawl delay
+# Crawl-delay (optional - helps with server load)
 Crawl-delay: 1
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow admin or sensitive areas (if any)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Allow all calculator pages and content
+Allow: /?tab=bedtime
+Allow: /?tab=wakeup
+Allow: /?tab=nap
+Allow: /?tab=baby
+Allow: /?tab=tracker
+Allow: /?tab=age
+Allow: /sleep-science
+Allow: /more-resources
+Allow: /help
+Allow: /about
+Allow: /contact
