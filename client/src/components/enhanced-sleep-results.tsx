@@ -165,8 +165,8 @@ export function EnhancedSleepResults({
         </div>
       )}
 
-      {/* Results Grid */}
-      <div className="grid gap-4">
+      {/* Results Grid - Responsive Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {times.map((time, index) => (
           <Card
             key={index}
@@ -177,49 +177,53 @@ export function EnhancedSleepResults({
             } hover:scale-105 group cursor-pointer`}
             data-testid={`sleep-result-${index}`}
           >
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
+            <CardContent className="p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
                 {/* Time and Details */}
-                <div className="flex items-center space-x-4">
-                  <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl p-3 text-white group-hover:scale-110 transition-transform duration-300">
-                    {type === 'bedtime' ? <Bed className="w-6 h-6" /> : <Clock className="w-6 h-6" />}
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl p-2 sm:p-3 text-white group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                    {type === 'bedtime' ? <Bed className="w-5 h-5 sm:w-6 sm:h-6" /> : <Clock className="w-5 h-5 sm:w-6 sm:h-6" />}
                   </div>
                   
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <div className="flex items-center space-x-2 mb-1">
-                      <h3 className="text-2xl font-bold text-gray-800">{time.time}</h3>
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-800">{time.time}</h3>
                       {getQualityIcon(time.quality)}
                     </div>
                     
-                    <div className="flex items-center space-x-3 text-sm text-gray-600">
+                    <div className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm text-gray-600">
                       <span className="flex items-center space-x-1">
-                        <Brain size={14} />
+                        <Brain size={12} className="sm:hidden" />
+                        <Brain size={14} className="hidden sm:block" />
                         <span>{time.cycles} cycles</span>
                       </span>
                       <span className="flex items-center space-x-1">
-                        <Heart size={14} />
+                        <Heart size={12} className="sm:hidden" />
+                        <Heart size={14} className="hidden sm:block" />
                         <span>{time.duration}</span>
                       </span>
                     </div>
                     
-                    <p className="text-sm text-gray-500 mt-1">
+                    <p className="text-xs sm:text-sm text-gray-500 mt-1">
                       {getCyclesBenefits(time.cycles)}
                     </p>
                   </div>
                 </div>
 
                 {/* Quality Badge and Action */}
-                <div className="text-right space-y-2">
+                <div className="flex sm:flex-col items-center sm:items-end space-x-2 sm:space-x-0 sm:space-y-2">
                   <Badge 
-                    className={`${getQualityColor(time.quality)} capitalize font-medium px-3 py-1`}
+                    className={`${getQualityColor(time.quality)} capitalize font-medium px-2 sm:px-3 py-1 text-xs sm:text-sm`}
                   >
                     {time.quality}
                   </Badge>
                   
                   {time.quality === 'excellent' && (
-                    <div className="flex items-center text-green-600 text-sm font-medium">
-                      <Star size={14} className="mr-1" />
-                      Recommended
+                    <div className="flex items-center text-green-600 text-xs sm:text-sm font-medium">
+                      <Star size={12} className="sm:hidden mr-1" />
+                      <Star size={14} className="hidden sm:block mr-1" />
+                      <span className="hidden sm:inline">Recommended</span>
+                      <span className="sm:hidden">Top</span>
                     </div>
                   )}
                 </div>
@@ -250,7 +254,7 @@ export function EnhancedSleepResults({
             <div className="flex items-center justify-between">
               <CardTitle className="text-xl font-bold text-gray-800 flex items-center gap-2">
                 <TrendingUp className="text-blue-600" size={24} />
-                Personalized Sleep Health Assessment
+                AI Health Assessment for {userSex === 'female' ? 'Women' : 'Men'} Aged {userAge}
               </CardTitle>
               <Badge 
                 className={`${getQualityColor(sleepAssessment.quality)} border px-3 py-1 font-bold`}
@@ -260,22 +264,22 @@ export function EnhancedSleepResults({
               </Badge>
             </div>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-4 sm:space-y-6">
             {/* Assessment Overview */}
-            <div className="bg-white rounded-xl p-4 border border-blue-100">
-              <div className="flex items-start gap-3">
-                <div className="bg-blue-100 rounded-full p-2 mt-1">
-                  <Brain className="text-blue-600" size={20} />
+            <div className="bg-white rounded-xl p-3 sm:p-4 border border-blue-100">
+              <div className="flex flex-col sm:flex-row sm:items-start gap-3">
+                <div className="bg-blue-100 rounded-full p-2 self-start">
+                  <Brain className="text-blue-600" size={18} />
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-gray-800 mb-2">Sleep Quality Analysis</h4>
-                  <p className="text-gray-700 leading-relaxed">{sleepAssessment.feedback}</p>
-                  <div className="mt-3 flex items-center gap-4 text-sm">
+                  <h4 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">Sleep Quality Analysis for {userSex === 'female' ? 'Women' : 'Men'} Aged {userAge}</h4>
+                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{sleepAssessment.feedback}</p>
+                  <div className="mt-3 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm">
                     <span className="text-gray-600">
                       <strong>Your Sleep:</strong> {sleepAssessment.hoursSlept.toFixed(1)}h
                     </span>
                     <span className="text-gray-600">
-                      <strong>Recommended:</strong> {sleepAssessment.recommendedHours}h
+                      <strong>Optimal for your profile:</strong> {sleepAssessment.recommendedHours}h
                     </span>
                   </div>
                 </div>
@@ -284,18 +288,18 @@ export function EnhancedSleepResults({
 
             {/* Benefits Section */}
             {sleepAssessment.benefits.length > 0 && (
-              <div className="bg-green-50 rounded-xl p-4 border border-green-200">
-                <div className="flex items-start gap-3">
-                  <div className="bg-green-100 rounded-full p-2 mt-1">
-                    <CheckCircle className="text-green-600" size={20} />
+              <div className="bg-green-50 rounded-xl p-3 sm:p-4 border border-green-200">
+                <div className="flex flex-col sm:flex-row sm:items-start gap-3">
+                  <div className="bg-green-100 rounded-full p-2 self-start">
+                    <CheckCircle className="text-green-600" size={18} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-semibold text-gray-800 mb-3">Health Benefits You'll Experience</h4>
-                    <div className="grid gap-2">
+                    <h4 className="font-semibold text-gray-800 mb-3 text-sm sm:text-base">Personalized Health Benefits for {userSex === 'female' ? 'Women' : 'Men'} Aged {userAge}</h4>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
                       {sleepAssessment.benefits.map((benefit, index) => (
-                        <div key={index} className="flex items-center gap-2 text-sm text-gray-700">
-                          <CheckCircle className="text-green-500 flex-shrink-0" size={16} />
-                          {benefit}
+                        <div key={index} className="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                          <CheckCircle className="text-green-500 flex-shrink-0 mt-0.5" size={14} />
+                          <span>{benefit}</span>
                         </div>
                       ))}
                     </div>
@@ -306,18 +310,18 @@ export function EnhancedSleepResults({
 
             {/* Risk Factors Section */}
             {sleepAssessment.riskFactors.length > 0 && (
-              <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
-                <div className="flex items-start gap-3">
-                  <div className="bg-amber-100 rounded-full p-2 mt-1">
-                    <AlertTriangle className="text-amber-600" size={20} />
+              <div className="bg-amber-50 rounded-xl p-3 sm:p-4 border border-amber-200">
+                <div className="flex flex-col sm:flex-row sm:items-start gap-3">
+                  <div className="bg-amber-100 rounded-full p-2 self-start">
+                    <AlertTriangle className="text-amber-600" size={18} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-semibold text-gray-800 mb-3">Health Considerations</h4>
-                    <div className="grid gap-2">
+                    <h4 className="font-semibold text-gray-800 mb-3 text-sm sm:text-base">Health Considerations for {userSex === 'female' ? 'Women' : 'Men'} Aged {userAge}</h4>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
                       {sleepAssessment.riskFactors.map((risk, index) => (
-                        <div key={index} className="flex items-center gap-2 text-sm text-gray-700">
-                          <AlertTriangle className="text-amber-500 flex-shrink-0" size={16} />
-                          {risk}
+                        <div key={index} className="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                          <AlertTriangle className="text-amber-500 flex-shrink-0 mt-0.5" size={14} />
+                          <span>{risk}</span>
                         </div>
                       ))}
                     </div>
@@ -420,31 +424,23 @@ export function EnhancedSleepResults({
         </Card>
       )}
 
-      {/* Sleep Tips */}
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6">
-        <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
-          <Zap className="mr-2 text-blue-600" size={18} />
-          Sleep Optimization Tips
-        </h4>
-        <div className="grid md:grid-cols-2 gap-3 text-sm text-gray-600">
-          <div className="flex items-start space-x-2">
-            <ArrowRight size={14} className="mt-0.5 text-blue-500" />
-            <span>Keep your bedroom cool (60-67°F)</span>
-          </div>
-          <div className="flex items-start space-x-2">
-            <ArrowRight size={14} className="mt-0.5 text-blue-500" />
-            <span>Avoid screens 1 hour before bed</span>
-          </div>
-          <div className="flex items-start space-x-2">
-            <ArrowRight size={14} className="mt-0.5 text-blue-500" />
-            <span>Try meditation or deep breathing</span>
-          </div>
-          <div className="flex items-start space-x-2">
-            <ArrowRight size={14} className="mt-0.5 text-blue-500" />
-            <span>Maintain consistent sleep schedule</span>
+      {/* Personalized Sleep Tips */}
+      {sleepAssessment && (
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6">
+          <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
+            <Zap className="mr-2 text-blue-600" size={18} />
+            Personalized Sleep Tips for {userSex === 'female' ? 'Women' : 'Men'} Aged {userAge}
+          </h4>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 text-xs sm:text-sm text-gray-600">
+            {sleepAssessment.tips.slice(0, 8).map((tip, index) => (
+              <div key={index} className="flex items-start space-x-2">
+                <ArrowRight size={12} className="mt-0.5 text-blue-500 flex-shrink-0" />
+                <span>{tip}</span>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
