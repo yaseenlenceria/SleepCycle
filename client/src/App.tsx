@@ -10,6 +10,7 @@ import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Help from "@/pages/help";
 import SleepScience from "@/pages/sleep-science";
+import MoreResources from "@/pages/more-resources";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/help" component={Help} />
       <Route path="/sleep-science" component={SleepScience} />
+      <Route path="/more-resources" component={MoreResources} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>

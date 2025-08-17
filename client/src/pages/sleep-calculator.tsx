@@ -221,11 +221,12 @@ export default function SleepCalculator() {
               <div className="text-center mt-8">
                 <Button
                   onClick={handleCalculateBedtime}
-                  className="bg-gradient-to-r from-sleep-blue-600 to-sleep-purple-600 hover:from-sleep-blue-700 hover:to-sleep-purple-700 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="bg-gradient-to-r from-sleep-blue-600 to-sleep-purple-600 hover:from-sleep-blue-700 hover:to-sleep-purple-700 text-white px-6 md:px-10 py-3 md:py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm md:text-base"
                   data-testid="button-calculate-bedtime"
                 >
-                  <Calculator className="mr-3" size={20} />
-                  Calculate Optimal Bedtimes
+                  <Calculator className="mr-2 md:mr-3" size={18} />
+                  <span className="hidden sm:inline">Calculate Optimal Bedtimes</span>
+                  <span className="sm:hidden">Calculate Bedtime</span>
                 </Button>
               </div>
             </div>
