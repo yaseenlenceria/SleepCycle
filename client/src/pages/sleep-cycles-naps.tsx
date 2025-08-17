@@ -7,11 +7,11 @@ import { Coffee, Clock, Zap, Sun, Battery } from 'lucide-react';
 export default function SleepCyclesNapsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Nap Calculator - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Ideal Bedtime & Wake Up Times";
+    document.title = "Nap Calculator - Optimal Nap Duration with AI Health Assessment | Sleepcycle.io";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Sleep Cycle perfects your napping using sound analysis, 4 billion sleep sessions, and 13 years of science. Master power naps, optimal durations, and strategic rest timing.');
+      metaDescription.setAttribute('content', 'AI Nap Calculator with FREE Health Assessment. Get optimal nap duration and timing personalized for your age and lifestyle. Science-backed power nap recommendations. Not just another calculator – AI that optimizes YOUR energy.');
     }
   }, []);
 
@@ -23,10 +23,10 @@ export default function SleepCyclesNapsPage() {
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Sleep Cycles for Naps
+            AI Nap Calculator - Optimal Duration
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            Master the science of strategic napping. Learn optimal nap durations, perfect timing, and how to use power naps to boost energy, productivity, and cognitive performance without disrupting nighttime sleep.
+            <strong>Fix Your Energy with AI</strong> – Get personalized nap timing and duration with FREE health assessment. Science-backed power nap recommendations that adapt to YOUR schedule and energy needs.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
             <span>⚡ Power Naps</span>

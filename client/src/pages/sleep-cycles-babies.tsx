@@ -7,11 +7,11 @@ import { Baby, Clock, Moon, Sun, Heart } from 'lucide-react';
 export default function SleepCyclesBabiesPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Baby Sleep Cycles - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
+    document.title = "Baby & Toddler Nap Calculator - AI Sleep Cycles for Babies (0-12 Months) | Sleepcycle.io";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Sleep Cycle helps parents master baby sleep patterns using sound analysis, 4 billion sleep sessions, and 13 years of science. Expert guide for 0-12 month baby sleep cycles and schedules.');
+      metaDescription.setAttribute('content', 'AI-powered Baby Sleep Calculator with FREE Health Assessment. Get personalized nap schedules for babies 0-12 months. Evidence-based recommendations from pediatric experts. Not just another calculator – AI that adapts to your baby\'s needs.');
     }
   }, []);
 
@@ -23,10 +23,10 @@ export default function SleepCyclesBabiesPage() {
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Sleep Cycles for Babies
+            AI Baby & Toddler Nap Calculator
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            Understanding your baby's sleep patterns is crucial for healthy development. Learn about newborn sleep cycles, optimal nap schedules, and how to establish healthy sleep habits from birth to 12 months.
+            <strong>Fix Your Baby's Sleep with AI</strong> – Get personalized nap schedules and sleep recommendations with FREE health assessment. Science-backed, AI-driven advice that adapts to your baby's unique needs from 0-12 months.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
             <span>👶 Newborn Sleep Patterns</span>

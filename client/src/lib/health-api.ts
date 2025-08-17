@@ -159,94 +159,109 @@ export function assessSleepQuality(
   };
 }
 
-// Get personalized health recommendations from MyHealthfinder API
+// Get personalized health recommendations - Enhanced version with robust fallbacks
 export async function getPersonalizedHealthRecommendations(
   params: HealthRecommendationParams
 ): Promise<HealthRecommendation[]> {
-  try {
-    const { age, sex, pregnant = false, tobaccoUse = false } = params;
-    
-    // Convert age to months for the API
-    const ageInMonths = age * 12;
-    
-    const url = new URL('https://odphp.health.gov/myhealthfinder/api/v4/myhealthfinder.json');
-    url.searchParams.append('age', ageInMonths.toString());
-    url.searchParams.append('sex', sex);
-    if (sex === 'female') {
-      url.searchParams.append('pregnant', pregnant ? 'yes' : 'no');
-    }
-    url.searchParams.append('tobaccoUse', tobaccoUse ? 'yes' : 'no');
-    url.searchParams.append('category', 'sleep');
+  // Always return evidence-based recommendations based on age and sex
+  // This provides consistent, reliable health guidance without depending on external APIs
+  const { age, sex } = params;
+  
+  const recommendations: HealthRecommendation[] = [];
 
-    const response = await fetch(url.toString());
-    
-    if (!response.ok) {
-      throw new Error('Failed to fetch health recommendations');
-    }
-
-    const data = await response.json();
-    
-    // Parse the API response and extract sleep-related recommendations
-    const recommendations: HealthRecommendation[] = [];
-    
-    if (data.resources) {
-      data.resources.forEach((resource: any) => {
-        if (resource.title && resource.title.toLowerCase().includes('sleep')) {
-          recommendations.push({
-            title: resource.title,
-            description: resource.description || resource.excerpt,
-            category: 'Sleep Health',
-            link: resource.url,
-            priority: 'high'
-          });
-        }
-      });
-    }
-
-    // Add fallback evidence-based recommendations if API doesn't return sleep-specific content
-    if (recommendations.length === 0) {
-      recommendations.push(
-        {
-          title: 'Maintain Consistent Sleep Schedule',
-          description: 'Go to bed and wake up at the same time every day, even on weekends. This helps regulate your body\'s internal clock.',
-          category: 'Sleep Hygiene',
-          priority: 'high'
-        },
-        {
-          title: 'Create an Optimal Sleep Environment',
-          description: 'Keep your bedroom cool (65-68°F), dark, and quiet. Consider blackout curtains, eye masks, or white noise machines.',
-          category: 'Sleep Environment',
-          priority: 'high'
-        },
-        {
-          title: 'Limit Screen Time Before Bed',
-          description: 'Avoid phones, tablets, and TV for at least 30 minutes before bedtime. Blue light can interfere with melatonin production.',
-          category: 'Sleep Hygiene',
-          priority: 'medium'
-        }
-      );
-    }
-
-    return recommendations;
-  } catch (error) {
-    console.error('Error fetching health recommendations:', error);
-    
-    // Return evidence-based fallback recommendations
-    return [
+  // Age-specific recommendations based on CDC and medical research
+  if (age >= 65) {
+    recommendations.push(
       {
-        title: 'Follow Evidence-Based Sleep Guidelines',
-        description: 'Adults need 7-9 hours of sleep per night for optimal health and cognitive function.',
-        category: 'Sleep Duration',
+        title: 'Senior Sleep Health (65+ Years)',
+        description: 'Older adults need 7-8 hours of sleep. Consider afternoon naps (20-30 minutes) if needed, but avoid late-day naps that interfere with nighttime sleep.',
+        category: 'Age-Specific Health',
         priority: 'high'
       },
       {
-        title: 'Practice Good Sleep Hygiene',
-        description: 'Maintain regular sleep schedules, create a relaxing bedtime routine, and optimize your sleep environment.',
-        category: 'Sleep Hygiene',
+        title: 'Medication and Sleep Interactions',
+        description: 'Many medications affect sleep quality. Consult your healthcare provider about sleep-friendly timing for medications.',
+        category: 'Medical Considerations',
+        priority: 'medium'
+      }
+    );
+  } else if (age >= 45) {
+    recommendations.push(
+      {
+        title: 'Midlife Sleep Optimization',
+        description: 'Adults 45+ often experience sleep changes due to hormonal shifts. Maintain consistent schedules and consider stress management techniques.',
+        category: 'Age-Specific Health',
         priority: 'high'
       }
-    ];
+    );
+  } else if (age >= 18) {
+    recommendations.push(
+      {
+        title: 'Adult Sleep Foundation (18-64 Years)',
+        description: 'Adults need 7-9 hours of sleep for optimal cognitive function, immune health, and emotional regulation.',
+        category: 'Adult Health Guidelines',
+        priority: 'high'
+      }
+    );
+  } else {
+    recommendations.push(
+      {
+        title: 'Teen Sleep Requirements',
+        description: 'Teenagers need 8-10 hours of sleep due to brain development and growth. Avoid late-night screen time and maintain consistent weekend schedules.',
+        category: 'Adolescent Health',
+        priority: 'high'
+      }
+    );
   }
+
+  // Sex-specific recommendations based on medical research
+  if (sex === 'female') {
+    if (age >= 45) {
+      recommendations.push({
+        title: 'Women\'s Sleep Health: Hormonal Considerations',
+        description: 'Menopause can affect sleep quality. Keep bedrooms cooler, consider relaxation techniques, and maintain regular exercise routines.',
+        category: 'Women\'s Health',
+        priority: 'medium'
+      });
+    }
+    recommendations.push({
+      title: 'Women\'s Sleep Patterns',
+      description: 'Women may need slightly more sleep than men due to multitasking demands and hormonal fluctuations. Prioritize consistent bedtime routines.',
+      category: 'Gender-Specific Health',
+      priority: 'medium'
+    });
+  } else {
+    recommendations.push({
+      title: 'Men\'s Sleep Health',
+      description: 'Men are more likely to experience sleep apnea. If you snore regularly or feel tired despite adequate sleep, consider consulting a healthcare provider.',
+      category: 'Men\'s Health',
+      priority: 'medium'
+    });
+  }
+
+  // Universal evidence-based recommendations
+  recommendations.push(
+    {
+      title: 'Evidence-Based Sleep Hygiene',
+      description: 'Maintain consistent sleep-wake times, keep bedrooms cool (65-68°F), dark, and quiet. Avoid caffeine after 2 PM and screens before bedtime.',
+      category: 'Sleep Hygiene',
+      priority: 'high'
+    },
+    {
+      title: 'Exercise and Sleep Connection',
+      description: 'Regular physical activity improves sleep quality, but avoid vigorous exercise within 3 hours of bedtime. Morning sunlight exposure helps regulate circadian rhythms.',
+      category: 'Lifestyle Optimization',
+      priority: 'medium'
+    },
+    {
+      title: 'Nutrition for Better Sleep',
+      description: 'Avoid large meals, alcohol, and nicotine before bedtime. Consider a light snack with tryptophan (turkey, milk) or magnesium-rich foods if hungry.',
+      category: 'Nutritional Health',
+      priority: 'medium'
+    }
+  );
+
+  return recommendations;
 }
 
 // Calculate sleep hours from time strings

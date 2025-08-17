@@ -227,10 +227,10 @@ export default function SleepCalculator() {
             <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">
-                  Optimal Bedtime Calculator
+                  AI Bedtime Calculator with Health Assessment
                 </h3>
                 <p className="text-gray-600 max-w-lg mx-auto">
-                  Select your desired wake-up time and we'll calculate the perfect bedtimes for 90-minute sleep cycles
+                  Select your desired wake-up time and get personalized bedtimes with FREE health recommendations. Not just another calculator – AI that adapts to YOUR needs
                 </p>
               </div>
 
@@ -275,10 +275,10 @@ export default function SleepCalculator() {
             <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">
-                  Wake-Up Time Calculator
+                  AI Wake-Up Time Calculator with Health Assessment
                 </h3>
                 <p className="text-gray-600 max-w-lg mx-auto">
-                  Going to sleep now? Find the scientifically best times to wake up refreshed
+                  Going to sleep now? Get AI-powered wake-up times with FREE personalized health analysis. Science-backed recommendations that optimize YOUR sleep quality
                 </p>
               </div>
 
@@ -367,7 +367,7 @@ export default function SleepCalculator() {
         {/* Enhanced Educational Content */}
         <div className="bg-gradient-to-br from-white via-blue-50 to-indigo-50 bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8 mt-12">
           <h3 className="text-3xl font-bold text-center bg-gradient-to-r from-sleep-blue-800 to-sleep-purple-600 bg-clip-text text-transparent mb-8">
-            The Science of Sleep Cycles
+            AI Sleep Science & Personalized Health Assessment
           </h3>
           
           <div className="grid md:grid-cols-3 gap-8">
