@@ -3,7 +3,7 @@ import { useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { TimePicker } from '@/components/time-picker';
 import { MobileOptimizedPicker } from '@/components/mobile-optimized-picker';
-import { ScrollTimePicker } from '@/components/scroll-time-picker';
+
 import { SleepResults } from '@/components/sleep-results';
 import { NapCalculator } from '@/components/nap-calculator';
 import { SleepTracker } from '@/components/sleep-tracker';
@@ -202,12 +202,21 @@ export default function SleepCalculator() {
               </div>
 
               <div className="flex justify-center">
-                <ScrollTimePicker
-                  hour={hour}
-                  minute={minute}
-                  period={period}
-                  onTimeChange={handleTimeChange}
-                />
+                {isMobile ? (
+                  <MobileOptimizedPicker
+                    hour={hour}
+                    minute={minute}
+                    period={period}
+                    onTimeChange={handleTimeChange}
+                  />
+                ) : (
+                  <TimePicker
+                    hour={hour}
+                    minute={minute}
+                    period={period}
+                    onTimeChange={handleTimeChange}
+                  />
+                )}
               </div>
 
               <div className="text-center mt-8">

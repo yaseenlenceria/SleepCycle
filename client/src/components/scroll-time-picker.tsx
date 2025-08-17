@@ -19,8 +19,8 @@ export function ScrollTimePicker({ hour, minute, period, onTimeChange, className
   // Generate hours (1-12)
   const hours = Array.from({ length: 12 }, (_, i) => (i + 1).toString());
   
-  // Generate minutes (00, 05, 10, ..., 55)
-  const minutes = Array.from({ length: 12 }, (_, i) => (i * 5).toString().padStart(2, '0'));
+  // Generate minutes (00, 15, 30, 45)
+  const minutes = ['00', '15', '30', '45'];
   
   const periods = ['AM', 'PM'];
 
@@ -30,7 +30,7 @@ export function ScrollTimePicker({ hour, minute, period, onTimeChange, className
     const index = items.indexOf(value);
     if (index === -1) return;
     
-    const itemHeight = 60; // Height of each item
+    const itemHeight = 40; // Height of each item
     const containerHeight = ref.current.clientHeight;
     const scrollTop = index * itemHeight - (containerHeight / 2) + (itemHeight / 2);
     
@@ -56,7 +56,7 @@ export function ScrollTimePicker({ hour, minute, period, onTimeChange, className
   ) => {
     if (!ref.current) return;
 
-    const itemHeight = 60;
+    const itemHeight = 40;
     const scrollTop = ref.current.scrollTop;
     const containerHeight = ref.current.clientHeight;
     const centerOffset = containerHeight / 2;
@@ -104,18 +104,18 @@ export function ScrollTimePicker({ hour, minute, period, onTimeChange, className
     const isCurrentlyScrolling = isScrolling[type];
     
     return (
-      <div className="relative flex-1 h-[240px] overflow-hidden">
+      <div className="relative flex-1 h-[180px] overflow-hidden">
         {/* Gradient overlays */}
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white via-white/80 to-transparent z-10 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white via-white/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
         
         {/* Center highlight */}
-        <div className="absolute top-1/2 left-0 right-0 h-[60px] -translate-y-1/2 bg-gradient-to-r from-sleep-blue-50 to-sleep-purple-50 border-2 border-sleep-blue-200 rounded-xl z-5 pointer-events-none shadow-lg" />
+        <div className="absolute top-1/2 left-1 right-1 h-[40px] -translate-y-1/2 bg-sleep-blue-50 border border-sleep-blue-200 rounded-lg z-5 pointer-events-none" />
         
         {/* Scrollable content */}
         <div
           ref={ref}
-          className="h-full overflow-y-auto scrollbar-hide px-2 py-[90px]"
+          className="h-full overflow-y-auto scrollbar-hide px-1 py-[70px]"
           onScroll={createScrollHandler(type)}
           style={{
             scrollSnapType: 'y mandatory',
@@ -128,10 +128,10 @@ export function ScrollTimePicker({ hour, minute, period, onTimeChange, className
               <div
                 key={item}
                 className={cn(
-                  "h-[60px] flex items-center justify-center text-2xl font-bold transition-all duration-300 cursor-pointer select-none",
+                  "h-[40px] flex items-center justify-center text-lg font-semibold transition-all duration-200 cursor-pointer select-none",
                   isSelected
-                    ? "text-sleep-blue-700 scale-110 drop-shadow-lg"
-                    : "text-gray-400 hover:text-gray-600 scale-90"
+                    ? "text-sleep-blue-700 scale-105"
+                    : "text-gray-400 hover:text-gray-600"
                 )}
                 style={{ scrollSnapAlign: 'center' }}
                 onClick={() => {
@@ -151,45 +151,36 @@ export function ScrollTimePicker({ hour, minute, period, onTimeChange, className
 
   return (
     <div className={cn(
-      "bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 max-w-md mx-auto",
-      "bg-gradient-to-br from-white via-gray-50 to-gray-100",
+      "bg-white rounded-xl shadow-lg border border-gray-200 p-4 max-w-sm mx-auto",
       className
     )}>
-      <div className="text-center mb-6">
-        <div className="text-sm font-medium text-gray-600 mb-2">Select Time</div>
+      <div className="text-center mb-4">
         <div className="text-lg font-bold text-gray-800">
           {hour}:{minute} {period}
         </div>
       </div>
       
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-2">
         {/* Hour Column */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center flex-1">
           <div className="text-xs font-medium text-gray-500 mb-2">Hour</div>
           {renderScrollColumn(hourRef, hours, hour, 'hour')}
         </div>
         
         {/* Separator */}
-        <div className="text-3xl font-bold text-sleep-blue-600 pt-8">:</div>
+        <div className="text-2xl font-bold text-sleep-blue-600 pt-6">:</div>
         
         {/* Minute Column */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center flex-1">
           <div className="text-xs font-medium text-gray-500 mb-2">Min</div>
           {renderScrollColumn(minuteRef, minutes, minute, 'minute')}
         </div>
         
         {/* Period Column */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center flex-1">
           <div className="text-xs font-medium text-gray-500 mb-2">Period</div>
           {renderScrollColumn(periodRef, periods, period, 'period')}
         </div>
-      </div>
-      
-      {/* Visual indicators */}
-      <div className="flex justify-center mt-4 space-x-1">
-        <div className="w-2 h-2 rounded-full bg-sleep-blue-400 animate-pulse" />
-        <div className="w-2 h-2 rounded-full bg-sleep-purple-400 animate-pulse delay-100" />
-        <div className="w-2 h-2 rounded-full bg-sleep-blue-400 animate-pulse delay-200" />
       </div>
     </div>
   );
