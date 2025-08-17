@@ -10,21 +10,21 @@ export function Footer() {
             <div>
               <h4 className="font-bold text-gray-800 mb-4">Sleep Calculators</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="/#bedtime" className="text-sleep-blue-600 hover:text-sleep-blue-700">Bedtime Calculator</a></li>
-                <li><a href="/#wakeup" className="text-sleep-blue-600 hover:text-sleep-blue-700">Wake-up Time Calculator</a></li>
-                <li><a href="/#nap" className="text-sleep-blue-600 hover:text-sleep-blue-700">Nap Calculator for Adults</a></li>
-                <li><a href="/#baby" className="text-sleep-blue-600 hover:text-sleep-blue-700">Baby Nap Calculator</a></li>
-                <li><a href="/#tracker" className="text-sleep-blue-600 hover:text-sleep-blue-700">Sleep Duration Tracker</a></li>
+                <li><Link href="/?tab=bedtime" className="text-sleep-blue-600 hover:text-sleep-blue-700">Bedtime Calculator</Link></li>
+                <li><Link href="/?tab=wakeup" className="text-sleep-blue-600 hover:text-sleep-blue-700">Wake-up Time Calculator</Link></li>
+                <li><Link href="/?tab=nap" className="text-sleep-blue-600 hover:text-sleep-blue-700">Nap Calculator for Adults</Link></li>
+                <li><Link href="/?tab=baby" className="text-sleep-blue-600 hover:text-sleep-blue-700">Baby Nap Calculator</Link></li>
+                <li><Link href="/?tab=tracker" className="text-sleep-blue-600 hover:text-sleep-blue-700">Sleep Duration Tracker</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold text-gray-800 mb-4">Sleep Science</h4>
               <ul className="space-y-2 text-sm">
-                <li><span className="text-gray-600">90 Minute Sleep Cycles</span></li>
-                <li><span className="text-gray-600">REM Sleep Optimization</span></li>
-                <li><span className="text-gray-600">Circadian Rhythm Tips</span></li>
-                <li><span className="text-gray-600">Age-Specific Recommendations</span></li>
-                <li><span className="text-gray-600">Sleep Quality Analysis</span></li>
+                <li><Link href="/sleep-science#90-minute" className="text-sleep-blue-600 hover:text-sleep-blue-700">90 Minute Sleep Cycles</Link></li>
+                <li><Link href="/sleep-science#rem" className="text-sleep-blue-600 hover:text-sleep-blue-700">REM Sleep Optimization</Link></li>
+                <li><Link href="/sleep-science#circadian" className="text-sleep-blue-600 hover:text-sleep-blue-700">Circadian Rhythm Tips</Link></li>
+                <li><Link href="/sleep-science#age-specific" className="text-sleep-blue-600 hover:text-sleep-blue-700">Age-Specific Recommendations</Link></li>
+                <li><Link href="/sleep-science#quality" className="text-sleep-blue-600 hover:text-sleep-blue-700">Sleep Quality Analysis</Link></li>
               </ul>
             </div>
             <div>

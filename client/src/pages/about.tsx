@@ -2,8 +2,13 @@ import { Link } from 'wouter';
 import { ArrowLeft, Heart, Users, Target, Award, Clock, Moon } from 'lucide-react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { useEffect } from 'react';
 
 export default function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-sleep-blue-50 via-sleep-purple-50 to-pink-50">
       <Header />

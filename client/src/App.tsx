@@ -9,6 +9,7 @@ import PrivacyPolicy from "@/pages/privacy-policy";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Help from "@/pages/help";
+import SleepScience from "@/pages/sleep-science";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/help" component={Help} />
+      <Route path="/sleep-science" component={SleepScience} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>

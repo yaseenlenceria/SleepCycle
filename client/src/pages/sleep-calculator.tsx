@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { TimePicker } from '@/components/time-picker';
 import { MobileOptimizedPicker } from '@/components/mobile-optimized-picker';
@@ -14,7 +15,11 @@ import { Bed, Sun, Clock, Heart, Coffee, BarChart3, Users, Calculator, Moon, Sta
 import { useIsMobile } from '@/hooks/use-mobile';
 
 export default function SleepCalculator() {
-  const [activeTab, setActiveTab] = useState<'bedtime' | 'wakeup' | 'nap' | 'tracker' | 'age' | 'baby'>('bedtime');
+  const [location] = useLocation();
+  const urlParams = new URLSearchParams(location.split('?')[1] || '');
+  const tabFromUrl = urlParams.get('tab') as 'bedtime' | 'wakeup' | 'nap' | 'tracker' | 'age' | 'baby' | null;
+  
+  const [activeTab, setActiveTab] = useState<'bedtime' | 'wakeup' | 'nap' | 'tracker' | 'age' | 'baby'>(tabFromUrl || 'bedtime');
   const isMobile = useIsMobile();
   const [hour, setHour] = useState('6');
   const [minute, setMinute] = useState('30');
@@ -24,6 +29,18 @@ export default function SleepCalculator() {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
   const [showBedtimeResults, setShowBedtimeResults] = useState(false);
   const [showWakeupResults, setShowWakeupResults] = useState(false);
+
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Update tab from URL
+  useEffect(() => {
+    if (tabFromUrl && ['bedtime', 'wakeup', 'nap', 'tracker', 'age', 'baby'].includes(tabFromUrl)) {
+      setActiveTab(tabFromUrl);
+    }
+  }, [tabFromUrl]);
 
   // Update current time every minute
   useEffect(() => {
