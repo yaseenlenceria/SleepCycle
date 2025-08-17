@@ -10,7 +10,7 @@ import { AgeCalculator } from '@/components/age-calculator';
 import { BabyNapCalculator } from '@/components/baby-nap-calculator';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { calculateBedtimes, calculateWakeUpTimes, getCurrentTime, SleepTime } from '@/lib/sleep-calculations';
+import { calculateBedtimes, calculateWakeUpTimes, calculateWakeUpTimesFromNow, getCurrentTime, SleepTime } from '@/lib/sleep-calculations';
 import { Bed, Sun, Clock, Heart, Coffee, BarChart3, Users, Calculator, Moon, Star, Baby, Smartphone } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -86,8 +86,9 @@ export default function SleepCalculator() {
     setShowWakeupResults(false);
     
     setTimeout(() => {
-      const results = calculateWakeUpTimes();
-      setWakeupTimes(results);
+      const {times, currentTime: liveTime} = calculateWakeUpTimesFromNow();
+      setWakeupTimes(times);
+      setCurrentTime(liveTime); // Update with actual current time
       setIsCalculating(false);
       setShowWakeupResults(true);
     }, 1500);
@@ -98,8 +99,9 @@ export default function SleepCalculator() {
     setShowSleepNowResults(false);
     
     setTimeout(() => {
-      const results = calculateWakeUpTimes();
-      setSleepNowTimes(results);
+      const {times, currentTime: liveTime} = calculateWakeUpTimesFromNow();
+      setSleepNowTimes(times);
+      setCurrentTime(liveTime); // Update with actual current time
       setIsCalculating(false);
       setShowSleepNowResults(true);
     }, 1500);

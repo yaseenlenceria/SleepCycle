@@ -294,35 +294,69 @@ export async function getPersonalizedHealthRecommendations(
 
 // Calculate sleep hours from time strings with proper AM/PM parsing
 export function calculateSleepHours(bedtime: string, wakeTime: string): number {
+  console.log(`=== SLEEP CALCULATION DEBUG ===`);
+  console.log(`Input: Bedtime="${bedtime}", WakeTime="${wakeTime}"`);
+  
   // Parse bedtime
   const bedParsed = parseTimeString(bedtime);
   const bedDate = new Date();
   bedDate.setHours(bedParsed.hour, bedParsed.minute, 0, 0);
+  console.log(`Parsed Bedtime: ${bedParsed.hour}:${bedParsed.minute} (24h) -> ${bedDate.toLocaleString()}`);
   
   // Parse wake time
   const wakeParsed = parseTimeString(wakeTime);
   let wakeDate = new Date();
   wakeDate.setHours(wakeParsed.hour, wakeParsed.minute, 0, 0);
+  console.log(`Parsed WakeTime: ${wakeParsed.hour}:${wakeParsed.minute} (24h) -> ${wakeDate.toLocaleString()}`);
   
   // If wake time is earlier than bedtime, it's the next day
   if (wakeDate <= bedDate) {
     wakeDate.setDate(wakeDate.getDate() + 1);
+    console.log(`Wake time moved to next day: ${wakeDate.toLocaleString()}`);
   }
   
   const diffMs = wakeDate.getTime() - bedDate.getTime();
-  return diffMs / (1000 * 60 * 60); // Convert to hours
+  const hours = diffMs / (1000 * 60 * 60);
+  console.log(`Total sleep duration: ${hours.toFixed(2)} hours`);
+  console.log(`=== END DEBUG ===`);
+  
+  return hours; // Convert to hours
 }
 
 // Helper function to parse time strings with AM/PM
 function parseTimeString(timeStr: string): { hour: number; minute: number } {
-  const [time, period] = timeStr.split(' ');
+  if (!timeStr || !timeStr.includes(' ')) {
+    console.warn(`Invalid time string: "${timeStr}"`);
+    return { hour: 0, minute: 0 };
+  }
+  
+  const [time, period] = timeStr.trim().split(' ');
+  if (!time || !period || !time.includes(':')) {
+    console.warn(`Malformed time string: "${timeStr}"`);
+    return { hour: 0, minute: 0 };
+  }
+  
   const [hourStr, minuteStr] = time.split(':');
   let hour = parseInt(hourStr);
-  const minute = parseInt(minuteStr);
+  const minute = parseInt(minuteStr || '0');
+  
+  if (isNaN(hour) || isNaN(minute)) {
+    console.warn(`Invalid hour/minute in time string: "${timeStr}"`);
+    return { hour: 0, minute: 0 };
+  }
+  
+  console.log(`Parsing "${timeStr}": hour=${hour}, minute=${minute}, period=${period}`);
   
   // Convert to 24-hour format
-  if (period === 'PM' && hour !== 12) hour += 12;
-  if (period === 'AM' && hour === 12) hour = 0;
+  if (period.toUpperCase() === 'PM' && hour !== 12) {
+    hour += 12;
+    console.log(`PM conversion: ${hour - 12} -> ${hour}`);
+  }
+  if (period.toUpperCase() === 'AM' && hour === 12) {
+    hour = 0;
+    console.log(`AM 12 conversion: 12 -> 0`);
+  }
   
+  console.log(`Final parsed: ${hour}:${minute} (24-hour format)`);
   return { hour, minute };
 }

@@ -99,6 +99,38 @@ export function calculateWakeUpTimes(): SleepTime[] {
   return wakeUpTimes;
 }
 
+export function calculateWakeUpTimesFromNow(): {times: SleepTime[], currentTime: string} {
+  const now = new Date();
+  const currentTimeString = formatTime(now);
+  
+  // Add 15 minutes for falling asleep
+  const fallAsleepTime = new Date(now.getTime() + (15 * 60 * 1000));
+  
+  const wakeUpTimes: SleepTime[] = [];
+
+  // Calculate wake-up times for 1-6 sleep cycles
+  for (let cycles = 1; cycles <= 6; cycles++) {
+    // Each cycle is 90 minutes
+    const sleepMinutes = cycles * 90;
+    
+    const wakeUpTime = new Date(fallAsleepTime.getTime() + (sleepMinutes * 60 * 1000));
+    const duration = formatDuration(sleepMinutes);
+    const quality = getSleepQuality(cycles);
+    
+    wakeUpTimes.push({
+      time: formatTime(wakeUpTime),
+      cycles: cycles,
+      duration: duration,
+      quality: quality
+    });
+  }
+
+  return {
+    times: wakeUpTimes,
+    currentTime: currentTimeString
+  };
+}
+
 export function getCurrentTime(): string {
   return formatTime(new Date());
 }
