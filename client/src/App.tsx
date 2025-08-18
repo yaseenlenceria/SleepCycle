@@ -28,6 +28,7 @@ import WhyBestSleepCalculatorPage from '@/pages/why-best-sleep-calculator';
 import NinetyMinuteSleepCycleCalculatorPage from '@/pages/90-minute-sleep-cycle-calculator';
 import HowMuchSleepDidIGetCalculatorPage from '@/pages/how-much-sleep-did-i-get-calculator';
 import BestSleepCalculatorByAgePage from '@/pages/best-sleep-calculator-by-age';
+import SleepCalculatorByAgePage from '@/pages/sleep-calculator-by-age';
 
 function Router() {
   return (
@@ -55,6 +56,7 @@ function Router() {
       <Route path="/90-minute-sleep-cycle-calculator" component={NinetyMinuteSleepCycleCalculatorPage} />
       <Route path="/how-much-sleep-did-i-get-calculator" component={HowMuchSleepDidIGetCalculatorPage} />
       <Route path="/best-sleep-calculator-by-age" component={BestSleepCalculatorByAgePage} />
+      <Route path="/sleep-calculator-by-age" component={SleepCalculatorByAgePage} />
       <Route path="/sleep-calculator" component={SleepCalculator} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />

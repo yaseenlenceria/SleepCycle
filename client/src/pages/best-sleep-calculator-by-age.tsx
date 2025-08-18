@@ -2,8 +2,9 @@ import { useEffect } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Users, Brain, Target, Trophy } from 'lucide-react';
-import { UltraSimpleHomepage } from '@/components/ultra-simple-homepage';
+
 import { Link } from 'wouter';
 
 export default function BestSleepCalculatorByAgePage() {
@@ -40,7 +41,13 @@ export default function BestSleepCalculatorByAgePage() {
         </div>
 
         {/* Interactive Calculator */}
-        <UltraSimpleHomepage />
+        <div className="text-center mb-8">
+          <Link href="/sleep-calculator-by-age">
+            <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg">
+              🧮 Try Our Advanced Age-Specific Calculator
+            </Button>
+          </Link>
+        </div>
 
         {/* Age-Specific Sleep Calculators */}
         <div className="mt-16 mb-12">
