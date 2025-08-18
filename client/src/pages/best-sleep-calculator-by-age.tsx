@@ -21,7 +21,6 @@ export default function BestSleepCalculatorByAgePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <Header />
-      
       <main className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Hero Section */}
         <div className="text-center mb-12">
@@ -43,9 +42,7 @@ export default function BestSleepCalculatorByAgePage() {
         {/* Interactive Calculator */}
         <div className="text-center mb-8">
           <Link href="/sleep-calculator-by-age">
-            <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg">
-              🧮 Try Our Advanced Age-Specific Calculator
-            </Button>
+            <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg">Try Our Advanced Age-Specific Calculator</Button>
           </Link>
         </div>
 
@@ -224,7 +221,6 @@ export default function BestSleepCalculatorByAgePage() {
           </p>
         </div>
       </main>
-      
       <Footer />
     </div>
   );
