@@ -42,7 +42,7 @@ export function Footer() {
 
           {/* Baby & Child Sleep */}
           <div>
-            <h4 className="font-bold text-white mb-4 text-lg">👶 Baby & Child Sleep</h4>
+            <h4 className="font-bold text-white mb-4 text-lg">Baby & Child Sleep</h4>
             <ul className="space-y-3 text-sm">
               <li><Link href="/sleep-cycles-babies" className="text-pink-300 hover:text-pink-200 transition-colors">Baby Sleep Calculator (0-12m)</Link></li>
               <li><Link href="/sleep-cycles-newborns" className="text-pink-300 hover:text-pink-200 transition-colors">Newborn Sleep (0-3 months)</Link></li>
