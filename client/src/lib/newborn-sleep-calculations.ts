@@ -14,9 +14,27 @@ export function formatTime(date: Date): string {
 }
 
 export function calculateNewbornNapTimes(startTime: string): NewbornSleepTime[] {
+  // Ensure startTime is a string and has the expected format
+  if (!startTime || typeof startTime !== 'string') {
+    console.error('Invalid startTime:', startTime);
+    return [];
+  }
+
   // Parse the start time
-  const [time, period] = startTime.split(' ');
-  const [hourStr, minuteStr] = time.split(':');
+  const timeParts = startTime.split(' ');
+  if (timeParts.length !== 2) {
+    console.error('Invalid time format:', startTime);
+    return [];
+  }
+
+  const [time, period] = timeParts;
+  const timePortion = time.split(':');
+  if (timePortion.length !== 2) {
+    console.error('Invalid time portion:', time);
+    return [];
+  }
+
+  const [hourStr, minuteStr] = timePortion;
   let hour = parseInt(hourStr);
   const minute = parseInt(minuteStr);
 
@@ -29,46 +47,57 @@ export function calculateNewbornNapTimes(startTime: string): NewbornSleepTime[] 
 
   const sleepTimes: NewbornSleepTime[] = [];
 
-  // Newborns sleep 14-17 hours per day in 2-4 hour chunks
-  // They wake every 2-3 hours for feeding
-  const napDurations = [2, 2.5, 3, 1.5, 3.5, 2]; // hours
+  // Based on age-appropriate cycle lengths for newborns (40-60 minutes)
+  // Create realistic nap and wake periods
+  const napOptions = [
+    { cycles: 2, minutes: 80, type: 'Short nap' },   // 1h 20m
+    { cycles: 3, minutes: 120, type: 'Regular nap' }, // 2h
+    { cycles: 4, minutes: 160, type: 'Long nap' },   // 2h 40m
+    { cycles: 2, minutes: 90, type: 'Power nap' },   // 1h 30m
+    { cycles: 5, minutes: 200, type: 'Extended nap' }, // 3h 20m
+    { cycles: 3, minutes: 135, type: 'Good nap' }    // 2h 15m
+  ];
+
   let currentTime = new Date(startDate);
 
-  for (let i = 0; i < 6; i++) {
-    const napDuration = napDurations[i];
-    const napMinutes = napDuration * 60;
-    
+  napOptions.forEach((option, index) => {
     // Sleep period
     sleepTimes.push({
       time: formatTime(currentTime),
-      duration: `${napDuration}h sleep`,
-      type: 'nap',
-      quality: i % 3 === 0 ? 'deep' : (i % 2 === 0 ? 'rem' : 'light')
+      duration: `${Math.floor(option.minutes/60)}h ${option.minutes%60}m (${option.type})`,
+      type: option.minutes <= 120 ? 'nap' : 'night-sleep',
+      quality: option.cycles <= 2 ? 'light' : (option.cycles <= 3 ? 'rem' : 'deep')
     });
 
     // Add sleep duration
-    currentTime = new Date(currentTime.getTime() + napMinutes * 60 * 1000);
+    currentTime = new Date(currentTime.getTime() + option.minutes * 60 * 1000);
+  });
 
-    // Feeding/wake period (30-60 minutes)
-    const wakeDuration = 30 + Math.random() * 30; // 30-60 minutes
-    sleepTimes.push({
-      time: formatTime(currentTime),
-      duration: `${Math.round(wakeDuration)}min awake`,
-      type: 'feeding-break',
-      quality: 'light'
-    });
-
-    // Add wake duration
-    currentTime = new Date(currentTime.getTime() + wakeDuration * 60 * 1000);
-  }
-
-  return sleepTimes.slice(0, 8); // Return first 8 periods (4 sleep, 4 wake)
+  return sleepTimes;
 }
 
 export function calculateNewbornBedtimes(wakeUpTime: string): NewbornSleepTime[] {
+  // Ensure wakeUpTime is a string and has the expected format
+  if (!wakeUpTime || typeof wakeUpTime !== 'string') {
+    console.error('Invalid wakeUpTime:', wakeUpTime);
+    return [];
+  }
+
   // Parse wake-up time
-  const [time, period] = wakeUpTime.split(' ');
-  const [hourStr, minuteStr] = time.split(':');
+  const timeParts = wakeUpTime.split(' ');
+  if (timeParts.length !== 2) {
+    console.error('Invalid wake-up time format:', wakeUpTime);
+    return [];
+  }
+
+  const [time, period] = timeParts;
+  const timePortion = time.split(':');
+  if (timePortion.length !== 2) {
+    console.error('Invalid time portion:', time);
+    return [];
+  }
+
+  const [hourStr, minuteStr] = timePortion;
   let hour = parseInt(hourStr);
   const minute = parseInt(minuteStr);
 
@@ -87,25 +116,25 @@ export function calculateNewbornBedtimes(wakeUpTime: string): NewbornSleepTime[]
 
   const bedtimes: NewbornSleepTime[] = [];
 
-  // Newborns need different sleep durations throughout the day
+  // Age-appropriate bedtime options for newborns
+  // Based on 40-60 minute cycles typical for babies 0-3 months
   const sleepOptions = [
-    { hours: 2, type: 'Short nap' },
-    { hours: 2.5, type: 'Regular nap' },
-    { hours: 3, type: 'Long nap' },
-    { hours: 3.5, type: 'Extended nap' },
-    { hours: 4, type: 'Night sleep stretch' },
-    { hours: 5, type: 'Longest night stretch' }
+    { cycles: 3, minutes: 120, type: 'Short sleep' },    // 2h
+    { cycles: 4, minutes: 160, type: 'Regular sleep' },  // 2h 40m
+    { cycles: 5, minutes: 200, type: 'Good sleep' },     // 3h 20m
+    { cycles: 6, minutes: 240, type: 'Long sleep' },     // 4h
+    { cycles: 7, minutes: 280, type: 'Extended sleep' }, // 4h 40m
+    { cycles: 8, minutes: 320, type: 'Night sleep' }     // 5h 20m
   ];
 
   sleepOptions.forEach((option, index) => {
-    const totalMinutes = option.hours * 60;
-    const bedtime = new Date(wakeUp.getTime() - (totalMinutes * 60 * 1000));
+    const bedtime = new Date(wakeUp.getTime() - (option.minutes * 60 * 1000));
     
     bedtimes.push({
       time: formatTime(bedtime),
-      duration: `${option.hours}h (${option.type})`,
-      type: option.hours <= 3 ? 'nap' : 'night-sleep',
-      quality: option.hours <= 2 ? 'light' : (option.hours <= 3.5 ? 'rem' : 'deep')
+      duration: `${Math.floor(option.minutes/60)}h ${option.minutes%60}m (${option.type})`,
+      type: option.minutes <= 200 ? 'nap' : 'night-sleep',
+      quality: option.cycles <= 4 ? 'light' : (option.cycles <= 6 ? 'rem' : 'deep')
     });
   });
 
@@ -121,14 +150,14 @@ export function calculateNewbornSleepNow(): {times: NewbornSleepTime[], currentT
   
   const wakeUpTimes: NewbornSleepTime[] = [];
 
-  // Calculate different nap/sleep durations for newborns
+  // Age-appropriate sleep durations for newborns (40-60 min cycles)
   const newbornSleepOptions = [
-    { minutes: 90, type: 'Short nap', quality: 'light' as const },
-    { minutes: 120, type: 'Regular nap', quality: 'rem' as const },
-    { minutes: 150, type: 'Long nap', quality: 'deep' as const },
-    { minutes: 180, type: 'Extended nap', quality: 'deep' as const },
-    { minutes: 240, type: 'Night sleep', quality: 'deep' as const },
-    { minutes: 300, type: 'Long night sleep', quality: 'deep' as const }
+    { cycles: 2, minutes: 80, type: 'Short nap' },      // 1h 20m
+    { cycles: 3, minutes: 120, type: 'Regular nap' },   // 2h
+    { cycles: 4, minutes: 160, type: 'Good nap' },      // 2h 40m
+    { cycles: 5, minutes: 200, type: 'Long nap' },      // 3h 20m
+    { cycles: 6, minutes: 240, type: 'Night sleep' },   // 4h
+    { cycles: 8, minutes: 320, type: 'Long night' }     // 5h 20m
   ];
 
   newbornSleepOptions.forEach(option => {
@@ -140,8 +169,8 @@ export function calculateNewbornSleepNow(): {times: NewbornSleepTime[], currentT
     wakeUpTimes.push({
       time: formatTime(wakeUpTime),
       duration: `${durationText} (${option.type})`,
-      type: option.minutes <= 180 ? 'nap' : 'night-sleep',
-      quality: option.quality
+      type: option.minutes <= 200 ? 'nap' : 'night-sleep',
+      quality: option.cycles <= 3 ? 'light' : (option.cycles <= 5 ? 'rem' : 'deep')
     });
   });
 

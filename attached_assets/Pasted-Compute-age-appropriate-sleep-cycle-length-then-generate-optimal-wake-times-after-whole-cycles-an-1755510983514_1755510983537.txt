@@ -1,0 +1,410 @@
+Compute age-appropriate sleep cycle length, then generate optimal wake times (after whole cycles) and age-based nap schedules from a given sleep start (bedtime or nap start). Keep it simple for parents, but robust for edge cases.
+
+Core Concepts
+A) Age → Cycle Length
+
+Map baby age to an estimated sleep cycle length:
+
+Age band	Cycle length (min)	Notes
+0–2 months	40	newborn cycles are short; heavy REM
+3–5 months	45	stabilizing
+6–8 months	50	more NREM
+9–12 months	55	approaching an hour
+13–36 months	60	toddler range
+
+Implementation: choose the center of each band (above). Also expose an “Advanced” slider (±10 min) so parents can fine-tune if needed.
+
+B) Whole-Cycle Wake Times
+
+From a sleep start time T0, propose wake times at N cycles:
+
+cycle_minutes = f(age_months)
+wake_time(N) = T0 + N * cycle_minutes
+
+
+Return a list for N in a sensible range:
+
+Naps: N = 1..5
+
+Overnight: N = 6..11 (roughly 8–11 hours)
+
+Mark 2–4 cycles as “good nap”, 6–10 cycles as “overnight”.
+
+C) Age-Based Nap Framework (guide, not strict)
+
+Offer a suggested daily structure:
+
+Age	Total sleep/24h	Naps/day	Typical nap length	Wake windows (WW)
+0–2 m	14–17 h	4–6	30–90 min	45–90 min
+3–5 m	13–16 h	3–4	45–120 min	90–120 min
+6–8 m	13–15 h	2–3	60–120 min	2–3 h
+9–12 m	12–15 h	2	60–150 min	2.5–3.5 h
+13–18 m	12–14 h	1–2 (transition)	90–180 min	3–5 h
+19–36 m	11–14 h	1	60–150 min	4–6 h
+
+Use this to suggest nap counts and spacing, but keep the calculator’s core output grounded in cycles.
+
+Inputs & Outputs
+Inputs
+
+age_value: number
+
+age_unit: "months" or "years" (convert to months)
+
+sleep_start: ISO datetime or local time string (e.g., "20:00")
+
+mode: "overnight" or "nap" (affects N range & labels)
+
+advanced_cycle_adjust: integer minutes in [-10, 10] (default 0)
+
+time_zone: IANA string (default local)
+
+Outputs
+
+cycle_minutes: integer
+
+wake_times[]: array of objects:
+
+time: ISO datetime (localized display)
+
+cycles: N
+
+tag: "light"|"good-nap"|"overnight"|"early|late"
+
+note: brief text (e.g., “Most babies wake happier here”)
+
+nap_suggestion: (optional) structured plan (see JSON below)
+
+warnings[]: validation messages (e.g., “start was in the past”)
+
+Algorithm (step-by-step)
+
+Normalize age to months
+
+age_months = age_unit == "years" ? age_value*12 : age_value
+age_months = clamp(age_months, 0, 36)
+
+
+Cycle length lookup
+
+if 0 <= age_months <= 2: base=40
+elif 3 <= age_months <= 5: base=45
+elif 6 <= age_months <= 8: base=50
+elif 9 <= age_months <= 12: base=55
+else: base=60
+cycle_minutes = clamp(base + advanced_cycle_adjust, 35, 70)
+
+
+Parse start time in time_zone. If only “HH:mm” given, assume today (and if already past, allow but add a warning).
+
+Choose N range
+
+if mode == "nap": N_range = [1..5]
+else: N_range = [6..11]  # overnight
+
+
+Compute wake times
+For each N in N_range, wake = T0 + N*cycle_minutes. Tagging:
+
+1 cycle: "light" (often too short)
+
+2–4 cycles & mode=="nap": "good-nap"
+
+6–10 cycles & mode=="overnight": "overnight"
+
+If wake < 5h total overnight: tag "early"
+
+If wake > 12h total overnight: tag "late"
+
+Build nap suggestion (optional, if mode=="overnight" and user ticks “Suggest next day plan”):
+
+Infer wake window from table by age.
+
+Suggest Nap 1 ≈ WW after morning wake; length 2–3 cycles.
+
+Suggest Nap 2 ≈ next WW; length 1–2 cycles (age-dependent).
+
+If age < 6m, allow Nap 3 catnap (1 cycle).
+
+Return JSON with wake_times, cycle_minutes, nap_suggestion, warnings.
+
+Validation & Edge Cases
+
+Age outside 0–36 months → clamp and warn: “This tool is for 0–36 months.”
+
+Start time parse failure → error message with examples.
+
+If only time given and it’s > 6 hours in the past, suggest “Use tomorrow?” CTA.
+
+Handle DST/time-zone correctly via IANA zone.
+
+Advanced adjust keeps cycle in [35, 70] min.
+
+UX / UI Requirements
+Minimal UI
+
+Inputs: Age (number + unit), Start time (time picker), Mode toggle (Nap/Overnight), Advanced slider (±10 min, optional), Time zone (auto detect; editable).
+
+Primary CTA: Calculate
+
+Results:
+
+A list of wake options (chips/cards): “6 cycles → 6:30 AM · Ideal overnight”
+
+A small timeline bar (optional): blocks for each cycle with markers at wake points.
+
+Copy button to copy best time(s).
+
+Helper text:
+
+“Wake the baby near a cycle boundary for easier transitions.”
+
+“Every baby is unique; use this as a guide.”
+
+Accessibility
+
+Labels tied to inputs; keyboard-navigable.
+
+Announce result list to screen readers (ARIA live region).
+
+4.5:1 contrast, 16px+ body text.
+
+i18n
+
+Keep all user strings in a translations map.
+
+Time formatting localized (12/24h).
+
+SEO snippet (if page)
+
+Title: “Baby Sleep Cycle Calculator (0–36 Months)”
+
+Meta description: “Calculate optimal baby wake times based on full sleep cycles. Age-based nap suggestions for newborns, infants, and toddlers.”
+
+API Design (optional)
+Request (JSON)
+{
+  "age_value": 6,
+  "age_unit": "months",
+  "sleep_start": "2025-08-18T20:00:00",
+  "mode": "overnight",
+  "advanced_cycle_adjust": 0,
+  "time_zone": "Asia/Karachi",
+  "include_nap_suggestion": true
+}
+
+Response (JSON)
+{
+  "cycle_minutes": 50,
+  "wake_times": [
+    { "cycles": 6, "time": "2025-08-19T01:00:00+05:00", "tag": "overnight", "note": "Short overnight" },
+    { "cycles": 7, "time": "2025-08-19T01:50:00+05:00", "tag": "overnight", "note": "" },
+    { "cycles": 8, "time": "2025-08-19T02:40:00+05:00", "tag": "overnight", "note": "" },
+    { "cycles": 9, "time": "2025-08-19T03:30:00+05:00", "tag": "overnight", "note": "Common sweet spot" },
+    { "cycles": 10, "time": "2025-08-19T04:20:00+05:00", "tag": "overnight", "note": "" }
+  ],
+  "nap_suggestion": {
+    "total_naps": 2,
+    "wake_windows_minutes": [150, 180],
+    "naps": [
+      { "start_after_wake_minutes": 150, "length_minutes": 100 }, 
+      { "start_after_wake_minutes": 180, "length_minutes": 100 }
+    ]
+  },
+  "warnings": []
+}
+
+Pseudocode
+function cycle_length(age_months):
+  if age_months <= 2: return 40
+  if age_months <= 5: return 45
+  if age_months <= 8: return 50
+  if age_months <= 12: return 55
+  return 60
+
+function calculate(params):
+  age_m = to_months(params.age_value, params.age_unit)
+  age_m = clamp(age_m, 0, 36)
+  base = cycle_length(age_m)
+  cycle = clamp(base + params.advanced_cycle_adjust, 35, 70)
+
+  T0 = parse_local_time(params.sleep_start, params.time_zone)
+  Nrange = params.mode == "nap" ? [1..5] : [6..11]
+
+  results = []
+  for N in Nrange:
+    wake = T0 + N * cycle minutes
+    tag = classify(N, params.mode)
+    note = note_for(N, params.mode)
+    results.append({ cycles:N, time:wake, tag:tag, note:note })
+
+  nap_suggestion = params.include_nap_suggestion ? suggest_naps(age_m) : null
+
+  return { cycle_minutes: cycle, wake_times: results, nap_suggestion, warnings: [] }
+
+
+classify() and suggest_naps() implement the tables above.
+
+Copy Blocks (ready to paste)
+
+H1: Baby Sleep Cycle Calculator (0–36 Months)
+Lead: Enter your baby’s age and sleep start time. We’ll suggest wake-up times that land at the end of full sleep cycles, plus age-based nap tips.
+
+Helper: Babies often wake more easily between cycles. Use these times as guideposts — always adapt to your child’s cues.
+
+Disclaimer: This is informational and not medical advice. If you have concerns about your baby’s sleep, consult a pediatric professional.
+
+Test Cases (use to validate)
+
+Newborn nap
+
+age: 1 month, start: 11:00, mode: nap
+
+cycle = 40 → N=1..5 → 11:40, 12:20, 13:00, 13:40, 14:20
+
+6-month overnight
+
+age: 6 months, start: 20:00, mode: overnight
+
+cycle = 50 → N=6..10 → 01:00, 01:50, 02:40, 03:30, 04:20
+
+9 cycles (03:30) flagged “Common sweet spot”
+
+Toddler one-nap
+
+age: 20 months, nap start 13:00, mode: nap
+
+cycle = 60 → 14:00, 15:00, 16:00
+
+Recommend 2–3 cycles (15:00–16:00 best)
+
+Advanced adjust
+
+age: 9 months (base 55), adjust −5 → 50
+
+start 19:30 overnight → 6–10 cycles → 00:20, 01:10, 02:00, 02:50, 03:40
+
+Edge: time in past
+
+start today 08:00 (now 14:00) → warning: “Start time is earlier today.”
+
+Drop-in JavaScript (vanilla)
+<div id="baby-sleep-app">
+  <label>Age: <input id="ageValue" type="number" min="0" max="36" value="6"></label>
+  <select id="ageUnit"><option>months</option><option>years</option></select>
+  <label>Sleep start (HH:MM): <input id="sleepStart" type="time" value="20:00"></label>
+  <label>Mode:
+    <select id="mode"><option value="overnight">Overnight</option><option value="nap">Nap</option></select>
+  </label>
+  <label>Adjust cycle (±10 min): <input id="adjust" type="range" min="-10" max="10" value="0"></label>
+  <button id="calcBtn">Calculate</button>
+  <div id="results" aria-live="polite"></div>
+</div>
+
+<script>
+(function(){
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+
+  function toMonths(value, unit){
+    return unit === 'years' ? Math.round(value*12) : Math.round(value);
+  }
+  function cycleLength(ageM){
+    if (ageM <= 2) return 40;
+    if (ageM <= 5) return 45;
+    if (ageM <= 8) return 50;
+    if (ageM <= 12) return 55;
+    return 60;
+  }
+  function clamp(n, lo, hi){ return Math.max(lo, Math.min(hi, n)); }
+
+  function parseTodayTime(hhmm, zone){
+    const [h,m] = hhmm.split(':').map(Number);
+    const now = new Date();
+    // create today at hh:mm in local zone
+    const d = new Date(now.getFullYear(), now.getMonth(), now.getDate(), h, m, 0, 0);
+    return d; // browser Date uses local zone; display with toLocaleString
+  }
+
+  function addMinutes(date, mins){
+    return new Date(date.getTime() + mins*60000);
+  }
+
+  function classifyTag(N, mode, totalMins){
+    if (mode === 'nap'){
+      if (N === 1) return 'light';
+      if (N >= 2 && N <= 4) return 'good-nap';
+      return 'late';
+    } else {
+      if (N >= 6 && N <= 10) return 'overnight';
+      if (totalMins < 300) return 'early';
+      if (totalMins > 720) return 'late';
+      return 'overnight';
+    }
+  }
+
+  function calculate(params){
+    let ageM = clamp(toMonths(params.ageValue, params.ageUnit), 0, 36);
+    let base = cycleLength(ageM);
+    let cycle = clamp(base + (params.adjust||0), 35, 70);
+
+    const start = parseTodayTime(params.sleepStart, params.timeZone);
+    const now = new Date();
+    const warnings = [];
+    if (start.getTime() < now.getTime() - 6*3600e3){
+      warnings.push('Start time appears to be earlier today. Consider choosing tomorrow.');
+    }
+
+    const Nrange = params.mode === 'nap' ? [1,2,3,4,5] : [6,7,8,9,10,11];
+    const wake_times = Nrange.map(N=>{
+      const t = addMinutes(start, N*cycle);
+      const total = N*cycle;
+      const tag = classifyTag(N, params.mode, total);
+      const note = (params.mode==='overnight' && N===9) ? 'Common sweet spot' :
+                   (params.mode==='nap' && (N===2 || N===3)) ? 'Solid nap length' : '';
+      return {
+        cycles: N,
+        time: t.toISOString(),
+        display: t.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}),
+        tag, note
+      };
+    });
+
+    return { cycle_minutes: cycle, wake_times, warnings };
+  }
+
+  document.getElementById('calcBtn').addEventListener('click', ()=>{
+    const params = {
+      ageValue: parseFloat(document.getElementById('ageValue').value || '0'),
+      ageUnit: document.getElementById('ageUnit').value,
+      sleepStart: document.getElementById('sleepStart').value,
+      mode: document.getElementById('mode').value,
+      adjust: parseInt(document.getElementById('adjust').value, 10),
+      timeZone: tz
+    };
+    const res = calculate(params);
+    const container = document.getElementById('results');
+    container.innerHTML = `
+      <p><strong>Estimated cycle:</strong> ${res.cycle_minutes} min</p>
+      ${res.warnings.map(w=>`<p role="alert">${w}</p>`).join('')}
+      <div>${res.wake_times.map(w=>`
+        <div style="margin:.4rem 0;padding:.5rem;border:1px solid #ddd;border-radius:.6rem">
+          <div><strong>${w.cycles} ${w.cycles===1?'cycle':'cycles'}</strong> → <strong>${w.display}</strong> <em>(${w.tag})</em></div>
+          ${w.note ? `<div style="font-size:.9em;opacity:.8">${w.note}</div>`:''}
+        </div>
+      `).join('')}</div>
+    `;
+  });
+})();
+</script>
+
+Analytics & Quality
+
+Log anonymized: age band, mode, chosen wake option, adjust value, session locale.
+
+A/B: show 5 vs 7 wake options; icon vs text tags.
+
+Error rate: time parsing failures < 0.5%.
+
+Safety & Messaging
+
+Always show a non-alarmist note: “All babies vary; use this as a guide. If you’re worried about sleep or feeding, talk to your pediatrician.”
