@@ -126,6 +126,7 @@ export default function SleepCalculator() {
           period={period}
           onTimeChange={handleTimeChange}
           onCalculateBedtime={handleCalculateBedtime}
+          onCalculateWakeup={handleCalculateWakeup}
           onSleepNow={handleSleepNow}
         />
 

@@ -5,6 +5,7 @@ import { Moon, ArrowRight, Sun, Bed } from 'lucide-react';
 
 interface UltraSimpleHomepageProps {
   onCalculateBedtime: () => void;
+  onCalculateWakeup: () => void;
   onSleepNow: () => void;
   onTimeChange: (hour: string, minute: string, period: string) => void;
   hour: string;
@@ -13,7 +14,8 @@ interface UltraSimpleHomepageProps {
 }
 
 export function UltraSimpleHomepage({ 
-  onCalculateBedtime, 
+  onCalculateBedtime,
+  onCalculateWakeup, 
   onSleepNow, 
   onTimeChange,
   hour,
@@ -189,6 +191,7 @@ export function UltraSimpleHomepage({
             </div>
 
             <Button
+              onClick={onCalculateWakeup}
               className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 font-semibold rounded-lg transition-colors"
               data-testid="button-calculate-wakeup"
             >
