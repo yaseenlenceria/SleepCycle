@@ -112,9 +112,7 @@ export function NewbornCalculator({
                   className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-400 text-white font-semibold py-4 px-6 rounded-xl transition-colors text-base lg:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
                   disabled={isCalculating !== ''}
                   data-testid="button-calculate-bedtime"
-                >
-                  🕐 Find Baby's Bedtime
-                </Button>
+                >Find Baby's Bedtime</Button>
               )}
             </div>
           </CardContent>
