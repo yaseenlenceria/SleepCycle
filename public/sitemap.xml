@@ -248,6 +248,18 @@
     </image:image>
   </url>
 
+  <!-- Blog Posts - Shift Work -->
+  <url>
+    <loc>https://sleepcycle.io/blog/night-shift-sleep-cycle</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://sleepcycle.io/blog-images/night-shift-sleep.svg</image:loc>
+      <image:title>Best Sleep Cycle for Night Shift Workers</image:title>
+    </image:image>
+  </url>
+
   <!-- Blog Posts - Company -->
   <url>
     <loc>https://sleepcycle.io/blog/sleepcycle-worldwide-launch</loc>

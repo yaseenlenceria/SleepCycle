@@ -41,6 +41,7 @@ import { BlogPostLaSleepDoctors } from '@/pages/blog-post-la-sleep-doctors';
 import { BlogPostFullSleepCycle } from '@/pages/blog-post-full-sleep-cycle';
 import { BlogPostUbermanSleepCycle } from '@/pages/blog-post-uberman-sleep-cycle';
 import { BlogPostBestSleepApps } from '@/pages/blog-post-best-sleep-apps';
+import { BlogPostNightShiftSleep } from '@/pages/blog-post-night-shift-sleep';
 
 function Router() {
   return (
@@ -82,6 +83,7 @@ function Router() {
       <Route path="/blog/full-sleep-cycle-length" component={BlogPostFullSleepCycle} />
       <Route path="/blog/uberman-sleep-cycle" component={BlogPostUbermanSleepCycle} />
       <Route path="/blog/best-sleep-apps-2025" component={BlogPostBestSleepApps} />
+      <Route path="/blog/night-shift-sleep-cycle" component={BlogPostNightShiftSleep} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>

@@ -127,6 +127,15 @@ function BlogContent() {
       readTime: '11 min read',
       category: 'App Reviews',
       image: '/blog-images/best-sleep-apps.svg'
+    },
+    {
+      id: 'night-shift-sleep-cycle',
+      title: 'Best Sleep Cycle for Night Shift Workers',
+      excerpt: 'Working night shifts can completely disrupt your body\'s natural circadian rhythm. Learn expert strategies like anchor sleep, split cycles, and 90-minute rules to reduce fatigue and health risks.',
+      date: 'January 18, 2025',
+      readTime: '12 min read',
+      category: 'Shift Work Sleep',
+      image: '/blog-images/night-shift-sleep.svg'
     }
   ];
 
