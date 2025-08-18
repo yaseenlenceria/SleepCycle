@@ -43,15 +43,15 @@ export function NewbornCalculator({
   const periods = ['AM', 'PM'];
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-8">
+    <div className="w-full px-4 space-y-6">
       {/* Time Selector */}
-      <div className="text-center mb-10">
-        <div className="bg-white rounded-2xl shadow-lg border-2 border-pink-200 p-6 inline-block">
-          <div className="flex justify-center items-center gap-3 md:gap-4">
+      <div className="text-center">
+        <div className="bg-white rounded-xl shadow-md border-2 border-pink-200 p-4 sm:p-6 inline-block max-w-full">
+          <div className="flex justify-center items-center gap-2 sm:gap-3">
             <select
               value={hour}
               onChange={(e) => onTimeChange(e.target.value, minute, period)}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold border-2 border-pink-300 rounded-xl px-4 py-3 bg-white focus:border-pink-500 focus:outline-none min-w-[80px] text-center"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold border-2 border-pink-300 rounded-lg px-2 sm:px-3 py-2 sm:py-3 bg-white focus:border-pink-500 focus:outline-none w-16 sm:w-20 text-center"
               data-testid="hour-selector"
             >
               {hours.map(h => (
@@ -59,12 +59,12 @@ export function NewbornCalculator({
               ))}
             </select>
             
-            <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-600">:</span>
+            <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-600">:</span>
             
             <select
               value={minute}
               onChange={(e) => onTimeChange(hour, e.target.value, period)}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold border-2 border-pink-300 rounded-xl px-4 py-3 bg-white focus:border-pink-500 focus:outline-none min-w-[80px] text-center"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold border-2 border-pink-300 rounded-lg px-2 sm:px-3 py-2 sm:py-3 bg-white focus:border-pink-500 focus:outline-none w-16 sm:w-20 text-center"
               data-testid="minute-selector"
             >
               {minutes.map(m => (
@@ -75,7 +75,7 @@ export function NewbornCalculator({
             <select
               value={period}
               onChange={(e) => onTimeChange(hour, minute, e.target.value)}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold border-2 border-pink-300 rounded-xl px-4 py-3 bg-white focus:border-pink-500 focus:outline-none min-w-[80px] text-center"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold border-2 border-pink-300 rounded-lg px-2 sm:px-3 py-2 sm:py-3 bg-white focus:border-pink-500 focus:outline-none w-16 sm:w-20 text-center"
               data-testid="period-selector"
             >
               {periods.map(p => (
