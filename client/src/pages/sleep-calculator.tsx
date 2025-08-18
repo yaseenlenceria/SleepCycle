@@ -142,95 +142,95 @@ export default function SleepCalculator() {
           onCalculateBedtime={handleCalculateBedtime}
           onCalculateWakeup={handleCalculateWakeup}
           onSleepNow={handleSleepNow}
+          showBedtimeResults={showBedtimeResults}
+          showWakeupResults={showWakeupResults}
+          showSleepNowResults={showSleepNowResults}
+          bedtimeResultsComponent={
+            showBedtimeResults ? (
+              <div>
+                <SimpleSleepResults
+                  times={bedtimes}
+                  type="bedtime"
+                  selectedTime={selectedTimeString}
+                  selectedSleepDuration={selectedSleepDuration}
+                  isLoading={isCalculating}
+                  userAge={userProfile?.age}
+                  userSex={userProfile?.sex}
+                  onSleepDurationChange={(duration) => {
+                    setSelectedSleepDuration(duration);
+                    handleCalculateBedtime();
+                  }}
+                />
+                <div className="mt-4 text-center">
+                  <Button
+                    onClick={() => setShowBedtimeResults(false)}
+                    variant="outline"
+                    size="sm"
+                    className="text-gray-600"
+                  >
+                    Hide Results
+                  </Button>
+                </div>
+              </div>
+            ) : undefined
+          }
+          wakeupResultsComponent={
+            showWakeupResults ? (
+              <div>
+                <SimpleSleepResults
+                  times={wakeupTimes}
+                  type="wakeup"
+                  selectedTime={selectedTimeString}
+                  selectedSleepDuration={selectedSleepDuration}
+                  isLoading={isCalculating}
+                  userAge={userProfile?.age}
+                  userSex={userProfile?.sex}
+                  onSleepDurationChange={(duration) => {
+                    setSelectedSleepDuration(duration);
+                    if (selectedTimeString) {
+                      handleCalculateWakeup(selectedTimeString);
+                    }
+                  }}
+                />
+                <div className="mt-4 text-center">
+                  <Button
+                    onClick={() => setShowWakeupResults(false)}
+                    variant="outline"
+                    size="sm"
+                    className="text-gray-600"
+                  >
+                    Hide Results
+                  </Button>
+                </div>
+              </div>
+            ) : undefined
+          }
+          sleepNowResultsComponent={
+            showSleepNowResults ? (
+              <div>
+                <SimpleSleepResults
+                  times={sleepNowTimes}
+                  type="sleepNow"
+                  selectedTime={currentTime}
+                  selectedSleepDuration={selectedSleepDuration}
+                  isLoading={isCalculating}
+                  userAge={userProfile?.age}
+                  userSex={userProfile?.sex}
+                />
+                <div className="mt-4 text-center">
+                  <Button
+                    onClick={() => setShowSleepNowResults(false)}
+                    variant="outline"
+                    size="sm"
+                    className="text-gray-600"
+                  >
+                    Hide Results
+                  </Button>
+                </div>
+              </div>
+            ) : undefined
+          }
         />
-
-        {/* Expandable Results - Show directly on home page */}
-        <div className="max-w-sm mx-auto sm:max-w-md mt-4">
-          {showBedtimeResults && (
-            <div className="animate-in slide-in-from-top-5 duration-500">
-              <SimpleSleepResults
-                times={bedtimes}
-                type="bedtime"
-                selectedTime={selectedTimeString}
-                selectedSleepDuration={selectedSleepDuration}
-                isLoading={isCalculating}
-                userAge={userProfile?.age}
-                userSex={userProfile?.sex}
-                onSleepDurationChange={(duration) => {
-                  setSelectedSleepDuration(duration);
-                  handleCalculateBedtime();
-                }}
-              />
-              
-              <div className="mt-4 text-center">
-                <Button
-                  onClick={() => setShowBedtimeResults(false)}
-                  variant="outline"
-                  size="sm"
-                  className="text-gray-600"
-                >
-                  Hide Results
-                </Button>
-              </div>
-            </div>
-          )}
-          
-          {showWakeupResults && (
-            <div className="animate-in slide-in-from-top-5 duration-500">
-              <SimpleSleepResults
-                times={wakeupTimes}
-                type="wakeup"
-                selectedTime={selectedTimeString}
-                selectedSleepDuration={selectedSleepDuration}
-                isLoading={isCalculating}
-                userAge={userProfile?.age}
-                userSex={userProfile?.sex}
-                onSleepDurationChange={(duration) => {
-                  setSelectedSleepDuration(duration);
-                  if (selectedTimeString) {
-                    handleCalculateWakeup(selectedTimeString);
-                  }
-                }}
-              />
-              
-              <div className="mt-4 text-center">
-                <Button
-                  onClick={() => setShowWakeupResults(false)}
-                  variant="outline"
-                  size="sm"
-                  className="text-gray-600"
-                >
-                  Hide Results
-                </Button>
-              </div>
-            </div>
-          )}
-          
-          {showSleepNowResults && (
-            <div className="animate-in slide-in-from-top-5 duration-500">
-              <SimpleSleepResults
-                times={sleepNowTimes}
-                type="sleepNow"
-                selectedTime={currentTime}
-                selectedSleepDuration={selectedSleepDuration}
-                isLoading={isCalculating}
-                userAge={userProfile?.age}
-                userSex={userProfile?.sex}
-              />
-              
-              <div className="mt-4 text-center">
-                <Button
-                  onClick={() => setShowSleepNowResults(false)}
-                  variant="outline"
-                  size="sm"
-                  className="text-gray-600"
-                >
-                  Hide Results
-                </Button>
-              </div>
-            </div>
-          )}
-        </div>
 
         {/* Hidden Old Bedtime Calculator - Keep for other functionality */}
         {false && activeTab === 'bedtime' && (

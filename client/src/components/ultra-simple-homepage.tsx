@@ -11,6 +11,13 @@ interface UltraSimpleHomepageProps {
   hour: string;
   minute: string;
   period: string;
+  // Results display props
+  showBedtimeResults: boolean;
+  showWakeupResults: boolean;
+  showSleepNowResults: boolean;
+  bedtimeResultsComponent?: React.ReactNode;
+  wakeupResultsComponent?: React.ReactNode;
+  sleepNowResultsComponent?: React.ReactNode;
 }
 
 export function UltraSimpleHomepage({ 
@@ -20,7 +27,13 @@ export function UltraSimpleHomepage({
   onTimeChange,
   hour,
   minute,
-  period 
+  period,
+  showBedtimeResults,
+  showWakeupResults,
+  showSleepNowResults,
+  bedtimeResultsComponent,
+  wakeupResultsComponent,
+  sleepNowResultsComponent
 }: UltraSimpleHomepageProps) {
   const [wakeHour, setWakeHour] = useState(hour);
   const [wakeMinute, setWakeMinute] = useState(minute);
@@ -125,6 +138,13 @@ export function UltraSimpleHomepage({
           </CardContent>
         </Card>
 
+        {/* Expandable Results for Bedtime */}
+        {showBedtimeResults && (
+          <div className="mt-3 animate-in slide-in-from-top-5 duration-500">
+            {bedtimeResultsComponent}
+          </div>
+        )}
+
         {/* Bed Time Card */}
         <Card className="bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-200 shadow-lg hover:shadow-xl transition-all">
           <CardContent className="p-4 sm:p-6">
@@ -206,6 +226,13 @@ export function UltraSimpleHomepage({
           </CardContent>
         </Card>
 
+        {/* Expandable Results for Wake Up Time */}
+        {showWakeupResults && (
+          <div className="mt-3 animate-in slide-in-from-top-5 duration-500">
+            {wakeupResultsComponent}
+          </div>
+        )}
+
         {/* Sleep Now Card */}
         <Card className="bg-white shadow-md hover:shadow-lg transition-shadow">
           <CardContent className="p-4 sm:p-6">
@@ -253,6 +280,13 @@ export function UltraSimpleHomepage({
             </Button>
           </CardContent>
         </Card>
+
+        {/* Expandable Results for Sleep Now */}
+        {showSleepNowResults && (
+          <div className="mt-3 animate-in slide-in-from-top-5 duration-500">
+            {sleepNowResultsComponent}
+          </div>
+        )}
 
         {/* How Does It Work Section */}
         <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
