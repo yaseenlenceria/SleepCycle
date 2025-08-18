@@ -99,12 +99,12 @@ export default function SleepCalculator() {
     }, 1500);
   };
 
-  const handleSleepNow = () => {
+  const handleSleepNow = (sleepDuration?: number) => {
     setIsCalculating(true);
     setShowSleepNowResults(false);
     
     setTimeout(() => {
-      const {times, currentTime: liveTime} = calculateWakeUpTimesFromNow();
+      const {times, currentTime: liveTime} = calculateWakeUpTimesFromNow(sleepDuration);
       setSleepNowTimes(times);
       setCurrentTime(liveTime); // Update with actual current time
       setIsCalculating(false);

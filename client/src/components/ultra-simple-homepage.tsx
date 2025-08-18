@@ -6,7 +6,7 @@ import { Moon, ArrowRight, Sun, Bed } from 'lucide-react';
 interface UltraSimpleHomepageProps {
   onCalculateBedtime: () => void;
   onCalculateWakeup: () => void;
-  onSleepNow: () => void;
+  onSleepNow: (sleepDuration?: number) => void;
   onTimeChange: (hour: string, minute: string, period: string) => void;
   hour: string;
   minute: string;
@@ -29,6 +29,8 @@ export function UltraSimpleHomepage({
   const [bedHour, setBedHour] = useState('11');
   const [bedMinute, setBedMinute] = useState('00');
   const [bedPeriod, setBedPeriod] = useState('PM');
+  
+  const [selectedSleepDuration, setSelectedSleepDuration] = useState(8);
 
   // Generate hours and minutes
   const hours = Array.from({ length: 12 }, (_, i) => String(i === 0 ? 12 : i).padStart(2, '0'));
@@ -222,27 +224,28 @@ export function UltraSimpleHomepage({
             <div className="mb-3 sm:mb-4">
               <p className="text-xs text-gray-500 mb-2">How many hours do you want to sleep?</p>
               <div className="grid grid-cols-4 gap-1 sm:gap-2">
-                <button className="p-2 text-xs sm:text-sm bg-gray-100 hover:bg-green-100 rounded border text-gray-700 hover:text-green-700 transition-colors">
-                  6h
-                </button>
-                <button className="p-2 text-xs sm:text-sm bg-gray-100 hover:bg-green-100 rounded border text-gray-700 hover:text-green-700 transition-colors">
-                  7h
-                </button>
-                <button className="p-2 text-xs sm:text-sm bg-green-100 border-green-300 rounded border text-green-700 font-medium">
-                  8h
-                </button>
-                <button className="p-2 text-xs sm:text-sm bg-gray-100 hover:bg-green-100 rounded border text-gray-700 hover:text-green-700 transition-colors">
-                  9h
-                </button>
+                {[6, 7, 8, 9].map(hours => (
+                  <button 
+                    key={hours}
+                    onClick={() => setSelectedSleepDuration(hours)}
+                    className={`p-2 text-xs sm:text-sm rounded border transition-colors ${
+                      selectedSleepDuration === hours 
+                        ? 'bg-green-100 border-green-300 text-green-700 font-medium'
+                        : 'bg-gray-100 hover:bg-green-100 border-gray-300 text-gray-700 hover:text-green-700'
+                    }`}
+                  >
+                    {hours}h
+                  </button>
+                ))}
               </div>
             </div>
 
             <Button
-              onClick={onSleepNow}
+              onClick={() => onSleepNow(selectedSleepDuration)}
               className="w-full bg-green-500 hover:bg-green-600 text-white py-2 sm:py-3 text-sm sm:text-base font-semibold rounded-lg transition-colors"
               data-testid="button-sleep-now"
             >
-              Sleep Now
+              Sleep Now ({selectedSleepDuration}h)
               <ArrowRight className="ml-1 sm:ml-2" size={14} />
             </Button>
           </CardContent>

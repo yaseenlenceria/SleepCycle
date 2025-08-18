@@ -99,7 +99,7 @@ export function calculateWakeUpTimes(): SleepTime[] {
   return wakeUpTimes;
 }
 
-export function calculateWakeUpTimesFromNow(): {times: SleepTime[], currentTime: string} {
+export function calculateWakeUpTimesFromNow(targetSleepHours?: number): {times: SleepTime[], currentTime: string} {
   const now = new Date();
   const currentTimeString = formatTime(now);
   
@@ -108,12 +108,13 @@ export function calculateWakeUpTimesFromNow(): {times: SleepTime[], currentTime:
   
   const wakeUpTimes: SleepTime[] = [];
 
-  // Calculate wake-up times for 1-6 sleep cycles
-  for (let cycles = 1; cycles <= 6; cycles++) {
-    // Each cycle is 90 minutes
-    const sleepMinutes = cycles * 90;
-    
+  if (targetSleepHours) {
+    // Calculate exact wake-up time for specified sleep duration
+    const sleepMinutes = targetSleepHours * 60;
     const wakeUpTime = new Date(fallAsleepTime.getTime() + (sleepMinutes * 60 * 1000));
+    
+    // Calculate how many cycles this represents
+    const cycles = Math.round(targetSleepHours / 1.5);
     const duration = formatDuration(sleepMinutes);
     const quality = getSleepQuality(cycles);
     
@@ -123,6 +124,44 @@ export function calculateWakeUpTimesFromNow(): {times: SleepTime[], currentTime:
       duration: duration,
       quality: quality
     });
+    
+    // Add nearby cycle-based options
+    for (let cycleDiff = -1; cycleDiff <= 1; cycleDiff++) {
+      if (cycleDiff === 0) continue; // Skip the exact target as it's already added
+      
+      const adjustedCycles = Math.max(1, cycles + cycleDiff);
+      const adjustedSleepMinutes = adjustedCycles * 90;
+      const adjustedWakeUpTime = new Date(fallAsleepTime.getTime() + (adjustedSleepMinutes * 60 * 1000));
+      const adjustedDuration = formatDuration(adjustedSleepMinutes);
+      const adjustedQuality = getSleepQuality(adjustedCycles);
+      
+      wakeUpTimes.push({
+        time: formatTime(adjustedWakeUpTime),
+        cycles: adjustedCycles,
+        duration: adjustedDuration,
+        quality: adjustedQuality
+      });
+    }
+    
+    // Sort times by cycles
+    wakeUpTimes.sort((a, b) => a.cycles - b.cycles);
+  } else {
+    // Calculate wake-up times for 1-6 sleep cycles (original behavior)
+    for (let cycles = 1; cycles <= 6; cycles++) {
+      // Each cycle is 90 minutes
+      const sleepMinutes = cycles * 90;
+      
+      const wakeUpTime = new Date(fallAsleepTime.getTime() + (sleepMinutes * 60 * 1000));
+      const duration = formatDuration(sleepMinutes);
+      const quality = getSleepQuality(cycles);
+      
+      wakeUpTimes.push({
+        time: formatTime(wakeUpTime),
+        cycles: cycles,
+        duration: duration,
+        quality: quality
+      });
+    }
   }
 
   return {

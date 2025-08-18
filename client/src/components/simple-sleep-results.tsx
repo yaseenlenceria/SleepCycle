@@ -134,7 +134,7 @@ export function SimpleSleepResults({
                     </div>
                     {isRecommended && (
                       <Badge className="bg-green-100 text-green-700 text-xs">
-                        {index === 0 ? '⭐ Best' : '👍 Good'}
+                        {index === 0 ? 'Best' : 'Good'}
                       </Badge>
                     )}
                   </div>
