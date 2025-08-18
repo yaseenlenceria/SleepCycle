@@ -135,6 +135,17 @@
 
   <!-- Blog Posts - Sleep Science (High Priority) -->
   <url>
+    <loc>https://sleepcycle.io/blog/nap-calculator-science</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://sleepcycle.io/blog-images/nap-calculator-science.svg</image:loc>
+      <image:title>Nap Calculator: The Science of the Perfect Nap</image:title>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://sleepcycle.io/blog/sleep-cycles-by-age</loc>
     <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>

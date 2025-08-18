@@ -69,6 +69,7 @@ export default function SitemapPage() {
   ];
 
   const blogPosts = [
+    { title: 'Nap Calculator: The Science of the Perfect Nap', path: '/blog/nap-calculator-science', category: 'Sleep Optimization' },
     { title: 'Sleep Cycles by Age: How Much Sleep Do You Really Need?', path: '/blog/sleep-cycles-by-age', category: 'Sleep Science' },
     { title: 'The Best Time to Go to Sleep and Wake Up (According to Science)', path: '/blog/best-time-sleep-wake-up', category: 'Sleep Optimization' },
     { title: 'How Many Sleep Cycles Do You Need Per Night?', path: '/blog/how-many-sleep-cycles-per-night', category: 'Sleep Science' },

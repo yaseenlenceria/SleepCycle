@@ -46,6 +46,7 @@ import { BlogPost2YearOldSleepCycle } from '@/pages/blog-post-2-year-old-sleep-c
 import { BlogPostHowManySleepCycles } from '@/pages/blog-post-how-many-sleep-cycles';
 import { BlogPostBestTimeSleepWakeUp } from '@/pages/blog-post-best-time-sleep-wake-up';
 import { BlogPostSleepCyclesByAge } from '@/pages/blog-post-sleep-cycles-by-age';
+import { BlogPostNapCalculatorScience } from '@/pages/blog-post-nap-calculator-science';
 
 function Router() {
   return (
@@ -92,6 +93,7 @@ function Router() {
       <Route path="/blog/how-many-sleep-cycles-per-night" component={BlogPostHowManySleepCycles} />
       <Route path="/blog/best-time-sleep-wake-up" component={BlogPostBestTimeSleepWakeUp} />
       <Route path="/blog/sleep-cycles-by-age" component={BlogPostSleepCyclesByAge} />
+      <Route path="/blog/nap-calculator-science" component={BlogPostNapCalculatorScience} />
       {/* Fallback to 404 */}
       <Route component={NotFoundPage} />
     </Switch>

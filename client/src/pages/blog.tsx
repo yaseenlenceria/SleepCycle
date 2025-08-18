@@ -30,6 +30,15 @@ export function BlogPage() {
 function BlogContent() {
   const blogPosts = [
     {
+      id: 'nap-calculator-science',
+      title: 'Nap Calculator: The Science of the Perfect Nap',
+      excerpt: 'Master the science of perfect napping: 20-minute power naps for energy, 90-minute cycle naps for recovery. Learn optimal nap timing for work, study, and athletic performance with proven strategies.',
+      date: 'January 18, 2025',
+      readTime: '9 min read',
+      category: 'Sleep Optimization',
+      image: '/blog-images/nap-calculator-science.svg'
+    },
+    {
       id: 'sleep-cycles-by-age',
       title: 'Sleep Cycles by Age: How Much Sleep Do You Really Need?',
       excerpt: 'Complete CDC and NHS guide to sleep needs from newborns (14-17 hours) to seniors (7-8 hours). Understand why sleep requirements change with age and find your optimal schedule.',
