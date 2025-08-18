@@ -30,6 +30,15 @@ export function BlogPage() {
 function BlogContent() {
   const blogPosts = [
     {
+      id: 'sleep-cycles-by-age',
+      title: 'Sleep Cycles by Age: How Much Sleep Do You Really Need?',
+      excerpt: 'Complete CDC and NHS guide to sleep needs from newborns (14-17 hours) to seniors (7-8 hours). Understand why sleep requirements change with age and find your optimal schedule.',
+      date: 'January 18, 2025',
+      readTime: '10 min read',
+      category: 'Sleep Science',
+      image: '/blog-images/sleep-cycles-by-age.svg'
+    },
+    {
       id: 'best-time-sleep-wake-up',
       title: 'The Best Time to Go to Sleep and Wake Up (According to Science)',
       excerpt: 'Discover scientifically proven bedtimes for 6 AM, 7 AM, and 8 AM wake times. Learn why 90-minute sleep cycles matter and how to wake up refreshed every morning using optimal sleep timing.',

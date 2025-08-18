@@ -135,6 +135,17 @@
 
   <!-- Blog Posts - Sleep Science (High Priority) -->
   <url>
+    <loc>https://sleepcycle.io/blog/sleep-cycles-by-age</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://sleepcycle.io/blog-images/sleep-cycles-by-age.svg</image:loc>
+      <image:title>Sleep Cycles by Age: How Much Sleep Do You Really Need</image:title>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://sleepcycle.io/blog/best-time-sleep-wake-up</loc>
     <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>

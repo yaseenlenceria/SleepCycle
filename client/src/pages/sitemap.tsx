@@ -69,6 +69,7 @@ export default function SitemapPage() {
   ];
 
   const blogPosts = [
+    { title: 'Sleep Cycles by Age: How Much Sleep Do You Really Need?', path: '/blog/sleep-cycles-by-age', category: 'Sleep Science' },
     { title: 'The Best Time to Go to Sleep and Wake Up (According to Science)', path: '/blog/best-time-sleep-wake-up', category: 'Sleep Optimization' },
     { title: 'How Many Sleep Cycles Do You Need Per Night?', path: '/blog/how-many-sleep-cycles-per-night', category: 'Sleep Science' },
     { title: 'How Long is One Sleep Cycle? A Complete Guide', path: '/blog/sleep-cycle-length', category: 'Sleep Science' },

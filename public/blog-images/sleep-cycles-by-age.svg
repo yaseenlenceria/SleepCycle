@@ -1,0 +1,241 @@
+<svg width="900" height="700" viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="babyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="childGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="teenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f87171;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="adultGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="seniorGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="700" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1f2937">
+    Sleep Requirements by Age Group
+  </text>
+  <text x="450" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">
+    CDC & NHS Recommended Sleep Hours and Cycles
+  </text>
+  
+  <!-- Age Group Bars -->
+  <g transform="translate(50, 110)">
+    
+    <!-- Newborns (0-3 months) -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="800" height="80" rx="10" fill="url(#babyGradient)" filter="url(#shadow)"/>
+      <text x="20" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+        Newborns (0-3 months)
+      </text>
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="14" fill="white">
+        14-17 hours • 8-9 cycles • Sleep spread across day & night
+      </text>
+      <text x="750" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">
+        14-17h
+      </text>
+      <text x="750" y="55" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">
+        per day
+      </text>
+    </g>
+    
+    <!-- Infants (4-12 months) -->
+    <g transform="translate(0, 90)">
+      <rect x="0" y="0" width="720" height="80" rx="10" fill="url(#childGradient)" filter="url(#shadow)"/>
+      <text x="20" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+        Infants (4-12 months)
+      </text>
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="14" fill="white">
+        12-16 hours • 7-8 cycles • Night sleep + daytime naps
+      </text>
+      <text x="670" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">
+        12-16h
+      </text>
+      <text x="670" y="55" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">
+        per day
+      </text>
+    </g>
+    
+    <!-- Toddlers (1-2 years) -->
+    <g transform="translate(0, 180)">
+      <rect x="0" y="0" width="640" height="80" rx="10" fill="#22c55e" filter="url(#shadow)"/>
+      <text x="20" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+        Toddlers (1-2 years)
+      </text>
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="14" fill="white">
+        11-14 hours • 6-7 cycles • Consistent bedtime routines
+      </text>
+      <text x="590" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">
+        11-14h
+      </text>
+      <text x="590" y="55" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">
+        per day
+      </text>
+    </g>
+    
+    <!-- Children (3-5 years) -->
+    <g transform="translate(0, 270)">
+      <rect x="0" y="0" width="580" height="80" rx="10" fill="#f59e0b" filter="url(#shadow)"/>
+      <text x="20" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+        Children (3-5 years)
+      </text>
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="14" fill="white">
+        10-13 hours • 6-7 cycles • Sleep consolidates at night
+      </text>
+      <text x="530" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">
+        10-13h
+      </text>
+      <text x="530" y="55" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">
+        per night
+      </text>
+    </g>
+    
+    <!-- School-age (6-12 years) -->
+    <g transform="translate(0, 360)">
+      <rect x="0" y="0" width="520" height="80" rx="10" fill="#eab308" filter="url(#shadow)"/>
+      <text x="20" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+        School-age (6-12 years)
+      </text>
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="14" fill="white">
+        9-12 hours • 5-6 cycles • Critical for learning & growth
+      </text>
+      <text x="470" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">
+        9-12h
+      </text>
+      <text x="470" y="55" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">
+        per night
+      </text>
+    </g>
+    
+    <!-- Teenagers (13-18 years) -->
+    <g transform="translate(0, 450)">
+      <rect x="0" y="0" width="460" height="80" rx="10" fill="url(#teenGradient)" filter="url(#shadow)"/>
+      <text x="20" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+        Teenagers (13-18 years)
+      </text>
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="14" fill="white">
+        8-10 hours • 5-6 cycles • Natural "night owl" tendency
+      </text>
+      <text x="410" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">
+        8-10h
+      </text>
+      <text x="410" y="55" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">
+        per night
+      </text>
+    </g>
+    
+    <!-- Adults (18-64 years) -->
+    <g transform="translate(0, 540)">
+      <rect x="0" y="0" width="420" height="80" rx="10" fill="url(#adultGradient)" filter="url(#shadow)"/>
+      <text x="20" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+        Adults (18-64 years)
+      </text>
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="14" fill="white">
+        7-9 hours • 4-6 cycles • Most feel best with 7.5h (5 cycles)
+      </text>
+      <text x="370" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">
+        7-9h
+      </text>
+      <text x="370" y="55" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">
+        per night
+      </text>
+    </g>
+    
+    <!-- Older Adults (65+ years) -->
+    <g transform="translate(0, 630)">
+      <rect x="0" y="0" width="380" height="80" rx="10" fill="#6b7280" filter="url(#shadow)"/>
+      <text x="20" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+        Older Adults (65+ years)
+      </text>
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="14" fill="white">
+        7-8 hours • 4-5 cycles • Lighter sleep, earlier wake times
+      </text>
+      <text x="330" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">
+        7-8h
+      </text>
+      <text x="330" y="55" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">
+        per night
+      </text>
+    </g>
+  </g>
+  
+  <!-- Sleep Cycle Visualization -->
+  <g transform="translate(620, 200)">
+    <rect x="0" y="0" width="250" height="120" rx="10" fill="white" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)"/>
+    <text x="125" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#374151">
+      90-Minute Sleep Cycle
+    </text>
+    
+    <!-- Cycle stages -->
+    <rect x="20" y="40" width="50" height="25" rx="3" fill="#93c5fd"/>
+    <text x="45" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1e40af">Light</text>
+    <text x="45" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">20min</text>
+    
+    <rect x="75" y="40" width="50" height="25" rx="3" fill="#4ade80"/>
+    <text x="100" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#15803d">Deep</text>
+    <text x="100" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">50min</text>
+    
+    <rect x="130" y="40" width="50" height="25" rx="3" fill="#fbbf24"/>
+    <text x="155" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#92400e">REM</text>
+    <text x="155" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#6b7280">20min</text>
+    
+    <text x="125" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">
+      = 1 Complete Cycle
+    </text>
+  </g>
+  
+  <!-- Key Insights -->
+  <g transform="translate(620, 350)">
+    <rect x="0" y="0" width="250" height="200" rx="10" fill="white" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)"/>
+    <text x="125" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#374151">
+      Key Insights
+    </text>
+    
+    <text x="20" y="50" font-family="Arial, sans-serif" font-size="12" fill="#374151">
+      • Sleep needs decrease with age
+    </text>
+    <text x="20" y="70" font-family="Arial, sans-serif" font-size="12" fill="#374151">
+      • Babies need most REM sleep
+    </text>
+    <text x="20" y="90" font-family="Arial, sans-serif" font-size="12" fill="#374151">
+      • Teens have delayed circadian
+    </text>
+    <text x="20" y="105" font-family="Arial, sans-serif" font-size="12" fill="#374151">
+      rhythm (natural night owls)
+    </text>
+    <text x="20" y="125" font-family="Arial, sans-serif" font-size="12" fill="#374151">
+      • Adults optimal: 7.5h (5 cycles)
+    </text>
+    <text x="20" y="145" font-family="Arial, sans-serif" font-size="12" fill="#374151">
+      • Seniors have lighter sleep
+    </text>
+    <text x="20" y="165" font-family="Arial, sans-serif" font-size="12" fill="#374151">
+      • Quality matters as much as
+    </text>
+    <text x="20" y="180" font-family="Arial, sans-serif" font-size="12" fill="#374151">
+      quantity in all age groups
+    </text>
+  </g>
+  
+  <!-- Sources -->
+  <text x="450" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af">
+    Sources: CDC, NHS, American Academy of Sleep Medicine | SleepCycle.io
+  </text>
+</svg>
