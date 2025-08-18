@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, Heart, Zap, ChevronDown, ChevronUp, CheckCircle, AlertTriangle, Brain, Eye, EyeOff } from 'lucide-react';
+import { Clock, Heart, Zap, ChevronDown, ChevronUp, CheckCircle, AlertTriangle, Brain } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { EnhancedLoadingAnimation } from './enhanced-loading-animation';
 import { SleepTime } from '@/lib/sleep-calculations';
-import { SleepCycleVisualization } from './sleep-cycle-visualization';
-import { EnhancedSleepCycleAnimation } from './enhanced-sleep-cycle-animation';
+
 import { 
   assessSleepQuality, 
   getPersonalizedHealthRecommendations, 
@@ -41,7 +40,7 @@ export function SimpleSleepResults({
   userSex = 'male'
 }: SimpleSleepResultsProps) {
   const [showHealthTips, setShowHealthTips] = useState(false);
-  const [showVisualization, setShowVisualization] = useState(false);
+
   const [sleepAssessment, setSleepAssessment] = useState<SleepAssessment | null>(null);
 
   useEffect(() => {
@@ -170,15 +169,8 @@ export function SimpleSleepResults({
         </CardContent>
       </Card>
 
-      {/* Enhanced Sleep Cycle Visualization */}
-      {showVisualization && times.length > 0 && (
-        <EnhancedSleepCycleAnimation
-          bedtime={type === 'bedtime' ? times[0]?.time || selectedTime || '' : selectedTime || ''}
-          wakeTime={type === 'bedtime' ? selectedTime || '' : times[0]?.time || ''}
-          cycles={times[0]?.cycles || Math.max(1, Math.min(6, type === 'bedtime' ? 6 : 4))}
-          isAnimating={showVisualization}
-        />
-      )}
+
+
 
       {/* Health Assessment */}
       {sleepAssessment && (
