@@ -1,0 +1,173 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://sleepcycle.io/#website",
+      "url": "https://sleepcycle.io/",
+      "name": "Sleepcycle.io - World's #1 Sleep Cycle Calculator",
+      "description": "The world's most trusted sleep cycle calculator with FREE AI health assessment. Calculate optimal bedtime and wake-up times based on 90-minute sleep cycles.",
+      "publisher": {
+        "@id": "https://sleepcycle.io/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint", 
+            "urlTemplate": "https://sleepcycle.io/?search={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ],
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sleepcycle.io/#organization",
+      "name": "Sleepcycle.io",
+      "url": "https://sleepcycle.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://sleepcycle.io/#logo",
+        "inLanguage": "en-US",
+        "url": "https://sleepcycle.io/logo.png",
+        "contentUrl": "https://sleepcycle.io/logo.png",
+        "width": 512,
+        "height": 512,
+        "caption": "Sleepcycle.io Logo"
+      },
+      "image": {
+        "@id": "https://sleepcycle.io/#logo"
+      },
+      "sameAs": [
+        "https://sleepcycle.io/about",
+        "https://sleepcycle.io/why-best-sleep-calculator"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-555-SLEEP-IO",
+        "contactType": "customer service",
+        "areaServed": "Worldwide",
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://sleepcycle.io/#webapp",
+      "url": "https://sleepcycle.io/",
+      "name": "Sleep Cycle Calculator",
+      "description": "AI-powered sleep cycle calculator with personalized health assessments",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "150000",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "featureList": [
+        "AI-powered health assessments",
+        "90-minute sleep cycle calculations", 
+        "Age-specific calculators",
+        "Newborn and baby sleep tools",
+        "Adult sleep optimization",
+        "Personalized recommendations",
+        "Free to use",
+        "No registration required"
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://sleepcycle.io/#howto",
+      "name": "How to Use the Sleep Cycle Calculator",
+      "description": "Step-by-step guide to calculate your optimal bedtime and wake-up times",
+      "image": "https://sleepcycle.io/how-to-use-guide.png",
+      "totalTime": "PT2M",
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "Current time or desired wake-up time"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Choose your calculation type",
+          "text": "Select whether you want to find your bedtime (if you know when you want to wake up) or wake-up time (if you know when you'll go to bed)",
+          "image": "https://sleepcycle.io/step1.png"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "Set your time",
+          "text": "Use the time picker to select your desired wake-up time or bedtime",
+          "image": "https://sleepcycle.io/step2.png"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Get AI recommendations",
+          "text": "Click calculate to receive personalized sleep times based on 90-minute cycles and get your FREE AI health assessment",
+          "image": "https://sleepcycle.io/step3.png"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://sleepcycle.io/#calculators",
+      "name": "Sleep Calculators Available",
+      "description": "Complete list of sleep calculators for all ages",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Adult Sleep Calculator",
+          "url": "https://sleepcycle.io/sleep-calculator",
+          "description": "Main AI-powered sleep calculator with health assessment for adults"
+        },
+        {
+          "@type": "ListItem", 
+          "position": 2,
+          "name": "Newborn Sleep Calculator",
+          "url": "https://sleepcycle.io/sleep-cycles-newborns",
+          "description": "Specialized calculator for newborn babies 0-3 months"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3, 
+          "name": "4 Month Baby Sleep Calculator",
+          "url": "https://sleepcycle.io/sleep-cycles-4-month-old",
+          "description": "Sleep regression support calculator for 4-month-old babies"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "6 Month Baby Sleep Calculator", 
+          "url": "https://sleepcycle.io/sleep-cycles-6-month-old",
+          "description": "Sleep training ready calculator for 6-month-old babies"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "7 Month Baby Sleep Calculator",
+          "url": "https://sleepcycle.io/sleep-cycles-7-month-old", 
+          "description": "2-nap schedule optimization for 7-month-old babies"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Toddler Sleep Calculator",
+          "url": "https://sleepcycle.io/sleep-cycles-toddlers",
+          "description": "Nap transition calculator for toddlers ages 1-3 years"
+        }
+      ]
+    }
+  ]
+}

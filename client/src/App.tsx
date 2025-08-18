@@ -23,6 +23,8 @@ import SleepCyclesNewborns from '@/pages/sleep-cycles-newborns';
 import SleepCycles6MonthOld from '@/pages/sleep-cycles-6-month-old';
 import SleepCycles7MonthOld from '@/pages/sleep-cycles-7-month-old';
 import SleepCycles2YearOlds from '@/pages/sleep-cycles-2-year-olds';
+import SitemapPage from '@/pages/sitemap';
+import WhyBestSleepCalculatorPage from '@/pages/why-best-sleep-calculator';
 
 function Router() {
   return (
@@ -45,6 +47,9 @@ function Router() {
       <Route path="/sleep-cycles-6-month-old" component={SleepCycles6MonthOld} />
       <Route path="/sleep-cycles-7-month-old" component={SleepCycles7MonthOld} />
       <Route path="/sleep-cycles-2-year-olds" component={SleepCycles2YearOlds} />
+      <Route path="/sitemap" component={SitemapPage} />
+      <Route path="/why-best-sleep-calculator" component={WhyBestSleepCalculatorPage} />
+      <Route path="/sleep-calculator" component={SleepCalculator} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>

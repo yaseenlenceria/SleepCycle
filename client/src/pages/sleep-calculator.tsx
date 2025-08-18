@@ -43,11 +43,11 @@ export default function SleepCalculator() {
   // Scroll to top on page load and set SEO meta
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Cycle — The World's Best Sleep App | Sleep Calculator: Ideal Bedtime & Wake Up Times";
+    document.title = "World's #1 Sleep Cycle Calculator with FREE AI Health Assessment | Sleepcycle.io";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Track and improve your sleep with Sleep Cycle. The app uses sound analysis, 4 billion sleep sessions, and 13 years of science to help millions sleep better. Find your ideal bedtime and wake up times.');
+      metaDescription.setAttribute('content', '★★★★★ World\'s #1 Sleep Cycle Calculator - Sleepcycle.io. FREE AI Health Assessment, 4+ billion sleep sessions analyzed. Best bedtime calculator trusted by millions. Fix your sleep cycle now!');
     }
   }, []);
 

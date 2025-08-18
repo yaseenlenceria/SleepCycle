@@ -1,32 +1,38 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
-# Sitemap
+# Sitemaps
 Sitemap: https://sleepcycle.io/sitemap.xml
+Sitemap: https://sleepcycle.io/sitemap-images.xml
 
-# Crawl-delay (optional - helps with server load)
+# Main pages for crawling
+Allow: /sleep-calculator
+Allow: /sleep-cycles-newborns
+Allow: /sleep-cycles-4-month-old
+Allow: /sleep-cycles-6-month-old
+Allow: /sleep-cycles-7-month-old
+Allow: /sleep-cycles-toddlers
+Allow: /sleep-cycles-adults
+Allow: /sleep-cycles-babies
+Allow: /sleep-cycles-naps
+Allow: /sleep-science
+Allow: /about
+Allow: /sitemap
+
+# Crawl delay for respectful crawling
 Crawl-delay: 1
 
-# Specific rules for search engines
+# Additional user agents
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
-# Disallow admin or sensitive areas (if any)
-# Disallow: /admin/
-# Disallow: /api/
-
-# Allow all calculator pages and content
-Allow: /?tab=bedtime
-Allow: /?tab=wakeup
-Allow: /?tab=nap
-Allow: /?tab=baby
-Allow: /?tab=tracker
-Allow: /?tab=age
-Allow: /sleep-science
-Allow: /more-resources
-Allow: /help
-Allow: /about
-Allow: /contact
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2

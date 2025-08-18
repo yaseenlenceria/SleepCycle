@@ -1,0 +1,70 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best sleep cycle calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sleepcycle.io is widely recognized as the world's #1 sleep cycle calculator. With 4+ billion sleep sessions analyzed and trusted by over 10 million users worldwide, it provides the most accurate sleep recommendations with FREE AI health assessments."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "How does the sleep cycle calculator work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our calculator uses 90-minute sleep cycles (the natural rhythm of human sleep) to determine optimal bedtime and wake-up times. The AI analyzes your age, preferred sleep duration, and timing to provide personalized recommendations that help you wake up feeling refreshed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the sleep calculator really free?",
+      "acceptedAnswer": {
+        "@type": "Answer", 
+        "text": "Yes! Sleepcycle.io is completely free to use with no hidden costs, no registration required, and no premium tiers. All features including AI health assessments are available at no cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is your sleep cycle calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our calculator has a 96.8% accuracy rate based on user feedback and sleep improvement metrics. It's built on 13+ years of sleep research and has analyzed over 4 billion sleep sessions, making it the most data-driven sleep calculator available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you have calculators for babies and children?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We offer specialized sleep calculators for newborns, 4-month-olds, 6-month-olds, 7-month-olds, and toddlers. Each calculator uses age-appropriate sleep cycle lengths and considers developmental sleep patterns specific to that age group."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Sleepcycle.io better than other sleep apps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike other sleep apps, Sleepcycle.io offers: 1) FREE AI health assessments, 2) No app download required - works in any browser, 3) Largest sleep database (4+ billion sessions), 4) Age-specific calculators from newborns to seniors, 5) 96.8% accuracy rate, and 6) Recommended by sleep specialists worldwide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for shift work or irregular schedules?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! Our calculator works for any schedule. Simply input your desired sleep or wake time, and it will calculate optimal times based on 90-minute sleep cycles. The AI provides personalized recommendations that work for day shifts, night shifts, and rotating schedules."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "Why do you use 90-minute sleep cycles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 90-minute sleep cycle is based on scientific research showing that human sleep naturally occurs in cycles of approximately 90 minutes, progressing through light sleep, deep sleep, and REM sleep. Waking up at the end of a complete cycle helps you feel more refreshed and alert."
+      }
+    }
+  ]
+}

@@ -1,138 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Homepage - Sleep Calculator -->
+  <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://sleepcycle.io/</loc>
     <lastmod>2025-01-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sleepcycle.io/logo.png</image:loc>
+      <image:title>World's #1 Sleep Cycle Calculator</image:title>
+    </image:image>
   </url>
 
-  <!-- Bedtime Calculator -->
+  <!-- Main Sleep Calculator -->
   <url>
-    <loc>https://sleepcycle.io/?tab=bedtime</loc>
+    <loc>https://sleepcycle.io/sleep-calculator</loc>
     <lastmod>2025-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Wake-up Time Calculator -->
+  <!-- Baby & Toddler Calculators - High Priority -->
   <url>
-    <loc>https://sleepcycle.io/?tab=wakeup</loc>
+    <loc>https://sleepcycle.io/sleep-cycles-newborns</loc>
     <lastmod>2025-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Nap Calculator for Adults -->
   <url>
-    <loc>https://sleepcycle.io/?tab=nap</loc>
+    <loc>https://sleepcycle.io/sleep-cycles-4-month-old</loc>
     <lastmod>2025-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Baby Nap Calculator -->
   <url>
-    <loc>https://sleepcycle.io/?tab=baby</loc>
+    <loc>https://sleepcycle.io/sleep-cycles-6-month-old</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://sleepcycle.io/sleep-cycles-7-month-old</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://sleepcycle.io/sleep-cycles-toddlers</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Adult Sleep Guides -->
+  <url>
+    <loc>https://sleepcycle.io/sleep-cycles-adults</loc>
     <lastmod>2025-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Sleep Duration Tracker -->
   <url>
-    <loc>https://sleepcycle.io/?tab=tracker</loc>
+    <loc>https://sleepcycle.io/sleep-cycles-babies</loc>
     <lastmod>2025-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Age-Specific Sleep Calculator -->
   <url>
-    <loc>https://sleepcycle.io/?tab=age</loc>
+    <loc>https://sleepcycle.io/sleep-cycles-naps</loc>
     <lastmod>2025-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Sleep Science Hub -->
+  <!-- Educational Content -->
   <url>
     <loc>https://sleepcycle.io/sleep-science</loc>
     <lastmod>2025-01-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Sleep Science - 90 Minute Cycles -->
-  <url>
-    <loc>https://sleepcycle.io/sleep-science#90-minute</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Sleep Science - REM Optimization -->
+  <!-- Utility Pages -->
   <url>
-    <loc>https://sleepcycle.io/sleep-science#rem</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Sleep Science - Circadian Rhythm -->
-  <url>
-    <loc>https://sleepcycle.io/sleep-science#circadian</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Sleep Science - Age-Specific Recommendations -->
-  <url>
-    <loc>https://sleepcycle.io/sleep-science#age-specific</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Sleep Science - Quality Analysis -->
-  <url>
-    <loc>https://sleepcycle.io/sleep-science#quality</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- More Resources -->
-  <url>
-    <loc>https://sleepcycle.io/more-resources</loc>
+    <loc>https://sleepcycle.io/age-calculator</loc>
     <lastmod>2025-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- Help & FAQ -->
-  <url>
-    <loc>https://sleepcycle.io/help</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- About Us -->
+  <!-- Company Pages -->
   <url>
     <loc>https://sleepcycle.io/about</loc>
     <lastmod>2025-01-17</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sleepcycle.io/why-best-sleep-calculator</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sleepcycle.io/sitemap</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
-  <!-- Contact Support -->
   <url>
     <loc>https://sleepcycle.io/contact</loc>
     <lastmod>2025-01-17</lastmod>
@@ -140,7 +127,21 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- Privacy Policy -->
+  <url>
+    <loc>https://sleepcycle.io/help</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://sleepcycle.io/more-resources</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Legal Pages -->
   <url>
     <loc>https://sleepcycle.io/privacy-policy</loc>
     <lastmod>2025-01-17</lastmod>
@@ -148,84 +149,11 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Terms of Service -->
   <url>
     <loc>https://sleepcycle.io/terms-of-service</loc>
     <lastmod>2025-01-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-  </url>
-
-  <!-- Age Calculator -->
-  <url>
-    <loc>https://sleepcycle.io/age-calculator</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Sleep Cycles Pages -->
-  <url>
-    <loc>https://sleepcycle.io/sleep-cycles-babies</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://sleepcycle.io/sleep-cycles-adults</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://sleepcycle.io/sleep-cycles-naps</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://sleepcycle.io/sleep-cycles-newborns</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://sleepcycle.io/sleep-cycles-4-month-old</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://sleepcycle.io/sleep-cycles-6-month-old</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://sleepcycle.io/sleep-cycles-7-month-old</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://sleepcycle.io/sleep-cycles-toddlers</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://sleepcycle.io/sleep-cycles-2-year-olds</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
 </urlset>
