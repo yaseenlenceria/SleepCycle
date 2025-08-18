@@ -312,6 +312,15 @@
   .mobile-padding {
     padding: 1rem;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
   
   .mobile-full-width {
     width: 100%;

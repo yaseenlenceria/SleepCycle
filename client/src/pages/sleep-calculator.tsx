@@ -114,110 +114,127 @@ export default function SleepCalculator() {
       <Header />
 
       <main className="max-w-6xl mx-auto px-4 py-8">
-        {/* Enhanced Mobile-First Mode Toggle */}
-        <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-4 md:p-6 mb-8 sleep-glow">
-          <div className="flex justify-center mb-6">
-            <div className="bg-gray-100 rounded-xl p-2 w-full max-w-4xl">
-              {/* Mobile: Grid Layout */}
-              <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 justify-center">
-                <Button
-                  variant={activeTab === 'bedtime' ? 'default' : 'ghost'}
-                  onClick={() => {
-                    setActiveTab('bedtime');
-                    setShowBedtimeResults(false);
-                    setShowWakeupResults(false);
-                  }}
-                  className={`px-3 py-4 md:px-4 md:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
-                    activeTab === 'bedtime'
-                      ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
-                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
-                  }`}
-                  data-testid="tab-bedtime"
-                >
-                  <div className="flex flex-col md:flex-row items-center">
-                    <Bed className="mb-1 md:mb-0 md:mr-2" size={isMobile ? 20 : 18} />
-                    <span className="text-xs md:text-sm">Bedtime</span>
-                  </div>
-                </Button>
-                <Button
-                  variant={activeTab === 'wakeup' ? 'default' : 'ghost'}
-                  onClick={() => {
-                    setActiveTab('wakeup');
-                    setShowBedtimeResults(false);
-                    setShowWakeupResults(false);
-                  }}
-                  className={`px-3 py-4 md:px-4 md:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
-                    activeTab === 'wakeup'
-                      ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
-                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
-                  }`}
-                  data-testid="tab-wakeup"
-                >
-                  <div className="flex flex-col md:flex-row items-center">
-                    <Sun className="mb-1 md:mb-0 md:mr-2" size={isMobile ? 20 : 18} />
-                    <span className="text-xs md:text-sm">Wake-up</span>
-                  </div>
-                </Button>
-                <Button
-                  variant={activeTab === 'nap' ? 'default' : 'ghost'}
-                  onClick={() => setActiveTab('nap')}
-                  className={`px-3 py-4 md:px-4 md:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
-                    activeTab === 'nap'
-                      ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
-                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
-                  }`}
-                  data-testid="tab-nap"
-                >
-                  <div className="flex flex-col md:flex-row items-center">
-                    <Coffee className="mb-1 md:mb-0 md:mr-2" size={isMobile ? 20 : 18} />
-                    <span className="text-xs md:text-sm">Nap</span>
-                  </div>
-                </Button>
-                <Button
-                  variant={activeTab === 'baby' ? 'default' : 'ghost'}
-                  onClick={() => setActiveTab('baby')}
-                  className={`px-3 py-4 md:px-4 md:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
-                    activeTab === 'baby'
-                      ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
-                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
-                  }`}
-                  data-testid="tab-baby"
-                >
-                  <div className="flex flex-col md:flex-row items-center">
-                    <Baby className="mb-1 md:mb-0 md:mr-2" size={isMobile ? 20 : 18} />
-                    <span className="text-xs md:text-sm">Baby</span>
-                  </div>
-                </Button>
-                <Button
-                  variant={activeTab === 'tracker' ? 'default' : 'ghost'}
-                  onClick={() => setActiveTab('tracker')}
-                  className={`px-3 py-4 md:px-4 md:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
-                    activeTab === 'tracker'
-                      ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
-                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
-                  }`}
-                  data-testid="tab-tracker"
-                >
-                  <div className="flex flex-col md:flex-row items-center">
-                    <BarChart3 className="mb-1 md:mb-0 md:mr-2" size={isMobile ? 20 : 18} />
-                    <span className="text-xs md:text-sm">Tracker</span>
-                  </div>
-                </Button>
-                <Button
-                  variant={activeTab === 'age' ? 'default' : 'ghost'}
-                  onClick={() => setActiveTab('age')}
-                  className={`px-3 py-4 md:px-4 md:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
-                    activeTab === 'age'
-                      ? 'bg-sleep-blue-600 text-white hover:bg-sleep-blue-700 shadow-lg'
-                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-200'
-                  }`}
-                  data-testid="tab-age"
-                >
-                  <div className="flex flex-col md:flex-row items-center">
-                    <Users className="mb-1 md:mb-0 md:mr-2" size={isMobile ? 20 : 18} />
-                    <span className="text-xs md:text-sm">Age</span>
-                  </div>
-                </Button>
+        {/* Amazing Sleep Calculator Navigation */}
+        <div className="relative">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-indigo-500/5 rounded-3xl"></div>
+          
+          {/* Main Navigation Card */}
+          <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-3 sm:p-6 mb-8 overflow-hidden">
+            {/* Floating Gradient Orbs */}
+            <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-br from-indigo-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+            
+            {/* Header */}
+            <div className="relative text-center mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-2">
+                AI Sleep Calculator
+              </h2>
+              <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
+                Choose your calculator and get personalized health assessments powered by AI
+              </p>
+            </div>
+
+            {/* Navigation Tabs */}
+            <div className="relative">
+              {/* Mobile: Horizontal Scroll */}
+              <div className="md:hidden overflow-x-auto scrollbar-hide">
+                <div className="flex space-x-2 pb-2 px-1" style={{minWidth: 'max-content'}}>
+                  {[
+                    { id: 'bedtime', label: 'Bedtime', icon: Bed, gradient: 'from-blue-500 to-blue-600', description: 'Perfect bedtime' },
+                    { id: 'wakeup', label: 'Wake-up', icon: Sun, gradient: 'from-amber-500 to-orange-500', description: 'Optimal wake time' },
+                    { id: 'nap', label: 'Nap', icon: Coffee, gradient: 'from-green-500 to-teal-500', description: 'Power nap timer' },
+                    { id: 'baby', label: 'Baby', icon: Baby, gradient: 'from-pink-500 to-rose-500', description: 'Baby sleep guide' },
+                    { id: 'tracker', label: 'Tracker', icon: BarChart3, gradient: 'from-purple-500 to-violet-500', description: 'Sleep analytics' },
+                    { id: 'age', label: 'Age-Specific', icon: Users, gradient: 'from-indigo-500 to-purple-500', description: 'By age group' }
+                  ].map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => {
+                        setActiveTab(tab.id as any);
+                        if (tab.id === 'bedtime' || tab.id === 'wakeup') {
+                          setShowBedtimeResults(false);
+                          setShowWakeupResults(false);
+                        }
+                      }}
+                      className={`relative flex flex-col items-center justify-center p-3 rounded-2xl min-w-[80px] transition-all duration-300 transform hover:scale-105 ${
+                        activeTab === tab.id
+                          ? `bg-gradient-to-br ${tab.gradient} text-white shadow-lg shadow-${tab.gradient.split('-')[1]}-500/25`
+                          : 'bg-white/60 hover:bg-white/80 text-gray-600 hover:text-gray-800'
+                      }`}
+                      data-testid={`tab-${tab.id}`}
+                    >
+                      <div className={`p-2 rounded-xl mb-1 ${activeTab === tab.id ? 'bg-white/20' : 'bg-gradient-to-br ' + tab.gradient + ' bg-opacity-10'}`}>
+                        <tab.icon size={20} className={activeTab === tab.id ? 'text-white' : `text-${tab.gradient.split('-')[1]}-500`} />
+                      </div>
+                      <span className="text-xs font-semibold">{tab.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Desktop: Grid Layout */}
+              <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-4">
+                {[
+                  { id: 'bedtime', label: 'Bedtime Calculator', icon: Bed, gradient: 'from-blue-500 to-blue-600', description: 'Find your perfect bedtime' },
+                  { id: 'wakeup', label: 'Wake-up Timer', icon: Sun, gradient: 'from-amber-500 to-orange-500', description: 'Optimal wake-up times' },
+                  { id: 'nap', label: 'Nap Calculator', icon: Coffee, gradient: 'from-green-500 to-teal-500', description: 'Power nap optimization' },
+                  { id: 'baby', label: 'Baby & Toddler', icon: Baby, gradient: 'from-pink-500 to-rose-500', description: 'Baby sleep schedules' },
+                  { id: 'tracker', label: 'Sleep Tracker', icon: BarChart3, gradient: 'from-purple-500 to-violet-500', description: 'Track your progress' },
+                  { id: 'age', label: 'Age-Specific', icon: Users, gradient: 'from-indigo-500 to-purple-500', description: 'Recommendations by age' }
+                ].map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => {
+                      setActiveTab(tab.id as any);
+                      if (tab.id === 'bedtime' || tab.id === 'wakeup') {
+                        setShowBedtimeResults(false);
+                        setShowWakeupResults(false);
+                      }
+                    }}
+                    className={`group relative flex flex-col items-center p-4 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${
+                      activeTab === tab.id
+                        ? `bg-gradient-to-br ${tab.gradient} text-white shadow-lg shadow-${tab.gradient.split('-')[1]}-500/25`
+                        : 'bg-white/60 hover:bg-white/80 text-gray-700 hover:text-gray-900'
+                    }`}
+                    data-testid={`tab-${tab.id}`}
+                  >
+                    {/* Icon Container */}
+                    <div className={`relative p-3 rounded-xl mb-3 transition-all duration-300 ${
+                      activeTab === tab.id 
+                        ? 'bg-white/20' 
+                        : `bg-gradient-to-br ${tab.gradient} bg-opacity-10 group-hover:bg-opacity-20`
+                    }`}>
+                      <tab.icon 
+                        size={24} 
+                        className={`transition-all duration-300 ${
+                          activeTab === tab.id 
+                            ? 'text-white' 
+                            : `text-${tab.gradient.split('-')[1]}-600 group-hover:text-${tab.gradient.split('-')[1]}-700`
+                        }`} 
+                      />
+                      
+                      {/* Active Indicator */}
+                      {activeTab === tab.id && (
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                      )}
+                    </div>
+                    
+                    {/* Text */}
+                    <div className="text-center">
+                      <h3 className={`font-semibold text-sm mb-1 transition-all duration-300 ${
+                        activeTab === tab.id ? 'text-white' : 'text-gray-800 group-hover:text-gray-900'
+                      }`}>
+                        {tab.label}
+                      </h3>
+                      <p className={`text-xs transition-all duration-300 ${
+                        activeTab === tab.id ? 'text-white/80' : 'text-gray-500 group-hover:text-gray-600'
+                      }`}>
+                        {tab.description}
+                      </p>
+                    </div>
+                  </button>
+                ))}
               </div>
             </div>
           </div>
