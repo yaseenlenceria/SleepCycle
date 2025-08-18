@@ -135,7 +135,7 @@ export function UltraSimpleHomepage({
                   I will go to bed at
                 </h2>
               </div>
-              <div className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-bold">With AI assistant </div>
+              <div className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-extralight">With AI assistant </div>
             </div>
             
             <div className="flex justify-center items-center space-x-2 sm:space-x-3 mb-4 sm:mb-5">
