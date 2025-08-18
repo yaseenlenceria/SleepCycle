@@ -5,9 +5,22 @@ export function Footer() {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white mt-16">
       <div className="max-w-7xl mx-auto px-4 py-12">
-        {/* Trust Signals Header */}
+        {/* SEO-Optimized Logo Header */}
         <div className="text-center mb-12 border-b border-gray-700 pb-8">
-          <div className="flex justify-center items-center gap-8 mb-4">
+          <div className="flex justify-center items-center mb-6">
+            <img 
+              src="/logo.png" 
+              alt="SleepCycle.io - World's #1 Sleep Cycle Calculator - Official Logo"
+              title="SleepCycle.io - Best Sleep Calculator Platform with AI Assessment"
+              className="h-12 sm:h-16 w-auto"
+              width="250"
+              height="50"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mb-4">
             <div className="flex items-center gap-2">
               <Star className="text-yellow-400" size={20} />
               <span className="text-sm font-semibold">★★★★★ 4.9/5 Rating</span>
@@ -21,8 +34,8 @@ export function Footer() {
               <span className="text-sm font-semibold">100% FREE Forever</span>
             </div>
           </div>
-          <h3 className="text-2xl font-bold text-white mb-2">★★★★★ World's #1 Sleep Calculator Platform</h3>
-          <p className="text-gray-300">Trusted by millions worldwide for scientifically accurate sleep optimization</p>
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">★★★★★ World's #1 Sleep Calculator Platform</h3>
+          <p className="text-gray-300 text-sm sm:text-base">Trusted by millions worldwide for scientifically accurate sleep optimization</p>
         </div>
 
         {/* Main Footer Navigation */}
