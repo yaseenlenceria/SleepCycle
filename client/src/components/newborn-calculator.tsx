@@ -142,9 +142,7 @@ export function NewbornCalculator({
                   className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 text-white font-semibold py-4 px-6 rounded-xl transition-colors text-base lg:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
                   disabled={isCalculating !== ''}
                   data-testid="button-calculate-nap-schedule"
-                >
-                  💤 Create Nap Schedule
-                </Button>
+                > Create Nap Schedule</Button>
               )}
             </div>
           </CardContent>
