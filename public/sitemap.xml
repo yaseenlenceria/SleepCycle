@@ -135,6 +135,17 @@
 
   <!-- Blog Posts - Sleep Science (High Priority) -->
   <url>
+    <loc>https://sleepcycle.io/blog/how-many-sleep-cycles-per-night</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sleepcycle.io/blog-images/sleep-cycles-per-night.png</image:loc>
+      <image:title>How Many Sleep Cycles Do You Need Per Night Guide</image:title>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://sleepcycle.io/blog/sleep-cycle-length</loc>
     <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>

@@ -30,6 +30,15 @@ export function BlogPage() {
 function BlogContent() {
   const blogPosts = [
     {
+      id: 'how-many-sleep-cycles-per-night',
+      title: 'How Many Sleep Cycles Do You Need Per Night?',
+      excerpt: 'Adults need 4-6 sleep cycles per night to feel fully rested. Learn why 5 cycles (7.5 hours) is optimal and how to wake up refreshed by timing your sleep cycles correctly.',
+      date: 'January 18, 2025',
+      readTime: '8 min read',
+      category: 'Sleep Science',
+      image: '/blog-images/sleep-cycles-per-night.png'
+    },
+    {
       id: 'sleep-cycle-length',
       title: 'How Long is One Sleep Cycle? A Complete Guide',
       excerpt: 'Sleep is divided into cycles, each made up of multiple stages. Understanding how long a sleep cycle lasts and how many cycles you need can help you wake up refreshed and improve your well-being.',
