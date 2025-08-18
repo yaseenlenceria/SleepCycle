@@ -66,8 +66,12 @@ export function SimpleSleepResults({
       }
 
       const sleepHours = calculateSleepHours(bedtime, wakeTime);
-      const assessment = assessSleepQuality(sleepHours, userAge, userSex, bedtime, wakeTime);
-      const recommendations = await getPersonalizedHealthRecommendations(sleepHours, userAge, userSex);
+      const assessment = assessSleepQuality(sleepHours, userAge, userSex);
+      const recommendations = await getPersonalizedHealthRecommendations({
+        sleepDuration: sleepHours,
+        age: userAge,
+        sex: userSex
+      });
 
       setSleepAssessment({
         sleepDuration: sleepHours,

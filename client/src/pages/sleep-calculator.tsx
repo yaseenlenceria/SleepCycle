@@ -8,6 +8,7 @@ import { NapCalculator } from '@/components/nap-calculator';
 import { SleepTracker } from '@/components/sleep-tracker';
 import { AgeCalculator } from '@/components/age-calculator';
 import { BabyNapCalculator } from '@/components/baby-nap-calculator';
+import { SimpleHomepageNavigation } from '@/components/simple-homepage-navigation';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { calculateBedtimes, calculateWakeUpTimes, calculateWakeUpTimesFromNow, getCurrentTime, SleepTime } from '@/lib/sleep-calculations';
@@ -33,6 +34,7 @@ export default function SleepCalculator() {
   const [isCalculating, setIsCalculating] = useState(false);
   const [sleepNowTimes, setSleepNowTimes] = useState<SleepTime[]>([]);
   const [showSleepNowResults, setShowSleepNowResults] = useState(false);
+  const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [userProfile, setUserProfile] = useState<{age: number; sex: 'male' | 'female'} | null>(null);
 
   // Scroll to top on page load and set SEO meta
@@ -114,132 +116,18 @@ export default function SleepCalculator() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 animate-gradient">
       <Header />
 
-      <main className="max-w-6xl mx-auto px-4 py-8">
-        {/* Amazing Sleep Calculator Navigation */}
-        <div className="relative">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-indigo-500/5 rounded-3xl"></div>
-          
-          {/* Main Navigation Card */}
-          <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-3 sm:p-6 mb-8 overflow-hidden">
-            {/* Floating Gradient Orbs */}
-            <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-2xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-br from-indigo-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
-            
-            {/* Header */}
-            <div className="relative text-center mb-6">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-2">
-                AI Sleep Calculator
-              </h2>
-              <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-                Choose your calculator and get personalized health assessments powered by AI
-              </p>
-            </div>
-
-            {/* Navigation Tabs */}
-            <div className="relative">
-              {/* Mobile: Horizontal Scroll */}
-              <div className="md:hidden overflow-x-auto scrollbar-hide">
-                <div className="flex space-x-2 pb-2 px-1" style={{minWidth: 'max-content'}}>
-                  {[
-                    { id: 'bedtime', label: 'Bedtime', icon: Bed, gradient: 'from-blue-500 to-blue-600', description: 'Perfect bedtime' },
-                    { id: 'wakeup', label: 'Wake-up', icon: Sun, gradient: 'from-amber-500 to-orange-500', description: 'Optimal wake time' },
-                    { id: 'nap', label: 'Nap', icon: Coffee, gradient: 'from-green-500 to-teal-500', description: 'Power nap timer' },
-                    { id: 'baby', label: 'Baby', icon: Baby, gradient: 'from-pink-500 to-rose-500', description: 'Baby sleep guide' },
-                    { id: 'tracker', label: 'Tracker', icon: BarChart3, gradient: 'from-purple-500 to-violet-500', description: 'Sleep analytics' },
-                    { id: 'age', label: 'Age-Specific', icon: Users, gradient: 'from-indigo-500 to-purple-500', description: 'By age group' }
-                  ].map((tab) => (
-                    <button
-                      key={tab.id}
-                      onClick={() => {
-                        setActiveTab(tab.id as any);
-                        if (tab.id === 'bedtime' || tab.id === 'wakeup') {
-                          setShowBedtimeResults(false);
-                          setShowWakeupResults(false);
-                        }
-                      }}
-                      className={`relative flex flex-col items-center justify-center p-3 rounded-2xl min-w-[80px] transition-all duration-300 transform hover:scale-105 ${
-                        activeTab === tab.id
-                          ? `bg-gradient-to-br ${tab.gradient} text-white shadow-lg shadow-${tab.gradient.split('-')[1]}-500/25`
-                          : 'bg-white/60 hover:bg-white/80 text-gray-600 hover:text-gray-800'
-                      }`}
-                      data-testid={`tab-${tab.id}`}
-                    >
-                      <div className={`p-2 rounded-xl mb-1 ${activeTab === tab.id ? 'bg-white/20' : 'bg-gradient-to-br ' + tab.gradient + ' bg-opacity-10'}`}>
-                        <tab.icon size={20} className={activeTab === tab.id ? 'text-white' : `text-${tab.gradient.split('-')[1]}-500`} />
-                      </div>
-                      <span className="text-xs font-semibold">{tab.label}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Desktop: Grid Layout */}
-              <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-4">
-                {[
-                  { id: 'bedtime', label: 'Bedtime Calculator', icon: Bed, gradient: 'from-blue-500 to-blue-600', description: 'Find your perfect bedtime' },
-                  { id: 'wakeup', label: 'Wake-up Timer', icon: Sun, gradient: 'from-amber-500 to-orange-500', description: 'Optimal wake-up times' },
-                  { id: 'nap', label: 'Nap Calculator', icon: Coffee, gradient: 'from-green-500 to-teal-500', description: 'Power nap optimization' },
-                  { id: 'baby', label: 'Baby & Toddler', icon: Baby, gradient: 'from-pink-500 to-rose-500', description: 'Baby sleep schedules' },
-                  { id: 'tracker', label: 'Sleep Tracker', icon: BarChart3, gradient: 'from-purple-500 to-violet-500', description: 'Track your progress' },
-                  { id: 'age', label: 'Age-Specific', icon: Users, gradient: 'from-indigo-500 to-purple-500', description: 'Recommendations by age' }
-                ].map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => {
-                      setActiveTab(tab.id as any);
-                      if (tab.id === 'bedtime' || tab.id === 'wakeup') {
-                        setShowBedtimeResults(false);
-                        setShowWakeupResults(false);
-                      }
-                    }}
-                    className={`group relative flex flex-col items-center p-4 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${
-                      activeTab === tab.id
-                        ? `bg-gradient-to-br ${tab.gradient} text-white shadow-lg shadow-${tab.gradient.split('-')[1]}-500/25`
-                        : 'bg-white/60 hover:bg-white/80 text-gray-700 hover:text-gray-900'
-                    }`}
-                    data-testid={`tab-${tab.id}`}
-                  >
-                    {/* Icon Container */}
-                    <div className={`relative p-3 rounded-xl mb-3 transition-all duration-300 ${
-                      activeTab === tab.id 
-                        ? 'bg-white/20' 
-                        : `bg-gradient-to-br ${tab.gradient} bg-opacity-10 group-hover:bg-opacity-20`
-                    }`}>
-                      <tab.icon 
-                        size={24} 
-                        className={`transition-all duration-300 ${
-                          activeTab === tab.id 
-                            ? 'text-white' 
-                            : `text-${tab.gradient.split('-')[1]}-600 group-hover:text-${tab.gradient.split('-')[1]}-700`
-                        }`} 
-                      />
-                      
-                      {/* Active Indicator */}
-                      {activeTab === tab.id && (
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-white rounded-full animate-pulse"></div>
-                      )}
-                    </div>
-                    
-                    {/* Text */}
-                    <div className="text-center">
-                      <h3 className={`font-semibold text-sm mb-1 transition-all duration-300 ${
-                        activeTab === tab.id ? 'text-white' : 'text-gray-800 group-hover:text-gray-900'
-                      }`}>
-                        {tab.label}
-                      </h3>
-                      <p className={`text-xs transition-all duration-300 ${
-                        activeTab === tab.id ? 'text-white/80' : 'text-gray-500 group-hover:text-gray-600'
-                      }`}>
-                        {tab.description}
-                      </p>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+      <main className="max-w-4xl mx-auto px-4 py-8">
+        {/* Simple Navigation */}
+        <SimpleHomepageNavigation
+          activeTab={activeTab}
+          onTabChange={(tab) => {
+            setActiveTab(tab);
+            if (tab === 'bedtime' || tab === 'wakeup') {
+              setShowBedtimeResults(false);
+              setShowWakeupResults(false);
+            }
+          }}
+        />
 
         {/* Bedtime Calculator */}
         {activeTab === 'bedtime' && (
