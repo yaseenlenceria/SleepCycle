@@ -30,6 +30,7 @@ interface SimpleSleepResultsProps {
   isLoading?: boolean;
   userAge?: number;
   userSex?: 'male' | 'female';
+  onSleepDurationChange?: (duration: number) => void;
 }
 
 export function SimpleSleepResults({ 
@@ -39,7 +40,8 @@ export function SimpleSleepResults({
   selectedSleepDuration,
   isLoading = false,
   userAge = 30,
-  userSex = 'male'
+  userSex = 'male',
+  onSleepDurationChange
 }: SimpleSleepResultsProps) {
   const [showHealthTips, setShowHealthTips] = useState(false);
 
@@ -89,7 +91,6 @@ export function SimpleSleepResults({
 
       const assessment = assessSleepQuality(sleepHours, userAge, userSex);
       const recommendations = await getPersonalizedHealthRecommendations({
-        sleepDuration: sleepHours,
         age: userAge,
         sex: userSex
       });
@@ -124,9 +125,34 @@ export function SimpleSleepResults({
       {/* Sleep Times Grid */}
       <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
         <CardContent className="p-6">
+          {/* Sleep Duration Selector for bedtime and wakeup types */}
+          {(type === 'bedtime' || type === 'wakeup') && (
+            <div className="mb-6">
+              <p className="text-sm text-gray-600 mb-3 text-center">How many hours do you want to sleep?</p>
+              <div className="flex justify-center gap-2 mb-4">
+                {[6, 7, 8, 9].map(hours => (
+                  <button 
+                    key={hours}
+                    onClick={() => {
+                      onSleepDurationChange?.(hours);
+                    }}
+                    className={`px-4 py-2 text-sm rounded-lg border transition-colors ${
+                      selectedSleepDuration === hours 
+                        ? 'bg-blue-100 border-blue-300 text-blue-700 font-medium'
+                        : 'bg-gray-100 hover:bg-blue-100 border-gray-300 text-gray-700 hover:text-blue-700'
+                    }`}
+                  >
+                    {hours}h
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           <h3 className="text-xl font-bold text-center text-gray-800 mb-6">
             {type === 'bedtime' ? 'Your Optimal Bedtimes' : 
              type === 'sleepNow' ? `Wake Up Times (${selectedSleepDuration ? selectedSleepDuration + 'h sleep' : 'Sleep Now'})` : 
+             type === 'wakeup' ? (selectedSleepDuration ? `Your Wake Up Times (${selectedSleepDuration}h sleep)` : 'You Should Wake Up At:') :
              'You Should Wake Up At:'}
           </h3>
           

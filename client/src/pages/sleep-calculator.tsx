@@ -165,9 +165,14 @@ export default function SleepCalculator() {
                       times={bedtimes}
                       type="bedtime"
                       selectedTime={selectedTimeString}
+                      selectedSleepDuration={selectedSleepDuration}
                       isLoading={isCalculating}
                       userAge={userProfile?.age}
                       userSex={userProfile?.sex}
+                      onSleepDurationChange={(duration) => {
+                        setSelectedSleepDuration(duration);
+                        // Optionally trigger re-calculation with new duration
+                      }}
                     />
                   )}
                   {showWakeupResults && (
@@ -175,9 +180,13 @@ export default function SleepCalculator() {
                       times={wakeupTimes}
                       type="wakeup"
                       selectedTime={selectedTimeString}
+                      selectedSleepDuration={selectedSleepDuration}
                       isLoading={isCalculating}
                       userAge={userProfile?.age}
                       userSex={userProfile?.sex}
+                      onSleepDurationChange={(duration) => {
+                        setSelectedSleepDuration(duration);
+                      }}
                     />
                   )}
                   {showSleepNowResults && (
