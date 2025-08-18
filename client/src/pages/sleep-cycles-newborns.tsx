@@ -1,19 +1,86 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Heart, Clock, Baby, Moon, AlertCircle } from 'lucide-react';
+import { UltraSimpleHomepage } from '@/components/ultra-simple-homepage';
+import { SimpleSleepResults } from '@/components/simple-sleep-results';
+import { calculateBedtimes, calculateWakeUpTimes, calculateWakeUpTimesFromNow } from '@/lib/sleep-calculations';
 
 export default function SleepCyclesNewbornsPage() {
+  // Calculator state
+  const [hour, setHour] = useState('7');
+  const [minute, setMinute] = useState('00');
+  const [period, setPeriod] = useState('AM');
+  const [bedtimes, setBedtimes] = useState<any[]>([]);
+  const [wakeupTimes, setWakeupTimes] = useState<any[]>([]);
+  const [sleepNowTimes, setSleepNowTimes] = useState<any[]>([]);
+  const [currentTime, setCurrentTime] = useState('');
+  const [isCalculating, setIsCalculating] = useState(false);
+  const [selectedSleepDuration, setSelectedSleepDuration] = useState(12); // Newborns need more sleep
+  const [showBedtimeResults, setShowBedtimeResults] = useState(false);
+  const [showWakeupResults, setShowWakeupResults] = useState(false);
+  const [showSleepNowResults, setShowSleepNowResults] = useState(false);
+  const [userProfile, setUserProfile] = useState({ age: 0, sex: 'female' }); // Newborn profile
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Newborn Sleep Cycles - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
+    document.title = "AI Sleep Calculator for Newborns - FREE Baby Sleep Assessment | Best Sleep Times for 0-3 Months";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Sleep Cycle guides new parents through 0-3 month sleep cycles using sound analysis, 4 billion sleep sessions, and 13 years of science. Master newborn sleep patterns and safe practices.');
+      metaDescription.setAttribute('content', 'FREE AI sleep calculator for newborns 0-3 months. Get personalized baby sleep schedules, safe sleep guidance, and expert recommendations for healthy newborn sleep patterns.');
     }
   }, []);
+
+  const handleTimeChange = (newHour: string, newMinute: string, newPeriod: string) => {
+    setHour(newHour);
+    setMinute(newMinute);
+    setPeriod(newPeriod);
+  };
+
+  const handleCalculateBedtime = () => {
+    setIsCalculating(true);
+    setShowWakeupResults(false);
+    setShowSleepNowResults(false);
+    
+    setTimeout(() => {
+      const wakeTime = `${hour}:${minute} ${period}`;
+      const result = calculateBedtimes(wakeTime, selectedSleepDuration);
+      setBedtimes(result);
+      setIsCalculating(false);
+      setShowBedtimeResults(true);
+    }, 1500);
+  };
+
+  const handleCalculateWakeup = (bedtimeString?: string) => {
+    setIsCalculating(true);
+    setShowBedtimeResults(false);
+    setShowSleepNowResults(false);
+    
+    setTimeout(() => {
+      const bedtime = bedtimeString || `${hour}:${minute} ${period}`;
+      const result = calculateWakeUpTimes();
+      setWakeupTimes(result);
+      setIsCalculating(false);
+      setShowWakeupResults(true);
+    }, 1500);
+  };
+
+  const handleSleepNow = (sleepDuration: number = selectedSleepDuration) => {
+    setIsCalculating(true);
+    setShowBedtimeResults(false);
+    setShowWakeupResults(false);
+    
+    setTimeout(() => {
+      const {times, currentTime: liveTime} = calculateWakeUpTimesFromNow(sleepDuration);
+      setSleepNowTimes(times);
+      setCurrentTime(liveTime);
+      setIsCalculating(false);
+      setShowSleepNowResults(true);
+    }, 1500);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
@@ -22,19 +89,131 @@ export default function SleepCyclesNewbornsPage() {
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Sleep Cycles for Newborns
+            AI Sleep Calculator for Newborns
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            Understanding newborn sleep patterns is essential for new parents. Learn about sleep cycles, safe sleep practices, and establishing healthy routines for babies 0-3 months old.
+            FREE personalized sleep calculator for babies 0-3 months. Get AI-powered recommendations for optimal sleep times, safe sleep practices, and healthy newborn routines.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
             <span>👶 0-3 Months</span>
-            <span>😴 50-60 Min Cycles</span>
+            <span>🧠 AI-Powered</span>
             <span>🛡️ Safe Sleep</span>
-            <span>🍼 Feed-Sleep Pattern</span>
+            <span>📊 FREE Assessment</span>
           </div>
         </div>
 
+        {/* Newborn Sleep Calculator */}
+        <div className="mb-12">
+          <Card className="bg-gradient-to-br from-pink-50 to-purple-50 border-pink-200 shadow-xl">
+            <CardHeader className="text-center">
+              <CardTitle className="text-2xl font-bold text-gray-800 flex items-center justify-center gap-2">
+                <Baby className="text-pink-500" size={28} />
+                Newborn Sleep Calculator
+              </CardTitle>
+              <p className="text-gray-600">Personalized sleep schedules for babies 0-3 months old</p>
+            </CardHeader>
+            <CardContent>
+              <UltraSimpleHomepage
+                hour={hour}
+                minute={minute}
+                period={period}
+                onTimeChange={handleTimeChange}
+                onCalculateBedtime={handleCalculateBedtime}
+                onCalculateWakeup={handleCalculateWakeup}
+                onSleepNow={handleSleepNow}
+                showBedtimeResults={showBedtimeResults}
+                showWakeupResults={showWakeupResults}
+                showSleepNowResults={showSleepNowResults}
+                bedtimeResultsComponent={
+                  showBedtimeResults ? (
+                    <div>
+                      <SimpleSleepResults
+                        times={bedtimes}
+                        type="bedtime"
+                        selectedTime={`${hour}:${minute} ${period}`}
+                        selectedSleepDuration={selectedSleepDuration}
+                        isLoading={isCalculating}
+                        userAge={userProfile?.age}
+                        userSex={userProfile?.sex}
+                        onSleepDurationChange={(duration) => {
+                          setSelectedSleepDuration(duration);
+                          handleCalculateBedtime();
+                        }}
+                      />
+                      <div className="mt-4 text-center">
+                        <Button
+                          onClick={() => setShowBedtimeResults(false)}
+                          variant="outline"
+                          size="sm"
+                          className="text-gray-600"
+                        >
+                          Hide Results
+                        </Button>
+                      </div>
+                    </div>
+                  ) : undefined
+                }
+                wakeupResultsComponent={
+                  showWakeupResults ? (
+                    <div>
+                      <SimpleSleepResults
+                        times={wakeupTimes}
+                        type="wakeup"
+                        selectedTime={`${hour}:${minute} ${period}`}
+                        selectedSleepDuration={selectedSleepDuration}
+                        isLoading={isCalculating}
+                        userAge={userProfile?.age}
+                        userSex={userProfile?.sex}
+                        onSleepDurationChange={(duration) => {
+                          setSelectedSleepDuration(duration);
+                          const bedtimeString = `${hour}:${minute} ${period}`;
+                          handleCalculateWakeup(bedtimeString);
+                        }}
+                      />
+                      <div className="mt-4 text-center">
+                        <Button
+                          onClick={() => setShowWakeupResults(false)}
+                          variant="outline"
+                          size="sm"
+                          className="text-gray-600"
+                        >
+                          Hide Results
+                        </Button>
+                      </div>
+                    </div>
+                  ) : undefined
+                }
+                sleepNowResultsComponent={
+                  showSleepNowResults ? (
+                    <div>
+                      <SimpleSleepResults
+                        times={sleepNowTimes}
+                        type="sleepNow"
+                        selectedTime={currentTime}
+                        selectedSleepDuration={selectedSleepDuration}
+                        isLoading={isCalculating}
+                        userAge={userProfile?.age}
+                        userSex={userProfile?.sex}
+                      />
+                      <div className="mt-4 text-center">
+                        <Button
+                          onClick={() => setShowSleepNowResults(false)}
+                          variant="outline"
+                          size="sm"
+                          className="text-gray-600"
+                        >
+                          Hide Results
+                        </Button>
+                      </div>
+                    </div>
+                  ) : undefined
+                }
+              />
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Newborn Sleep Facts */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <Card className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl border-0">
             <CardHeader className="text-center pb-4">
@@ -53,8 +232,8 @@ export default function SleepCyclesNewbornsPage() {
               <CardTitle className="text-lg">Total Daily Sleep</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <div className="text-2xl font-bold text-blue-600 mb-2">14-17 hours</div>
-              <p className="text-sm text-gray-600">Around the clock sleeping</p>
+              <div className="text-2xl font-bold text-blue-600 mb-2">12-17 hours</div>
+              <p className="text-sm text-gray-600">Frequent short sleeps</p>
             </CardContent>
           </Card>
 
