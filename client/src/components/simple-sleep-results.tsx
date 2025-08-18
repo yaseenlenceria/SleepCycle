@@ -295,34 +295,7 @@ export function SimpleSleepResults({
               </div>
             </div>
 
-            {/* Expandable Health Tips */}
-            {showHealthTips && (
-              <div className="space-y-3 animate-in slide-in-from-top-5 duration-300">
-                {sleepAssessment.tips.map((tip, index) => (
-                  <div key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <div className="bg-blue-100 rounded-full p-1 mt-0.5">
-                      <CheckCircle size={14} className="text-blue-600" />
-                    </div>
-                    <span className="text-sm text-gray-700 flex-1">{tip}</span>
-                  </div>
-                ))}
-                
-                <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                  <div className="flex items-center text-blue-700 mb-2">
-                    <Brain size={16} className="mr-2" />
-                    <span className="font-semibold">Why This Matters</span>
-                  </div>
-                  <p className="text-sm text-blue-600">
-                    {sleepAssessment.sleepDuration >= 7 && sleepAssessment.sleepDuration <= 9
-                      ? "Your sleep duration is in the optimal range! This helps with memory consolidation, immune function, and emotional regulation."
-                      : sleepAssessment.sleepDuration < 7
-                      ? "Consider extending your sleep time. Quality sleep boosts immune function, improves memory, and enhances mood regulation."
-                      : "While you're getting plenty of sleep, ensure it's quality rest. Too much sleep can sometimes indicate underlying health issues."
-                    }
-                  </p>
-                </div>
-              </div>
-            )}
+            
           </CardContent>
         </Card>
       )}
