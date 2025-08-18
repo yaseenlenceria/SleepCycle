@@ -265,7 +265,7 @@ export default function SleepCalculator() {
                 />
               </div>
 
-              <div className="text-center mt-8">
+              <div className="text-center mt-8 space-y-4">
                 <Button
                   onClick={handleCalculateBedtime}
                   className="bg-gradient-to-r from-sleep-blue-600 to-sleep-purple-600 hover:from-sleep-blue-700 hover:to-sleep-purple-700 text-white px-6 md:px-10 py-3 md:py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm md:text-base"
@@ -275,6 +275,19 @@ export default function SleepCalculator() {
                   <span className="hidden sm:inline">Calculate Optimal Bedtimes</span>
                   <span className="sm:hidden">Calculate Bedtime</span>
                 </Button>
+
+                <div className="text-center">
+                  <div className="text-lg font-semibold text-gray-700 mb-2">Or</div>
+                  <Button
+                    onClick={handleSleepNow}
+                    variant="outline"
+                    className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white border-0 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    data-testid="button-sleep-now-bedtime"
+                  >
+                    <Moon className="mr-2" size={18} />
+                    Sleep Now
+                  </Button>
+                </div>
               </div>
             </div>
 
@@ -345,6 +358,18 @@ export default function SleepCalculator() {
               userAge={userProfile?.age}
               userSex={userProfile?.sex}
             />
+
+            {/* Show Sleep Now results when using Sleep Now from bedtime */}
+            {showSleepNowResults && !showWakeupResults && (
+              <SimpleSleepResults
+                times={sleepNowTimes}
+                type="wakeup"
+                selectedTime={currentTime}
+                isLoading={isCalculating}
+                userAge={userProfile?.age}
+                userSex={userProfile?.sex}
+              />
+            )}
           </div>
         )}
 

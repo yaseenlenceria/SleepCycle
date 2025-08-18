@@ -97,13 +97,15 @@ export function SimpleSleepResults({
       <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
         <CardContent className="p-6">
           <h3 className="text-xl font-bold text-center text-gray-800 mb-6">
-            {type === 'bedtime' ? '🛏️ Your Optimal Bedtimes' : '⏰ Your Wake-Up Times'}
+            {type === 'bedtime' ? '🛏️ Your Optimal Bedtimes' : '⏰ You Should Wake Up At:'}
           </h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {times.slice(0, 6).map((time, index) => {
-              const cycles = type === 'bedtime' ? 6 - index : 4 + index;
-              const isRecommended = index === 0 || index === 1;
+              // For wake-up times (Sleep Now), cycles start from 1 and go to 6
+              // For bedtimes, cycles start from 6 and go down to 1
+              const cycles = type === 'bedtime' ? 6 - index : index + 1;
+              const isRecommended = type === 'bedtime' ? (index === 0 || index === 1) : (index === 3 || index === 4);
               
               return (
                 <div
@@ -119,7 +121,10 @@ export function SimpleSleepResults({
                       {time.time}
                     </div>
                     <div className="text-sm text-gray-600 mb-2">
-                      {cycles} sleep cycles ({cycles * 1.5}h)
+                      {cycles} cycle{cycles > 1 ? 's' : ''}
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      {cycles * 1.5} hr
                     </div>
                     {isRecommended && (
                       <Badge className="bg-green-100 text-green-700 text-xs">
