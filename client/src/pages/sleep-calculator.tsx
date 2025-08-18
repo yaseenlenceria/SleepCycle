@@ -43,12 +43,49 @@ export default function SleepCalculator() {
   // Scroll to top on page load and set SEO meta
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "World's #1 Sleep Cycle Calculator with FREE AI Health Assessment | Sleepcycle.io";
+    document.title = "Sleep Cycle Calculator | World's #1 Free Sleep Calculator 2025";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', '★★★★★ World\'s #1 Sleep Cycle Calculator - Sleepcycle.io. FREE AI Health Assessment, 4+ billion sleep sessions analyzed. Best bedtime calculator trusted by millions. Fix your sleep cycle now!');
+      metaDescription.setAttribute('content', 'Calculate perfect bedtime and wake times with our free sleep cycle calculator. Based on 90-minute sleep cycles science. Find optimal sleep schedule instantly - no app download needed!');
     }
+    
+    // Set additional meta tags
+    const setMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
+      if (meta) {
+        meta.setAttribute('content', content);
+      } else {
+        meta = document.createElement('meta');
+        if (name.startsWith('og:') || name.startsWith('twitter:')) {
+          meta.setAttribute('property', name);
+        } else {
+          meta.setAttribute('name', name);
+        }
+        meta.setAttribute('content', content);
+        document.head.appendChild(meta);
+      }
+    };
+    
+    setMeta('keywords', 'sleep cycle calculator, bedtime calculator, wake up calculator, 90 minute sleep cycle, sleep calculator free, best sleep calculator 2025');
+    setMeta('og:title', 'Sleep Cycle Calculator | World\'s #1 Free Sleep Calculator');
+    setMeta('og:description', 'Calculate perfect bedtime and wake times with our free sleep cycle calculator based on 90-minute sleep cycles science.');
+    setMeta('og:type', 'website');
+    setMeta('og:url', 'https://sleepcycle.io/');
+    setMeta('og:image', 'https://sleepcycle.io/logo.png');
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', 'Sleep Cycle Calculator | World\'s #1 Free Calculator');
+    setMeta('twitter:description', 'Calculate perfect bedtime and wake times with our free sleep cycle calculator based on 90-minute sleep cycles.');
+    setMeta('twitter:image', 'https://sleepcycle.io/logo.png');
+    
+    // Set canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://sleepcycle.io/');
   }, []);
 
   // Update tab from URL
@@ -131,8 +168,7 @@ export default function SleepCalculator() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 animate-gradient">
       <Header />
-
-      <main className="px-2 py-4 sm:px-4 sm:py-6">
+        <main className="px-2 py-4 sm:px-4 sm:py-6">
         {/* Ultra Simple Homepage */}
         <UltraSimpleHomepage
           hour={hour}
