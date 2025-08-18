@@ -5,8 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Heart, Clock, Baby, Moon, AlertCircle } from 'lucide-react';
 import { UltraSimpleHomepage } from '@/components/ultra-simple-homepage';
-import { SimpleSleepResults } from '@/components/simple-sleep-results';
-import { calculateBedtimes, calculateWakeUpTimes, calculateWakeUpTimesFromNow } from '@/lib/sleep-calculations';
+import { NewbornSleepResults } from '@/components/newborn-sleep-results';
+import { calculateNewbornBedtimes, calculateNewbornSleepNow, calculateNewbornNapTimes, getNewbornSleepRecommendations } from '@/lib/newborn-sleep-calculations';
 
 export default function SleepCyclesNewbornsPage() {
   // Calculator state
@@ -18,7 +18,8 @@ export default function SleepCyclesNewbornsPage() {
   const [sleepNowTimes, setSleepNowTimes] = useState<any[]>([]);
   const [currentTime, setCurrentTime] = useState('');
   const [isCalculating, setIsCalculating] = useState(false);
-  const [selectedSleepDuration, setSelectedSleepDuration] = useState(12); // Newborns need more sleep
+  const [selectedSleepDuration, setSelectedSleepDuration] = useState(3); // Newborn nap duration in hours
+  const [babyAgeWeeks, setBabyAgeWeeks] = useState(4);
   const [showBedtimeResults, setShowBedtimeResults] = useState(false);
   const [showWakeupResults, setShowWakeupResults] = useState(false);
   const [showSleepNowResults, setShowSleepNowResults] = useState(false);
@@ -47,7 +48,7 @@ export default function SleepCyclesNewbornsPage() {
     
     setTimeout(() => {
       const wakeTime = `${hour}:${minute} ${period}`;
-      const result = calculateBedtimes(wakeTime, selectedSleepDuration);
+      const result = calculateNewbornBedtimes(wakeTime);
       setBedtimes(result);
       setIsCalculating(false);
       setShowBedtimeResults(true);
@@ -60,8 +61,8 @@ export default function SleepCyclesNewbornsPage() {
     setShowSleepNowResults(false);
     
     setTimeout(() => {
-      const bedtime = bedtimeString || `${hour}:${minute} ${period}`;
-      const result = calculateWakeUpTimes();
+      const napStartTime = bedtimeString || `${hour}:${minute} ${period}`;
+      const result = calculateNewbornNapTimes(napStartTime);
       setWakeupTimes(result);
       setIsCalculating(false);
       setShowWakeupResults(true);
@@ -74,7 +75,7 @@ export default function SleepCyclesNewbornsPage() {
     setShowWakeupResults(false);
     
     setTimeout(() => {
-      const {times, currentTime: liveTime} = calculateWakeUpTimesFromNow(sleepDuration);
+      const {times, currentTime: liveTime} = calculateNewbornSleepNow();
       setSleepNowTimes(times);
       setCurrentTime(liveTime);
       setIsCalculating(false);
@@ -110,7 +111,23 @@ export default function SleepCyclesNewbornsPage() {
                 <Baby className="text-pink-500" size={28} />
                 Newborn Sleep Calculator
               </CardTitle>
-              <p className="text-gray-600">Personalized sleep schedules for babies 0-3 months old</p>
+              <p className="text-gray-600">Baby sleep timing designed for 0-3 months (not adult cycles)</p>
+              <div className="mt-3 flex justify-center gap-2">
+                <span className="text-xs text-gray-500">Baby Age:</span>
+                {[2, 4, 6, 8, 10, 12].map(weeks => (
+                  <button 
+                    key={weeks}
+                    onClick={() => setBabyAgeWeeks(weeks)}
+                    className={`px-2 py-1 text-xs rounded border ${
+                      babyAgeWeeks === weeks 
+                        ? 'bg-pink-100 border-pink-300 text-pink-700' 
+                        : 'bg-gray-100 border-gray-300 text-gray-600'
+                    }`}
+                  >
+                    {weeks}w
+                  </button>
+                ))}
+              </div>
             </CardHeader>
             <CardContent>
               <UltraSimpleHomepage
@@ -127,18 +144,12 @@ export default function SleepCyclesNewbornsPage() {
                 bedtimeResultsComponent={
                   showBedtimeResults ? (
                     <div>
-                      <SimpleSleepResults
+                      <NewbornSleepResults
                         times={bedtimes}
                         type="bedtime"
                         selectedTime={`${hour}:${minute} ${period}`}
-                        selectedSleepDuration={selectedSleepDuration}
                         isLoading={isCalculating}
-                        userAge={userProfile?.age}
-                        userSex={userProfile?.sex}
-                        onSleepDurationChange={(duration) => {
-                          setSelectedSleepDuration(duration);
-                          handleCalculateBedtime();
-                        }}
+                        babyAgeWeeks={babyAgeWeeks}
                       />
                       <div className="mt-4 text-center">
                         <Button
@@ -156,19 +167,12 @@ export default function SleepCyclesNewbornsPage() {
                 wakeupResultsComponent={
                   showWakeupResults ? (
                     <div>
-                      <SimpleSleepResults
+                      <NewbornSleepResults
                         times={wakeupTimes}
-                        type="wakeup"
+                        type="nap-schedule"
                         selectedTime={`${hour}:${minute} ${period}`}
-                        selectedSleepDuration={selectedSleepDuration}
                         isLoading={isCalculating}
-                        userAge={userProfile?.age}
-                        userSex={userProfile?.sex}
-                        onSleepDurationChange={(duration) => {
-                          setSelectedSleepDuration(duration);
-                          const bedtimeString = `${hour}:${minute} ${period}`;
-                          handleCalculateWakeup(bedtimeString);
-                        }}
+                        babyAgeWeeks={babyAgeWeeks}
                       />
                       <div className="mt-4 text-center">
                         <Button
@@ -186,14 +190,12 @@ export default function SleepCyclesNewbornsPage() {
                 sleepNowResultsComponent={
                   showSleepNowResults ? (
                     <div>
-                      <SimpleSleepResults
+                      <NewbornSleepResults
                         times={sleepNowTimes}
                         type="sleepNow"
                         selectedTime={currentTime}
-                        selectedSleepDuration={selectedSleepDuration}
                         isLoading={isCalculating}
-                        userAge={userProfile?.age}
-                        userSex={userProfile?.sex}
+                        babyAgeWeeks={babyAgeWeeks}
                       />
                       <div className="mt-4 text-center">
                         <Button
