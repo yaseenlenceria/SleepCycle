@@ -31,7 +31,7 @@ export default function BestSleepCalculatorByAgePage() {
             <strong>The World's Most Accurate Sleep Calculator by Age</strong> – Personalized sleep schedules for every age group from newborns to seniors. FREE age-specific sleep cycle calculator with AI health assessment based on your age, gender, and unique sleep needs.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 mb-8">
-            <span>👶 Newborn to Senior</span>
+            <span>Newborn to Senior</span>
             <span>⚖️ Gender-Specific</span>
             <span>🧬 Age-Based Science</span>
             <span>🎯 Personalized Results</span>
