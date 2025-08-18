@@ -42,6 +42,42 @@ export function Header() {
               <span className="text-gray-500 text-sm ml-2">Rated by 10M+ users worldwide</span>
             </div>
           </div>
+
+          {/* Elegant Navigation Links */}
+          <div className="text-center mt-8">
+            <nav className="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
+              <Link 
+                href="/" 
+                className="text-gray-700 hover:text-blue-600 font-medium text-lg transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
+              >
+                Sleep Calculator
+              </Link>
+              <Link 
+                href="/sleep-cycles-babies" 
+                className="text-gray-700 hover:text-pink-600 font-medium text-lg transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
+              >
+                Baby Sleep
+              </Link>
+              <Link 
+                href="/90-minute-sleep-cycle-calculator" 
+                className="text-gray-700 hover:text-purple-600 font-medium text-lg transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
+              >
+                90-Min Cycles
+              </Link>
+              <Link 
+                href="/sleep-cycles-adults" 
+                className="text-gray-700 hover:text-green-600 font-medium text-lg transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
+              >
+                Adult Sleep
+              </Link>
+              <Link 
+                href="/sleep-science" 
+                className="text-gray-700 hover:text-indigo-600 font-medium text-lg transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
+              >
+                Sleep Science
+              </Link>
+            </nav>
+          </div>
         </div>
 
         {/* Subtle bottom border gradient */}
