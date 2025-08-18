@@ -56,7 +56,7 @@ export function Footer() {
 
           {/* Adult Sleep & Science */}
           <div>
-            <h4 className="font-bold text-white mb-4 text-lg">🧠 Adult Sleep & Science</h4>
+            <h4 className="font-bold text-white mb-4 text-lg">Adult Sleep & Science</h4>
             <ul className="space-y-3 text-sm">
               <li><Link href="/sleep-cycles-adults" className="text-green-300 hover:text-green-200 transition-colors">Adult Sleep Cycles</Link></li>
               <li><Link href="/sleep-science" className="text-green-300 hover:text-green-200 transition-colors">Sleep Science Research</Link></li>
