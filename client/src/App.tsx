@@ -32,6 +32,7 @@ import SleepCalculatorByAgePage from '@/pages/sleep-calculator-by-age';
 import { BlogPage } from '@/pages/blog';
 import { BlogPostLaunch } from '@/pages/blog-post-launch';
 import { BlogPostBabyNaps } from '@/pages/blog-post-baby-naps';
+import { BlogPostSleepCycleMyth } from '@/pages/blog-post-sleep-cycle-myth';
 
 function Router() {
   return (
@@ -62,6 +63,7 @@ function Router() {
       <Route path="/sleep-calculator-by-age" component={SleepCalculatorByAgePage} />
       <Route path="/sleep-calculator" component={SleepCalculator} />
       <Route path="/blog" component={BlogPage} />
+      <Route path="/blog/sleep-cycle-myth" component={BlogPostSleepCycleMyth} />
       <Route path="/blog/sleepcycle-worldwide-launch" component={BlogPostLaunch} />
       <Route path="/blog/baby-nap-duration-guide" component={BlogPostBabyNaps} />
       {/* Fallback to 404 */}

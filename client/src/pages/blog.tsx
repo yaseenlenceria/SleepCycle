@@ -5,6 +5,15 @@ import { Footer } from '@/components/footer';
 export function BlogPage() {
   const blogPosts = [
     {
+      id: 'sleep-cycle-myth',
+      title: 'The 90-Minute Sleep Cycle Myth: What Science Actually Says About Sleep Patterns',
+      excerpt: 'The popular belief that everyone sleeps in perfect 90-minute cycles has become widespread online, but the scientific reality is far more complex and individualized.',
+      date: 'January 18, 2025',
+      readTime: '10 min read',
+      category: 'Sleep Science',
+      image: '/favicon.png'
+    },
+    {
       id: 'sleepcycle-worldwide-launch',
       title: 'SleepCycle.io Officially Launches Worldwide: Revolutionizing Sleep Health with AI-Powered Sleep Cycle Calculator',
       excerpt: 'After 3 years of development and testing with over 10 million users, SleepCycle.io officially launches globally as the world\'s most trusted sleep optimization platform.',
@@ -44,7 +53,7 @@ export function BlogPage() {
 
       {/* Blog Posts Grid */}
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
             <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-video bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center">
