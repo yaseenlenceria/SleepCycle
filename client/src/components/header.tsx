@@ -10,9 +10,8 @@ export function Header() {
             <div className="flex items-center justify-center mb-2">
               {/* SleepCycle.io Logo */}
               <img 
-                src="/logo.png" 
+                src="attached_assets/logo-sleepcyclecalculator.png" 
                 alt="SleepCycle.io - World's #1 Sleep Cycle Calculator"
-                title="SleepCycle.io - Best Sleep Calculator with AI Health Assessment"
                 className="h-8 sm:h-10 md:h-12 w-auto max-w-xs"
                 loading="eager"
                 decoding="async"
@@ -20,7 +19,7 @@ export function Header() {
             </div>
           </Link>
           <p className="text-xs sm:text-sm md:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            ★★★★★ World's #1 Sleep Calculator with FREE AI Health Assessment
+          World's #1 Sleep Calculator with FREE AI Health Assessment
           </p>
         </div>
       </div>
