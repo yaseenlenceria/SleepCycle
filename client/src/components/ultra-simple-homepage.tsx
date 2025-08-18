@@ -60,9 +60,7 @@ export function UltraSimpleHomepage({
     <div className="w-full max-w-sm mx-auto px-3 sm:max-w-lg lg:max-w-2xl sm:px-4 lg:px-6">
       {/* Hero Trust Signals */}
       <div className="text-center mb-6 sm:mb-8">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
-          ★★★★★ World's #1 Sleep Calculator
-        </h1>
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3">World's #1 Sleep Calculator</h1>
         <p className="text-sm sm:text-base text-gray-600 mb-4">
           FREE AI Health Assessment • 4+ Billion Sleep Sessions Analyzed • Trusted by 10M+ Users
         </p>
@@ -72,7 +70,6 @@ export function UltraSimpleHomepage({
           <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full">✓ Expert Approved</span>
         </div>
       </div>
-      
       <div className="space-y-3 sm:space-y-4 lg:space-y-6">
         
         {/* Wake Up Time Card */}
