@@ -272,8 +272,8 @@ export default function SleepCalculator() {
                   data-testid="button-calculate-bedtime"
                 >
                   <Calculator className="mr-2 md:mr-3" size={18} />
-                  <span className="hidden sm:inline">Calculate Optimal Bedtimes</span>
-                  <span className="sm:hidden">Calculate Bedtime</span>
+                  <span className="hidden sm:inline">Find Your Perfect Bedtime</span>
+                  <span className="sm:hidden">Find Bedtime</span>
                 </Button>
 
                 <div className="text-center">
@@ -287,6 +287,7 @@ export default function SleepCalculator() {
                     <Moon className="mr-2" size={18} />
                     Sleep Now
                   </Button>
+                  <p className="text-xs text-gray-500 mt-1">Get wake-up times if you sleep right now</p>
                 </div>
               </div>
             </div>
@@ -332,7 +333,8 @@ export default function SleepCalculator() {
                   data-testid="button-calculate-wakeup"
                 >
                   <Sun className="mr-3" size={20} />
-                  Calculate Wake-Up Times
+                  <span className="hidden sm:inline">Calculate Wake-Up Times</span>
+                  <span className="sm:hidden">Wake-Up Times</span>
                 </Button>
 
                 <div className="text-center">
@@ -359,11 +361,11 @@ export default function SleepCalculator() {
               userSex={userProfile?.sex}
             />
 
-            {/* Show Sleep Now results when using Sleep Now from bedtime */}
-            {showSleepNowResults && !showWakeupResults && (
+            {/* Show Sleep Now results - works from both bedtime and wake-up calculators */}
+            {showSleepNowResults && (
               <SimpleSleepResults
                 times={sleepNowTimes}
-                type="wakeup"
+                type="wakeup" 
                 selectedTime={currentTime}
                 isLoading={isCalculating}
                 userAge={userProfile?.age}
