@@ -57,43 +57,51 @@ export function UltraSimpleHomepage({
   };
 
   return (
-    <div className="w-full max-w-sm mx-auto px-3 sm:max-w-lg lg:max-w-2xl sm:px-4 lg:px-6">
-      {/* Hero Trust Signals */}
-      <div className="text-center mb-6 sm:mb-8">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3">#1 Sleep Calculator: 90-Minute Sleep Cycle Calculator by Age</h1>
-        <p className="text-sm sm:text-base text-gray-600 mb-4">
+    <div className="w-full max-w-sm mx-auto px-4 sm:max-w-lg lg:max-w-2xl sm:px-6 lg:px-8">
+      {/* Hero Trust Signals - Mobile Optimized */}
+      <div className="text-center mb-4 sm:mb-6 lg:mb-8">
+        <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-2 sm:mb-3 leading-tight">#1 Sleep Calculator: 90-Minute Sleep Cycle Calculator by Age</h1>
+        <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
           FREE AI Health Assessment • Calculate: How Much Sleep Did I Get • Scientifically Best Bedtime & Wake Time • 4+ Billion Sleep Sessions Analyzed
         </p>
-        <div className="flex justify-center items-center gap-4 text-xs text-gray-500">
-          <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full">✓ Best Sleep Calculator</span>
-          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full">✓ Age & Gender Based</span>
-          <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full">✓ Free Sleep Cycle Time</span>
+        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-xs">
+          <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full whitespace-nowrap">✓ Best Sleep Calculator</span>
+          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full whitespace-nowrap">✓ Age & Gender Based</span>
+          <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full whitespace-nowrap">✓ Free Sleep Cycle Time</span>
         </div>
       </div>
 
       
 
-      <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+      <div className="space-y-4 sm:space-y-5 lg:space-y-6">
         
-        {/* Wake Up Time Card */}
+        {/* Wake Up Time Card - Mobile Optimized */}
         <Card className="bg-gradient-to-br from-orange-50 to-yellow-50 border-orange-200 shadow-lg hover:shadow-xl transition-all">
-          <CardContent className="p-4 sm:p-6 lg:p-8">
-            <div className="flex items-center justify-between mb-3 sm:mb-4 lg:mb-6">
-              <div className="flex items-center">
-                <Sun className="text-orange-500 mr-2 lg:mr-3" size={20} />
-                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800">
+          <CardContent className="p-3 sm:p-4 lg:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-5">
+              <div className="flex items-center mb-2 sm:mb-0">
+                <Sun className="text-orange-500 mr-2" size={18} />
+                <h2 className="text-base sm:text-lg lg:text-xl font-bold text-gray-800">
                   I will wake up at
                 </h2>
               </div>
-              <div className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-extralight">With AI assistant </div>
+              <div className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs self-start sm:self-auto">AI assistant</div>
             </div>
             
-            <div className="flex justify-center items-center space-x-2 sm:space-x-3 lg:space-x-4 mb-4 sm:mb-5 lg:mb-6">
+            {/* Mobile-First Time Selector */}
+            <div className="flex justify-center items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               {/* Hour */}
               <select 
                 value={wakeHour}
                 onChange={(e) => handleWakeTimeChange(e.target.value, wakeMinute, wakePeriod)}
-                className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 text-lg sm:text-xl lg:text-2xl font-bold text-center border-3 border-orange-300 rounded-xl focus:border-orange-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-orange-400 transition-colors shadow-md"
+                className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-base sm:text-lg lg:text-xl font-bold text-center border-2 border-orange-300 rounded-lg focus:border-orange-500 focus:outline-none bg-white cursor-pointer hover:border-orange-400 transition-colors shadow-sm appearance-none"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
+                  backgroundPosition: 'right 0.25rem center',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: '1rem',
+                  paddingRight: '1.5rem'
+                }}
                 data-testid="wake-hour-select"
               >
                 {hours.map(h => (
@@ -101,13 +109,20 @@ export function UltraSimpleHomepage({
                 ))}
               </select>
 
-              <div className="text-xl sm:text-2xl font-bold text-orange-600">:</div>
+              <div className="text-lg sm:text-xl font-bold text-orange-600">:</div>
 
               {/* Minute */}
               <select 
                 value={wakeMinute}
                 onChange={(e) => handleWakeTimeChange(wakeHour, e.target.value, wakePeriod)}
-                className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 text-lg sm:text-xl lg:text-2xl font-bold text-center border-3 border-orange-300 rounded-xl focus:border-orange-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-orange-400 transition-colors shadow-md"
+                className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-base sm:text-lg lg:text-xl font-bold text-center border-2 border-orange-300 rounded-lg focus:border-orange-500 focus:outline-none bg-white cursor-pointer hover:border-orange-400 transition-colors shadow-sm appearance-none"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
+                  backgroundPosition: 'right 0.25rem center',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: '1rem',
+                  paddingRight: '1.5rem'
+                }}
                 data-testid="wake-minute-select"
               >
                 {minutes.map(m => (
@@ -115,13 +130,13 @@ export function UltraSimpleHomepage({
                 ))}
               </select>
 
-              {/* AM/PM */}
-              <div className="bg-orange-100 rounded-xl p-1 shadow-md">
+              {/* AM/PM - Mobile Optimized */}
+              <div className="bg-orange-100 rounded-lg p-0.5 shadow-sm">
                 <button
                   onClick={() => handleWakeTimeChange(wakeHour, wakeMinute, 'AM')}
-                  className={`px-3 py-2 sm:px-4 sm:py-3 lg:px-5 lg:py-4 rounded-lg text-sm sm:text-base lg:text-lg font-bold transition-colors ${
+                  className={`px-2 py-2 sm:px-3 sm:py-2 rounded-md text-sm sm:text-base font-bold transition-colors min-w-[2.5rem] ${
                     wakePeriod === 'AM' 
-                      ? 'bg-orange-500 text-white shadow-md' 
+                      ? 'bg-orange-500 text-white shadow-sm' 
                       : 'text-orange-600 hover:text-orange-700 hover:bg-orange-200'
                   }`}
                   data-testid="wake-am-button"
@@ -130,9 +145,9 @@ export function UltraSimpleHomepage({
                 </button>
                 <button
                   onClick={() => handleWakeTimeChange(wakeHour, wakeMinute, 'PM')}
-                  className={`px-3 py-2 sm:px-4 sm:py-3 lg:px-5 lg:py-4 rounded-lg text-sm sm:text-base lg:text-lg font-bold transition-colors ${
+                  className={`px-2 py-2 sm:px-3 sm:py-2 rounded-md text-sm sm:text-base font-bold transition-colors min-w-[2.5rem] ${
                     wakePeriod === 'PM' 
-                      ? 'bg-orange-500 text-white shadow-md' 
+                      ? 'bg-orange-500 text-white shadow-sm' 
                       : 'text-orange-600 hover:text-orange-700 hover:bg-orange-200'
                   }`}
                   data-testid="wake-pm-button"
@@ -144,11 +159,11 @@ export function UltraSimpleHomepage({
 
             <Button
               onClick={onCalculateBedtime}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 sm:py-4 lg:py-5 text-base sm:text-lg lg:text-xl font-bold rounded-xl transition-colors shadow-lg hover:shadow-xl"
+              className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-lg transition-colors shadow-md hover:shadow-lg touch-manipulation"
               data-testid="button-calculate-bedtime"
             >
               Find My Bedtime
-              <ArrowRight className="ml-2" size={18} />
+              <ArrowRight className="ml-2" size={16} />
             </Button>
           </CardContent>
         </Card>
@@ -160,25 +175,33 @@ export function UltraSimpleHomepage({
           </div>
         )}
 
-        {/* Bed Time Card */}
+        {/* Bed Time Card - Mobile Optimized */}
         <Card className="bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-200 shadow-lg hover:shadow-xl transition-all">
-          <CardContent className="p-4 sm:p-6 lg:p-8">
-            <div className="flex items-center justify-between mb-3 sm:mb-4 lg:mb-6">
-              <div className="flex items-center">
-                <Bed className="text-purple-500 mr-2 lg:mr-3" size={20} />
-                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800">
+          <CardContent className="p-3 sm:p-4 lg:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-5">
+              <div className="flex items-center mb-2 sm:mb-0">
+                <Bed className="text-purple-500 mr-2" size={18} />
+                <h2 className="text-base sm:text-lg lg:text-xl font-bold text-gray-800">
                   I will go to bed at
                 </h2>
               </div>
-              <div className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-extralight">With AI assistant </div>
+              <div className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs self-start sm:self-auto">AI assistant</div>
             </div>
             
-            <div className="flex justify-center items-center space-x-2 sm:space-x-3 lg:space-x-4 mb-4 sm:mb-5 lg:mb-6">
+            {/* Mobile-First Time Selector */}
+            <div className="flex justify-center items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               {/* Hour */}
               <select 
                 value={bedHour}
                 onChange={(e) => setBedHour(e.target.value)}
-                className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 text-lg sm:text-xl lg:text-2xl font-bold text-center border-3 border-purple-300 rounded-xl focus:border-purple-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-purple-400 transition-colors shadow-md"
+                className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-base sm:text-lg lg:text-xl font-bold text-center border-2 border-purple-300 rounded-lg focus:border-purple-500 focus:outline-none bg-white cursor-pointer hover:border-purple-400 transition-colors shadow-sm appearance-none"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
+                  backgroundPosition: 'right 0.25rem center',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: '1rem',
+                  paddingRight: '1.5rem'
+                }}
                 data-testid="bed-hour-select"
               >
                 {hours.map(h => (
@@ -186,13 +209,20 @@ export function UltraSimpleHomepage({
                 ))}
               </select>
 
-              <div className="text-xl sm:text-2xl font-bold text-purple-600">:</div>
+              <div className="text-lg sm:text-xl font-bold text-purple-600">:</div>
 
               {/* Minute */}
               <select 
                 value={bedMinute}
                 onChange={(e) => setBedMinute(e.target.value)}
-                className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 text-lg sm:text-xl lg:text-2xl font-bold text-center border-3 border-purple-300 rounded-xl focus:border-purple-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-purple-400 transition-colors shadow-md"
+                className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-base sm:text-lg lg:text-xl font-bold text-center border-2 border-purple-300 rounded-lg focus:border-purple-500 focus:outline-none bg-white cursor-pointer hover:border-purple-400 transition-colors shadow-sm appearance-none"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
+                  backgroundPosition: 'right 0.25rem center',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: '1rem',
+                  paddingRight: '1.5rem'
+                }}
                 data-testid="bed-minute-select"
               >
                 {minutes.map(m => (
@@ -200,13 +230,13 @@ export function UltraSimpleHomepage({
                 ))}
               </select>
 
-              {/* AM/PM */}
-              <div className="bg-purple-100 rounded-xl p-1 shadow-md">
+              {/* AM/PM - Mobile Optimized */}
+              <div className="bg-purple-100 rounded-lg p-0.5 shadow-sm">
                 <button
                   onClick={() => setBedPeriod('AM')}
-                  className={`px-3 py-2 sm:px-4 sm:py-3 lg:px-5 lg:py-4 rounded-lg text-sm sm:text-base lg:text-lg font-bold transition-colors ${
+                  className={`px-2 py-2 sm:px-3 sm:py-2 rounded-md text-sm sm:text-base font-bold transition-colors min-w-[2.5rem] ${
                     bedPeriod === 'AM' 
-                      ? 'bg-purple-500 text-white shadow-md' 
+                      ? 'bg-purple-500 text-white shadow-sm' 
                       : 'text-purple-600 hover:text-purple-700 hover:bg-purple-200'
                   }`}
                   data-testid="bed-am-button"
@@ -215,9 +245,9 @@ export function UltraSimpleHomepage({
                 </button>
                 <button
                   onClick={() => setBedPeriod('PM')}
-                  className={`px-3 py-2 sm:px-4 sm:py-3 lg:px-5 lg:py-4 rounded-lg text-sm sm:text-base lg:text-lg font-bold transition-colors ${
+                  className={`px-2 py-2 sm:px-3 sm:py-2 rounded-md text-sm sm:text-base font-bold transition-colors min-w-[2.5rem] ${
                     bedPeriod === 'PM' 
-                      ? 'bg-purple-500 text-white shadow-md' 
+                      ? 'bg-purple-500 text-white shadow-sm' 
                       : 'text-purple-600 hover:text-purple-700 hover:bg-purple-200'
                   }`}
                   data-testid="bed-pm-button"
@@ -232,11 +262,11 @@ export function UltraSimpleHomepage({
                 const bedtime = `${bedHour}:${bedMinute} ${bedPeriod}`;
                 onCalculateWakeup(bedtime);
               }}
-              className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 sm:py-4 lg:py-5 text-base sm:text-lg lg:text-xl font-bold rounded-xl transition-colors shadow-lg hover:shadow-xl"
+              className="w-full bg-purple-500 hover:bg-purple-600 active:bg-purple-700 text-white py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-lg transition-colors shadow-md hover:shadow-lg touch-manipulation"
               data-testid="button-calculate-wakeup"
             >
               Find My Wake Time
-              <ArrowRight className="ml-2" size={18} />
+              <ArrowRight className="ml-2" size={16} />
             </Button>
           </CardContent>
         </Card>
