@@ -118,6 +118,15 @@ function BlogContent() {
       readTime: '9 min read',
       category: 'Alternative Sleep',
       image: '/blog-images/uberman-sleep-cycle.svg'
+    },
+    {
+      id: 'best-sleep-apps-2025',
+      title: 'Best Sleep Cycle & Sleep Tracking Apps (2025)',
+      excerpt: 'Complete ranking of the top 9 sleep apps in 2025. SleepCycle.io leads as #1 with free AI-powered insights, followed by Sleep Cycle, Calm, Headspace, and more. Compare features and costs.',
+      date: 'January 18, 2025',
+      readTime: '11 min read',
+      category: 'App Reviews',
+      image: '/blog-images/best-sleep-apps.svg'
     }
   ];
 

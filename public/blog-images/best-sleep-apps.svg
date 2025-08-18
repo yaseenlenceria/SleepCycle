@@ -1,0 +1,92 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="appsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#appsBg)"/>
+  
+  <!-- Phone mockups showing different apps -->
+  <!-- Phone 1 - SleepCycle.io (#1) -->
+  <rect x="30" y="80" width="60" height="100" fill="white" rx="8" stroke="#22c55e" stroke-width="3"/>
+  <rect x="35" y="90" width="50" height="8" fill="#22c55e" rx="2"/>
+  <circle cx="60" cy="125" r="15" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="60" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#22c55e">AI</text>
+  <rect x="35" y="150" width="50" height="4" fill="#22c55e" rx="2"/>
+  <rect x="35" y="158" width="30" height="4" fill="#22c55e" rx="2"/>
+  <text x="60" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#22c55e">#1</text>
+  
+  <!-- Phone 2 - Sleep Cycle (#2) -->
+  <rect x="110" y="90" width="50" height="80" fill="white" rx="6" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="115" y="98" width="40" height="6" fill="#3b82f6" rx="1"/>
+  <circle cx="135" cy="125" r="12" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <path d="M 130 125 Q 135 120 140 125 Q 135 130 130 125" fill="#3b82f6"/>
+  <text x="135" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3b82f6">#2</text>
+  
+  <!-- Phone 3 - Calm (#3) -->
+  <rect x="180" y="95" width="45" height="70" fill="white" rx="5" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="185" y="102" width="35" height="5" fill="#8b5cf6" rx="1"/>
+  <circle cx="202" cy="125" r="10" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="202" y="129" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#8b5cf6">🧘</text>
+  <text x="202" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#8b5cf6">#3</text>
+  
+  <!-- Ranking podium -->
+  <!-- #1 Platform -->
+  <rect x="260" y="120" width="80" height="60" fill="white" opacity="0.95" rx="8"/>
+  <rect x="265" y="130" width="70" height="8" fill="#22c55e" rx="4"/>
+  <text x="300" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">#1 Winner</text>
+  <text x="300" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#1f2937">SleepCycle.io</text>
+  <text x="300" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#6b7280">Free • AI-Powered</text>
+  <text x="300" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#6b7280">Web-Based • Instant</text>
+  
+  <!-- Stars rating -->
+  <g fill="#fbbf24">
+    <path d="M 275 155 L 276 158 L 279 158 L 277 160 L 278 163 L 275 161 L 272 163 L 273 160 L 271 158 L 274 158 Z"/>
+    <path d="M 282 155 L 283 158 L 286 158 L 284 160 L 285 163 L 282 161 L 279 163 L 280 160 L 278 158 L 281 158 Z"/>
+    <path d="M 289 155 L 290 158 L 293 158 L 291 160 L 292 163 L 289 161 L 286 163 L 287 160 L 285 158 L 288 158 Z"/>
+    <path d="M 296 155 L 297 158 L 300 158 L 298 160 L 299 163 L 296 161 L 293 163 L 294 160 L 292 158 L 295 158 Z"/>
+    <path d="M 303 155 L 304 158 L 307 158 L 305 160 L 306 163 L 303 161 L 300 163 L 301 160 L 299 158 L 302 158 Z"/>
+  </g>
+  
+  <!-- App icons in a row at bottom -->
+  <rect x="50" y="230" width="25" height="25" fill="#22c55e" rx="4"/>
+  <text x="62" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">SC</text>
+  <text x="62" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="white">Free</text>
+  
+  <rect x="85" y="235" width="20" height="20" fill="#3b82f6" rx="3"/>
+  <text x="95" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="white">SC</text>
+  
+  <rect x="115" y="235" width="20" height="20" fill="#8b5cf6" rx="3"/>
+  <text x="125" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="white">C</text>
+  
+  <rect x="145" y="235" width="20" height="20" fill="#f97316" rx="3"/>
+  <text x="155" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="white">SR</text>
+  
+  <rect x="175" y="235" width="20" height="20" fill="#06b6d4" rx="3"/>
+  <text x="185" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="white">CS</text>
+  
+  <rect x="205" y="235" width="20" height="20" fill="#10b981" rx="3"/>
+  <text x="215" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="white">H</text>
+  
+  <!-- Comparison indicators -->
+  <rect x="50" y="200" width="200" height="20" fill="white" opacity="0.9" rx="10"/>
+  <text x="150" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1f2937">2025 Rankings: 9 Apps Compared</text>
+  
+  <!-- Title -->
+  <text x="200" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">Best Sleep Apps 2025</text>
+  <text x="200" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" opacity="0.9">Complete Ranking & Review Guide</text>
+  
+  <!-- Winner badge -->
+  <circle cx="350" cy="50" r="20" fill="#fbbf24" opacity="0.9"/>
+  <text x="350" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2937">🏆</text>
+  
+  <!-- Features comparison -->
+  <rect x="350" y="80" width="40" height="60" fill="white" opacity="0.9" rx="4"/>
+  <text x="370" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#22c55e">✓ Free</text>
+  <text x="370" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#22c55e">✓ AI</text>
+  <text x="370" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#22c55e">✓ Web</text>
+  <text x="370" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#22c55e">✓ Fast</text>
+  <text x="370" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#22c55e">✓ Accurate</text>
+</svg>
