@@ -84,7 +84,6 @@ export default function WhyBestSleepCalculatorPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50">
       <Header />
-      
       <main className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -125,9 +124,7 @@ export default function WhyBestSleepCalculatorPage() {
 
         {/* Proof Points */}
         <section className="mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">
-            🏆 The Evidence: Why We're #1
-          </h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center"> The Evidence: Why We're #1</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {proofPoints.map((point, index) => (
               <Card key={index} className={`bg-white bg-opacity-90 backdrop-blur-md shadow-xl border-0 hover:shadow-2xl transition-all duration-300 border-l-4 border-l-${point.color}-500`}>
@@ -290,7 +287,6 @@ export default function WhyBestSleepCalculatorPage() {
           </CardContent>
         </Card>
       </main>
-
       <Footer />
     </div>
   );
