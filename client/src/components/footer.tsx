@@ -30,7 +30,7 @@ export function Footer() {
           
           {/* Top Sleep Calculators */}
           <div>
-            <h4 className="font-bold text-white mb-4 text-lg">🏆 Top Sleep Calculators</h4>
+            <h4 className="font-bold text-white mb-4 text-lg">Top Sleep Calculators</h4>
             <ul className="space-y-3 text-sm">
               <li><Link href="/" className="text-blue-300 hover:text-blue-200 transition-colors">Sleep Calculator (Main)</Link></li>
               <li><Link href="/90-minute-sleep-cycle-calculator" className="text-blue-300 hover:text-blue-200 transition-colors">90-Minute Sleep Cycle Calculator</Link></li>
