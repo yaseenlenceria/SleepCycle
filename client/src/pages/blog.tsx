@@ -91,6 +91,15 @@ function BlogContent() {
       readTime: '10 min read',
       category: 'Newborn Sleep Guide',
       image: '/blog-images/newborn-sleep-patterns.svg'
+    },
+    {
+      id: 'best-sleep-doctors-los-angeles',
+      title: '10 Best Sleep Doctors & Sleep Centers in Los Angeles (2025)',
+      excerpt: 'Complete guide to top sleep medicine specialists in LA. Find expert treatment for sleep apnea, insomnia, snoring at UCLA, USC, Cedars-Sinai and leading private practices with contact details.',
+      date: 'January 18, 2025',
+      readTime: '12 min read',
+      category: 'Sleep Medicine Directory',
+      image: '/blog-images/la-sleep-doctors.svg'
     }
   ];
 
