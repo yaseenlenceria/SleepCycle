@@ -327,65 +327,9 @@ export default function SleepCalculator() {
           </div>
         )}
 
-        {/* User Profile Form at Top for Better UX */}
-        <Card className="bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200 mb-8">
-          <CardContent className="p-6 text-center">
-            <h3 className="text-lg font-bold text-gray-800 mb-2">
-              {userProfile ? '✅ Profile Set!' : '🎯 Get Personalized Results!'}
-            </h3>
-            <p className="text-gray-600 mb-4">
-              {userProfile 
-                ? `${userProfile.sex === 'female' ? 'Female' : 'Male'}, Age ${userProfile.age} - Getting AI-powered recommendations`
-                : 'Tell us your age and gender for personalized health recommendations'
-              }
-            </p>
-            <UserProfileForm 
-              onProfileSet={setUserProfile}
-              initialProfile={userProfile || undefined}
-            />
-          </CardContent>
-        </Card>
 
-        {/* Simplified Educational Content */}
-        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 mt-12">
-          <CardContent className="p-8">
-            <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">
-              How Our Sleep Calculator Works
-            </h3>
-            
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <Clock className="text-blue-600" size={24} />
-                </div>
-                <h4 className="font-bold text-gray-800 mb-2">90-Minute Cycles</h4>
-                <p className="text-sm text-gray-600">
-                  Sleep happens in 90-minute cycles. Waking up between cycles helps you feel refreshed.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <Bed className="text-purple-600" size={24} />
-                </div>
-                <h4 className="font-bold text-gray-800 mb-2">15-Minute Buffer</h4>
-                <p className="text-sm text-gray-600">
-                  We account for the average 15 minutes it takes to fall asleep.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <Heart className="text-green-600" size={24} />
-                </div>
-                <h4 className="font-bold text-gray-800 mb-2">AI Health Tips</h4>
-                <p className="text-sm text-gray-600">
-                  Get personalized recommendations based on your age and gender.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+
+
       </main>
 
       <Footer />
