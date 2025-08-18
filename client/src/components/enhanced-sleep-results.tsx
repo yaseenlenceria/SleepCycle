@@ -331,18 +331,18 @@ export function EnhancedSleepResults({
             )}
 
             {/* Personalized Tips */}
-            <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
-              <div className="flex items-start gap-3">
-                <div className="bg-blue-100 rounded-full p-2 mt-1">
-                  <Shield className="text-blue-600" size={20} />
+            <div className="bg-blue-50 rounded-xl p-3 sm:p-4 border border-blue-200">
+              <div className="flex flex-col sm:flex-row sm:items-start gap-3">
+                <div className="bg-blue-100 rounded-full p-2 self-start">
+                  <Shield className="text-blue-600" size={18} />
                 </div>
-                <div className="flex-1">
-                  <h4 className="font-semibold text-gray-800 mb-3">Evidence-Based Sleep Tips</h4>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-gray-800 mb-3 text-sm sm:text-base">Evidence-Based Sleep Tips</h4>
                   <div className="grid gap-2">
                     {sleepAssessment.tips.slice(0, 5).map((tip, index) => (
-                      <div key={index} className="flex items-start gap-2 text-sm text-gray-700">
-                        <Zap className="text-blue-500 flex-shrink-0 mt-0.5" size={14} />
-                        {tip}
+                      <div key={index} className="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                        <Zap className="text-blue-500 flex-shrink-0 mt-0.5" size={12} />
+                        <span className="break-words">{tip}</span>
                       </div>
                     ))}
                   </div>
@@ -373,9 +373,9 @@ export function EnhancedSleepResults({
                     </h4>
                     <div className="grid gap-2">
                       {sleepAssessment.tips.slice(5).map((tip, index) => (
-                        <div key={index} className="flex items-start gap-2 text-sm text-gray-700">
-                          <Star className="text-purple-500 flex-shrink-0 mt-0.5" size={14} />
-                          {tip}
+                        <div key={index} className="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
+                          <Star className="text-purple-500 flex-shrink-0 mt-0.5" size={12} />
+                          <span className="break-words">{tip}</span>
                         </div>
                       ))}
                     </div>
@@ -426,16 +426,16 @@ export function EnhancedSleepResults({
 
       {/* Personalized Sleep Tips */}
       {sleepAssessment && (
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6">
-          <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
-            <Zap className="mr-2 text-blue-600" size={18} />
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4 sm:p-6">
+          <h4 className="font-semibold text-gray-800 mb-3 flex items-center text-sm sm:text-base">
+            <Zap className="mr-2 text-blue-600" size={16} />
             Personalized Sleep Tips for {userSex === 'female' ? 'Women' : 'Men'} Aged {userAge}
           </h4>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 text-xs sm:text-sm text-gray-600">
             {sleepAssessment.tips.slice(0, 8).map((tip, index) => (
               <div key={index} className="flex items-start space-x-2">
                 <ArrowRight size={12} className="mt-0.5 text-blue-500 flex-shrink-0" />
-                <span>{tip}</span>
+                <span className="break-words">{tip}</span>
               </div>
             ))}
           </div>
