@@ -65,12 +65,8 @@ export function SimpleSleepResults({
       }
 
       const sleepHours = calculateSleepHours(bedtime, wakeTime);
-      const assessment = assessSleepQuality(sleepHours, userAge, userSex);
-      const recommendations = await getPersonalizedHealthRecommendations({
-        sleepDuration: sleepHours,
-        age: userAge,
-        sex: userSex
-      });
+      const assessment = assessSleepQuality(sleepHours);
+      const recommendations = await getPersonalizedHealthRecommendations(sleepHours, userAge, userSex);
 
       setSleepAssessment({
         sleepDuration: sleepHours,
@@ -145,29 +141,7 @@ export function SimpleSleepResults({
         </CardContent>
       </Card>
 
-      {/* Sleep Cycle Visualization Toggle */}
-      <Card className="bg-white shadow-lg">
-        <CardContent className="p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h4 className="text-lg font-bold text-gray-800 mb-2">
-                🧠 Interactive Sleep Cycle Visualization
-              </h4>
-              <p className="text-sm text-gray-600">
-                Watch your sleep journey unfold with animated cycles, stages, and real-time brain activity
-              </p>
-            </div>
-            <Button
-              onClick={() => setShowVisualization(!showVisualization)}
-              variant="outline"
-              className="flex items-center space-x-2"
-            >
-              {showVisualization ? <EyeOff size={16} /> : <Eye size={16} />}
-              <span>{showVisualization ? 'Hide' : 'Show'} Visualization</span>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+
 
 
 
