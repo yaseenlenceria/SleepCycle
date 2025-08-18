@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { EnhancedTimePicker } from '@/components/enhanced-time-picker';
-import { EnhancedSleepResults } from '@/components/enhanced-sleep-results';
+import { SimpleSleepResults } from '@/components/simple-sleep-results';
 import { UserProfileForm } from '@/components/user-profile-form';
 import { NapCalculator } from '@/components/nap-calculator';
 import { SleepTracker } from '@/components/sleep-tracker';
@@ -12,6 +12,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { calculateBedtimes, calculateWakeUpTimes, calculateWakeUpTimesFromNow, getCurrentTime, SleepTime } from '@/lib/sleep-calculations';
 import { Bed, Sun, Clock, Heart, Coffee, BarChart3, Users, Calculator, Moon, Star, Baby, Smartphone } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 export default function SleepCalculator() {
@@ -277,7 +278,7 @@ export default function SleepCalculator() {
               </div>
             </div>
 
-            <EnhancedSleepResults
+            <SimpleSleepResults
               times={bedtimes}
               type="bedtime"
               selectedTime={showBedtimeResults ? selectedTimeString : undefined}
@@ -336,7 +337,7 @@ export default function SleepCalculator() {
               </div>
             </div>
 
-            <EnhancedSleepResults
+            <SimpleSleepResults
               times={showWakeupResults ? wakeupTimes : sleepNowTimes}
               type="wakeup"
               selectedTime={showWakeupResults ? currentTime : showSleepNowResults ? currentTime : undefined}
@@ -375,77 +376,62 @@ export default function SleepCalculator() {
           </div>
         )}
 
-        {/* User Profile Form for Personalized Recommendations */}
-        <div className="mt-12">
-          <UserProfileForm 
-            onProfileSet={setUserProfile}
-            initialProfile={userProfile || undefined}
-          />
-        </div>
-
-        {/* Enhanced Educational Content */}
-        <div className="bg-gradient-to-br from-white via-blue-50 to-indigo-50 bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8 mt-12">
-          <h3 className="text-3xl font-bold text-center bg-gradient-to-r from-sleep-blue-800 to-sleep-purple-600 bg-clip-text text-transparent mb-8">
-            AI Sleep Science & Personalized Health Assessment
-          </h3>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center group">
-              <div className="bg-gradient-to-br from-sleep-blue-100 to-sleep-blue-200 rounded-2xl w-20 h-20 flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg sleep-float">
-                <Clock className="text-sleep-blue-600" size={32} />
-              </div>
-              <h4 className="text-xl font-bold text-gray-800 mb-3">90-Minute Cycles</h4>
-              <p className="text-gray-600 leading-relaxed">
-                Each sleep cycle lasts approximately 90 minutes, consisting of light sleep, 
-                deep sleep, and REM sleep stages. Waking up between cycles helps you feel refreshed.
-              </p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="bg-gradient-to-br from-sleep-purple-100 to-sleep-purple-200 rounded-2xl w-20 h-20 flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg sleep-float">
-                <Bed className="text-sleep-purple-600" size={32} />
-              </div>
-              <h4 className="text-xl font-bold text-gray-800 mb-3">15-Minute Buffer</h4>
-              <p className="text-gray-600 leading-relaxed">
-                The average person takes about 15 minutes to fall asleep, which is factored 
-                into our calculations for accurate bedtime recommendations.
-              </p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="bg-gradient-to-br from-teal-100 to-emerald-200 rounded-2xl w-20 h-20 flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg sleep-float">
-                <Heart className="text-teal-600" size={32} />
-              </div>
-              <h4 className="text-xl font-bold text-gray-800 mb-3">5-6 Cycles Ideal</h4>
-              <p className="text-gray-600 leading-relaxed">
-                Most adults need 5-6 complete sleep cycles (7.5-9 hours) for optimal rest, recovery, 
-                and cognitive performance.
-              </p>
-            </div>
+        {/* User Profile Form - Move to Top for Better UX */}
+        {!userProfile && (
+          <div className="mb-8">
+            <Card className="bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200">
+              <CardContent className="p-6 text-center">
+                <h3 className="text-lg font-bold text-gray-800 mb-2">Get Personalized Results!</h3>
+                <p className="text-gray-600 mb-4">Tell us your age and gender for AI-powered health recommendations</p>
+                <UserProfileForm 
+                  onProfileSet={setUserProfile}
+                  initialProfile={userProfile || undefined}
+                />
+              </CardContent>
+            </Card>
           </div>
+        )}
 
-          {/* SEO-focused content section */}
-          <div className="mt-12 grid md:grid-cols-2 gap-8">
-            <div className="bg-white bg-opacity-70 rounded-xl p-6">
-              <h4 className="text-lg font-bold text-gray-800 mb-4">Why Sleep Cycles Matter</h4>
-              <ul className="space-y-2 text-gray-600">
-                <li>• <strong>Memory Consolidation:</strong> Deep sleep helps transfer memories from short-term to long-term storage</li>
-                <li>• <strong>Physical Recovery:</strong> Growth hormone is released during deep sleep stages</li>
-                <li>• <strong>Brain Detoxification:</strong> The glymphatic system clears metabolic waste during sleep</li>
-                <li>• <strong>Emotional Regulation:</strong> REM sleep helps process emotions and stress</li>
-              </ul>
+        {/* Simplified Educational Content */}
+        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 mt-12">
+          <CardContent className="p-8">
+            <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">
+              How Our Sleep Calculator Works
+            </h3>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Clock className="text-blue-600" size={24} />
+                </div>
+                <h4 className="font-bold text-gray-800 mb-2">90-Minute Cycles</h4>
+                <p className="text-sm text-gray-600">
+                  Sleep happens in 90-minute cycles. Waking up between cycles helps you feel refreshed.
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Bed className="text-purple-600" size={24} />
+                </div>
+                <h4 className="font-bold text-gray-800 mb-2">15-Minute Buffer</h4>
+                <p className="text-sm text-gray-600">
+                  We account for the average 15 minutes it takes to fall asleep.
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Heart className="text-green-600" size={24} />
+                </div>
+                <h4 className="font-bold text-gray-800 mb-2">AI Health Tips</h4>
+                <p className="text-sm text-gray-600">
+                  Get personalized recommendations based on your age and gender.
+                </p>
+              </div>
             </div>
-            <div className="bg-white bg-opacity-70 rounded-xl p-6">
-              <h4 className="text-lg font-bold text-gray-800 mb-4">Scientifically Best Sleep Times</h4>
-              <ul className="space-y-2 text-gray-600">
-                <li>• <strong>Bedtime:</strong> Between 10:00 PM - 11:00 PM aligns with natural circadian rhythms</li>
-                <li>• <strong>Wake Time:</strong> 6:00 AM - 7:00 AM maximizes morning light exposure</li>
-                <li>• <strong>Consistency:</strong> Same sleep/wake times daily strengthen your body clock</li>
-                <li>• <strong>Temperature:</strong> Core body temperature drops 1-2°F during optimal sleep</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       </main>
 
       <Footer />
