@@ -91,10 +91,10 @@ export default function SleepCycles7MonthOldPage() {
             FREE personalized sleep calculator for 7-month babies. Master 2-nap schedules with AI-powered recommendations designed for mobility milestones and developmental sleep patterns.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-            <span>🚼 7 Month Development</span>
+            <span>7 Month Development</span>
             <span> AI-Powered</span>
             <span> Mobility Support</span>
-            <span>📊 FREE Assessment</span>
+            <span>FREE Assessment</span>
           </div>
         </div>
 
