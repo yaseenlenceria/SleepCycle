@@ -8,23 +8,19 @@ export function Header() {
         <div className="text-center">
           <Link href="/" className="block hover:opacity-80 transition-opacity">
             <div className="flex items-center justify-center mb-2">
-              {/* SEO-Optimized Logo */}
+              {/* Custom SleepCycle.io Logo */}
               <img 
                 src="/logo.png" 
-                alt="SleepCycle.io - World's #1 Sleep Cycle Calculator Logo"
+                alt="SleepCycle.io - World's #1 Sleep Cycle Calculator"
                 title="SleepCycle.io - Best Sleep Calculator with AI Health Assessment"
-                className="h-8 sm:h-10 w-auto mr-3 sm:mr-4"
-                width="200"
-                height="40"
+                className="h-10 sm:h-12 w-auto"
                 loading="eager"
                 decoding="async"
+                onError={(e) => {
+                  console.error('Logo failed to load:', e);
+                  e.currentTarget.style.display = 'none';
+                }}
               />
-              <div className="flex items-center">
-                <h1 className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-800 to-purple-600 bg-clip-text text-transparent">
-                  SleepCycle.io
-                </h1>
-                <Star className="text-purple-600 ml-2 animate-pulse" size={16} />
-              </div>
             </div>
           </Link>
           <p className="text-xs sm:text-sm md:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
