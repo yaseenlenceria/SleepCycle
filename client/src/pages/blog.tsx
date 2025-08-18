@@ -1,4 +1,6 @@
 import { Link } from 'wouter';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 
 export function BlogPage() {
   const blogPosts = [
@@ -23,7 +25,9 @@ export function BlogPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+    <>
+      <Header />
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       {/* Hero Section */}
       <div className="bg-white border-b">
         <div className="max-w-4xl mx-auto px-6 py-12">
@@ -98,6 +102,8 @@ export function BlogPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }

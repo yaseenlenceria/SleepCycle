@@ -1,8 +1,12 @@
 import { Link } from 'wouter';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 
 export function BlogPostLaunch() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <Header />
+      <div className="min-h-screen bg-white">
       {/* Article Header */}
       <article className="max-w-4xl mx-auto px-6 py-12">
         <div className="mb-8">
@@ -152,6 +156,8 @@ export function BlogPostLaunch() {
           </div>
         </div>
       </article>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }

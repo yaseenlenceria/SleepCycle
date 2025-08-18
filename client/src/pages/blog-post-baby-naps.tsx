@@ -1,8 +1,12 @@
 import { Link } from 'wouter';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 
 export function BlogPostBabyNaps() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <Header />
+      <div className="min-h-screen bg-white">
       <article className="max-w-4xl mx-auto px-6 py-12">
         <div className="mb-8">
           <Link href="/blog" className="text-blue-600 hover:text-blue-700 font-medium flex items-center mb-6">
@@ -307,6 +311,8 @@ export function BlogPostBabyNaps() {
           </div>
         </div>
       </article>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
