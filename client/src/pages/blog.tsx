@@ -11,7 +11,7 @@ export function BlogPage() {
       date: 'January 18, 2025',
       readTime: '8 min read',
       category: 'Sleep Fundamentals',
-      image: '/favicon.png'
+      image: '/blog-images/sleep-cycle-length.svg'
     },
     {
       id: 'sleep-stages-guide',
@@ -20,7 +20,7 @@ export function BlogPage() {
       date: 'January 18, 2025',
       readTime: '7 min read',
       category: 'Sleep Education',
-      image: '/favicon.png'
+      image: '/blog-images/sleep-stages.svg'
     },
     {
       id: 'sleep-cycle-stages',
@@ -29,7 +29,7 @@ export function BlogPage() {
       date: 'January 18, 2025',
       readTime: '9 min read',
       category: 'Sleep Science',
-      image: '/favicon.png'
+      image: '/blog-images/sleep-cycle-stages.svg'
     },
     {
       id: 'sleep-cycle-myth',
@@ -38,7 +38,7 @@ export function BlogPage() {
       date: 'January 18, 2025',
       readTime: '10 min read',
       category: 'Sleep Science',
-      image: '/favicon.png'
+      image: '/blog-images/sleep-myth.svg'
     },
     {
       id: 'sleepcycle-worldwide-launch',
@@ -47,7 +47,7 @@ export function BlogPage() {
       date: 'January 18, 2025',
       readTime: '5 min read',
       category: 'Company News',
-      image: '/favicon.png'
+      image: '/blog-images/company-launch.svg'
     },
     {
       id: 'baby-nap-duration-guide',
@@ -56,7 +56,7 @@ export function BlogPage() {
       date: 'January 18, 2025',
       readTime: '8 min read',
       category: 'Baby Sleep Guide',
-      image: '/favicon.png'
+      image: '/blog-images/baby-naps.svg'
     }
   ];
 
@@ -83,11 +83,11 @@ export function BlogPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {blogPosts.map((post) => (
             <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="aspect-video bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center">
+              <div className="aspect-video bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center p-4">
                 <img 
                   src={post.image} 
                   alt={post.title}
-                  className="w-20 h-20 opacity-50"
+                  className="w-full h-full object-contain rounded-lg"
                 />
               </div>
               <div className="p-6">
