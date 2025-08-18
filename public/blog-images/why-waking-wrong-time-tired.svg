@@ -1,298 +1,239 @@
-<svg width="900" height="850" viewBox="0 0 900 850" xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="900" viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="goodWakeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="badWakeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+    <linearGradient id="sleepyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f97316;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="lightSleepGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#dbeafe;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#93c5fd;stop-opacity:1" />
+    <linearGradient id="refreshedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="deepSleepGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#dcfce7;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#22c55e;stop-opacity:1" />
+    <linearGradient id="lightStage" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#bfdbfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="remSleepGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    <linearGradient id="deepStage" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#bbf7d0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
     </linearGradient>
-    <filter id="shadow">
-      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    <linearGradient id="remStage" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fed7aa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="dropShadow">
+      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.2"/>
     </filter>
-    <filter id="glowEffect">
-      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-      <feMerge> 
-        <feMergeNode in="coloredBlur"/>
+    <filter id="innerGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
   
   <!-- Background -->
-  <rect width="900" height="850" fill="#f8fafc"/>
+  <rect width="900" height="900" fill="#fafafa"/>
   
-  <!-- Header Section -->
-  <rect x="0" y="0" width="900" height="100" fill="url(#headerGradient)"/>
-  <text x="450" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white">
-    Why Waking at the Wrong Time Makes You Tired
+  <!-- Main Title Banner -->
+  <rect x="0" y="0" width="900" height="120" fill="url(#primaryGradient)" filter="url(#dropShadow)"/>
+  <text x="450" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white">
+    Why Waking at the Wrong Time
   </text>
-  <text x="450" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.9)">
-    Understanding Sleep Inertia vs. Natural Wake-ups Through 90-Minute Sleep Cycles
+  <text x="450" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white">
+    Makes You Tired
   </text>
-  <text x="450" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)">
-    The Science Behind Perfect Sleep Timing for Peak Morning Performance
+  <text x="450" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.85)">
+    The Sleep Inertia Effect: When Sleep Timing Trumps Sleep Duration
   </text>
   
-  <!-- Sleep Cycle Wave Visualization -->
-  <g transform="translate(50, 120)">
-    <rect x="0" y="0" width="800" height="200" rx="15" fill="white" stroke="#e5e7eb" stroke-width="3" filter="url(#shadow)"/>
+  <!-- Sleep Wave Illustration -->
+  <g transform="translate(50, 140)">
+    <rect x="0" y="0" width="800" height="220" rx="16" fill="white" stroke="#e2e8f0" stroke-width="3" filter="url(#dropShadow)"/>
     
-    <text x="20" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2937">
-      90-Minute Sleep Cycle Progression
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1e293b">
+      The 90-Minute Sleep Cycle Journey
     </text>
-    <text x="20" y="50" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
-      Your brain cycles through these stages every night - timing your wake-up matters!
+    <text x="20" y="52" font-family="Arial, sans-serif" font-size="15" fill="#64748b">
+      Understanding when your body naturally wants to wake up
     </text>
     
-    <!-- Timeline with enhanced markers -->
-    <g transform="translate(60, 70)">
-      <line x1="0" y1="40" x2="680" y2="40" stroke="#d1d5db" stroke-width="2"/>
+    <!-- Sleep Cycle Wave Path -->
+    <g transform="translate(60, 75)">
+      <!-- Background timeline -->
+      <rect x="0" y="60" width="680" height="4" fill="#f1f5f9" rx="2"/>
       
-      <!-- Time markers with enhanced styling -->
-      <g font-family="Arial, sans-serif" font-size="12" fill="#374151">
-        <text x="0" y="25" text-anchor="middle">0 min</text>
-        <text x="113" y="25" text-anchor="middle">15 min</text>
-        <text x="227" y="25" text-anchor="middle">30 min</text>
-        <text x="340" y="25" text-anchor="middle">45 min</text>
-        <text x="454" y="25" text-anchor="middle">60 min</text>
-        <text x="567" y="25" text-anchor="middle">75 min</text>
-        <text x="680" y="25" text-anchor="middle">90 min</text>
+      <!-- Sleep stages as wave segments -->
+      <path d="M0,60 Q85,20 170,60" fill="none" stroke="url(#lightStage)" stroke-width="8" stroke-linecap="round"/>
+      <path d="M170,60 Q255,100 340,100 Q425,100 510,60" fill="none" stroke="url(#deepStage)" stroke-width="8" stroke-linecap="round"/>
+      <path d="M510,60 Q565,30 620,45 Q650,50 680,60" fill="none" stroke="url(#remStage)" stroke-width="8" stroke-linecap="round"/>
+      
+      <!-- Time markers -->
+      <g font-family="Arial, sans-serif" font-size="13" fill="#475569">
+        <text x="0" y="20" text-anchor="middle">0</text>
+        <text x="113" y="20" text-anchor="middle">15</text>
+        <text x="227" y="20" text-anchor="middle">30</text>
+        <text x="340" y="20" text-anchor="middle">45</text>
+        <text x="453" y="20" text-anchor="middle">60</text>
+        <text x="567" y="20" text-anchor="middle">75</text>
+        <text x="680" y="20" text-anchor="middle">90 min</text>
+      </g>
+      
+      <!-- Sleep stage labels -->
+      <g font-family="Arial, sans-serif">
+        <text x="85" y="40" text-anchor="middle" font-size="14" font-weight="bold" fill="#3b82f6">Light Sleep</text>
+        <text x="85" y="90" text-anchor="middle" font-size="11" fill="#3b82f6">Easy to wake</text>
         
-        <!-- Tick marks -->
-        <g stroke="#9ca3af" stroke-width="1">
-          <line x1="0" y1="35" x2="0" y2="45"/>
-          <line x1="113" y1="35" x2="113" y2="45"/>
-          <line x1="227" y1="35" x2="227" y2="45"/>
-          <line x1="340" y1="35" x2="340" y2="45"/>
-          <line x1="454" y1="35" x2="454" y2="45"/>
-          <line x1="567" y1="35" x2="567" y2="45"/>
-          <line x1="680" y1="35" x2="680" y2="45"/>
-        </g>
+        <text x="340" y="120" text-anchor="middle" font-size="14" font-weight="bold" fill="#16a34a">Deep Sleep Zone</text>
+        <text x="340" y="135" text-anchor="middle" font-size="11" fill="#16a34a">Physical restoration - Hard to wake</text>
+        
+        <text x="595" y="35" text-anchor="middle" font-size="14" font-weight="bold" fill="#ea580c">REM</text>
+        <text x="595" y="85" text-anchor="middle" font-size="11" fill="#ea580c">Dreams & memory</text>
       </g>
-    </g>
-    
-    <!-- Enhanced Sleep Stages with 3D effect -->
-    <g transform="translate(60, 120)">
-      <!-- Light Sleep Stage 1 -->
-      <rect x="0" y="0" width="113" height="50" fill="url(#lightSleepGradient)" rx="8" filter="url(#shadow)"/>
-      <text x="56" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e40af">
-        Light Sleep
-      </text>
-      <text x="56" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1e40af">
-        Stage 1-2
-      </text>
-      <text x="56" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#059669">
-        ✓ EASY WAKE
-      </text>
       
-      <!-- Deep Sleep Stage -->
-      <rect x="113" y="0" width="454" height="50" fill="url(#deepSleepGradient)" rx="8" filter="url(#shadow)"/>
-      <text x="340" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#15803d">
-        Deep Sleep (Slow Wave Sleep)
-      </text>
-      <text x="340" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#15803d">
-        Stage 3 - Physical Restoration & Memory Consolidation
-      </text>
-      <text x="340" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#dc2626">
-        ✗ SLEEP INERTIA ZONE - AVOID WAKING HERE
-      </text>
+      <!-- Wake quality indicators -->
+      <circle cx="85" cy="60" r="15" fill="#10b981" stroke="white" stroke-width="4" filter="url(#innerGlow)"/>
+      <text x="85" y="67" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">✓</text>
       
-      <!-- REM Sleep Stage -->
-      <rect x="567" y="0" width="113" height="50" fill="url(#remSleepGradient)" rx="8" filter="url(#shadow)"/>
-      <text x="623" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d97706">
-        REM Sleep
-      </text>
-      <text x="623" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#d97706">
-        Dreams & Learning
-      </text>
-      <text x="623" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#059669">
-        ✓ GOOD WAKE
-      </text>
-    </g>
-    
-    <!-- Wake-up quality indicators with enhanced visuals -->
-    <g transform="translate(60, 160)">
-      <!-- Excellent wake time -->
-      <circle cx="56" cy="15" r="12" fill="#10b981" stroke="white" stroke-width="3" filter="url(#glowEffect)"/>
-      <text x="56" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">✓</text>
+      <circle cx="340" cy="100" r="15" fill="#ef4444" stroke="white" stroke-width="4" filter="url(#innerGlow)"/>
+      <text x="340" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">✗</text>
       
-      <!-- Poor wake time -->
-      <circle cx="340" cy="15" r="12" fill="#ef4444" stroke="white" stroke-width="3" filter="url(#glowEffect)"/>
-      <text x="340" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">✗</text>
-      
-      <!-- Good wake time -->
-      <circle cx="623" cy="15" r="12" fill="#10b981" stroke="white" stroke-width="3" filter="url(#glowEffect)"/>
-      <text x="623" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">✓</text>
+      <circle cx="595" cy="52" r="15" fill="#10b981" stroke="white" stroke-width="4" filter="url(#innerGlow)"/>
+      <text x="595" y="59" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">✓</text>
     </g>
   </g>
   
-  <!-- Real-World Comparison Examples -->
-  <g transform="translate(50, 340)">
-    <text x="400" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1f2937">
-      Real-World Sleep Timing Examples
+  <!-- Comparison Scenarios -->
+  <g transform="translate(50, 380)">
+    <text x="400" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#1e293b">
+      Sleep Timing Reality Check
     </text>
     
-    <!-- Bad Timing Scenario -->
+    <!-- Tired Scenario -->
     <g transform="translate(0, 40)">
-      <rect x="0" y="0" width="390" height="220" rx="15" fill="url(#badWakeGradient)" filter="url(#shadow)"/>
+      <rect x="0" y="0" width="380" height="260" rx="16" fill="url(#sleepyGradient)" filter="url(#dropShadow)"/>
       
-      <text x="195" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white">
-        ❌ Poor Sleep Timing
+      <text x="190" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">
+        😴 Wrong Timing Result
       </text>
       
-      <rect x="20" y="50" width="350" height="40" rx="8" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
-      <text x="195" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
-        Sleep: 11:00 PM → Wake: 7:00 AM
+      <rect x="25" y="55" width="330" height="50" rx="12" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="2"/>
+      <text x="190" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">
+        Sleep: 10:30 PM → Wake: 6:30 AM
       </text>
-      <text x="195" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
-        8 hours = 5.33 sleep cycles (incomplete cycle)
-      </text>
-      
-      <text x="20" y="115" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
-        Waking During Deep Sleep Causes:
+      <text x="190" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="white">
+        8 hours = 5.33 cycles (incomplete)
       </text>
       
-      <g transform="translate(20, 125)" font-family="Arial, sans-serif" font-size="13" fill="white">
-        <text x="0" y="15">🧠 Severe grogginess lasting 1-4 hours</text>
-        <text x="0" y="32">⚡ 65% reduction in cognitive performance</text>
-        <text x="0" y="49">😠 Increased irritability and mood swings</text>
-        <text x="0" y="66">☕ Heavy dependence on caffeine</text>
-        <text x="0" y="83">😴 Feeling "unrested" despite 8 full hours</text>
+      <text x="25" y="130" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+        Waking Mid-Deep Sleep:
+      </text>
+      
+      <g transform="translate(25, 140)" font-family="Arial, sans-serif" font-size="15" fill="white">
+        <text x="0" y="20">• Groggy for 2-4 hours after waking</text>
+        <text x="0" y="40">• Brain fog affects decision making</text>
+        <text x="0" y="60">• Irritable mood throughout morning</text>
+        <text x="0" y="80">• Multiple coffees needed to function</text>
+        <text x="0" y="100">• "I need more sleep" feeling</text>
       </g>
     </g>
     
-    <!-- Good Timing Scenario -->
-    <g transform="translate(410, 40)">
-      <rect x="0" y="0" width="390" height="220" rx="15" fill="url(#goodWakeGradient)" filter="url(#shadow)"/>
+    <!-- Refreshed Scenario -->
+    <g transform="translate(420, 40)">
+      <rect x="0" y="0" width="380" height="260" rx="16" fill="url(#refreshedGradient)" filter="url(#dropShadow)"/>
       
-      <text x="195" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white">
-        ✅ Perfect Sleep Timing
+      <text x="190" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">
+        ⚡ Perfect Timing Result
       </text>
       
-      <rect x="20" y="50" width="350" height="40" rx="8" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
-      <text x="195" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
-        Sleep: 11:30 PM → Wake: 7:00 AM
+      <rect x="25" y="55" width="330" height="50" rx="12" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="2"/>
+      <text x="190" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">
+        Sleep: 11:00 PM → Wake: 6:30 AM
       </text>
-      <text x="195" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
-        7.5 hours = 5 complete sleep cycles
-      </text>
-      
-      <text x="20" y="115" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
-        Waking During Light Sleep Provides:
+      <text x="190" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="white">
+        7.5 hours = 5 complete cycles
       </text>
       
-      <g transform="translate(20, 125)" font-family="Arial, sans-serif" font-size="13" fill="white">
-        <text x="0" y="15">⚡ Instant alertness and natural energy</text>
-        <text x="0" y="32">🧠 Peak cognitive function from minute one</text>
-        <text x="0" y="49">😊 Positive mood and high motivation</text>
-        <text x="0" y="66">🚫 No caffeine needed to function</text>
-        <text x="0" y="83">✨ Feeling completely refreshed with less sleep</text>
-      </g>
-    </g>
-  </g>
-  
-  <!-- Sleep Inertia Impact Dashboard -->
-  <g transform="translate(50, 580)">
-    <text x="400" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1f2937">
-      Sleep Inertia Impact on Daily Performance
-    </text>
-    <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
-      How waking during deep sleep affects every aspect of your day
-    </text>
-    
-    <g transform="translate(0, 60)">
-      <!-- Cognitive Performance -->
-      <g>
-        <rect x="0" y="0" width="190" height="90" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
-        <text x="95" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#92400e">
-          🧠 Cognitive Impact
-        </text>
-        <text x="15" y="40" font-family="Arial, sans-serif" font-size="12" fill="#92400e" font-weight="bold">• Focus drops up to 65%</text>
-        <text x="15" y="55" font-family="Arial, sans-serif" font-size="12" fill="#92400e">• Memory formation impaired</text>
-        <text x="15" y="70" font-family="Arial, sans-serif" font-size="12" fill="#92400e">• Decision-making errors increase</text>
-        <text x="15" y="85" font-family="Arial, sans-serif" font-size="12" fill="#92400e">• Problem-solving slows 40%</text>
-      </g>
+      <text x="25" y="130" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+        Waking During Light Sleep:
+      </text>
       
-      <!-- Physical Performance -->
-      <g transform="translate(210, 0)">
-        <rect x="0" y="0" width="190" height="90" rx="12" fill="#fecaca" stroke="#ef4444" stroke-width="2" filter="url(#shadow)"/>
-        <text x="95" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#991b1b">
-          💪 Physical Impact
-        </text>
-        <text x="15" y="40" font-family="Arial, sans-serif" font-size="12" fill="#991b1b" font-weight="bold">• Reaction time 2x slower</text>
-        <text x="15" y="55" font-family="Arial, sans-serif" font-size="12" fill="#991b1b">• Motor coordination drops</text>
-        <text x="15" y="70" font-family="Arial, sans-serif" font-size="12" fill="#991b1b">• Fatigue resistance low</text>
-        <text x="15" y="85" font-family="Arial, sans-serif" font-size="12" fill="#991b1b">• Accident risk increases 48%</text>
-      </g>
-      
-      <!-- Emotional Wellbeing -->
-      <g transform="translate(420, 0)">
-        <rect x="0" y="0" width="190" height="90" rx="12" fill="#ddd6fe" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
-        <text x="95" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#5b21b6">
-          😌 Emotional Impact
-        </text>
-        <text x="15" y="40" font-family="Arial, sans-serif" font-size="12" fill="#5b21b6" font-weight="bold">• Irritability increases 300%</text>
-        <text x="15" y="55" font-family="Arial, sans-serif" font-size="12" fill="#5b21b6">• Stress sensitivity rises</text>
-        <text x="15" y="70" font-family="Arial, sans-serif" font-size="12" fill="#5b21b6">• Mood swings common</text>
-        <text x="15" y="85" font-family="Arial, sans-serif" font-size="12" fill="#5b21b6">• Social interactions suffer</text>
-      </g>
-      
-      <!-- Productivity Loss -->
-      <g transform="translate(630, 0)">
-        <rect x="0" y="0" width="170" height="90" rx="12" fill="#d1fae5" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
-        <text x="85" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#065f46">
-          📊 Productivity Impact
-        </text>
-        <text x="15" y="40" font-family="Arial, sans-serif" font-size="12" fill="#065f46" font-weight="bold">• Overall output drops 40%</text>
-        <text x="15" y="55" font-family="Arial, sans-serif" font-size="12" fill="#065f46">• Tasks take 2x longer</text>
-        <text x="15" y="70" font-family="Arial, sans-serif" font-size="12" fill="#065f46">• Error rates double</text>
-        <text x="15" y="85" font-family="Arial, sans-serif" font-size="12" fill="#065f46">• Meeting effectiveness -60%</text>
+      <g transform="translate(25, 140)" font-family="Arial, sans-serif" font-size="15" fill="white">
+        <text x="0" y="20">• Immediately alert and energized</text>
+        <text x="0" y="40">• Clear thinking from the first minute</text>
+        <text x="0" y="60">• Positive, motivated mindset</text>
+        <text x="0" y="80">• No caffeine needed to start day</text>
+        <text x="0" y="100">• Feeling refreshed with less sleep</text>
       </g>
     </g>
   </g>
   
-  <!-- Key Scientific Insight -->
-  <g transform="translate(50, 700)">
-    <rect x="0" y="0" width="800" height="100" rx="15" fill="url(#headerGradient)" filter="url(#shadow)"/>
+  <!-- Sleep Inertia Science Box -->
+  <g transform="translate(50, 660)">
+    <rect x="0" y="0" width="800" height="160" rx="16" fill="white" stroke="#e2e8f0" stroke-width="3" filter="url(#dropShadow)"/>
     
-    <text x="400" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">
-      💡 Revolutionary Sleep Science Discovery
+    <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">
+      The Sleep Inertia Effect Explained
     </text>
-    <text x="400" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="white">
-      Quality Sleep Timing Beats Quantity Every Time
+    <text x="400" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#64748b">
+      Why your body feels worse when interrupted during deep sleep
     </text>
-    <text x="400" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">
-      7.5 hours with perfect timing > 8-9 hours with wrong timing
+    
+    <g transform="translate(40, 70)">
+      <rect x="0" y="0" width="180" height="70" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <text x="90" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e">
+        🧠 Mental Impact
+      </text>
+      <text x="12" y="35" font-family="Arial, sans-serif" font-size="11" fill="#92400e">• Focus reduced by 65%</text>
+      <text x="12" y="48" font-family="Arial, sans-serif" font-size="11" fill="#92400e">• Memory recall impaired</text>
+      <text x="12" y="61" font-family="Arial, sans-serif" font-size="11" fill="#92400e">• Decision making slower</text>
+      
+      <rect x="200" y="0" width="180" height="70" rx="8" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+      <text x="290" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#991b1b">
+        😠 Mood Impact  
+      </text>
+      <text x="212" y="35" font-family="Arial, sans-serif" font-size="11" fill="#991b1b">• Irritability increases 300%</text>
+      <text x="212" y="48" font-family="Arial, sans-serif" font-size="11" fill="#991b1b">• Stress sensitivity high</text>
+      <text x="212" y="61" font-family="Arial, sans-serif" font-size="11" fill="#991b1b">• Social interactions suffer</text>
+      
+      <rect x="400" y="0" width="180" height="70" rx="8" fill="#ddd6fe" stroke="#8b5cf6" stroke-width="2"/>
+      <text x="490" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#5b21b6">
+        💪 Physical Impact
+      </text>
+      <text x="412" y="35" font-family="Arial, sans-serif" font-size="11" fill="#5b21b6">• Reaction time 2x slower</text>
+      <text x="412" y="48" font-family="Arial, sans-serif" font-size="11" fill="#5b21b6">• Coordination problems</text>
+      <text x="412" y="61" font-family="Arial, sans-serif" font-size="11" fill="#5b21b6">• Accident risk +48%</text>
+      
+      <rect x="600" y="0" width="160" height="70" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="680" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#166534">
+        📈 Work Impact
+      </text>
+      <text x="612" y="35" font-family="Arial, sans-serif" font-size="11" fill="#166534">• Productivity drops 40%</text>
+      <text x="612" y="48" font-family="Arial, sans-serif" font-size="11" fill="#166534">• Tasks take 2x longer</text>
+      <text x="612" y="61" font-family="Arial, sans-serif" font-size="11" fill="#166534">• Error rates double</text>
+    </g>
+  </g>
+  
+  <!-- Key Takeaway -->
+  <g transform="translate(50, 840)">
+    <rect x="0" y="0" width="800" height="50" rx="25" fill="url(#primaryGradient)" filter="url(#dropShadow)"/>
+    <text x="400" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+      💡 Game-Changing Insight: Sleep Quality Timing > Sleep Quantity
     </text>
-    <text x="400" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)">
-      Use complete 90-minute cycles: 5 cycles = 7.5 hours | 6 cycles = 9 hours | 4 cycles = 6 hours
+    <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">
+      7.5 hours perfectly timed = Better than 9 hours poorly timed
     </text>
   </g>
   
-  <!-- Footer Branding -->
-  <text x="450" y="830" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6">
-    SleepCycle.io
-  </text>
-  <text x="450" y="845" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#9ca3af">
-    Master Your Sleep Timing for Peak Daily Performance
+  <!-- Footer -->
+  <text x="450" y="880" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#6366f1">
+    SleepCycle.io - Master Your Sleep Timing for Peak Performance
   </text>
 </svg>
