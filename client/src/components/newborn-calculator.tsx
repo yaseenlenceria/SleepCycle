@@ -18,7 +18,7 @@ interface NewbornCalculatorProps {
   bedtimeResultsComponent?: React.ReactNode;
   napResultsComponent?: React.ReactNode;
   sleepNowResultsComponent?: React.ReactNode;
-  isCalculating?: boolean;
+  isCalculating?: string;
 }
 
 export function NewbornCalculator({
@@ -35,7 +35,7 @@ export function NewbornCalculator({
   bedtimeResultsComponent,
   napResultsComponent,
   sleepNowResultsComponent,
-  isCalculating = false
+  isCalculating = ''
 }: NewbornCalculatorProps) {
   
   const hours = Array.from({ length: 12 }, (_, i) => (i + 1).toString());
@@ -87,11 +87,11 @@ export function NewbornCalculator({
       </div>
 
       {/* Calculator Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
         
         {/* Baby Morning Wake Time */}
-        <Card className="bg-gradient-to-br from-orange-50 to-yellow-50 border-orange-200 shadow-lg hover:shadow-xl transition-all duration-300">
-          <CardContent className="p-6 lg:p-8 text-center">
+        <Card className="bg-gradient-to-br from-orange-50 to-yellow-50 border-orange-200 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
+          <CardContent className="p-4 md:p-6 lg:p-8 text-center h-full flex flex-col justify-between">
             <div className="space-y-4">
               <Clock className="mx-auto text-orange-500" size={40} />
               <div>
@@ -105,15 +105,16 @@ export function NewbornCalculator({
             </div>
             
             <div className="mt-6">
-              {isCalculating ? (
+              {isCalculating === 'bedtime' ? (
                 <EnhancedLoadingAnimation />
               ) : (
                 <Button 
                   onClick={onCalculateBedtime}
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-6 rounded-xl transition-colors text-base lg:text-lg"
+                  className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-400 text-white font-semibold py-4 px-6 rounded-xl transition-colors text-base lg:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+                  disabled={isCalculating !== ''}
                   data-testid="button-calculate-bedtime"
                 >
-                  Find Baby's Bedtime
+                  🕐 Find Baby's Bedtime
                 </Button>
               )}
             </div>
@@ -121,8 +122,8 @@ export function NewbornCalculator({
         </Card>
 
         {/* Baby Bedtime/Nap Start */}
-        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300">
-          <CardContent className="p-6 lg:p-8 text-center">
+        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
+          <CardContent className="p-4 md:p-6 lg:p-8 text-center h-full flex flex-col justify-between">
             <div className="space-y-4">
               <Moon className="mx-auto text-blue-500" size={40} />
               <div>
@@ -136,15 +137,16 @@ export function NewbornCalculator({
             </div>
             
             <div className="mt-6">
-              {isCalculating ? (
+              {isCalculating === 'nap' ? (
                 <EnhancedLoadingAnimation />
               ) : (
                 <Button 
                   onClick={onCalculateNapSchedule}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-6 rounded-xl transition-colors text-base lg:text-lg"
+                  className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 text-white font-semibold py-4 px-6 rounded-xl transition-colors text-base lg:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+                  disabled={isCalculating !== ''}
                   data-testid="button-calculate-nap-schedule"
                 >
-                  Create Nap Schedule
+                  💤 Create Nap Schedule
                 </Button>
               )}
             </div>
@@ -152,8 +154,8 @@ export function NewbornCalculator({
         </Card>
 
         {/* Baby Sleep Now */}
-        <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 shadow-lg hover:shadow-xl transition-all duration-300">
-          <CardContent className="p-6 lg:p-8 text-center">
+        <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
+          <CardContent className="p-4 md:p-6 lg:p-8 text-center h-full flex flex-col justify-between">
             <div className="space-y-4">
               <Zap className="mx-auto text-green-500" size={40} />
               <div>
@@ -167,15 +169,16 @@ export function NewbornCalculator({
             </div>
             
             <div className="mt-6">
-              {isCalculating ? (
+              {isCalculating === 'sleepnow' ? (
                 <EnhancedLoadingAnimation />
               ) : (
                 <Button 
                   onClick={onSleepNow}
-                  className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-6 rounded-xl transition-colors text-base lg:text-lg"
+                  className="w-full bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white font-semibold py-4 px-6 rounded-xl transition-colors text-base lg:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+                  disabled={isCalculating !== ''}
                   data-testid="button-baby-sleep-now"
                 >
-                  Baby Sleep Times
+                  ⚡ Baby Sleep Times
                 </Button>
               )}
             </div>

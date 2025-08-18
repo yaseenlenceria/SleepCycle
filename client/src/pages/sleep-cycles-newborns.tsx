@@ -17,7 +17,7 @@ export default function SleepCyclesNewbornsPage() {
   const [wakeupTimes, setWakeupTimes] = useState<any[]>([]);
   const [sleepNowTimes, setSleepNowTimes] = useState<any[]>([]);
   const [currentTime, setCurrentTime] = useState('');
-  const [isCalculating, setIsCalculating] = useState(false);
+  const [isCalculating, setIsCalculating] = useState('');  // Track which button is calculating
   const [selectedSleepDuration, setSelectedSleepDuration] = useState(3); // Newborn nap duration in hours
   const [babyAgeWeeks, setBabyAgeWeeks] = useState(4);
   const [showBedtimeResults, setShowBedtimeResults] = useState(false);
@@ -42,7 +42,7 @@ export default function SleepCyclesNewbornsPage() {
   };
 
   const handleCalculateBedtime = () => {
-    setIsCalculating(true);
+    setIsCalculating('bedtime');
     setShowNapResults(false);
     setShowSleepNowResults(false);
     
@@ -50,13 +50,13 @@ export default function SleepCyclesNewbornsPage() {
       const wakeTime = `${hour}:${minute} ${period}`;
       const result = calculateNewbornBedtimes(wakeTime);
       setBedtimes(result);
-      setIsCalculating(false);
+      setIsCalculating('');
       setShowBedtimeResults(true);
     }, 1500);
   };
 
   const handleCalculateNapSchedule = (bedtimeString?: string) => {
-    setIsCalculating(true);
+    setIsCalculating('nap');
     setShowBedtimeResults(false);
     setShowSleepNowResults(false);
     
@@ -64,13 +64,13 @@ export default function SleepCyclesNewbornsPage() {
       const napStartTime = bedtimeString || `${hour}:${minute} ${period}`;
       const result = calculateNewbornNapTimes(napStartTime);
       setWakeupTimes(result);
-      setIsCalculating(false);
+      setIsCalculating('');
       setShowNapResults(true);
     }, 1500);
   };
 
   const handleSleepNow = (sleepDuration: number = selectedSleepDuration) => {
-    setIsCalculating(true);
+    setIsCalculating('sleepnow');
     setShowBedtimeResults(false);
     setShowNapResults(false);
     
@@ -78,7 +78,7 @@ export default function SleepCyclesNewbornsPage() {
       const {times, currentTime: liveTime} = calculateNewbornSleepNow();
       setSleepNowTimes(times);
       setCurrentTime(liveTime);
-      setIsCalculating(false);
+      setIsCalculating('');
       setShowSleepNowResults(true);
     }, 1500);
   };
