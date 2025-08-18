@@ -65,8 +65,23 @@ export function assessSleepQuality(
   let riskFactors: string[] = [];
   let benefits: string[] = [];
 
-  // Quality assessment based on CDC guidelines
-  if (hoursSlept >= recommended.min && hoursSlept <= recommended.max) {
+  // Enhanced quality assessment with realistic sleep duration checks
+  if (hoursSlept < 3) {
+    quality = 'poor';
+    feedback = `⚠️ Warning: Only ${hoursSlept.toFixed(1)} hours detected. This appears to be a nap rather than nighttime sleep. For proper sleep analysis, please enter your actual bedtime and wake-up time.`;
+    riskFactors = [
+      'Extremely insufficient sleep duration',
+      'May indicate incorrect time entry or nap instead of main sleep',
+      'Severe cognitive impairment risk',
+      'Increased accident risk'
+    ];
+    tips = [
+      'Verify your bedtime and wake-up times are correct',
+      'If this was a nap, use the nap calculator instead',
+      'Aim for 7-9 hours of nighttime sleep',
+      'Establish a consistent sleep schedule'
+    ];
+  } else if (hoursSlept >= recommended.min && hoursSlept <= recommended.max) {
     if (hoursSlept >= recommended.optimal - 0.5 && hoursSlept <= recommended.optimal + 0.5) {
       quality = 'excellent';
       feedback = `🎯 Perfect! You're getting ${hoursSlept.toFixed(1)} hours of sleep, which is optimal for ${userSex === 'female' ? 'women' : 'men'} aged ${userAge}. This sleep duration maximizes your health benefits.`;
