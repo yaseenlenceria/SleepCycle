@@ -14,7 +14,7 @@ import { UltraSimpleHomepage } from '@/components/ultra-simple-homepage';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { calculateBedtimes, calculateWakeUpTimes, calculateWakeUpTimesFromNow, getCurrentTime, SleepTime } from '@/lib/sleep-calculations';
-import { Bed, Sun, Clock, Heart, Coffee, BarChart3, Users, Calculator, Moon, Star, Baby, Smartphone } from 'lucide-react';
+import { Bed, Sun, Clock, Heart, Coffee, BarChart3, Users, Calculator, Moon, Star, Baby, Smartphone, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -118,7 +118,7 @@ export default function SleepCalculator() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 animate-gradient">
       <Header />
 
-      <main className="px-4 py-8">
+      <main className="px-2 py-4 sm:px-4 sm:py-6">
         {/* Ultra Simple Homepage */}
         <UltraSimpleHomepage
           hour={hour}
@@ -129,39 +129,88 @@ export default function SleepCalculator() {
           onSleepNow={handleSleepNow}
         />
 
-        {/* Results Display */}
+        {/* Results Display - Takes Full Page on Mobile */}
         {(showBedtimeResults || showWakeupResults || showSleepNowResults) && (
-          <div className="max-w-4xl mx-auto mt-8">
-            {showBedtimeResults && (
-              <SimpleSleepResults
-                times={bedtimes}
-                type="bedtime"
-                selectedTime={selectedTimeString}
-                isLoading={isCalculating}
-                userAge={userProfile?.age}
-                userSex={userProfile?.sex}
-              />
-            )}
-            {showWakeupResults && (
-              <SimpleSleepResults
-                times={wakeupTimes}
-                type="wakeup"
-                selectedTime={selectedTimeString}
-                isLoading={isCalculating}
-                userAge={userProfile?.age}
-                userSex={userProfile?.sex}
-              />
-            )}
-            {showSleepNowResults && (
-              <SimpleSleepResults
-                times={sleepNowTimes}
-                type="wakeup"
-                selectedTime={currentTime}
-                isLoading={isCalculating}
-                userAge={userProfile?.age}
-                userSex={userProfile?.sex}
-              />
-            )}
+          <div className="fixed inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 z-50 overflow-y-auto">
+            <div className="min-h-screen">
+              <Header />
+              <div className="px-2 py-4 sm:px-4 sm:py-6">
+                <div className="max-w-4xl mx-auto">
+                  <div className="mb-6">
+                    <Button
+                      onClick={() => {
+                        setShowBedtimeResults(false);
+                        setShowWakeupResults(false);
+                        setShowSleepNowResults(false);
+                      }}
+                      variant="outline"
+                      className="mb-4"
+                    >
+                      ← Back to Calculator
+                    </Button>
+                  </div>
+                  
+                  {showBedtimeResults && (
+                    <SimpleSleepResults
+                      times={bedtimes}
+                      type="bedtime"
+                      selectedTime={selectedTimeString}
+                      isLoading={isCalculating}
+                      userAge={userProfile?.age}
+                      userSex={userProfile?.sex}
+                    />
+                  )}
+                  {showWakeupResults && (
+                    <SimpleSleepResults
+                      times={wakeupTimes}
+                      type="wakeup"
+                      selectedTime={selectedTimeString}
+                      isLoading={isCalculating}
+                      userAge={userProfile?.age}
+                      userSex={userProfile?.sex}
+                    />
+                  )}
+                  {showSleepNowResults && (
+                    <SimpleSleepResults
+                      times={sleepNowTimes}
+                      type="wakeup"
+                      selectedTime={currentTime}
+                      isLoading={isCalculating}
+                      userAge={userProfile?.age}
+                      userSex={userProfile?.sex}
+                    />
+                  )}
+                  
+                  {/* Next Steps Navigation */}
+                  <Card className="mt-8 bg-white shadow-lg">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-4">What's Next?</h3>
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <Button
+                          onClick={() => {
+                            setShowBedtimeResults(false);
+                            setShowWakeupResults(false);
+                            setShowSleepNowResults(false);
+                          }}
+                          variant="outline"
+                          className="flex items-center justify-center py-3"
+                        >
+                          Try Different Time
+                          <ArrowRight className="ml-2" size={16} />
+                        </Button>
+                        <Button
+                          onClick={handleSleepNow}
+                          className="bg-green-500 hover:bg-green-600 text-white py-3"
+                        >
+                          Sleep Now Instead
+                          <Moon className="ml-2" size={16} />
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </div>
           </div>
         )}
 
