@@ -16,7 +16,7 @@ export function Header() {
             </div>
           </Link>
           <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
-            Optimize your sleep with scientifically-backed 90-minute sleep cycles
+            Best Sleepytime Bedtime Calculator with AI Health Assessment to Fix Your Sleep
           </p>
         </div>
       </div>

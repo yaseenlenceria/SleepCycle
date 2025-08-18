@@ -218,6 +218,25 @@ export function UltraSimpleHomepage({
               Get optimal wake-up times if you sleep right now
             </p>
 
+            {/* Quick Sleep Duration Selector */}
+            <div className="mb-3 sm:mb-4">
+              <p className="text-xs text-gray-500 mb-2">How many hours do you want to sleep?</p>
+              <div className="grid grid-cols-4 gap-1 sm:gap-2">
+                <button className="p-2 text-xs sm:text-sm bg-gray-100 hover:bg-green-100 rounded border text-gray-700 hover:text-green-700 transition-colors">
+                  6h
+                </button>
+                <button className="p-2 text-xs sm:text-sm bg-gray-100 hover:bg-green-100 rounded border text-gray-700 hover:text-green-700 transition-colors">
+                  7h
+                </button>
+                <button className="p-2 text-xs sm:text-sm bg-green-100 border-green-300 rounded border text-green-700 font-medium">
+                  8h
+                </button>
+                <button className="p-2 text-xs sm:text-sm bg-gray-100 hover:bg-green-100 rounded border text-gray-700 hover:text-green-700 transition-colors">
+                  9h
+                </button>
+              </div>
+            </div>
+
             <Button
               onClick={onSleepNow}
               className="w-full bg-green-500 hover:bg-green-600 text-white py-2 sm:py-3 text-sm sm:text-base font-semibold rounded-lg transition-colors"
