@@ -80,7 +80,7 @@ export default function SleepCalculator() {
     
     setTimeout(() => {
       const selectedTime = `${hour}:${minute} ${period}`;
-      const results = calculateBedtimes(selectedTime);
+      const results = calculateBedtimes(selectedTime, selectedSleepDuration);
       setBedtimes(results);
       setIsCalculating(false);
       setShowBedtimeResults(true);
@@ -94,7 +94,7 @@ export default function SleepCalculator() {
     setTimeout(() => {
       if (bedtime) {
         // Calculate wake-up times from specific bedtime
-        const results = calculateWakeUpTimesFromBedtime(bedtime);
+        const results = calculateWakeUpTimesFromBedtime(bedtime, selectedSleepDuration);
         setWakeupTimes(results);
       } else {
         // Calculate wake-up times from now
@@ -122,6 +122,11 @@ export default function SleepCalculator() {
   };
 
   const selectedTimeString = `${hour}:${minute} ${period}`;
+  
+  // Store bedtime values for wake-up calculations
+  const [bedHour, setBedHour] = useState('10');
+  const [bedMinute, setBedMinute] = useState('00');
+  const [bedPeriod, setBedPeriod] = useState('PM');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 animate-gradient">
@@ -171,7 +176,8 @@ export default function SleepCalculator() {
                       userSex={userProfile?.sex}
                       onSleepDurationChange={(duration) => {
                         setSelectedSleepDuration(duration);
-                        // Optionally trigger re-calculation with new duration
+                        // Re-calculate bedtimes with new duration preference
+                        handleCalculateBedtime();
                       }}
                     />
                   )}
@@ -186,6 +192,11 @@ export default function SleepCalculator() {
                       userSex={userProfile?.sex}
                       onSleepDurationChange={(duration) => {
                         setSelectedSleepDuration(duration);
+                        // Re-calculate wake-up times with new duration preference
+                        // We need to get the bedtime from the original selected time
+                        if (selectedTimeString) {
+                          handleCalculateWakeup(selectedTimeString);
+                        }
                       }}
                     />
                   )}

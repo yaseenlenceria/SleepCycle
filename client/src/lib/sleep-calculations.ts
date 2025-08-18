@@ -28,7 +28,7 @@ export function formatTime(date: Date): string {
   });
 }
 
-export function calculateBedtimes(wakeUpTime: string): SleepTime[] {
+export function calculateBedtimes(wakeUpTime: string, preferredDuration?: number): SleepTime[] {
   // Parse the wake-up time
   const [time, period] = wakeUpTime.split(' ');
   const [hourStr, minuteStr] = time.split(':');
@@ -68,8 +68,20 @@ export function calculateBedtimes(wakeUpTime: string): SleepTime[] {
     });
   }
 
-  // Return in reverse order (most sleep first)
-  return bedtimes.reverse();
+  // If preferred duration is specified, prioritize times close to that duration
+  if (preferredDuration) {
+    const targetCycles = Math.round(preferredDuration / 1.5);
+    bedtimes.sort((a, b) => {
+      const aDiff = Math.abs(a.cycles - targetCycles);
+      const bDiff = Math.abs(b.cycles - targetCycles);
+      return aDiff - bDiff;
+    });
+  } else {
+    // Return in reverse order (most sleep first)
+    bedtimes.reverse();
+  }
+
+  return bedtimes;
 }
 
 export function calculateWakeUpTimes(): SleepTime[] {
@@ -174,7 +186,7 @@ export function getCurrentTime(): string {
   return formatTime(new Date());
 }
 
-export function calculateWakeUpTimesFromBedtime(bedtimeStr: string): SleepTime[] {
+export function calculateWakeUpTimesFromBedtime(bedtimeStr: string, preferredDuration?: number): SleepTime[] {
   // Parse the bedtime string
   const [time, period] = bedtimeStr.split(' ');
   const [hourStr, minuteStr] = time.split(':');
@@ -208,6 +220,16 @@ export function calculateWakeUpTimesFromBedtime(bedtimeStr: string): SleepTime[]
       cycles: cycles,
       duration: duration,
       quality: quality
+    });
+  }
+
+  // If preferred duration is specified, prioritize times close to that duration
+  if (preferredDuration) {
+    const targetCycles = Math.round(preferredDuration / 1.5);
+    wakeUpTimes.sort((a, b) => {
+      const aDiff = Math.abs(a.cycles - targetCycles);
+      const bDiff = Math.abs(b.cycles - targetCycles);
+      return aDiff - bDiff;
     });
   }
 
