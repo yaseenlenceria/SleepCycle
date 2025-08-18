@@ -90,7 +90,7 @@ export function Footer() {
 
         {/* SEO Keywords Section */}
         <div className="bg-gray-800 rounded-xl p-6 mb-8">
-          <h4 className="font-bold text-white mb-3 text-center">🎯 Popular Sleep Calculator Searches</h4>
+          <h4 className="font-bold text-white mb-3 text-center">Popular Sleep Calculator Searches</h4>
           <div className="flex flex-wrap justify-center gap-2 text-xs">
             <span className="bg-blue-600 text-white px-3 py-1 rounded-full">sleep calculator</span>
             <span className="bg-blue-600 text-white px-3 py-1 rounded-full">90 minute sleep cycle calculator</span>
