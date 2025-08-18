@@ -1,19 +1,83 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Baby, Clock, Moon, Sun, Utensils } from 'lucide-react';
+import { NewbornCalculator } from '@/components/newborn-calculator';
+import { NewbornSleepResults } from '@/components/newborn-sleep-results';
+import { calculateNewbornBedtimes, calculateNewbornNapTimes, calculateNewbornSleepNow } from '@/lib/newborn-sleep-calculations';
 
 export default function SleepCycles6MonthOldPage() {
+  // Calculator state
+  const [hour, setHour] = useState('7');
+  const [minute, setMinute] = useState('00');
+  const [period, setPeriod] = useState('AM');
+  const [bedtimes, setBedtimes] = useState<any[]>([]);
+  const [wakeupTimes, setWakeupTimes] = useState<any[]>([]);
+  const [sleepNowTimes, setSleepNowTimes] = useState<any[]>([]);
+  const [currentTime, setCurrentTime] = useState('');
+  const [isCalculating, setIsCalculating] = useState('');
+  const [showBedtimeResults, setShowBedtimeResults] = useState(false);
+  const [showNapResults, setShowNapResults] = useState(false);
+  const [showSleepNowResults, setShowSleepNowResults] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "6 Month Baby Sleep - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
+    document.title = "AI Sleep Calculator for 6 Month Old Babies | Sleep Training Tool - Sleepcycle.io";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Sleep Cycle masters 6-month baby sleep training using sound analysis, 4 billion sleep sessions, and 13 years of science. Expert guidance for solid foods impact and sleep schedules.');
+      metaDescription.setAttribute('content', 'AI Sleep Calculator with FREE Health Assessment for 6-month babies. Master sleep training with personalized recommendations. Calculate optimal nap schedules and bedtimes now.');
     }
   }, []);
+
+  const handleTimeChange = (newHour: string, newMinute: string, newPeriod: string) => {
+    setHour(newHour);
+    setMinute(newMinute);
+    setPeriod(newPeriod);
+  };
+
+  const handleCalculateBedtime = () => {
+    setIsCalculating('bedtime');
+    setShowNapResults(false);
+    setShowSleepNowResults(false);
+    
+    setTimeout(() => {
+      const wakeTime = `${hour}:${minute} ${period}`;
+      const result = calculateNewbornBedtimes(wakeTime);
+      setBedtimes(result);
+      setIsCalculating('');
+      setShowBedtimeResults(true);
+    }, 1500);
+  };
+
+  const handleCalculateNapSchedule = () => {
+    setIsCalculating('nap');
+    setShowBedtimeResults(false);
+    setShowSleepNowResults(false);
+    
+    setTimeout(() => {
+      const napStartTime = `${hour}:${minute} ${period}`;
+      const result = calculateNewbornNapTimes(napStartTime);
+      setWakeupTimes(result);
+      setIsCalculating('');
+      setShowNapResults(true);
+    }, 1500);
+  };
+
+  const handleSleepNow = () => {
+    setIsCalculating('sleepnow');
+    setShowBedtimeResults(false);
+    setShowNapResults(false);
+    
+    setTimeout(() => {
+      const {times, currentTime: liveTime} = calculateNewbornSleepNow();
+      setSleepNowTimes(times);
+      setCurrentTime(liveTime);
+      setIsCalculating('');
+      setShowSleepNowResults(true);
+    }, 1500);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
@@ -22,18 +86,77 @@ export default function SleepCycles6MonthOldPage() {
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Sleep Cycles for 6 Month Old Babies
+            AI Sleep Calculator for 6 Month Old Babies
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            At 6 months, babies are ready for more predictable sleep patterns and may be candidates for sleep training. Learn about schedules, solid food impacts, and establishing consistent routines.
+            FREE personalized sleep calculator for 6-month babies. Master sleep training with AI-powered recommendations optimized for developing sleep patterns and solid food introduction.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
             <span>👶 6 Month Milestone</span>
-            <span>😴 Sleep Training Ready</span>
-            <span>🥄 Solid Foods Begin</span>
-            <span>⏰ Predictable Schedule</span>
+            <span>🧠 AI-Powered</span>
+            <span>🥄 Solid Foods Support</span>
+            <span>📊 FREE Assessment</span>
           </div>
         </div>
+
+        {/* 6-Month Sleep Calculator */}
+        <div className="mb-12">
+          <Card className="bg-gradient-to-br from-green-50 to-blue-50 border-green-200 shadow-xl">
+            <CardHeader className="text-center">
+              <CardTitle className="text-2xl font-bold text-gray-800 flex items-center justify-center gap-2">
+                <Baby className="text-green-500" size={28} />
+                6-Month Sleep Calculator
+              </CardTitle>
+              <p className="text-gray-600">Optimized for sleep training readiness (70-80 minute cycles)</p>
+              <div className="mt-3 flex justify-center gap-2">
+                <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">6 Months Old</span>
+                <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">Sleep Training Ready</span>
+              </div>
+            </CardHeader>
+            <CardContent className="p-6">
+              <NewbornCalculator
+                hour={hour}
+                minute={minute}
+                period={period}
+                onTimeChange={handleTimeChange}
+                onCalculateBedtime={handleCalculateBedtime}
+                onCalculateNapSchedule={handleCalculateNapSchedule}
+                onSleepNow={handleSleepNow}
+                isCalculating={isCalculating}
+                showBedtimeResults={showBedtimeResults}
+                showNapResults={showNapResults}
+                showSleepNowResults={showSleepNowResults}
+              />
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Results Section */}
+        {(showBedtimeResults || showNapResults || showSleepNowResults) && (
+          <div className="mb-12">
+            {showBedtimeResults && (
+              <NewbornSleepResults
+                times={bedtimes}
+                type="bedtime"
+                babyAgeWeeks={24} // 6 months = 24 weeks
+              />
+            )}
+            {showNapResults && (
+              <NewbornSleepResults
+                times={wakeupTimes}
+                type="napSchedule"
+                babyAgeWeeks={24}
+              />
+            )}
+            {showSleepNowResults && (
+              <NewbornSleepResults
+                times={sleepNowTimes}
+                type="sleepNow"
+                babyAgeWeeks={24}
+              />
+            )}
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <Card className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl border-0">

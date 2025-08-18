@@ -1,19 +1,83 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Baby, Clock, Moon, Sun, Calendar } from 'lucide-react';
+import { NewbornCalculator } from '@/components/newborn-calculator';
+import { NewbornSleepResults } from '@/components/newborn-sleep-results';
+import { calculateNewbornBedtimes, calculateNewbornNapTimes, calculateNewbornSleepNow } from '@/lib/newborn-sleep-calculations';
 
 export default function SleepCycles4MonthOldPage() {
+  // Calculator state
+  const [hour, setHour] = useState('7');
+  const [minute, setMinute] = useState('00');
+  const [period, setPeriod] = useState('AM');
+  const [bedtimes, setBedtimes] = useState<any[]>([]);
+  const [wakeupTimes, setWakeupTimes] = useState<any[]>([]);
+  const [sleepNowTimes, setSleepNowTimes] = useState<any[]>([]);
+  const [currentTime, setCurrentTime] = useState('');
+  const [isCalculating, setIsCalculating] = useState('');
+  const [showBedtimeResults, setShowBedtimeResults] = useState(false);
+  const [showNapResults, setShowNapResults] = useState(false);
+  const [showSleepNowResults, setShowSleepNowResults] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "4 Month Sleep Regression - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
+    document.title = "AI Sleep Calculator for 4 Month Old Babies | Fix Sleep Regression - Sleepcycle.io";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Sleep Cycle navigates 4-month sleep regression using sound analysis, 4 billion sleep sessions, and 13 years of science. Master 4-month-old sleep schedules and developmental milestones.');
+      metaDescription.setAttribute('content', 'AI Sleep Calculator with FREE Health Assessment for 4-month babies. Fix sleep regression with personalized recommendations based on 4-billion sleep sessions. Calculate optimal bedtimes now.');
     }
   }, []);
+
+  const handleTimeChange = (newHour: string, newMinute: string, newPeriod: string) => {
+    setHour(newHour);
+    setMinute(newMinute);
+    setPeriod(newPeriod);
+  };
+
+  const handleCalculateBedtime = () => {
+    setIsCalculating('bedtime');
+    setShowNapResults(false);
+    setShowSleepNowResults(false);
+    
+    setTimeout(() => {
+      const wakeTime = `${hour}:${minute} ${period}`;
+      const result = calculateNewbornBedtimes(wakeTime);
+      setBedtimes(result);
+      setIsCalculating('');
+      setShowBedtimeResults(true);
+    }, 1500);
+  };
+
+  const handleCalculateNapSchedule = () => {
+    setIsCalculating('nap');
+    setShowBedtimeResults(false);
+    setShowSleepNowResults(false);
+    
+    setTimeout(() => {
+      const napStartTime = `${hour}:${minute} ${period}`;
+      const result = calculateNewbornNapTimes(napStartTime);
+      setWakeupTimes(result);
+      setIsCalculating('');
+      setShowNapResults(true);
+    }, 1500);
+  };
+
+  const handleSleepNow = () => {
+    setIsCalculating('sleepnow');
+    setShowBedtimeResults(false);
+    setShowNapResults(false);
+    
+    setTimeout(() => {
+      const {times, currentTime: liveTime} = calculateNewbornSleepNow();
+      setSleepNowTimes(times);
+      setCurrentTime(liveTime);
+      setIsCalculating('');
+      setShowSleepNowResults(true);
+    }, 1500);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
@@ -23,18 +87,77 @@ export default function SleepCycles4MonthOldPage() {
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Sleep Cycles for 4 Month Old Babies
+            AI Sleep Calculator for 4 Month Old Babies
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            Navigate the important 4-month milestone with expert guidance on sleep patterns, schedules, and the famous 4-month sleep regression. Learn how to establish healthy sleep habits during this crucial developmental period.
+            FREE personalized sleep calculator for 4-month babies. Navigate sleep regression with AI-powered recommendations based on age-specific sleep cycles and developmental milestones.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
             <span>🍼 4-Month Development</span>
-            <span>😴 Sleep Regression</span>
-            <span>⏰ New Schedules</span>
-            <span>🌙 Longer Night Sleep</span>
+            <span>🧠 AI-Powered</span>
+            <span>😴 Sleep Regression Fix</span>
+            <span>📊 FREE Assessment</span>
           </div>
         </div>
+
+        {/* 4-Month Sleep Calculator */}
+        <div className="mb-12">
+          <Card className="bg-gradient-to-br from-pink-50 to-purple-50 border-pink-200 shadow-xl">
+            <CardHeader className="text-center">
+              <CardTitle className="text-2xl font-bold text-gray-800 flex items-center justify-center gap-2">
+                <Baby className="text-pink-500" size={28} />
+                4-Month Sleep Calculator
+              </CardTitle>
+              <p className="text-gray-600">Specialized timing for 4-month development (60-70 minute cycles)</p>
+              <div className="mt-3 flex justify-center gap-2">
+                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-medium">4 Months Old</span>
+                <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">Sleep Regression Support</span>
+              </div>
+            </CardHeader>
+            <CardContent className="p-6">
+              <NewbornCalculator
+                hour={hour}
+                minute={minute}
+                period={period}
+                onTimeChange={handleTimeChange}
+                onCalculateBedtime={handleCalculateBedtime}
+                onCalculateNapSchedule={handleCalculateNapSchedule}
+                onSleepNow={handleSleepNow}
+                isCalculating={isCalculating}
+                showBedtimeResults={showBedtimeResults}
+                showNapResults={showNapResults}
+                showSleepNowResults={showSleepNowResults}
+              />
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Results Section */}
+        {(showBedtimeResults || showNapResults || showSleepNowResults) && (
+          <div className="mb-12">
+            {showBedtimeResults && (
+              <NewbornSleepResults
+                times={bedtimes}
+                type="bedtime"
+                babyAgeWeeks={16} // 4 months = 16 weeks
+              />
+            )}
+            {showNapResults && (
+              <NewbornSleepResults
+                times={wakeupTimes}
+                type="napSchedule"
+                babyAgeWeeks={16}
+              />
+            )}
+            {showSleepNowResults && (
+              <NewbornSleepResults
+                times={sleepNowTimes}
+                type="sleepNow"
+                babyAgeWeeks={16}
+              />
+            )}
+          </div>
+        )}
 
         {/* Quick Reference Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

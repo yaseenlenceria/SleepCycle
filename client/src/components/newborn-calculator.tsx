@@ -75,7 +75,7 @@ export function NewbornCalculator({
             <select
               value={period}
               onChange={(e) => onTimeChange(hour, minute, e.target.value)}
-              className="text-2xl sm:text-3xl md:text-4xl font-bold border-2 border-pink-300 rounded-lg px-2 sm:px-3 py-2 sm:py-3 bg-white focus:border-pink-500 focus:outline-none w-16 sm:w-20 text-center pt-[11px] pb-[11px] pl-[0px] pr-[0px]"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold border-2 border-pink-300 rounded-lg px-2 sm:px-3 py-2 sm:py-3 bg-white focus:border-pink-500 focus:outline-none w-16 sm:w-20 text-center pt-[11px] pb-[11px] pl-[5px] pr-[5px]"
               data-testid="period-selector"
             >
               {periods.map(p => (

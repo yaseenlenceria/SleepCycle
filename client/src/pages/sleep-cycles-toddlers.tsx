@@ -1,19 +1,83 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, Clock, Bed, Sun, Moon } from 'lucide-react';
+import { NewbornCalculator } from '@/components/newborn-calculator';
+import { NewbornSleepResults } from '@/components/newborn-sleep-results';
+import { calculateNewbornBedtimes, calculateNewbornNapTimes, calculateNewbornSleepNow } from '@/lib/newborn-sleep-calculations';
 
 export default function SleepCyclesToddlersPage() {
+  // Calculator state
+  const [hour, setHour] = useState('7');
+  const [minute, setMinute] = useState('00');
+  const [period, setPeriod] = useState('AM');
+  const [bedtimes, setBedtimes] = useState<any[]>([]);
+  const [wakeupTimes, setWakeupTimes] = useState<any[]>([]);
+  const [sleepNowTimes, setSleepNowTimes] = useState<any[]>([]);
+  const [currentTime, setCurrentTime] = useState('');
+  const [isCalculating, setIsCalculating] = useState('');
+  const [showBedtimeResults, setShowBedtimeResults] = useState(false);
+  const [showNapResults, setShowNapResults] = useState(false);
+  const [showSleepNowResults, setShowSleepNowResults] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Toddler Sleep Cycles - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
+    document.title = "AI Sleep Calculator for Toddlers | Nap Transition Tool - Sleepcycle.io";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Sleep Cycle masters toddler sleep patterns using sound analysis, 4 billion sleep sessions, and 13 years of science. Expert guidance for ages 1-3 nap transitions and bedtime routines.');
+      metaDescription.setAttribute('content', 'AI Sleep Calculator with FREE Health Assessment for toddlers (1-3 years). Master nap transitions with personalized recommendations. Calculate optimal sleep schedules for growing toddlers now.');
     }
   }, []);
+
+  const handleTimeChange = (newHour: string, newMinute: string, newPeriod: string) => {
+    setHour(newHour);
+    setMinute(newMinute);
+    setPeriod(newPeriod);
+  };
+
+  const handleCalculateBedtime = () => {
+    setIsCalculating('bedtime');
+    setShowNapResults(false);
+    setShowSleepNowResults(false);
+    
+    setTimeout(() => {
+      const wakeTime = `${hour}:${minute} ${period}`;
+      const result = calculateNewbornBedtimes(wakeTime);
+      setBedtimes(result);
+      setIsCalculating('');
+      setShowBedtimeResults(true);
+    }, 1500);
+  };
+
+  const handleCalculateNapSchedule = () => {
+    setIsCalculating('nap');
+    setShowBedtimeResults(false);
+    setShowSleepNowResults(false);
+    
+    setTimeout(() => {
+      const napStartTime = `${hour}:${minute} ${period}`;
+      const result = calculateNewbornNapTimes(napStartTime);
+      setWakeupTimes(result);
+      setIsCalculating('');
+      setShowNapResults(true);
+    }, 1500);
+  };
+
+  const handleSleepNow = () => {
+    setIsCalculating('sleepnow');
+    setShowBedtimeResults(false);
+    setShowNapResults(false);
+    
+    setTimeout(() => {
+      const {times, currentTime: liveTime} = calculateNewbornSleepNow();
+      setSleepNowTimes(times);
+      setCurrentTime(liveTime);
+      setIsCalculating('');
+      setShowSleepNowResults(true);
+    }, 1500);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
@@ -23,18 +87,77 @@ export default function SleepCyclesToddlersPage() {
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Sleep Cycles for Toddlers
+            AI Sleep Calculator for Toddlers
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            Navigate toddler sleep challenges with expert guidance on sleep patterns, nap transitions, and bedtime routines for children ages 1-3 years. Learn how to handle sleep regressions and establish healthy sleep habits.
+            FREE personalized sleep calculator for toddlers (1-3 years). Navigate nap transitions with AI-powered recommendations designed for toddler sleep challenges and developmental changes.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
             <span>👶 Ages 1-3 Years</span>
+            <span>🧠 AI-Powered</span>
             <span>😴 Nap Transitions</span>
-            <span>🛏️ Bedtime Routines</span>
-            <span>🌙 Sleep Independence</span>
+            <span>📊 FREE Assessment</span>
           </div>
         </div>
+
+        {/* Toddler Sleep Calculator */}
+        <div className="mb-12">
+          <Card className="bg-gradient-to-br from-purple-50 to-pink-50 border-purple-200 shadow-xl">
+            <CardHeader className="text-center">
+              <CardTitle className="text-2xl font-bold text-gray-800 flex items-center justify-center gap-2">
+                <Users className="text-purple-500" size={28} />
+                Toddler Sleep Calculator
+              </CardTitle>
+              <p className="text-gray-600">Designed for toddler development & nap transitions (80-90 minute cycles)</p>
+              <div className="mt-3 flex justify-center gap-2">
+                <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">1-3 Years Old</span>
+                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-medium">Nap Transitions</span>
+              </div>
+            </CardHeader>
+            <CardContent className="p-6">
+              <NewbornCalculator
+                hour={hour}
+                minute={minute}
+                period={period}
+                onTimeChange={handleTimeChange}
+                onCalculateBedtime={handleCalculateBedtime}
+                onCalculateNapSchedule={handleCalculateNapSchedule}
+                onSleepNow={handleSleepNow}
+                isCalculating={isCalculating}
+                showBedtimeResults={showBedtimeResults}
+                showNapResults={showNapResults}
+                showSleepNowResults={showSleepNowResults}
+              />
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Results Section */}
+        {(showBedtimeResults || showNapResults || showSleepNowResults) && (
+          <div className="mb-12">
+            {showBedtimeResults && (
+              <NewbornSleepResults
+                times={bedtimes}
+                type="bedtime"
+                babyAgeWeeks={78} // 18 months = 78 weeks (middle of toddler range)
+              />
+            )}
+            {showNapResults && (
+              <NewbornSleepResults
+                times={wakeupTimes}
+                type="napSchedule"
+                babyAgeWeeks={78}
+              />
+            )}
+            {showSleepNowResults && (
+              <NewbornSleepResults
+                times={sleepNowTimes}
+                type="sleepNow"
+                babyAgeWeeks={78}
+              />
+            )}
+          </div>
+        )}
 
         {/* Age-Specific Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
