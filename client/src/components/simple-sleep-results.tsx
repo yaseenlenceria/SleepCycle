@@ -103,7 +103,7 @@ export function SimpleSleepResults({
       <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
         <CardContent className="p-6">
           <h3 className="text-xl font-bold text-center text-gray-800 mb-6">
-            {type === 'bedtime' ? '🛏️ Your Optimal Bedtimes' : '⏰ You Should Wake Up At:'}
+            {type === 'bedtime' ? 'Your Optimal Bedtimes' : 'You Should Wake Up At:'}
           </h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
