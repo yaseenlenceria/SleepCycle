@@ -5,6 +5,24 @@ import { Footer } from '@/components/footer';
 export function BlogPostSleepStages() {
   return (
     <>
+      <head>
+        <title>Sleep Cycle Stages: Complete 2025 Guide to 4 Stages of Sleep (NREM & REM)</title>
+        <meta name="description" content="Master the 4 sleep cycle stages: Light Sleep (Stage 1&2), Deep Sleep (Stage 3), and REM Sleep. Learn duration, benefits, and how to optimize each stage for better rest and health." />
+        <meta name="keywords" content="sleep stages, sleep cycle stages, REM sleep, NREM sleep, deep sleep, light sleep, sleep phase, sleep science, sleep quality" />
+        <meta property="og:title" content="Sleep Cycle Stages: Complete Guide to 4 Stages of Sleep" />
+        <meta property="og:description" content="Master the 4 sleep cycle stages: Light Sleep, Deep Sleep, and REM. Learn duration, benefits, and optimization tips for each stage." />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://sleepcycle.io/blog/sleep-stages-guide" />
+        <meta property="og:image" content="https://sleepcycle.io/blog-images/sleep-stages.svg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sleep Cycle Stages: Complete Guide to Better Sleep" />
+        <meta name="twitter:description" content="Master the 4 sleep cycle stages: Light Sleep, Deep Sleep, and REM. Expert guide to sleep stage optimization." />
+        <meta name="twitter:image" content="https://sleepcycle.io/blog-images/sleep-stages.svg" />
+        <meta name="author" content="SleepCycle.io Sleep Experts" />
+        <meta name="article:published_time" content="2025-01-18T00:00:00Z" />
+        <meta name="article:section" content="Sleep Education" />
+        <link rel="canonical" href="https://sleepcycle.io/blog/sleep-stages-guide" />
+      </head>
       <Header />
       <div className="min-h-screen bg-white">
         <article className="max-w-4xl mx-auto px-6 py-12">

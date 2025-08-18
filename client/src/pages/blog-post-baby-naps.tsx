@@ -5,6 +5,24 @@ import { Footer } from '@/components/footer';
 export function BlogPostBabyNaps() {
   return (
     <>
+      <head>
+        <title>How Long Should a Baby Nap? Complete 2025 Guide by Age (0-24 Months)</title>
+        <meta name="description" content="Expert baby nap duration guide: Newborn (2-4hrs), 3-6 months (1-3hrs), 6-12 months (1-2.5hrs), 12+ months (1-3hrs). Pediatric sleep specialist recommendations for optimal infant development." />
+        <meta name="keywords" content="baby nap duration, how long baby nap, infant sleep guide, newborn nap time, baby sleep schedule, pediatric sleep advice, baby nap calculator" />
+        <meta property="og:title" content="How Long Should a Baby Nap? Complete Age-Based Guide" />
+        <meta property="og:description" content="Expert baby nap duration guide by age (0-24 months). Pediatric sleep specialist recommendations for optimal infant development and family well-being." />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://sleepcycle.io/blog/baby-nap-duration-guide" />
+        <meta property="og:image" content="https://sleepcycle.io/blog-images/baby-naps.svg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How Long Should a Baby Nap? Complete Age-Based Guide" />
+        <meta name="twitter:description" content="Expert baby nap duration guide by age. Pediatric sleep specialist recommendations for optimal infant development." />
+        <meta name="twitter:image" content="https://sleepcycle.io/blog-images/baby-naps.svg" />
+        <meta name="author" content="SleepCycle.io Pediatric Sleep Experts" />
+        <meta name="article:published_time" content="2025-01-18T00:00:00Z" />
+        <meta name="article:section" content="Baby Sleep Guide" />
+        <link rel="canonical" href="https://sleepcycle.io/blog/baby-nap-duration-guide" />
+      </head>
       <Header />
       <div className="min-h-screen bg-white">
       <article className="max-w-4xl mx-auto px-6 py-12">

@@ -3,6 +3,31 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 
 export function BlogPage() {
+  return (
+    <>
+      <head>
+        <title>Sleep Science Blog: Expert Guides & Research from SleepCycle.io | 2025</title>
+        <meta name="description" content="Expert sleep science blog with research-backed guides on sleep cycles, stages, optimization tips, and baby sleep advice. Join 10M+ users getting better sleep with SleepCycle.io's trusted insights." />
+        <meta name="keywords" content="sleep science blog, sleep cycle guide, sleep stages, baby sleep advice, sleep optimization, sleep research, sleep calculator blog" />
+        <meta property="og:title" content="Sleep Science Blog: Expert Guides & Research from SleepCycle.io" />
+        <meta property="og:description" content="Research-backed sleep guides, optimization tips, and expert advice from the world's #1 sleep platform. Trusted by 10M+ users worldwide." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sleepcycle.io/blog" />
+        <meta property="og:image" content="https://sleepcycle.io/logo.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sleep Science Blog from SleepCycle.io" />
+        <meta name="twitter:description" content="Expert sleep guides, research, and optimization tips from the world's most trusted sleep platform." />
+        <meta name="twitter:image" content="https://sleepcycle.io/logo.jpg" />
+        <link rel="canonical" href="https://sleepcycle.io/blog" />
+      </head>
+      <Header />
+      <BlogContent />
+      <Footer />
+    </>
+  );
+}
+
+function BlogContent() {
   const blogPosts = [
     {
       id: 'sleep-cycle-length',
@@ -61,8 +86,6 @@ export function BlogPage() {
   ];
 
   return (
-    <>
-      <Header />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       {/* Hero Section */}
       <div className="bg-white border-b">
@@ -79,34 +102,34 @@ export function BlogPage() {
       </div>
 
       {/* Blog Posts Grid */}
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
-            <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="aspect-video bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center p-4">
+            <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
+              <div className="aspect-[16/10] bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center p-6">
                 <img 
                   src={post.image} 
                   alt={post.title}
                   className="w-full h-full object-contain rounded-lg"
                 />
               </div>
-              <div className="p-6">
-                <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-4">
+                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium text-xs sm:text-sm">
                     {post.category}
                   </span>
-                  <span>{post.date}</span>
-                  <span>{post.readTime}</span>
+                  <span className="text-xs sm:text-sm">{post.date}</span>
+                  <span className="text-xs sm:text-sm">{post.readTime}</span>
                 </div>
-                <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 line-clamp-3 leading-tight">
                   {post.title}
                 </h2>
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-gray-600 mb-6 line-clamp-3 text-sm sm:text-base flex-grow">
                   {post.excerpt}
                 </p>
                 <Link 
                   href={`/blog/${post.id}`}
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+                  className="inline-flex items-center justify-center text-blue-600 hover:text-blue-700 font-semibold transition-colors bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-lg text-sm sm:text-base mt-auto"
                 >
                   Read Full Article
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -119,27 +142,25 @@ export function BlogPage() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="mt-16 bg-white rounded-2xl shadow-lg p-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+        <div className="mt-16 bg-white rounded-2xl shadow-lg p-6 sm:p-8 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
             Stay Updated with Sleep Science
           </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          <p className="text-gray-600 mb-6 max-w-2xl mx-auto text-sm sm:text-base">
             Get the latest sleep research, optimization tips, and platform updates delivered to your inbox weekly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input 
               type="email" 
               placeholder="Your email address"
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
             />
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-sm sm:text-base whitespace-nowrap">
               Subscribe
             </button>
           </div>
         </div>
       </div>
       </div>
-      <Footer />
-    </>
   );
 }

@@ -5,6 +5,24 @@ import { Footer } from '@/components/footer';
 export function BlogPostLaunch() {
   return (
     <>
+      <head>
+        <title>SleepCycle.io Launches Worldwide: #1 AI Sleep Calculator with 10M+ Users</title>
+        <meta name="description" content="SleepCycle.io officially launches globally! Join 10M+ users using the world's most accurate AI-powered sleep cycle calculator. Free personalized health assessments and science-based sleep optimization." />
+        <meta name="keywords" content="SleepCycle.io launch, AI sleep calculator, sleep cycle calculator, sleep optimization platform, best sleep app, sleep health assessment" />
+        <meta property="og:title" content="SleepCycle.io Launches Worldwide: #1 AI Sleep Calculator" />
+        <meta property="og:description" content="Join 10M+ users on the world's most accurate AI-powered sleep cycle calculator. Free personalized health assessments and science-based optimization." />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://sleepcycle.io/blog/sleepcycle-worldwide-launch" />
+        <meta property="og:image" content="https://sleepcycle.io/blog-images/company-launch.svg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SleepCycle.io Launches Worldwide: #1 AI Sleep Calculator" />
+        <meta name="twitter:description" content="Join 10M+ users on the world's most trusted sleep optimization platform. AI-powered calculations and free health assessments." />
+        <meta name="twitter:image" content="https://sleepcycle.io/blog-images/company-launch.svg" />
+        <meta name="author" content="SleepCycle.io Team" />
+        <meta name="article:published_time" content="2025-01-18T00:00:00Z" />
+        <meta name="article:section" content="Company News" />
+        <link rel="canonical" href="https://sleepcycle.io/blog/sleepcycle-worldwide-launch" />
+      </head>
       <Header />
       <div className="min-h-screen bg-white">
       {/* Article Header */}
