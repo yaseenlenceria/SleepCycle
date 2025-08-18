@@ -13,7 +13,7 @@ import { ModernDashboardHomepage } from '@/components/modern-dashboard-homepage'
 import { UltraSimpleHomepage } from '@/components/ultra-simple-homepage';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { calculateBedtimes, calculateWakeUpTimes, calculateWakeUpTimesFromNow, getCurrentTime, SleepTime } from '@/lib/sleep-calculations';
+import { calculateBedtimes, calculateWakeUpTimes, calculateWakeUpTimesFromNow, calculateWakeUpTimesFromBedtime, getCurrentTime, SleepTime } from '@/lib/sleep-calculations';
 import { Bed, Sun, Clock, Heart, Coffee, BarChart3, Users, Calculator, Moon, Star, Baby, Smartphone, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -86,14 +86,21 @@ export default function SleepCalculator() {
     }, 1500); // Show loading animation for 1.5 seconds
   };
 
-  const handleCalculateWakeup = () => {
+  const handleCalculateWakeup = (bedtime?: string) => {
     setIsCalculating(true);
     setShowWakeupResults(false);
     
     setTimeout(() => {
-      const {times, currentTime: liveTime} = calculateWakeUpTimesFromNow();
-      setWakeupTimes(times);
-      setCurrentTime(liveTime); // Update with actual current time
+      if (bedtime) {
+        // Calculate wake-up times from specific bedtime
+        const results = calculateWakeUpTimesFromBedtime(bedtime);
+        setWakeupTimes(results);
+      } else {
+        // Calculate wake-up times from now
+        const {times, currentTime: liveTime} = calculateWakeUpTimesFromNow();
+        setWakeupTimes(times);
+        setCurrentTime(liveTime);
+      }
       setIsCalculating(false);
       setShowWakeupResults(true);
     }, 1500);

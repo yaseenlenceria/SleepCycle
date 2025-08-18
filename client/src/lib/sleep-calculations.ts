@@ -174,6 +174,46 @@ export function getCurrentTime(): string {
   return formatTime(new Date());
 }
 
+export function calculateWakeUpTimesFromBedtime(bedtimeStr: string): SleepTime[] {
+  // Parse the bedtime string
+  const [time, period] = bedtimeStr.split(' ');
+  const [hourStr, minuteStr] = time.split(':');
+  let hour = parseInt(hourStr);
+  const minute = parseInt(minuteStr);
+
+  // Convert to 24-hour format
+  if (period === 'PM' && hour !== 12) hour += 12;
+  if (period === 'AM' && hour === 12) hour = 0;
+
+  // Create bedtime date object
+  const bedtime = new Date();
+  bedtime.setHours(hour, minute, 0, 0);
+
+  // Add 15 minutes to fall asleep
+  const fallAsleepTime = new Date(bedtime.getTime() + 15 * 60 * 1000);
+
+  const wakeUpTimes: SleepTime[] = [];
+
+  // Calculate wake-up times for 1-6 sleep cycles
+  for (let cycles = 1; cycles <= 6; cycles++) {
+    // Each cycle is 90 minutes
+    const sleepMinutes = cycles * 90;
+    
+    const wakeUpTime = new Date(fallAsleepTime.getTime() + (sleepMinutes * 60 * 1000));
+    const duration = formatDuration(sleepMinutes);
+    const quality = getSleepQuality(cycles);
+    
+    wakeUpTimes.push({
+      time: formatTime(wakeUpTime),
+      cycles: cycles,
+      duration: duration,
+      quality: quality
+    });
+  }
+
+  return wakeUpTimes;
+}
+
 export function formatDuration(minutes: number): string {
   const hours = Math.floor(minutes / 60);
   const mins = minutes % 60;
