@@ -28,6 +28,14 @@ export function BlogPostBabyNaps() {
             How Long Should a Baby Nap? Complete Age-Based Guide for Optimal Infant Sleep
           </h1>
           
+          <div className="flex justify-center mb-8">
+            <img 
+              src="/blog-images/baby-naps.svg" 
+              alt="Baby nap duration guide illustration showing age-based sleep recommendations"
+              className="w-full max-w-md h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          
           <p className="text-xl text-gray-600 leading-relaxed">
             Understanding your baby's nap needs is crucial for healthy development and family well-being. This comprehensive guide provides pediatric sleep specialist recommendations for optimal nap duration from newborn to 24 months.
           </p>

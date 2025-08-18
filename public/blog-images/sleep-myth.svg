@@ -1,0 +1,41 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="mythBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9f7aea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#667eea;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#mythBg)"/>
+  
+  <!-- Myth vs Reality -->
+  <rect x="50" y="80" width="130" height="120" fill="#feb2b2" rx="10" opacity="0.9"/>
+  <rect x="220" y="80" width="130" height="120" fill="#9ae6b4" rx="10" opacity="0.9"/>
+  
+  <!-- Myth section -->
+  <text x="115" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c53030">MYTH</text>
+  <text x="115" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#c53030">90</text>
+  <text x="115" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#c53030">minutes</text>
+  <text x="115" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c53030">exactly</text>
+  <text x="115" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c53030">for everyone</text>
+  
+  <!-- Reality section -->
+  <text x="285" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2f855a">REALITY</text>
+  <text x="285" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2f855a">70-120</text>
+  <text x="285" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2f855a">minutes</text>
+  <text x="285" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2f855a">varies by</text>
+  <text x="285" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2f855a">individual</text>
+  
+  <!-- X mark for myth -->
+  <line x1="95" y1="130" x2="135" y2="170" stroke="#c53030" stroke-width="4" stroke-linecap="round"/>
+  <line x1="135" y1="130" x2="95" y2="170" stroke="#c53030" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Check mark for reality -->
+  <path d="M 265 140 L 275 150 L 305 120" stroke="#2f855a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Title -->
+  <text x="200" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">90-Minute Sleep Cycle Myth</text>
+  
+  <!-- Subtitle -->
+  <text x="200" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" opacity="0.9">Science vs Popular Belief</text>
+</svg>

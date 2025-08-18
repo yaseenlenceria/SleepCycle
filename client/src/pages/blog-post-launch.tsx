@@ -29,6 +29,14 @@ export function BlogPostLaunch() {
             SleepCycle.io Officially Launches Worldwide: Revolutionizing Sleep Health with AI-Powered Sleep Cycle Calculator
           </h1>
           
+          <div className="flex justify-center mb-8">
+            <img 
+              src="/blog-images/company-launch.svg" 
+              alt="SleepCycle.io worldwide launch illustration with global reach and user statistics"
+              className="w-full max-w-md h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          
           <p className="text-xl text-gray-600 leading-relaxed">
             After 3 years of intensive development and beta testing with over 10 million users across 50 countries, SleepCycle.io proudly announces its official worldwide launch as the most comprehensive sleep optimization platform ever created.
           </p>

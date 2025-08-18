@@ -28,6 +28,14 @@ export function BlogPostSleepCycleMyth() {
               The 90-Minute Sleep Cycle Myth: What Science Actually Says About Sleep Patterns
             </h1>
             
+            <div className="flex justify-center mb-8">
+              <img 
+                src="/blog-images/sleep-myth.svg" 
+                alt="Myth vs Reality illustration showing 90-minute sleep cycle myth debunked by science"
+                className="w-full max-w-md h-auto rounded-lg shadow-lg"
+              />
+            </div>
+            
             <p className="text-xl text-gray-600 leading-relaxed">
               The popular belief that everyone sleeps in perfect 90-minute cycles has become widespread online, but the scientific reality is far more complex and individualized. Here's what sleep research actually reveals about natural sleep patterns.
             </p>

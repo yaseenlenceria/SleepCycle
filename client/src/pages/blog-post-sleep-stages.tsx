@@ -28,6 +28,14 @@ export function BlogPostSleepStages() {
               Sleep Cycle Stages: A Complete Guide to Better Sleep
             </h1>
             
+            <div className="flex justify-center mb-8">
+              <img 
+                src="/blog-images/sleep-stages.svg" 
+                alt="Four stages of sleep illustration showing NREM and REM sleep phases"
+                className="w-full max-w-md h-auto rounded-lg shadow-lg"
+              />
+            </div>
+            
             <p className="text-xl text-gray-600 leading-relaxed">
               Sleep is not just about closing your eyes and resting—it's a structured process your body goes through every night. Understanding the stages of the sleep cycle can help you improve your health, focus, and overall well-being.
             </p>

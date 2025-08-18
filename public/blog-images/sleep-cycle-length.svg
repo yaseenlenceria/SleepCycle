@@ -1,0 +1,35 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgGradient)"/>
+  
+  <!-- Clock face -->
+  <circle cx="200" cy="150" r="80" fill="white" stroke="#4a5568" stroke-width="3"/>
+  
+  <!-- Clock numbers for 90 minutes -->
+  <text x="200" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4a5568">90 min</text>
+  <text x="270" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a5568">REM</text>
+  <text x="200" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a5568">Deep</text>
+  <text x="130" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a5568">Light</text>
+  
+  <!-- Clock hands -->
+  <line x1="200" y1="150" x2="200" y2="100" stroke="#667eea" stroke-width="4" stroke-linecap="round"/>
+  <line x1="200" y1="150" x2="240" y2="150" stroke="#764ba2" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Center dot -->
+  <circle cx="200" cy="150" r="5" fill="#4a5568"/>
+  
+  <!-- Sleep stages around clock -->
+  <circle cx="200" cy="70" r="15" fill="#48bb78" opacity="0.8"/>
+  <circle cx="280" cy="150" r="15" fill="#ed8936" opacity="0.8"/>
+  <circle cx="200" cy="230" r="15" fill="#9f7aea" opacity="0.8"/>
+  <circle cx="120" cy="150" r="15" fill="#38b2ac" opacity="0.8"/>
+  
+  <!-- Title -->
+  <text x="200" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">Sleep Cycle Duration</text>
+</svg>

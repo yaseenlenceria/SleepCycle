@@ -1,0 +1,46 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="launchBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4299e1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9f7aea;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#launchBg)"/>
+  
+  <!-- Globe -->
+  <circle cx="200" cy="150" r="60" fill="none" stroke="white" stroke-width="3" opacity="0.8"/>
+  <ellipse cx="200" cy="150" rx="60" ry="20" fill="none" stroke="white" stroke-width="2" opacity="0.6"/>
+  <ellipse cx="200" cy="150" rx="30" ry="60" fill="none" stroke="white" stroke-width="2" opacity="0.6"/>
+  <line x1="140" y1="150" x2="260" y2="150" stroke="white" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Launch rocket -->
+  <polygon points="200,80 190,100 210,100" fill="#fbd38d"/>
+  <rect x="190" y="100" width="20" height="30" fill="#fed7d7"/>
+  <polygon points="185,130 195,140 205,140 215,130 205,130 195,130" fill="#fc8181"/>
+  
+  <!-- Stars -->
+  <circle cx="120" cy="80" r="2" fill="white"/>
+  <circle cx="280" cy="70" r="2" fill="white"/>
+  <circle cx="340" cy="120" r="2" fill="white"/>
+  <circle cx="80" cy="200" r="2" fill="white"/>
+  <circle cx="320" cy="220" r="2" fill="white"/>
+  <circle cx="60" cy="120" r="2" fill="white"/>
+  
+  <!-- Launch text -->
+  <text x="200" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">SleepCycle.io</text>
+  <text x="200" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Worldwide Launch</text>
+  
+  <!-- Statistics -->
+  <rect x="50" y="220" width="100" height="40" fill="white" rx="5" opacity="0.9"/>
+  <text x="100" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4a5568">10M+</text>
+  <text x="100" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">Users</text>
+  
+  <rect x="170" y="220" width="100" height="40" fill="white" rx="5" opacity="0.9"/>
+  <text x="220" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4a5568">Global</text>
+  <text x="220" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">Reach</text>
+  
+  <rect x="290" y="220" width="80" height="40" fill="white" rx="5" opacity="0.9"/>
+  <text x="330" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4a5568">AI</text>
+  <text x="330" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">Powered</text>
+</svg>

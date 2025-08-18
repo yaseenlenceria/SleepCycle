@@ -1,0 +1,58 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="babyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ed64a6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9f7aea;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#babyBg)"/>
+  
+  <!-- Crib -->
+  <rect x="100" y="150" width="200" height="80" fill="#fbb6ce" rx="10" opacity="0.9"/>
+  <rect x="110" y="160" width="180" height="60" fill="#fed7e2" rx="5"/>
+  
+  <!-- Crib rails -->
+  <line x1="120" y1="150" x2="120" y2="130" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="140" y1="150" x2="140" y2="130" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="160" y1="150" x2="160" y2="130" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="180" y1="150" x2="180" y2="130" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="200" y1="150" x2="200" y2="130" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="220" y1="150" x2="220" y2="130" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="240" y1="150" x2="240" y2="130" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="260" y1="150" x2="260" y2="130" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="280" y1="150" x2="280" y2="130" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Baby (simplified) -->
+  <circle cx="200" cy="180" r="15" fill="#fbb6ce"/>
+  <ellipse cx="200" cy="195" rx="12" ry="8" fill="#fbb6ce"/>
+  
+  <!-- Sleep bubbles -->
+  <circle cx="150" cy="100" r="8" fill="white" opacity="0.7"/>
+  <text x="150" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9f7aea">Z</text>
+  
+  <circle cx="170" cy="80" r="10" fill="white" opacity="0.8"/>
+  <text x="170" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9f7aea">Z</text>
+  
+  <circle cx="195" cy="65" r="12" fill="white" opacity="0.9"/>
+  <text x="195" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9f7aea">Z</text>
+  
+  <!-- Age timeline -->
+  <line x1="50" y1="260" x2="350" y2="260" stroke="white" stroke-width="2"/>
+  <circle cx="80" cy="260" r="4" fill="white"/>
+  <circle cx="140" cy="260" r="4" fill="white"/>
+  <circle cx="200" cy="260" r="4" fill="white"/>
+  <circle cx="260" cy="260" r="4" fill="white"/>
+  <circle cx="320" cy="260" r="4" fill="white"/>
+  
+  <!-- Age labels -->
+  <text x="80" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">0-3m</text>
+  <text x="140" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">4-6m</text>
+  <text x="200" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">7-12m</text>
+  <text x="260" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">1-2y</text>
+  <text x="320" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">2y+</text>
+  
+  <!-- Title -->
+  <text x="200" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">Baby Nap Duration Guide</text>
+  <text x="200" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" opacity="0.9">Age-Specific Sleep Recommendations</text>
+</svg>

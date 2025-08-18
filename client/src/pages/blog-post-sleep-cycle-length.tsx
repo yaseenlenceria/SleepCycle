@@ -28,6 +28,14 @@ export function BlogPostSleepCycleLength() {
               How Long is One Sleep Cycle? A Complete Guide
             </h1>
             
+            <div className="flex justify-center mb-8">
+              <img 
+                src="/blog-images/sleep-cycle-length.svg" 
+                alt="Sleep cycle duration illustration showing 90-minute cycle with different sleep stages"
+                className="w-full max-w-md h-auto rounded-lg shadow-lg"
+              />
+            </div>
+            
             <p className="text-xl text-gray-600 leading-relaxed">
               Sleep plays a vital role in your health and daily performance. But did you know that sleep is not one continuous process? Instead, it is divided into cycles, each made up of multiple stages. Understanding how long a sleep cycle lasts can help you wake up refreshed and improve your overall well-being.
             </p>
