@@ -57,28 +57,28 @@ export function UltraSimpleHomepage({
   };
 
   return (
-    <div className="w-full max-w-sm mx-auto px-3 sm:max-w-md sm:px-4">
-      <div className="space-y-3 sm:space-y-4">
+    <div className="w-full max-w-sm mx-auto px-3 sm:max-w-lg lg:max-w-2xl sm:px-4 lg:px-6">
+      <div className="space-y-3 sm:space-y-4 lg:space-y-6">
         
         {/* Wake Up Time Card */}
         <Card className="bg-gradient-to-br from-orange-50 to-yellow-50 border-orange-200 shadow-lg hover:shadow-xl transition-all">
-          <CardContent className="p-4 sm:p-6">
-            <div className="flex items-center justify-between mb-3 sm:mb-4">
+          <CardContent className="p-4 sm:p-6 lg:p-8">
+            <div className="flex items-center justify-between mb-3 sm:mb-4 lg:mb-6">
               <div className="flex items-center">
-                <Sun className="text-orange-500 mr-2" size={20} />
-                <h2 className="text-lg sm:text-xl font-bold text-gray-800">
+                <Sun className="text-orange-500 mr-2 lg:mr-3" size={20} />
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800">
                   I will wake up at
                 </h2>
               </div>
               <div className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-extralight">With AI assistant </div>
             </div>
             
-            <div className="flex justify-center items-center space-x-2 sm:space-x-3 mb-4 sm:mb-5">
+            <div className="flex justify-center items-center space-x-2 sm:space-x-3 lg:space-x-4 mb-4 sm:mb-5 lg:mb-6">
               {/* Hour */}
               <select 
                 value={wakeHour}
                 onChange={(e) => handleWakeTimeChange(e.target.value, wakeMinute, wakePeriod)}
-                className="w-14 h-14 sm:w-18 sm:h-18 text-xl sm:text-3xl font-bold text-center border-3 border-orange-300 rounded-xl focus:border-orange-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-orange-400 transition-colors shadow-md"
+                className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20 text-xl sm:text-3xl lg:text-4xl font-bold text-center border-3 border-orange-300 rounded-xl focus:border-orange-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-orange-400 transition-colors shadow-md"
                 data-testid="wake-hour-select"
               >
                 {hours.map(h => (
@@ -92,7 +92,7 @@ export function UltraSimpleHomepage({
               <select 
                 value={wakeMinute}
                 onChange={(e) => handleWakeTimeChange(wakeHour, e.target.value, wakePeriod)}
-                className="w-14 h-14 sm:w-18 sm:h-18 text-xl sm:text-3xl font-bold text-center border-3 border-orange-300 rounded-xl focus:border-orange-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-orange-400 transition-colors shadow-md"
+                className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20 text-xl sm:text-3xl lg:text-4xl font-bold text-center border-3 border-orange-300 rounded-xl focus:border-orange-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-orange-400 transition-colors shadow-md"
                 data-testid="wake-minute-select"
               >
                 {minutes.map(m => (
@@ -104,7 +104,7 @@ export function UltraSimpleHomepage({
               <div className="bg-orange-100 rounded-xl p-1 shadow-md">
                 <button
                   onClick={() => handleWakeTimeChange(wakeHour, wakeMinute, 'AM')}
-                  className={`px-3 py-2 sm:px-4 sm:py-3 rounded-lg text-sm sm:text-base font-bold transition-colors ${
+                  className={`px-3 py-2 sm:px-4 sm:py-3 lg:px-5 lg:py-4 rounded-lg text-sm sm:text-base lg:text-lg font-bold transition-colors ${
                     wakePeriod === 'AM' 
                       ? 'bg-orange-500 text-white shadow-md' 
                       : 'text-orange-600 hover:text-orange-700 hover:bg-orange-200'
@@ -115,7 +115,7 @@ export function UltraSimpleHomepage({
                 </button>
                 <button
                   onClick={() => handleWakeTimeChange(wakeHour, wakeMinute, 'PM')}
-                  className={`px-3 py-2 sm:px-4 sm:py-3 rounded-lg text-sm sm:text-base font-bold transition-colors ${
+                  className={`px-3 py-2 sm:px-4 sm:py-3 lg:px-5 lg:py-4 rounded-lg text-sm sm:text-base lg:text-lg font-bold transition-colors ${
                     wakePeriod === 'PM' 
                       ? 'bg-orange-500 text-white shadow-md' 
                       : 'text-orange-600 hover:text-orange-700 hover:bg-orange-200'
@@ -129,7 +129,7 @@ export function UltraSimpleHomepage({
 
             <Button
               onClick={onCalculateBedtime}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 sm:py-4 text-base sm:text-lg font-bold rounded-xl transition-colors shadow-lg hover:shadow-xl"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 sm:py-4 lg:py-5 text-base sm:text-lg lg:text-xl font-bold rounded-xl transition-colors shadow-lg hover:shadow-xl"
               data-testid="button-calculate-bedtime"
             >
               Find My Bedtime
@@ -147,23 +147,23 @@ export function UltraSimpleHomepage({
 
         {/* Bed Time Card */}
         <Card className="bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-200 shadow-lg hover:shadow-xl transition-all">
-          <CardContent className="p-4 sm:p-6">
-            <div className="flex items-center justify-between mb-3 sm:mb-4">
+          <CardContent className="p-4 sm:p-6 lg:p-8">
+            <div className="flex items-center justify-between mb-3 sm:mb-4 lg:mb-6">
               <div className="flex items-center">
-                <Bed className="text-purple-500 mr-2" size={20} />
-                <h2 className="text-lg sm:text-xl font-bold text-gray-800">
+                <Bed className="text-purple-500 mr-2 lg:mr-3" size={20} />
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800">
                   I will go to bed at
                 </h2>
               </div>
               <div className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-extralight">With AI assistant </div>
             </div>
             
-            <div className="flex justify-center items-center space-x-2 sm:space-x-3 mb-4 sm:mb-5">
+            <div className="flex justify-center items-center space-x-2 sm:space-x-3 lg:space-x-4 mb-4 sm:mb-5 lg:mb-6">
               {/* Hour */}
               <select 
                 value={bedHour}
                 onChange={(e) => setBedHour(e.target.value)}
-                className="w-14 h-14 sm:w-18 sm:h-18 text-xl sm:text-3xl font-bold text-center border-3 border-purple-300 rounded-xl focus:border-purple-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-purple-400 transition-colors shadow-md"
+                className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20 text-xl sm:text-3xl lg:text-4xl font-bold text-center border-3 border-purple-300 rounded-xl focus:border-purple-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-purple-400 transition-colors shadow-md"
                 data-testid="bed-hour-select"
               >
                 {hours.map(h => (
@@ -177,7 +177,7 @@ export function UltraSimpleHomepage({
               <select 
                 value={bedMinute}
                 onChange={(e) => setBedMinute(e.target.value)}
-                className="w-14 h-14 sm:w-18 sm:h-18 text-xl sm:text-3xl font-bold text-center border-3 border-purple-300 rounded-xl focus:border-purple-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-purple-400 transition-colors shadow-md"
+                className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20 text-xl sm:text-3xl lg:text-4xl font-bold text-center border-3 border-purple-300 rounded-xl focus:border-purple-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-purple-400 transition-colors shadow-md"
                 data-testid="bed-minute-select"
               >
                 {minutes.map(m => (
@@ -189,7 +189,7 @@ export function UltraSimpleHomepage({
               <div className="bg-purple-100 rounded-xl p-1 shadow-md">
                 <button
                   onClick={() => setBedPeriod('AM')}
-                  className={`px-3 py-2 sm:px-4 sm:py-3 rounded-lg text-sm sm:text-base font-bold transition-colors ${
+                  className={`px-3 py-2 sm:px-4 sm:py-3 lg:px-5 lg:py-4 rounded-lg text-sm sm:text-base lg:text-lg font-bold transition-colors ${
                     bedPeriod === 'AM' 
                       ? 'bg-purple-500 text-white shadow-md' 
                       : 'text-purple-600 hover:text-purple-700 hover:bg-purple-200'
@@ -200,7 +200,7 @@ export function UltraSimpleHomepage({
                 </button>
                 <button
                   onClick={() => setBedPeriod('PM')}
-                  className={`px-3 py-2 sm:px-4 sm:py-3 rounded-lg text-sm sm:text-base font-bold transition-colors ${
+                  className={`px-3 py-2 sm:px-4 sm:py-3 lg:px-5 lg:py-4 rounded-lg text-sm sm:text-base lg:text-lg font-bold transition-colors ${
                     bedPeriod === 'PM' 
                       ? 'bg-purple-500 text-white shadow-md' 
                       : 'text-purple-600 hover:text-purple-700 hover:bg-purple-200'
@@ -217,7 +217,7 @@ export function UltraSimpleHomepage({
                 const bedtime = `${bedHour}:${bedMinute} ${bedPeriod}`;
                 onCalculateWakeup(bedtime);
               }}
-              className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 sm:py-4 text-base sm:text-lg font-bold rounded-xl transition-colors shadow-lg hover:shadow-xl"
+              className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 sm:py-4 lg:py-5 text-base sm:text-lg lg:text-xl font-bold rounded-xl transition-colors shadow-lg hover:shadow-xl"
               data-testid="button-calculate-wakeup"
             >
               Find My Wake Time
@@ -235,11 +235,11 @@ export function UltraSimpleHomepage({
 
         {/* Sleep Now Card */}
         <Card className="bg-white shadow-md hover:shadow-lg transition-shadow">
-          <CardContent className="p-4 sm:p-6">
-            <div className="flex items-center justify-between mb-3 sm:mb-4">
+          <CardContent className="p-4 sm:p-6 lg:p-8">
+            <div className="flex items-center justify-between mb-3 sm:mb-4 lg:mb-6">
               <div className="flex items-center">
-                <Moon className="text-green-500 mr-2" size={18} />
-                <h2 className="text-base sm:text-lg font-semibold text-gray-800">
+                <Moon className="text-green-500 mr-2 lg:mr-3" size={18} />
+                <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800">
                   Sleep Now
                 </h2>
               </div>
@@ -272,7 +272,7 @@ export function UltraSimpleHomepage({
 
             <Button
               onClick={() => onSleepNow(selectedSleepDuration)}
-              className="w-full bg-green-500 hover:bg-green-600 text-white py-2 sm:py-3 text-sm sm:text-base font-semibold rounded-lg transition-colors"
+              className="w-full bg-green-500 hover:bg-green-600 text-white py-2 sm:py-3 lg:py-4 text-sm sm:text-base lg:text-lg font-semibold rounded-lg transition-colors"
               data-testid="button-sleep-now"
             >
               Sleep Now ({selectedSleepDuration}h)

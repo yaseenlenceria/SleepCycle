@@ -124,7 +124,7 @@ export function SimpleSleepResults({
     <div className="space-y-4">
       {/* Sleep Times Grid - Compact for home page */}
       <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-lg">
-        <CardContent className="p-4 sm:p-6">
+        <CardContent className="p-4 sm:p-6 lg:p-8">
           {/* Sleep Duration Selector for bedtime and wakeup types */}
           {(type === 'bedtime' || type === 'wakeup') && (
             <div className="mb-6">
@@ -156,7 +156,7 @@ export function SimpleSleepResults({
              'You Should Wake Up At:'}
           </h3>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
             {times.slice(0, 6).map((time, index) => {
               // For wake-up times (Sleep Now), cycles start from 1 and go to 6
               // For bedtimes, cycles start from 6 and go down to 1
