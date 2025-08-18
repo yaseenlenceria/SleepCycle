@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, Heart, Zap, ChevronDown, ChevronUp, CheckCircle, AlertTriangle, Brain } from 'lucide-react';
+import { Clock, Heart, Zap, ChevronDown, ChevronUp, CheckCircle, AlertTriangle, Brain, Eye, EyeOff } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { EnhancedLoadingAnimation } from './enhanced-loading-animation';
 import { SleepTime } from '@/lib/sleep-calculations';
+import { SleepCycleVisualization } from './sleep-cycle-visualization';
+import { EnhancedSleepCycleAnimation } from './enhanced-sleep-cycle-animation';
 import { 
   assessSleepQuality, 
   getPersonalizedHealthRecommendations, 
@@ -39,6 +41,7 @@ export function SimpleSleepResults({
   userSex = 'male'
 }: SimpleSleepResultsProps) {
   const [showHealthTips, setShowHealthTips] = useState(false);
+  const [showVisualization, setShowVisualization] = useState(false);
   const [sleepAssessment, setSleepAssessment] = useState<SleepAssessment | null>(null);
 
   useEffect(() => {
@@ -138,6 +141,40 @@ export function SimpleSleepResults({
           </div>
         </CardContent>
       </Card>
+
+      {/* Sleep Cycle Visualization Toggle */}
+      <Card className="bg-white shadow-lg">
+        <CardContent className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h4 className="text-lg font-bold text-gray-800 mb-2">
+                🧠 Interactive Sleep Cycle Visualization
+              </h4>
+              <p className="text-sm text-gray-600">
+                Watch your sleep journey unfold with animated cycles, stages, and real-time brain activity
+              </p>
+            </div>
+            <Button
+              onClick={() => setShowVisualization(!showVisualization)}
+              variant="outline"
+              className="flex items-center space-x-2"
+            >
+              {showVisualization ? <EyeOff size={16} /> : <Eye size={16} />}
+              <span>{showVisualization ? 'Hide' : 'Show'} Visualization</span>
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Enhanced Sleep Cycle Visualization */}
+      {showVisualization && times.length > 0 && (
+        <EnhancedSleepCycleAnimation
+          bedtime={type === 'bedtime' ? times[0]?.time || selectedTime || '' : selectedTime || ''}
+          wakeTime={type === 'bedtime' ? selectedTime || '' : times[0]?.time || ''}
+          cycles={times[0]?.cycles || Math.max(1, Math.min(6, type === 'bedtime' ? 6 : 4))}
+          isAnimating={showVisualization}
+        />
+      )}
 
       {/* Health Assessment */}
       {sleepAssessment && (
