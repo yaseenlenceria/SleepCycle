@@ -1,101 +1,6 @@
 # Overview
 
-This is a comprehensive full-stack sleep optimization platform built with React and Express. The application provides multiple scientifically-based calculators to help users optimize their sleep cycles using 90-minute REM cycle science. It features an advanced SEO-optimized design with smooth animations, multiple calculator modes (bedtime, wake-up, nap, sleep tracking, age-specific), and educational content to rank highly on Google for sleep-related searches.
-
-The platform is now positioned as the "World's #1 Sleep Cycle Calculator" with comprehensive SEO implementation targeting top Google rankings for sleep calculator keywords.
-
-## Recent Enhancements (January 2025)
-
-### COMPREHENSIVE BLOG SYSTEM IMPLEMENTATION (January 18, 2025)
-- **PROFESSIONAL BLOG HOMEPAGE**: Created SEO-optimized blog homepage at /blog with clean design and newsletter signup
-- **SEO-OPTIMIZED BLOG POSTS**: Published 11 comprehensive blog posts targeting Google rankings:
-  - "How Long is One Sleep Cycle? A Complete Guide" - comprehensive guide on sleep cycle duration with visual stage breakdowns and optimization tips
-  - "Sleep Cycle Stages: A Complete Guide to Better Sleep" - educational guide covering the 4 stages of sleep with practical tips
-  - "The 90-Minute Sleep Cycle Myth" - evidence-based debunking of popular sleep myths with scientific research
-  - "SleepCycle.io Worldwide Launch" - company announcement with statistics, features, and authority messaging
-  - "How Long Should a Baby Nap?" - detailed age-based guide with expert recommendations and pediatric sleep advice
-  - "Newborn and Baby Sleep Patterns" - NHS-approved guide covering week-by-week and month-by-month sleep development
-  - "10 Best Sleep Doctors & Sleep Centers in Los Angeles" - local SEO directory with UCLA, USC, Cedars-Sinai, and private practices
-  - "How Long Is a Full Sleep Cycle?" - comprehensive guide to 90-minute cycles with stage breakdowns and timing examples
-  - "What Is the Uberman Sleep Cycle?" - responsible coverage of extreme polyphasic sleep with medical warnings and safer alternatives
-  - "Best Sleep Cycle & Sleep Tracking Apps (2025)" - complete app ranking with SleepCycle.io positioned as #1, comparing 9 popular apps
-- **GOOGLE-FRIENDLY CONTENT STRUCTURE**: Proper H1-H6 heading hierarchy, expert quotes, statistics, and comprehensive coverage
-- **BLOG NAVIGATION INTEGRATION**: Added Blog links to header (orange hover) and footer navigation for site-wide access
-- **CONSISTENT BRANDING**: All blog pages include header and footer components for unified user experience
-- **CALL-TO-ACTION OPTIMIZATION**: Strategic CTA buttons linking back to calculators from blog content for conversion
-- **SEO TAGS AND METADATA**: Proper tagging, publication dates, and schema markup for search engine optimization
-- **RESPONSIVE GRID LAYOUT**: Updated blog homepage to 3-column layout (lg screens) for better content display
-
-### STUNNING HEADER REDESIGN WITH BRANDING (January 18, 2025)
-- **BEAUTIFUL GRADIENT HEADER**: Created elegant gradient background (blue to indigo to purple) with professional styling
-- **CUSTOM LOGO INTEGRATION**: Successfully integrated SleepCycle.io logo with calculator and moon design from user's assets
-- **CUSTOM FAVICON IMPLEMENTATION**: Added custom favicon from user assets for browser tabs and Google search results
-- **ELEGANT NAVIGATION**: Clean text-based navigation links (Sleep Calculator, Baby Sleep, 90-Min Cycles, Adult Sleep, Sleep Science, Blog)
-- **PREMIUM DESIGN ELEMENTS**: Added hover effects, backdrop blur, shadows, and smooth animations
-- **PROFESSIONAL TAGLINE**: "World's Most Trusted Sleep Optimization Platform" with 5-star rating display
-- **RESPONSIVE BRANDING**: Logo and navigation work perfectly on all device sizes
-- **FIXED SERVER STATIC FILES**: Added proper static file serving to resolve logo display issues
-
-### COMPLETE MOBILE RESPONSIVENESS OVERHAUL (January 18, 2025)
-- **REDESIGNED TIME SELECTION INTERFACE**: Completely rebuilt all time selector cards with mobile-first approach and proper touch targets
-- **PERFECT MOBILE TIME PICKER**: Created labeled time selection with Hour/Min/Period sections, proper spacing, and visual hierarchy
-- **RESPONSIVE CARD LAYOUTS**: Fixed all card padding, alignment, and overflow issues on mobile devices with proper responsive scaling
-- **ENHANCED TOUCH INTERACTIONS**: Implemented touch-manipulation class, proper button sizing, and improved accessibility
-- **MOBILE-FIRST DESIGN SYSTEM**: Applied consistent responsive patterns across main homepage and all baby/toddler calculator pages
-- **VISUAL FEEDBACK IMPROVEMENTS**: Added scaling effects, shadows, and proper hover states for better mobile interaction
-- **NEWBORN CALCULATOR OPTIMIZATION**: Updated shared component used across all baby sleep pages (0-12m, newborn, 4-month, 6-month, 7-month, toddler, 2-year-old)
-- **CROSS-PAGE CONSISTENCY**: Ensured uniform mobile experience across all sleep calculator pages with standardized time selection interface
-- **ACCESSIBILITY ENHANCEMENTS**: Added proper labels, improved color contrast, and better focus states for screen readers
-
-### COMPREHENSIVE SEO OPTIMIZATION IMPLEMENTATION (January 17, 2025)
-- **PROFESSIONAL FAVICON GENERATION**: Created and implemented custom sleep-themed favicon with multiple sizes (16x16, 32x32, 180x180, 192x192, 512x512)
-- **WORLD'S #1 POSITIONING**: Complete rebranding to "★★★★★ World's #1 Sleep Cycle Calculator" with aggressive authority messaging
-- **ENHANCED STRUCTURED DATA**: Comprehensive Schema.org markup including WebApplication, Organization, FAQPage, HowTo, and ItemList schemas
-- **ADVANCED META OPTIMIZATION**: Updated title tags, descriptions, Open Graph tags, Twitter Cards with 5-star ratings and trust signals
-- **COMPREHENSIVE SITEMAP IMPLEMENTATION**: XML sitemap with proper priority hierarchy, image sitemaps, and structured URL organization
-- **ROBOTS.TXT OPTIMIZATION**: Search engine crawler directives with specific crawl delays and sitemap references
-- **TECHNICAL SEO FILES**: Added webmanifest, browserconfig.xml, humans.txt for enhanced search engine recognition
-- **AUTHORITY PAGE CREATION**: "/why-best-sleep-calculator" page with proof points, testimonials, and competitive comparisons
-- **COMPLETE SITEMAP PAGE**: "/sitemap" with visual site structure and trust signals for both users and search engines
-- **SEO-OPTIMIZED HOMEPAGE**: Added trust signals, authority badges, and "World's #1" messaging throughout interface
-- **GOOGLE-FRIENDLY RICH SNIPPETS**: FAQ structured data and rich snippet optimization for enhanced search result display
-- **SEARCH ENGINE VERIFICATION**: Meta tags for Google, Bing, Yandex, and Pinterest verification
-- **MOBILE-FIRST SEO**: Optimized for mobile search with proper viewport, touch icons, and responsive design signals
-
-## Previous Enhancements
-- **COMPLETE VISUALIZATION REMOVAL**: Eliminated all Interactive Sleep Cycle Visualization components per user preference for ultra-simple interface
-- **MOBILE-FIRST OPTIMIZATION**: Fixed mobile card layouts with responsive sizing, reduced padding, and optimized touch targets for perfect mobile experience
-- **ULTRA-SIMPLIFIED HOMEPAGE**: Streamlined interface to just three essential cards - "I will wake up at", "I will go to bed at", and "Sleep Now" buttons
-- **FIXED BEDTIME FUNCTIONALITY**: Connected "Find My Wake Time" button to proper calculation handlers, resolving non-working bedtime calculator
-- **CRITICAL BUG FIXES**: Fixed major accuracy issues with bedtime and wake-up calculation results in health assessments
-- **Accurate Sleep Duration Calculations**: Fixed `calculateSleepHours` function to properly parse AM/PM time formats and handle overnight sleep periods
-- **Enhanced Time Parsing**: Implemented robust time string parsing with proper 24-hour conversion for bedtime/wake-up calculations
-- **Corrected Health Assessment Logic**: Fixed bedtime vs wake-up time assignment in health assessment generation to ensure accurate sleep duration analysis
-- **Real-Time Current Time Integration**: Fixed wake-up calculator to use actual current time instead of placeholder strings for accurate health assessments
-- **AI Health Assessment Integration**: Integrated FREE personalized health recommendations system providing evidence-based sleep advice based on user demographics (age, biological sex)
-- **Comprehensive Health Recommendation Engine**: Created robust evidence-based recommendation system with age-specific, sex-specific, and universal sleep health guidance based on CDC guidelines and medical research
-- **Privacy-Protected User Profile System**: Added user demographic collection (age, sex) with secure, local-only data storage for personalized health assessments
-- **Real-Time Sleep Quality Analysis**: Enhanced results display with sleep quality assessments (Excellent/Good/Fair/Poor), health benefits analysis, and risk factor warnings based on actual sleep duration
-- **Age-Specific Sleep Recommendations**: Implemented customized sleep guidance for different age groups (teens, adults 18-64, seniors 65+) based on medical research
-- **Gender-Specific Health Insights**: Added specialized recommendations for men's and women's sleep health, including hormonal considerations and health risks
-- **Evidence-Based Health Content**: Replaced generic advice with authoritative recommendations covering sleep hygiene, exercise, nutrition, and medical considerations
-- **Aggressive AI-First SEO Messaging**: Completely rebranded entire website with "AI Sleep Calculator with FREE Health Assessment" positioning
-- **"Fix Your Sleep with AI" Positioning**: Updated all meta titles, descriptions, and headlines to emphasize AI-powered personalized recommendations
-- **Target Keywords Integration**: Optimized for "AI sleep calculator", "fix my sleep cycle", "sleep cycle AI tool", "personalized health assessment", "Baby & Toddler Nap Calculator", "Nap Calculator - Optimal Nap Duration", "Age-Specific Sleep Calculator"
-- **AI-Powered Calculator Titles**: Updated all calculator sections with "AI" prefix and "Health Assessment" messaging
-- **Comprehensive SEO Meta Optimization**: All pages now feature "AI Sleep Calculator with FREE Health Assessment" branding and aggressive AI positioning
-- **Advanced Sleep Science Content**: Enhanced educational content with AI sleep science & personalized health assessment focus
-- **Mobile-Responsive User Profile Forms**: Sleek age/sex selection interface with privacy notices and instant profile updates
-- **Enhanced Results Integration**: Sleep calculation results now include personalized health recommendations, sleep quality analysis, and evidence-based guidance
-- **Anti-Generic Messaging**: Implemented aggressive "Not just another calculator – AI that adapts to YOU" messaging throughout the platform
-- **Medical Authority Positioning**: Emphasized evidence-based recommendations from U.S. Health Department data and CDC guidelines
-- **Complete SEO Rebranding**: Updated homepage title to "AI Sleep Calculator with FREE Health Assessment | Fix Your Sleep Cycle - Sleepcycle.io"
-- **Baby & Toddler Nap Calculator**: Rebranded baby sleep pages with AI-powered nap calculator messaging and personalized health assessment focus
-- **Age-Specific Sleep Calculator**: Updated adult sleep cycles page with age-specific AI health assessment positioning
-- **Nap Calculator - Optimal Duration**: Enhanced nap calculator with AI-powered optimal duration and timing recommendations
-- **Sleep Cycle Pages Collection**: Updated 9 SEO-optimized pages with AI health assessment messaging
-- **Unified Component Architecture**: Enhanced with health assessment integration across all calculator types
-- **Complete Legal Compliance**: Terms of Service, Privacy Policy with health data protection and GDPR compliance
+This is a comprehensive full-stack sleep optimization platform built with React and Express. The application provides multiple scientifically-based calculators to help users optimize their sleep cycles using 90-minute REM cycle science. It features an advanced SEO-optimized design with smooth animations, multiple calculator modes (bedtime, wake-up, nap, sleep tracking, age-specific), and educational content to rank highly on Google for sleep-related searches. The platform is positioned as the "World's #1 Sleep Cycle Calculator" with comprehensive SEO implementation targeting top Google rankings for sleep calculator keywords. Key capabilities include a comprehensive blog system, stunning header design, and complete mobile responsiveness.
 
 # User Preferences
 
@@ -115,6 +20,8 @@ Legal structure: SIA Webby (Latvia) with proper Terms of Service and Privacy Pol
 - **Styling**: Tailwind CSS with custom CSS variables for theming
 - **State Management**: React hooks for local state, TanStack Query for server state
 - **Build Tool**: Vite for fast development and optimized production builds
+- **UI/UX Decisions**: Elegant gradient header, custom logo and favicon integration, professional tagline, responsive branding, redesigned time selection interface for mobile-first approach, responsive card layouts, enhanced touch interactions, and consistent branding across all pages.
+- **Feature Specifications**: Scientifically-based calculators (bedtime, wake-up, nap, sleep tracking, age-specific), comprehensive blog system with SEO-optimized posts and navigation, AI health assessment integration providing evidence-based sleep advice based on user demographics, real-time sleep quality analysis, and age/gender-specific recommendations.
 
 ## Backend Architecture
 - **Framework**: Express.js with TypeScript
@@ -134,12 +41,12 @@ Legal structure: SIA Webby (Latvia) with proper Terms of Service and Privacy Pol
 - **User Model**: Basic user schema with username and password fields
 - **Storage Interface**: Abstracted storage layer supporting user CRUD operations
 
-## External Dependencies
+## System Design Choices
+The architecture follows a monorepo structure with clear separation between client, server, and shared code. The sleep calculation logic is implemented as pure functions that calculate optimal sleep times based on 90-minute sleep cycles, accounting for a 15-minute fall-asleep period. Mobile-first optimization is a core design principle, resulting in streamlined interfaces and optimized touch targets. Extensive SEO optimization is integrated at all levels, including structured data, meta optimization, sitemaps, and robots.txt.
+
+# External Dependencies
 - **Database**: Neon serverless PostgreSQL (configured but not actively used)
 - **UI Framework**: Radix UI for accessible component primitives
 - **Form Handling**: React Hook Form with Zod resolvers for validation
 - **Date Utilities**: date-fns for time calculations and formatting
 - **Icons**: Lucide React for consistent iconography
-- **Development**: Replit-specific plugins for runtime error handling and cartographer integration
-
-The architecture follows a monorepo structure with clear separation between client, server, and shared code. The sleep calculation logic is implemented as pure functions that calculate optimal sleep times based on 90-minute sleep cycles, accounting for a 15-minute fall-asleep period.
