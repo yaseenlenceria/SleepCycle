@@ -69,6 +69,8 @@ export default function SitemapPage() {
   ];
 
   const blogPosts = [
+    { title: 'The Best Time to Go to Sleep and Wake Up (According to Science)', path: '/blog/best-time-sleep-wake-up', category: 'Sleep Optimization' },
+    { title: 'How Many Sleep Cycles Do You Need Per Night?', path: '/blog/how-many-sleep-cycles-per-night', category: 'Sleep Science' },
     { title: 'How Long is One Sleep Cycle? A Complete Guide', path: '/blog/sleep-cycle-length', category: 'Sleep Science' },
     { title: 'How Long Is a Full Sleep Cycle?', path: '/blog/full-sleep-cycle-length', category: 'Sleep Science' },
     { title: 'Sleep Cycle Stages: A Complete Guide to Better Sleep', path: '/blog/sleep-stages-guide', category: 'Sleep Education' },

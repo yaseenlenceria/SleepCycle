@@ -1,0 +1,151 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3730a3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#581c87;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="morningGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1f2937">
+    Best Bedtimes for Common Wake Times
+  </text>
+  <text x="400" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">
+    Based on 90-Minute Sleep Cycles
+  </text>
+  
+  <!-- Sleep Cycle Icons -->
+  <g transform="translate(50, 90)">
+    <!-- 4 Cycles -->
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#92400e">4 Cycles</text>
+    <text x="100" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#92400e">6 Hours</text>
+    
+    <!-- Sleep cycle visualization -->
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="40" height="20" rx="3" fill="#f59e0b"/>
+      <rect x="45" y="0" width="40" height="20" rx="3" fill="#f59e0b"/>
+      <rect x="90" y="0" width="40" height="20" rx="3" fill="#f59e0b"/>
+      <rect x="135" y="0" width="40" height="20" rx="3" fill="#f59e0b"/>
+    </g>
+    <text x="100" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#92400e">Minimum Sleep</text>
+  </g>
+  
+  <g transform="translate(300, 90)">
+    <!-- 5 Cycles (Recommended) -->
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="3" filter="url(#shadow)"/>
+    <text x="100" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d4ed8">⭐ RECOMMENDED ⭐</text>
+    <text x="100" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1d4ed8">5 Cycles</text>
+    <text x="100" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d4ed8">7.5 Hours</text>
+    
+    <!-- Sleep cycle visualization -->
+    <g transform="translate(10, 70)">
+      <rect x="0" y="0" width="36" height="20" rx="3" fill="#2563eb"/>
+      <rect x="40" y="0" width="36" height="20" rx="3" fill="#2563eb"/>
+      <rect x="80" y="0" width="36" height="20" rx="3" fill="#2563eb"/>
+      <rect x="120" y="0" width="36" height="20" rx="3" fill="#2563eb"/>
+      <rect x="160" y="0" width="36" height="20" rx="3" fill="#2563eb"/>
+    </g>
+    <text x="100" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d4ed8">Optimal Sleep</text>
+  </g>
+  
+  <g transform="translate(550, 90)">
+    <!-- 6 Cycles -->
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#7c3aed">6 Cycles</text>
+    <text x="100" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#7c3aed">9 Hours</text>
+    
+    <!-- Sleep cycle visualization -->
+    <g transform="translate(5, 60)">
+      <rect x="0" y="0" width="30" height="20" rx="3" fill="#8b5cf6"/>
+      <rect x="35" y="0" width="30" height="20" rx="3" fill="#8b5cf6"/>
+      <rect x="70" y="0" width="30" height="20" rx="3" fill="#8b5cf6"/>
+      <rect x="105" y="0" width="30" height="20" rx="3" fill="#8b5cf6"/>
+      <rect x="140" y="0" width="30" height="20" rx="3" fill="#8b5cf6"/>
+      <rect x="175" y="0" width="30" height="20" rx="3" fill="#8b5cf6"/>
+    </g>
+    <text x="100" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#7c3aed">Extended Sleep</text>
+  </g>
+  
+  <!-- Schedule Table -->
+  <g transform="translate(50, 260)">
+    <!-- Table Header -->
+    <rect x="0" y="0" width="700" height="50" fill="#374151" rx="8"/>
+    <text x="120" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Wake Time</text>
+    <text x="290" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">4 Cycles (6h)</text>
+    <text x="460" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">5 Cycles (7.5h) ⭐</text>
+    <text x="630" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">6 Cycles (9h)</text>
+    
+    <!-- 6:00 AM Row -->
+    <rect x="0" y="50" width="700" height="50" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="120" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1f2937">6:00 AM</text>
+    <text x="290" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">12:00 AM</text>
+    <rect x="385" y="60" width="150" height="30" fill="#dbeafe" rx="5"/>
+    <text x="460" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d4ed8">10:30 PM</text>
+    <text x="630" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">9:00 PM</text>
+    
+    <!-- 7:00 AM Row -->
+    <rect x="0" y="100" width="700" height="50" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="120" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1f2937">7:00 AM</text>
+    <text x="290" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">1:00 AM</text>
+    <rect x="385" y="110" width="150" height="30" fill="#dbeafe" rx="5"/>
+    <text x="460" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d4ed8">11:30 PM</text>
+    <text x="630" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">10:00 PM</text>
+    
+    <!-- 8:00 AM Row -->
+    <rect x="0" y="150" width="700" height="50" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="120" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1f2937">8:00 AM</text>
+    <text x="290" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">2:00 AM</text>
+    <rect x="385" y="160" width="150" height="30" fill="#dbeafe" rx="5"/>
+    <text x="460" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d4ed8">12:30 AM</text>
+    <text x="630" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">11:00 PM</text>
+  </g>
+  
+  <!-- Moon Icon -->
+  <g transform="translate(100, 480)">
+    <circle cx="25" cy="25" r="20" fill="url(#nightGradient)"/>
+    <circle cx="30" cy="20" r="15" fill="#f8fafc"/>
+    <text x="60" y="20" font-family="Arial, sans-serif" font-size="14" fill="#374151">Bedtime</text>
+    <text x="60" y="35" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Sleep Schedule</text>
+  </g>
+  
+  <!-- Sun Icon -->
+  <g transform="translate(600, 480)">
+    <circle cx="25" cy="25" r="18" fill="url(#morningGradient)"/>
+    <!-- Sun rays -->
+    <g stroke="#f59e0b" stroke-width="2">
+      <line x1="25" y1="2" x2="25" y2="8"/>
+      <line x1="25" y1="42" x2="25" y2="48"/>
+      <line x1="2" y1="25" x2="8" y2="25"/>
+      <line x1="42" y1="25" x2="48" y2="25"/>
+      <line x1="9.8" y1="9.8" x2="13.6" y2="13.6"/>
+      <line x1="36.4" y1="36.4" x2="40.2" y2="40.2"/>
+      <line x1="40.2" y1="9.8" x2="36.4" y2="13.6"/>
+      <line x1="13.6" y1="36.4" x2="9.8" y2="40.2"/>
+    </g>
+    <text x="-40" y="20" font-family="Arial, sans-serif" font-size="14" fill="#374151">Wake Time</text>
+    <text x="-40" y="35" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Energy & Alertness</text>
+  </g>
+  
+  <!-- Bottom Note -->
+  <text x="400" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
+    💡 Most adults perform best with 5 sleep cycles (7.5 hours) per night
+  </text>
+  
+  <!-- Branding -->
+  <text x="400" y="570" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af">
+    SleepCycle.io - World's #1 Sleep Calculator
+  </text>
+</svg>

@@ -30,6 +30,15 @@ export function BlogPage() {
 function BlogContent() {
   const blogPosts = [
     {
+      id: 'best-time-sleep-wake-up',
+      title: 'The Best Time to Go to Sleep and Wake Up (According to Science)',
+      excerpt: 'Discover scientifically proven bedtimes for 6 AM, 7 AM, and 8 AM wake times. Learn why 90-minute sleep cycles matter and how to wake up refreshed every morning using optimal sleep timing.',
+      date: 'January 18, 2025',
+      readTime: '8 min read',
+      category: 'Sleep Optimization',
+      image: '/blog-images/best-time-sleep-wake-up.svg'
+    },
+    {
       id: 'how-many-sleep-cycles-per-night',
       title: 'How Many Sleep Cycles Do You Need Per Night?',
       excerpt: 'Adults need 4-6 sleep cycles per night to feel fully rested. Learn why 5 cycles (7.5 hours) is optimal and how to wake up refreshed by timing your sleep cycles correctly.',
