@@ -1,108 +1,51 @@
 import { Link } from 'wouter';
-import { Menu, X, Calculator, Baby, Clock, Users, Brain } from 'lucide-react';
-import { useState } from 'react';
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
   return (
-    <header className="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Main Header */}
-        <div className="flex items-center justify-between py-4">
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0 hover:opacity-90 transition-opacity">
-            <img 
-              src="/logo.jpg" 
-              alt="SleepCycle.io - World's #1 Sleep Calculator"
-              className="h-12 sm:h-14 md:h-16 w-auto"
-              loading="eager"
-            />
-          </Link>
+    <header className="relative">
+      {/* Beautiful gradient background */}
+      <div className="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-8">
+          {/* Logo centered with elegant styling */}
+          <div className="text-center">
+            <Link href="/" className="inline-block hover:scale-105 transition-all duration-300 ease-out">
+              <div className="relative group">
+                {/* Subtle glow effect behind logo */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Logo with shadow and styling */}
+                <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/50">
+                  <img 
+                    src="/logo.jpg" 
+                    alt="SleepCycle.io - World's #1 Sleep Calculator"
+                    className="h-16 sm:h-18 md:h-20 w-auto mx-auto drop-shadow-sm"
+                    loading="eager"
+                  />
+                </div>
+              </div>
+            </Link>
+          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <Link href="/" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium transition-colors">
-              <Calculator size={18} />
-              <span>Sleep Calculator</span>
-            </Link>
-            <Link href="/sleep-cycles-babies" className="flex items-center space-x-2 text-gray-700 hover:text-pink-600 font-medium transition-colors">
-              <Baby size={18} />
-              <span>Baby Sleep</span>
-            </Link>
-            <Link href="/90-minute-sleep-cycle-calculator" className="flex items-center space-x-2 text-gray-700 hover:text-purple-600 font-medium transition-colors">
-              <Clock size={18} />
-              <span>90-Min Cycles</span>
-            </Link>
-            <Link href="/sleep-cycles-adults" className="flex items-center space-x-2 text-gray-700 hover:text-green-600 font-medium transition-colors">
-              <Users size={18} />
-              <span>Adult Sleep</span>
-            </Link>
-            <Link href="/sleep-science" className="flex items-center space-x-2 text-gray-700 hover:text-indigo-600 font-medium transition-colors">
-              <Brain size={18} />
-              <span>Sleep Science</span>
-            </Link>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMenu}
-            className="lg:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Elegant tagline */}
+          <div className="text-center mt-6">
+            <p className="text-gray-600 text-lg font-light tracking-wide">
+              World's Most Trusted Sleep Optimization Platform
+            </p>
+            <div className="flex items-center justify-center mt-2 space-x-1">
+              <div className="flex text-yellow-400">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                ))}
+              </div>
+              <span className="text-gray-500 text-sm ml-2">Rated by 10M+ users worldwide</span>
+            </div>
+          </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200 py-4">
-            <nav className="grid grid-cols-1 gap-4">
-              <Link 
-                href="/" 
-                className="flex items-center space-x-3 p-3 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-all"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Calculator size={20} />
-                <span>Main Sleep Calculator</span>
-              </Link>
-              <Link 
-                href="/sleep-cycles-babies" 
-                className="flex items-center space-x-3 p-3 rounded-lg text-gray-700 hover:text-pink-600 hover:bg-pink-50 font-medium transition-all"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Baby size={20} />
-                <span>Baby & Toddler Sleep</span>
-              </Link>
-              <Link 
-                href="/90-minute-sleep-cycle-calculator" 
-                className="flex items-center space-x-3 p-3 rounded-lg text-gray-700 hover:text-purple-600 hover:bg-purple-50 font-medium transition-all"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Clock size={20} />
-                <span>90-Minute Sleep Cycles</span>
-              </Link>
-              <Link 
-                href="/sleep-cycles-adults" 
-                className="flex items-center space-x-3 p-3 rounded-lg text-gray-700 hover:text-green-600 hover:bg-green-50 font-medium transition-all"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Users size={20} />
-                <span>Adult Sleep Optimization</span>
-              </Link>
-              <Link 
-                href="/sleep-science" 
-                className="flex items-center space-x-3 p-3 rounded-lg text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 font-medium transition-all"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Brain size={20} />
-                <span>Sleep Science & Research</span>
-              </Link>
-            </nav>
-          </div>
-        )}
+        {/* Subtle bottom border gradient */}
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
       </div>
     </header>
   );
