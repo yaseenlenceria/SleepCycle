@@ -12,13 +12,9 @@ export function Footer() {
               src="/logo.png" 
               alt="SleepCycle.io - World's #1 Sleep Cycle Calculator"
               title="SleepCycle.io - Best Sleep Calculator Platform with AI Assessment"
-              className="h-14 sm:h-18 w-auto"
+              className="h-12 sm:h-16 w-auto max-w-sm"
               loading="lazy"
               decoding="async"
-              onError={(e) => {
-                console.error('Footer logo failed to load:', e);
-                e.currentTarget.style.display = 'none';
-              }}
             />
           </div>
           

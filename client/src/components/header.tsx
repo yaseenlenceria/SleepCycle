@@ -8,18 +8,14 @@ export function Header() {
         <div className="text-center">
           <Link href="/" className="block hover:opacity-80 transition-opacity">
             <div className="flex items-center justify-center mb-2">
-              {/* Custom SleepCycle.io Logo */}
+              {/* SleepCycle.io Logo */}
               <img 
                 src="/logo.png" 
                 alt="SleepCycle.io - World's #1 Sleep Cycle Calculator"
                 title="SleepCycle.io - Best Sleep Calculator with AI Health Assessment"
-                className="h-10 sm:h-12 w-auto"
+                className="h-8 sm:h-10 md:h-12 w-auto max-w-xs"
                 loading="eager"
                 decoding="async"
-                onError={(e) => {
-                  console.error('Logo failed to load:', e);
-                  e.currentTarget.style.display = 'none';
-                }}
               />
             </div>
           </Link>
