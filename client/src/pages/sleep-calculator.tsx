@@ -38,6 +38,7 @@ export default function SleepCalculator() {
   const [showSleepNowResults, setShowSleepNowResults] = useState(false);
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [userProfile, setUserProfile] = useState<{age: number; sex: 'male' | 'female'} | null>(null);
+  const [selectedSleepDuration, setSelectedSleepDuration] = useState<number | undefined>(undefined);
 
   // Scroll to top on page load and set SEO meta
   useEffect(() => {
@@ -107,6 +108,7 @@ export default function SleepCalculator() {
   };
 
   const handleSleepNow = (sleepDuration?: number) => {
+    setSelectedSleepDuration(sleepDuration);
     setIsCalculating(true);
     setShowSleepNowResults(false);
     
@@ -181,8 +183,9 @@ export default function SleepCalculator() {
                   {showSleepNowResults && (
                     <SimpleSleepResults
                       times={sleepNowTimes}
-                      type="wakeup"
+                      type="sleepNow"
                       selectedTime={currentTime}
+                      selectedSleepDuration={selectedSleepDuration}
                       isLoading={isCalculating}
                       userAge={userProfile?.age}
                       userSex={userProfile?.sex}
@@ -207,7 +210,7 @@ export default function SleepCalculator() {
                           <ArrowRight className="ml-2" size={16} />
                         </Button>
                         <Button
-                          onClick={handleSleepNow}
+                          onClick={() => handleSleepNow()}
                           className="bg-green-500 hover:bg-green-600 text-white py-3"
                         >
                           Sleep Now Instead
@@ -260,7 +263,7 @@ export default function SleepCalculator() {
                 <div className="text-center">
                   <div className="text-lg font-semibold text-gray-700 mb-2">Or</div>
                   <Button
-                    onClick={handleSleepNow}
+                    onClick={() => handleSleepNow()}
                     variant="outline"
                     className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white border-0 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                     data-testid="button-sleep-now-bedtime"

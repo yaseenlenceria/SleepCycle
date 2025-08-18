@@ -24,8 +24,9 @@ interface SleepAssessment {
 
 interface SimpleSleepResultsProps {
   times: SleepTime[];
-  type: 'bedtime' | 'wakeup';
+  type: 'bedtime' | 'wakeup' | 'sleepNow';
   selectedTime?: string;
+  selectedSleepDuration?: number;
   isLoading?: boolean;
   userAge?: number;
   userSex?: 'male' | 'female';
@@ -35,6 +36,7 @@ export function SimpleSleepResults({
   times, 
   type, 
   selectedTime,
+  selectedSleepDuration,
   isLoading = false,
   userAge = 30,
   userSex = 'male'
@@ -44,27 +46,47 @@ export function SimpleSleepResults({
   const [sleepAssessment, setSleepAssessment] = useState<SleepAssessment | null>(null);
 
   useEffect(() => {
-    if (times.length > 0 && selectedTime) {
+    if (times.length > 0 && (selectedTime || type === 'sleepNow')) {
       generateHealthAssessment();
     }
-  }, [times, selectedTime, userAge, userSex]);
+  }, [times, selectedTime, selectedSleepDuration, type, userAge, userSex]);
 
   const generateHealthAssessment = async () => {
-    if (!times[0] || !selectedTime) return;
+    if (!times[0]) return;
+    if (type !== 'sleepNow' && !selectedTime) return;
 
     try {
       let bedtime: string;
       let wakeTime: string;
+      let sleepHours: number;
 
-      if (type === 'bedtime') {
+      if (type === 'sleepNow') {
+        // For sleep now calculations
+        const now = new Date();
+        bedtime = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')} ${now.getHours() >= 12 ? 'PM' : 'AM'}`;
+        
+        if (selectedSleepDuration) {
+          // Use exact selected duration
+          sleepHours = selectedSleepDuration;
+          // Find the time that matches closest to selected duration
+          const targetTime = times.find(t => Math.abs(t.cycles * 1.5 - selectedSleepDuration) <= 0.5) || times[0];
+          wakeTime = targetTime.time;
+        } else {
+          // Use first recommended time
+          const firstTime = times[0];
+          sleepHours = firstTime.cycles * 1.5;
+          wakeTime = firstTime.time;
+        }
+      } else if (type === 'bedtime') {
         bedtime = times[0].time;
-        wakeTime = selectedTime;
+        wakeTime = selectedTime!;
+        sleepHours = calculateSleepHours(bedtime, wakeTime);
       } else {
-        bedtime = selectedTime;
+        bedtime = selectedTime!;
         wakeTime = times[0].time;
+        sleepHours = calculateSleepHours(bedtime, wakeTime);
       }
 
-      const sleepHours = calculateSleepHours(bedtime, wakeTime);
       const assessment = assessSleepQuality(sleepHours, userAge, userSex);
       const recommendations = await getPersonalizedHealthRecommendations({
         sleepDuration: sleepHours,
@@ -78,7 +100,7 @@ export function SimpleSleepResults({
         bedtime,
         wakeTime,
         tips: assessment.tips.slice(0, 6),
-        healthScore: Math.round((sleepHours / 8) * 100),
+        healthScore: Math.round(Math.min(100, (sleepHours / 8) * 100)),
         recommendations: recommendations.map(r => r.description)
       });
     } catch (error) {
@@ -103,7 +125,9 @@ export function SimpleSleepResults({
       <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
         <CardContent className="p-6">
           <h3 className="text-xl font-bold text-center text-gray-800 mb-6">
-            {type === 'bedtime' ? 'Your Optimal Bedtimes' : 'You Should Wake Up At:'}
+            {type === 'bedtime' ? 'Your Optimal Bedtimes' : 
+             type === 'sleepNow' ? `Wake Up Times (${selectedSleepDuration ? selectedSleepDuration + 'h sleep' : 'Sleep Now'})` : 
+             'You Should Wake Up At:'}
           </h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
