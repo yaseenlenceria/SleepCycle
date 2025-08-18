@@ -100,6 +100,15 @@ function BlogContent() {
       readTime: '12 min read',
       category: 'Sleep Medicine Directory',
       image: '/blog-images/la-sleep-doctors.svg'
+    },
+    {
+      id: 'full-sleep-cycle-length',
+      title: 'How Long Is a Full Sleep Cycle?',
+      excerpt: 'If you\'ve ever woken up feeling groggy after what seemed like a full night\'s sleep, you\'ve probably interrupted a sleep cycle. Learn the 90-minute pattern and 4 sleep stages.',
+      date: 'January 18, 2025',
+      readTime: '8 min read',
+      category: 'Sleep Science',
+      image: '/blog-images/full-sleep-cycle.svg'
     }
   ];
 
