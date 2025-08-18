@@ -53,7 +53,7 @@ export function BlogPage() {
 
       {/* Blog Posts Grid */}
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
             <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-video bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center">
