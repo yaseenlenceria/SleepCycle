@@ -75,7 +75,7 @@ export function NewbornCalculator({
             <select
               value={period}
               onChange={(e) => onTimeChange(hour, minute, e.target.value)}
-              className="text-2xl sm:text-3xl md:text-4xl font-bold border-2 border-pink-300 rounded-lg px-2 sm:px-3 py-2 sm:py-3 bg-white focus:border-pink-500 focus:outline-none w-16 sm:w-20 text-center"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold border-2 border-pink-300 rounded-lg px-2 sm:px-3 py-2 sm:py-3 bg-white focus:border-pink-500 focus:outline-none w-16 sm:w-20 text-center pl-[0px] pr-[0px] pt-[11px] pb-[11px]"
               data-testid="period-selector"
             >
               {periods.map(p => (
@@ -85,7 +85,6 @@ export function NewbornCalculator({
           </div>
         </div>
       </div>
-
       {/* Calculator Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
         
@@ -185,7 +184,6 @@ export function NewbornCalculator({
           </CardContent>
         </Card>
       </div>
-
       {/* Results Section - Outside of Grid */}
       <div className="space-y-6">
         {showBedtimeResults && bedtimeResultsComponent && (
