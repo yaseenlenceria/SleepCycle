@@ -23,6 +23,15 @@ export function BlogPage() {
       image: '/favicon.png'
     },
     {
+      id: 'sleep-cycle-stages',
+      title: 'Stages of the Sleep Cycle: Everything You Need to Know',
+      excerpt: 'Sleep is not just a time when your body shuts down. It\'s an active process that occurs in different stages, each with a unique purpose for physical restoration, memory, and emotional health.',
+      date: 'January 18, 2025',
+      readTime: '9 min read',
+      category: 'Sleep Science',
+      image: '/favicon.png'
+    },
+    {
       id: 'sleep-cycle-myth',
       title: 'The 90-Minute Sleep Cycle Myth: What Science Actually Says About Sleep Patterns',
       excerpt: 'The popular belief that everyone sleeps in perfect 90-minute cycles has become widespread online, but the scientific reality is far more complex and individualized.',

@@ -35,6 +35,7 @@ import { BlogPostBabyNaps } from '@/pages/blog-post-baby-naps';
 import { BlogPostSleepCycleMyth } from '@/pages/blog-post-sleep-cycle-myth';
 import { BlogPostSleepStages } from '@/pages/blog-post-sleep-stages';
 import { BlogPostSleepCycleLength } from '@/pages/blog-post-sleep-cycle-length';
+import { BlogPostSleepCycleStages } from '@/pages/blog-post-sleep-cycle-stages';
 
 function Router() {
   return (
@@ -67,6 +68,7 @@ function Router() {
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/sleep-cycle-length" component={BlogPostSleepCycleLength} />
       <Route path="/blog/sleep-stages-guide" component={BlogPostSleepStages} />
+      <Route path="/blog/sleep-cycle-stages" component={BlogPostSleepCycleStages} />
       <Route path="/blog/sleep-cycle-myth" component={BlogPostSleepCycleMyth} />
       <Route path="/blog/sleepcycle-worldwide-launch" component={BlogPostLaunch} />
       <Route path="/blog/baby-nap-duration-guide" component={BlogPostBabyNaps} />
