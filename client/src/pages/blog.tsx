@@ -30,6 +30,15 @@ export function BlogPage() {
 function BlogContent() {
   const blogPosts = [
     {
+      id: 'why-waking-wrong-time-makes-tired',
+      title: 'Why Waking Up at the Wrong Time Makes You Tired',
+      excerpt: 'Ever slept 8 hours but still feel exhausted? Learn about sleep inertia and why waking during deep sleep causes grogginess. Discover how proper sleep timing eliminates morning fatigue.',
+      date: 'January 18, 2025',
+      readTime: '8 min read',
+      category: 'Sleep Science',
+      image: '/blog-images/why-waking-wrong-time-tired.svg'
+    },
+    {
       id: 'nap-calculator-science',
       title: 'Nap Calculator: The Science of the Perfect Nap',
       excerpt: 'Master the science of perfect napping: 20-minute power naps for energy, 90-minute cycle naps for recovery. Learn optimal nap timing for work, study, and athletic performance with proven strategies.',

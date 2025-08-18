@@ -69,6 +69,7 @@ export default function SitemapPage() {
   ];
 
   const blogPosts = [
+    { title: 'Why Waking Up at the Wrong Time Makes You Tired', path: '/blog/why-waking-wrong-time-makes-tired', category: 'Sleep Science' },
     { title: 'Nap Calculator: The Science of the Perfect Nap', path: '/blog/nap-calculator-science', category: 'Sleep Optimization' },
     { title: 'Sleep Cycles by Age: How Much Sleep Do You Really Need?', path: '/blog/sleep-cycles-by-age', category: 'Sleep Science' },
     { title: 'The Best Time to Go to Sleep and Wake Up (According to Science)', path: '/blog/best-time-sleep-wake-up', category: 'Sleep Optimization' },

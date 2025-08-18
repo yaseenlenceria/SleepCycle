@@ -135,6 +135,17 @@
 
   <!-- Blog Posts - Sleep Science (High Priority) -->
   <url>
+    <loc>https://sleepcycle.io/blog/why-waking-wrong-time-makes-tired</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://sleepcycle.io/blog-images/why-waking-wrong-time-tired.svg</image:loc>
+      <image:title>Why Waking Up at the Wrong Time Makes You Tired</image:title>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://sleepcycle.io/blog/nap-calculator-science</loc>
     <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>

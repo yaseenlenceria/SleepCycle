@@ -47,6 +47,7 @@ import { BlogPostHowManySleepCycles } from '@/pages/blog-post-how-many-sleep-cyc
 import { BlogPostBestTimeSleepWakeUp } from '@/pages/blog-post-best-time-sleep-wake-up';
 import { BlogPostSleepCyclesByAge } from '@/pages/blog-post-sleep-cycles-by-age';
 import { BlogPostNapCalculatorScience } from '@/pages/blog-post-nap-calculator-science';
+import { BlogPostWhyWakingWrongTimeTired } from '@/pages/blog-post-why-waking-wrong-time-tired';
 
 function Router() {
   return (
@@ -94,6 +95,7 @@ function Router() {
       <Route path="/blog/best-time-sleep-wake-up" component={BlogPostBestTimeSleepWakeUp} />
       <Route path="/blog/sleep-cycles-by-age" component={BlogPostSleepCyclesByAge} />
       <Route path="/blog/nap-calculator-science" component={BlogPostNapCalculatorScience} />
+      <Route path="/blog/why-waking-wrong-time-makes-tired" component={BlogPostWhyWakingWrongTimeTired} />
       {/* Fallback to 404 */}
       <Route component={NotFoundPage} />
     </Switch>
