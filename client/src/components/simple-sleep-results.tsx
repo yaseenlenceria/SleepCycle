@@ -63,17 +63,17 @@ export function SimpleSleepResults({
       }
 
       const sleepHours = calculateSleepHours(bedtime, wakeTime);
-      const quality = assessSleepQuality(sleepHours);
-      const recommendations = getPersonalizedHealthRecommendations(sleepHours, userAge, userSex);
+      const assessment = assessSleepQuality(sleepHours, userAge, userSex, bedtime, wakeTime);
+      const recommendations = await getPersonalizedHealthRecommendations(sleepHours, userAge, userSex);
 
       setSleepAssessment({
         sleepDuration: sleepHours,
-        quality,
+        quality: assessment.quality,
         bedtime,
         wakeTime,
-        tips: recommendations.slice(0, 6),
+        tips: assessment.tips.slice(0, 6),
         healthScore: Math.round((sleepHours / 8) * 100),
-        recommendations: recommendations
+        recommendations: recommendations.map(r => r.description)
       });
     } catch (error) {
       console.error('Error generating health assessment:', error);
@@ -144,11 +144,11 @@ export function SimpleSleepResults({
               </h4>
               <div className="flex items-center space-x-2">
                 <div className={`w-3 h-3 rounded-full ${
-                  sleepAssessment.quality === 'Excellent' ? 'bg-green-500' :
-                  sleepAssessment.quality === 'Good' ? 'bg-blue-500' :
-                  sleepAssessment.quality === 'Fair' ? 'bg-yellow-500' : 'bg-red-500'
+                  sleepAssessment.quality === 'excellent' ? 'bg-green-500' :
+                  sleepAssessment.quality === 'good' ? 'bg-blue-500' :
+                  sleepAssessment.quality === 'fair' ? 'bg-yellow-500' : 'bg-red-500'
                 }`}></div>
-                <span className="font-semibold text-gray-700">
+                <span className="font-semibold text-gray-700 capitalize">
                   {sleepAssessment.quality}
                 </span>
               </div>

@@ -376,21 +376,24 @@ export default function SleepCalculator() {
           </div>
         )}
 
-        {/* User Profile Form - Move to Top for Better UX */}
-        {!userProfile && (
-          <div className="mb-8">
-            <Card className="bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200">
-              <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Get Personalized Results!</h3>
-                <p className="text-gray-600 mb-4">Tell us your age and gender for AI-powered health recommendations</p>
-                <UserProfileForm 
-                  onProfileSet={setUserProfile}
-                  initialProfile={userProfile || undefined}
-                />
-              </CardContent>
-            </Card>
-          </div>
-        )}
+        {/* User Profile Form at Top for Better UX */}
+        <Card className="bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200 mb-8">
+          <CardContent className="p-6 text-center">
+            <h3 className="text-lg font-bold text-gray-800 mb-2">
+              {userProfile ? '✅ Profile Set!' : '🎯 Get Personalized Results!'}
+            </h3>
+            <p className="text-gray-600 mb-4">
+              {userProfile 
+                ? `${userProfile.sex === 'female' ? 'Female' : 'Male'}, Age ${userProfile.age} - Getting AI-powered recommendations`
+                : 'Tell us your age and gender for personalized health recommendations'
+              }
+            </p>
+            <UserProfileForm 
+              onProfileSet={setUserProfile}
+              initialProfile={userProfile || undefined}
+            />
+          </CardContent>
+        </Card>
 
         {/* Simplified Educational Content */}
         <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 mt-12">
