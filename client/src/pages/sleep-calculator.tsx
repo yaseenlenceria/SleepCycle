@@ -144,106 +144,93 @@ export default function SleepCalculator() {
           onSleepNow={handleSleepNow}
         />
 
-        {/* Results Display - Takes Full Page on Mobile */}
-        {(showBedtimeResults || showWakeupResults || showSleepNowResults) && (
-          <div className="fixed inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 z-50 overflow-y-auto">
-            <div className="min-h-screen">
-              <Header />
-              <div className="px-2 py-4 sm:px-4 sm:py-6">
-                <div className="max-w-4xl mx-auto">
-                  <div className="mb-6">
-                    <Button
-                      onClick={() => {
-                        setShowBedtimeResults(false);
-                        setShowWakeupResults(false);
-                        setShowSleepNowResults(false);
-                      }}
-                      variant="outline"
-                      className="mb-4"
-                    >
-                      ← Back to Calculator
-                    </Button>
-                  </div>
-                  
-                  {showBedtimeResults && (
-                    <SimpleSleepResults
-                      times={bedtimes}
-                      type="bedtime"
-                      selectedTime={selectedTimeString}
-                      selectedSleepDuration={selectedSleepDuration}
-                      isLoading={isCalculating}
-                      userAge={userProfile?.age}
-                      userSex={userProfile?.sex}
-                      onSleepDurationChange={(duration) => {
-                        setSelectedSleepDuration(duration);
-                        // Re-calculate bedtimes with new duration preference
-                        handleCalculateBedtime();
-                      }}
-                    />
-                  )}
-                  {showWakeupResults && (
-                    <SimpleSleepResults
-                      times={wakeupTimes}
-                      type="wakeup"
-                      selectedTime={selectedTimeString}
-                      selectedSleepDuration={selectedSleepDuration}
-                      isLoading={isCalculating}
-                      userAge={userProfile?.age}
-                      userSex={userProfile?.sex}
-                      onSleepDurationChange={(duration) => {
-                        setSelectedSleepDuration(duration);
-                        // Re-calculate wake-up times with new duration preference
-                        // We need to get the bedtime from the original selected time
-                        if (selectedTimeString) {
-                          handleCalculateWakeup(selectedTimeString);
-                        }
-                      }}
-                    />
-                  )}
-                  {showSleepNowResults && (
-                    <SimpleSleepResults
-                      times={sleepNowTimes}
-                      type="sleepNow"
-                      selectedTime={currentTime}
-                      selectedSleepDuration={selectedSleepDuration}
-                      isLoading={isCalculating}
-                      userAge={userProfile?.age}
-                      userSex={userProfile?.sex}
-                    />
-                  )}
-                  
-                  {/* Next Steps Navigation */}
-                  <Card className="mt-8 bg-white shadow-lg">
-                    <CardContent className="p-6">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-4">What's Next?</h3>
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        <Button
-                          onClick={() => {
-                            setShowBedtimeResults(false);
-                            setShowWakeupResults(false);
-                            setShowSleepNowResults(false);
-                          }}
-                          variant="outline"
-                          className="flex items-center justify-center py-3"
-                        >
-                          Try Different Time
-                          <ArrowRight className="ml-2" size={16} />
-                        </Button>
-                        <Button
-                          onClick={() => handleSleepNow()}
-                          className="bg-green-500 hover:bg-green-600 text-white py-3"
-                        >
-                          Sleep Now Instead
-                          <Moon className="ml-2" size={16} />
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+        {/* Expandable Results - Show directly on home page */}
+        <div className="max-w-sm mx-auto sm:max-w-md mt-4">
+          {showBedtimeResults && (
+            <div className="animate-in slide-in-from-top-5 duration-500">
+              <SimpleSleepResults
+                times={bedtimes}
+                type="bedtime"
+                selectedTime={selectedTimeString}
+                selectedSleepDuration={selectedSleepDuration}
+                isLoading={isCalculating}
+                userAge={userProfile?.age}
+                userSex={userProfile?.sex}
+                onSleepDurationChange={(duration) => {
+                  setSelectedSleepDuration(duration);
+                  handleCalculateBedtime();
+                }}
+              />
+              
+              <div className="mt-4 text-center">
+                <Button
+                  onClick={() => setShowBedtimeResults(false)}
+                  variant="outline"
+                  size="sm"
+                  className="text-gray-600"
+                >
+                  Hide Results
+                </Button>
               </div>
             </div>
-          </div>
-        )}
+          )}
+          
+          {showWakeupResults && (
+            <div className="animate-in slide-in-from-top-5 duration-500">
+              <SimpleSleepResults
+                times={wakeupTimes}
+                type="wakeup"
+                selectedTime={selectedTimeString}
+                selectedSleepDuration={selectedSleepDuration}
+                isLoading={isCalculating}
+                userAge={userProfile?.age}
+                userSex={userProfile?.sex}
+                onSleepDurationChange={(duration) => {
+                  setSelectedSleepDuration(duration);
+                  if (selectedTimeString) {
+                    handleCalculateWakeup(selectedTimeString);
+                  }
+                }}
+              />
+              
+              <div className="mt-4 text-center">
+                <Button
+                  onClick={() => setShowWakeupResults(false)}
+                  variant="outline"
+                  size="sm"
+                  className="text-gray-600"
+                >
+                  Hide Results
+                </Button>
+              </div>
+            </div>
+          )}
+          
+          {showSleepNowResults && (
+            <div className="animate-in slide-in-from-top-5 duration-500">
+              <SimpleSleepResults
+                times={sleepNowTimes}
+                type="sleepNow"
+                selectedTime={currentTime}
+                selectedSleepDuration={selectedSleepDuration}
+                isLoading={isCalculating}
+                userAge={userProfile?.age}
+                userSex={userProfile?.sex}
+              />
+              
+              <div className="mt-4 text-center">
+                <Button
+                  onClick={() => setShowSleepNowResults(false)}
+                  variant="outline"
+                  size="sm"
+                  className="text-gray-600"
+                >
+                  Hide Results
+                </Button>
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* Hidden Old Bedtime Calculator - Keep for other functionality */}
         {false && activeTab === 'bedtime' && (

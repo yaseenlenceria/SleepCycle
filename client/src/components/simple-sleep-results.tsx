@@ -121,10 +121,10 @@ export function SimpleSleepResults({
   if (!times.length) return null;
 
   return (
-    <div className="space-y-6">
-      {/* Sleep Times Grid */}
-      <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
-        <CardContent className="p-6">
+    <div className="space-y-4">
+      {/* Sleep Times Grid - Compact for home page */}
+      <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-lg">
+        <CardContent className="p-4 sm:p-6">
           {/* Sleep Duration Selector for bedtime and wakeup types */}
           {(type === 'bedtime' || type === 'wakeup') && (
             <div className="mb-6">
@@ -149,14 +149,14 @@ export function SimpleSleepResults({
             </div>
           )}
 
-          <h3 className="text-xl font-bold text-center text-gray-800 mb-6">
+          <h3 className="text-lg sm:text-xl font-bold text-center text-gray-800 mb-4 sm:mb-6">
             {type === 'bedtime' ? 'Your Optimal Bedtimes' : 
              type === 'sleepNow' ? `Wake Up Times (${selectedSleepDuration ? selectedSleepDuration + 'h sleep' : 'Sleep Now'})` : 
              type === 'wakeup' ? (selectedSleepDuration ? `Your Wake Up Times (${selectedSleepDuration}h sleep)` : 'You Should Wake Up At:') :
              'You Should Wake Up At:'}
           </h3>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
             {times.slice(0, 6).map((time, index) => {
               // For wake-up times (Sleep Now), cycles start from 1 and go to 6
               // For bedtimes, cycles start from 6 and go down to 1
@@ -166,24 +166,24 @@ export function SimpleSleepResults({
               return (
                 <div
                   key={index}
-                  className={`p-4 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
+                  className={`p-3 sm:p-4 rounded-lg border-2 transition-all duration-300 hover:scale-105 ${
                     isRecommended
-                      ? 'bg-white border-green-300 shadow-lg'
+                      ? 'bg-white border-green-300 shadow-md'
                       : 'bg-white/70 border-gray-200 hover:border-blue-300'
                   }`}
                 >
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-800 mb-1">
+                    <div className="text-lg sm:text-xl font-bold text-gray-800 mb-1">
                       {time.time}
                     </div>
-                    <div className="text-sm text-gray-600 mb-2">
+                    <div className="text-xs sm:text-sm text-gray-600 mb-1">
                       {cycles} cycle{cycles > 1 ? 's' : ''}
                     </div>
                     <div className="text-xs text-gray-500">
                       {cycles * 1.5} hr
                     </div>
                     {isRecommended && (
-                      <Badge className="bg-green-100 text-green-700 text-xs">
+                      <Badge className="bg-green-100 text-green-700 text-xs mt-1">
                         {index === 0 ? 'Best' : 'Good'}
                       </Badge>
                     )}
