@@ -4,7 +4,7 @@ import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Heart, Clock, Baby, Moon, AlertCircle } from 'lucide-react';
-import { UltraSimpleHomepage } from '@/components/ultra-simple-homepage';
+import { NewbornCalculator } from '@/components/newborn-calculator';
 import { NewbornSleepResults } from '@/components/newborn-sleep-results';
 import { calculateNewbornBedtimes, calculateNewbornSleepNow, calculateNewbornNapTimes, getNewbornSleepRecommendations } from '@/lib/newborn-sleep-calculations';
 
@@ -21,7 +21,7 @@ export default function SleepCyclesNewbornsPage() {
   const [selectedSleepDuration, setSelectedSleepDuration] = useState(3); // Newborn nap duration in hours
   const [babyAgeWeeks, setBabyAgeWeeks] = useState(4);
   const [showBedtimeResults, setShowBedtimeResults] = useState(false);
-  const [showWakeupResults, setShowWakeupResults] = useState(false);
+  const [showNapResults, setShowNapResults] = useState(false);
   const [showSleepNowResults, setShowSleepNowResults] = useState(false);
   const [userProfile, setUserProfile] = useState({ age: 0, sex: 'female' }); // Newborn profile
 
@@ -43,7 +43,7 @@ export default function SleepCyclesNewbornsPage() {
 
   const handleCalculateBedtime = () => {
     setIsCalculating(true);
-    setShowWakeupResults(false);
+    setShowNapResults(false);
     setShowSleepNowResults(false);
     
     setTimeout(() => {
@@ -55,7 +55,7 @@ export default function SleepCyclesNewbornsPage() {
     }, 1500);
   };
 
-  const handleCalculateWakeup = (bedtimeString?: string) => {
+  const handleCalculateNapSchedule = (bedtimeString?: string) => {
     setIsCalculating(true);
     setShowBedtimeResults(false);
     setShowSleepNowResults(false);
@@ -65,14 +65,14 @@ export default function SleepCyclesNewbornsPage() {
       const result = calculateNewbornNapTimes(napStartTime);
       setWakeupTimes(result);
       setIsCalculating(false);
-      setShowWakeupResults(true);
+      setShowNapResults(true);
     }, 1500);
   };
 
   const handleSleepNow = (sleepDuration: number = selectedSleepDuration) => {
     setIsCalculating(true);
     setShowBedtimeResults(false);
-    setShowWakeupResults(false);
+    setShowNapResults(false);
     
     setTimeout(() => {
       const {times, currentTime: liveTime} = calculateNewbornSleepNow();
@@ -130,17 +130,18 @@ export default function SleepCyclesNewbornsPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <UltraSimpleHomepage
+              <NewbornCalculator
                 hour={hour}
                 minute={minute}
                 period={period}
                 onTimeChange={handleTimeChange}
                 onCalculateBedtime={handleCalculateBedtime}
-                onCalculateWakeup={handleCalculateWakeup}
+                onCalculateNapSchedule={handleCalculateNapSchedule}
                 onSleepNow={handleSleepNow}
                 showBedtimeResults={showBedtimeResults}
-                showWakeupResults={showWakeupResults}
+                showNapResults={showNapResults}
                 showSleepNowResults={showSleepNowResults}
+                isCalculating={isCalculating}
                 bedtimeResultsComponent={
                   showBedtimeResults ? (
                     <div>
@@ -164,8 +165,8 @@ export default function SleepCyclesNewbornsPage() {
                     </div>
                   ) : undefined
                 }
-                wakeupResultsComponent={
-                  showWakeupResults ? (
+                napResultsComponent={
+                  showNapResults ? (
                     <div>
                       <NewbornSleepResults
                         times={wakeupTimes}
@@ -176,7 +177,7 @@ export default function SleepCyclesNewbornsPage() {
                       />
                       <div className="mt-4 text-center">
                         <Button
-                          onClick={() => setShowWakeupResults(false)}
+                          onClick={() => setShowNapResults(false)}
                           variant="outline"
                           size="sm"
                           className="text-gray-600"
