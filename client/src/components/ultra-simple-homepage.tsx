@@ -352,9 +352,7 @@ export function UltraSimpleHomepage({
                 <div className="text-xs text-gray-600">Happy Users</div>
               </div>
             </div>
-            <p className="text-xs text-gray-600">
-              📊 96.8% accuracy rate • 🏥 Recommended by doctors • 🌟 #1 rated by users
-            </p>
+            <p className="text-xs text-gray-600">96.8% accuracy rate • Recommended by doctors • 🌟 #1 rated by users</p>
           </CardContent>
         </Card>
         
