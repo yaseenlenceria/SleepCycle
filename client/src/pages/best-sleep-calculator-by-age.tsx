@@ -216,9 +216,7 @@ export default function BestSleepCalculatorByAgePage() {
           <p className="text-lg mb-6">
             Join millions who've optimized their sleep with our age-specific, scientifically-backed sleep calculators.
           </p>
-          <p className="text-sm opacity-90">
-            👶 Newborn to Senior • ⚖️ Gender-specific • 🧬 Age-based science • 🆓 Always FREE
-          </p>
+          <p className="text-sm opacity-90">Newborn to Senior •  Gender-specific •  Age-based science •  Always FREE</p>
         </div>
       </main>
       <Footer />
