@@ -93,7 +93,7 @@ export default function SleepCycles7MonthOldPage() {
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
             <span>🚼 7 Month Development</span>
             <span> AI-Powered</span>
-            <span>🧗 Mobility Support</span>
+            <span> Mobility Support</span>
             <span>📊 FREE Assessment</span>
           </div>
         </div>
