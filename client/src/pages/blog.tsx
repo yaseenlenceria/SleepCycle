@@ -144,7 +144,7 @@ function BlogContent() {
       date: 'January 18, 2025',
       readTime: '8 min read',
       category: 'Toddler Sleep',
-      image: '/blog-images/2-year-old-sleep-cycle.svg'
+      image: '/blog-images/2-year-old-sleep-cycle.png'
     }
   ];
 

@@ -34,7 +34,7 @@ export function BlogPost2YearOldSleepCycle() {
     setMeta('og:title', 'How Long Is a Sleep Cycle for a 2-Year-Old? Complete Guide');
     setMeta('og:description', '2-year-old sleep cycles last 45-60 minutes. Expert guide on toddler sleep patterns, schedules, and development needs.');
     setMeta('og:url', 'https://sleepcycle.io/blog/2-year-old-sleep-cycle');
-    setMeta('og:image', 'https://sleepcycle.io/blog-images/2-year-old-sleep-cycle.svg');
+    setMeta('og:image', 'https://sleepcycle.io/blog-images/2-year-old-sleep-cycle.png');
     
     // Set canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -55,7 +55,7 @@ export function BlogPost2YearOldSleepCycle() {
             {/* Hero Image */}
             <div className="aspect-[16/9] bg-gradient-to-r from-pink-100 to-blue-100 flex items-center justify-center p-8">
               <img 
-                src="/blog-images/2-year-old-sleep-cycle.svg" 
+                src="/blog-images/2-year-old-sleep-cycle.png" 
                 alt="2-year-old toddler sleep cycle patterns and development"
                 className="w-full h-full object-contain rounded-lg"
               />
