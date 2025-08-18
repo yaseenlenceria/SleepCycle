@@ -278,32 +278,48 @@ export function BlogPostSleepCycleMyth() {
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
                 <div>
-                  <p className="font-semibold mb-2 opacity-90">Main Calculators:</p>
-                  <ul className="space-y-1 opacity-80">
-                    <li><Link href="/" className="hover:underline">Sleep Cycle Calculator</Link></li>
-                    <li><Link href="/nap-calculator-for-adults" className="hover:underline">Adult Nap Calculator</Link></li>
-                  </ul>
+                  <p className="font-semibold mb-3 opacity-90">Main Calculators:</p>
+                  <div className="space-y-2">
+                    <Link href="/" className="block bg-white bg-opacity-20 text-white px-3 py-2 rounded-lg border border-white border-opacity-30 hover:bg-opacity-30 transition-colors text-xs font-medium">
+                      Sleep Cycle Calculator
+                    </Link>
+                    <Link href="/nap-calculator-for-adults" className="block bg-white bg-opacity-20 text-white px-3 py-2 rounded-lg border border-white border-opacity-30 hover:bg-opacity-30 transition-colors text-xs font-medium">
+                      Adult Nap Calculator
+                    </Link>
+                  </div>
                 </div>
                 <div>
-                  <p className="font-semibold mb-2 opacity-90">Age-Specific:</p>
-                  <ul className="space-y-1 opacity-80">
-                    <li><Link href="/sleep-calculator-by-age" className="hover:underline">By Age Calculator</Link></li>
-                    <li><Link href="/best-sleep-calculator-by-age" className="hover:underline">Best Sleep by Age</Link></li>
-                  </ul>
+                  <p className="font-semibold mb-3 opacity-90">Age-Specific:</p>
+                  <div className="space-y-2">
+                    <Link href="/sleep-calculator-by-age" className="block bg-white bg-opacity-20 text-white px-3 py-2 rounded-lg border border-white border-opacity-30 hover:bg-opacity-30 transition-colors text-xs font-medium">
+                      By Age Calculator
+                    </Link>
+                    <Link href="/best-sleep-calculator-by-age" className="block bg-white bg-opacity-20 text-white px-3 py-2 rounded-lg border border-white border-opacity-30 hover:bg-opacity-30 transition-colors text-xs font-medium">
+                      Best Sleep by Age
+                    </Link>
+                  </div>
                 </div>
                 <div>
-                  <p className="font-semibold mb-2 opacity-90">Baby & Child:</p>
-                  <ul className="space-y-1 opacity-80">
-                    <li><Link href="/baby-nap-calculator-0-12-months" className="hover:underline">Baby Calculator</Link></li>
-                    <li><Link href="/toddler-nap-calculator" className="hover:underline">Toddler Naps</Link></li>
-                  </ul>
+                  <p className="font-semibold mb-3 opacity-90">Baby & Child:</p>
+                  <div className="space-y-2">
+                    <Link href="/baby-nap-calculator-0-12-months" className="block bg-white bg-opacity-20 text-white px-3 py-2 rounded-lg border border-white border-opacity-30 hover:bg-opacity-30 transition-colors text-xs font-medium">
+                      Baby Calculator
+                    </Link>
+                    <Link href="/toddler-nap-calculator" className="block bg-white bg-opacity-20 text-white px-3 py-2 rounded-lg border border-white border-opacity-30 hover:bg-opacity-30 transition-colors text-xs font-medium">
+                      Toddler Naps
+                    </Link>
+                  </div>
                 </div>
                 <div>
-                  <p className="font-semibold mb-2 opacity-90">Learn More:</p>
-                  <ul className="space-y-1 opacity-80">
-                    <li><Link href="/blog/sleep-cycle-length" className="hover:underline">Cycle Length Guide</Link></li>
-                    <li><Link href="/blog/sleep-stages-guide" className="hover:underline">Sleep Stages</Link></li>
-                  </ul>
+                  <p className="font-semibold mb-3 opacity-90">Learn More:</p>
+                  <div className="space-y-2">
+                    <Link href="/blog/sleep-cycle-length" className="block bg-white bg-opacity-20 text-white px-3 py-2 rounded-lg border border-white border-opacity-30 hover:bg-opacity-30 transition-colors text-xs font-medium">
+                      Cycle Length Guide
+                    </Link>
+                    <Link href="/blog/sleep-stages-guide" className="block bg-white bg-opacity-20 text-white px-3 py-2 rounded-lg border border-white border-opacity-30 hover:bg-opacity-30 transition-colors text-xs font-medium">
+                      Sleep Stages
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

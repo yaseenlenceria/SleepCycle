@@ -60,27 +60,43 @@ export function BlogPostSleepStages() {
               </p>
               <div className="grid md:grid-cols-3 gap-4">
                 <div>
-                  <p className="text-blue-800 font-medium mb-2">Sleep Calculators:</p>
-                  <ul className="text-blue-700 space-y-1 text-sm">
-                    <li>• <Link href="/" className="hover:underline">Main Sleep Calculator</Link></li>
-                    <li>• <Link href="/sleep-calculator-by-age" className="hover:underline">By Age Calculator</Link></li>
-                    <li>• <Link href="/how-much-sleep-did-i-get-calculator" className="hover:underline">Sleep Duration</Link></li>
-                  </ul>
+                  <p className="text-blue-800 font-medium mb-3">Sleep Calculators:</p>
+                  <div className="space-y-2">
+                    <Link href="/" className="block bg-white text-blue-700 px-3 py-2 rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors text-xs font-medium">
+                      Main Sleep Calculator
+                    </Link>
+                    <Link href="/sleep-calculator-by-age" className="block bg-white text-blue-700 px-3 py-2 rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors text-xs font-medium">
+                      By Age Calculator
+                    </Link>
+                    <Link href="/how-much-sleep-did-i-get-calculator" className="block bg-white text-blue-700 px-3 py-2 rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors text-xs font-medium">
+                      Sleep Duration
+                    </Link>
+                  </div>
                 </div>
                 <div>
-                  <p className="text-blue-800 font-medium mb-2">Baby Sleep:</p>
-                  <ul className="text-blue-700 space-y-1 text-sm">
-                    <li>• <Link href="/baby-nap-calculator-0-12-months" className="hover:underline">0-12 Months</Link></li>
-                    <li>• <Link href="/toddler-nap-calculator" className="hover:underline">Toddler Naps</Link></li>
-                    <li>• <Link href="/blog/baby-nap-duration-guide" className="hover:underline">Baby Sleep Guide</Link></li>
-                  </ul>
+                  <p className="text-blue-800 font-medium mb-3">Baby Sleep:</p>
+                  <div className="space-y-2">
+                    <Link href="/baby-nap-calculator-0-12-months" className="block bg-white text-blue-700 px-3 py-2 rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors text-xs font-medium">
+                      0-12 Months
+                    </Link>
+                    <Link href="/toddler-nap-calculator" className="block bg-white text-blue-700 px-3 py-2 rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors text-xs font-medium">
+                      Toddler Naps
+                    </Link>
+                    <Link href="/blog/baby-nap-duration-guide" className="block bg-white text-blue-700 px-3 py-2 rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors text-xs font-medium">
+                      Baby Sleep Guide
+                    </Link>
+                  </div>
                 </div>
                 <div>
-                  <p className="text-blue-800 font-medium mb-2">Learn More:</p>
-                  <ul className="text-blue-700 space-y-1 text-sm">
-                    <li>• <Link href="/blog/sleep-cycle-length" className="hover:underline">Cycle Length Guide</Link></li>
-                    <li>• <Link href="/blog/sleep-cycle-myth" className="hover:underline">90-Min Myth</Link></li>
-                  </ul>
+                  <p className="text-blue-800 font-medium mb-3">Learn More:</p>
+                  <div className="space-y-2">
+                    <Link href="/blog/sleep-cycle-length" className="block bg-white text-blue-700 px-3 py-2 rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors text-xs font-medium">
+                      Cycle Length Guide
+                    </Link>
+                    <Link href="/blog/sleep-cycle-myth" className="block bg-white text-blue-700 px-3 py-2 rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors text-xs font-medium">
+                      90-Min Myth
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

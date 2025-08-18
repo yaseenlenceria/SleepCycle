@@ -75,21 +75,31 @@ export function BlogPostSleepCycleLength() {
               <p className="text-green-900 mb-4">
                 <strong>Pro Tip:</strong> If you wake up at the end of a cycle instead of in the middle, you'll feel more refreshed and alert.
               </p>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <p className="text-green-800 font-medium mb-2">Try Our Calculators:</p>
-                  <ul className="text-green-700 space-y-1">
-                    <li>• <Link href="/" className="hover:underline">Sleep Cycle Calculator</Link></li>
-                    <li>• <Link href="/nap-calculator-for-adults" className="hover:underline">Nap Calculator</Link></li>
-                    <li>• <Link href="/90-minute-sleep-cycle-calculator" className="hover:underline">90-Minute Calculator</Link></li>
-                  </ul>
+                  <p className="text-green-800 font-medium mb-3">Try Our Calculators:</p>
+                  <div className="space-y-2">
+                    <Link href="/" className="block bg-white text-green-700 px-4 py-2 rounded-lg border border-green-200 hover:bg-green-50 transition-colors text-sm font-medium">
+                      Sleep Cycle Calculator
+                    </Link>
+                    <Link href="/nap-calculator-for-adults" className="block bg-white text-green-700 px-4 py-2 rounded-lg border border-green-200 hover:bg-green-50 transition-colors text-sm font-medium">
+                      Nap Calculator
+                    </Link>
+                    <Link href="/90-minute-sleep-cycle-calculator" className="block bg-white text-green-700 px-4 py-2 rounded-lg border border-green-200 hover:bg-green-50 transition-colors text-sm font-medium">
+                      90-Minute Calculator
+                    </Link>
+                  </div>
                 </div>
                 <div>
-                  <p className="text-green-800 font-medium mb-2">Related Guides:</p>
-                  <ul className="text-green-700 space-y-1">
-                    <li>• <Link href="/blog/sleep-stages-guide" className="hover:underline">Sleep Stages Guide</Link></li>
-                    <li>• <Link href="/blog/sleep-cycle-myth" className="hover:underline">90-Minute Myth</Link></li>
-                  </ul>
+                  <p className="text-green-800 font-medium mb-3">Related Guides:</p>
+                  <div className="space-y-2">
+                    <Link href="/blog/sleep-stages-guide" className="block bg-white text-green-700 px-4 py-2 rounded-lg border border-green-200 hover:bg-green-50 transition-colors text-sm font-medium">
+                      Sleep Stages Guide
+                    </Link>
+                    <Link href="/blog/sleep-cycle-myth" className="block bg-white text-green-700 px-4 py-2 rounded-lg border border-green-200 hover:bg-green-50 transition-colors text-sm font-medium">
+                      90-Minute Myth
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
