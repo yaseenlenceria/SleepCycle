@@ -44,6 +44,8 @@ export function SimpleSleepResults({
   onSleepDurationChange
 }: SimpleSleepResultsProps) {
   const [showHealthTips, setShowHealthTips] = useState(false);
+  const [isDurationChanging, setIsDurationChanging] = useState(false);
+  const [loadingDuration, setLoadingDuration] = useState<number | null>(null);
 
   const [sleepAssessment, setSleepAssessment] = useState<SleepAssessment | null>(null);
 
@@ -128,21 +130,44 @@ export function SimpleSleepResults({
           {/* Sleep Duration Selector for bedtime and wakeup types */}
           {(type === 'bedtime' || type === 'wakeup') && (
             <div className="mb-6">
-              <p className="text-sm text-gray-600 mb-3 text-center">How many hours do you want to sleep?</p>
+              <p className="text-sm text-gray-600 mb-3 text-center">
+                How many hours do you want to sleep?
+                {isDurationChanging && (
+                  <span className="ml-2 text-blue-600 text-xs animate-pulse">
+                    Recalculating...
+                  </span>
+                )}
+              </p>
               <div className="flex justify-center gap-2 mb-4">
                 {[6, 7, 8, 9].map(hours => (
                   <button 
                     key={hours}
-                    onClick={() => {
-                      onSleepDurationChange?.(hours);
+                    onClick={async () => {
+                      setIsDurationChanging(true);
+                      setLoadingDuration(hours);
+                      
+                      // Add a small delay to show the loading animation
+                      setTimeout(() => {
+                        onSleepDurationChange?.(hours);
+                        setIsDurationChanging(false);
+                        setLoadingDuration(null);
+                      }, 800);
                     }}
-                    className={`px-4 py-2 text-sm rounded-lg border transition-colors ${
+                    disabled={isDurationChanging}
+                    className={`px-4 py-2 text-sm rounded-lg border transition-all duration-300 ${
                       selectedSleepDuration === hours 
                         ? 'bg-blue-100 border-blue-300 text-blue-700 font-medium'
                         : 'bg-gray-100 hover:bg-blue-100 border-gray-300 text-gray-700 hover:text-blue-700'
-                    }`}
+                    } ${isDurationChanging ? 'opacity-70 cursor-not-allowed' : 'hover:scale-105'}`}
                   >
-                    {hours}h
+                    {loadingDuration === hours ? (
+                      <div className="flex items-center justify-center">
+                        <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mr-1"></div>
+                        {hours}h
+                      </div>
+                    ) : (
+                      `${hours}h`
+                    )}
                   </button>
                 ))}
               </div>
