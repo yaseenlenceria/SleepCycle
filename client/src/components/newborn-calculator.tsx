@@ -43,7 +43,7 @@ export function NewbornCalculator({
   const periods = ['AM', 'PM'];
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-6">
+    <div className="w-full max-w-6xl mx-auto space-y-8">
       {/* Time Selector */}
       <div className="text-center mb-10">
         <div className="bg-white rounded-2xl shadow-lg border-2 border-pink-200 p-6 inline-block">
@@ -90,8 +90,8 @@ export function NewbornCalculator({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
         
         {/* Baby Morning Wake Time */}
-        <Card className="bg-gradient-to-br from-orange-50 to-yellow-50 border-orange-200 shadow-lg hover:shadow-xl transition-all duration-300 min-h-[280px]">
-          <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col justify-between">
+        <Card className="bg-gradient-to-br from-orange-50 to-yellow-50 border-orange-200 shadow-lg hover:shadow-xl transition-all duration-300">
+          <CardContent className="p-6 lg:p-8 text-center">
             <div className="space-y-4">
               <Clock className="mx-auto text-orange-500" size={40} />
               <div>
@@ -117,18 +117,12 @@ export function NewbornCalculator({
                 </Button>
               )}
             </div>
-            
-            {showBedtimeResults && bedtimeResultsComponent && (
-              <div className="mt-6">
-                {bedtimeResultsComponent}
-              </div>
-            )}
           </CardContent>
         </Card>
 
         {/* Baby Bedtime/Nap Start */}
-        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300 min-h-[280px]">
-          <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col justify-between">
+        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300">
+          <CardContent className="p-6 lg:p-8 text-center">
             <div className="space-y-4">
               <Moon className="mx-auto text-blue-500" size={40} />
               <div>
@@ -154,18 +148,12 @@ export function NewbornCalculator({
                 </Button>
               )}
             </div>
-            
-            {showNapResults && napResultsComponent && (
-              <div className="mt-6">
-                {napResultsComponent}
-              </div>
-            )}
           </CardContent>
         </Card>
 
         {/* Baby Sleep Now */}
-        <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 shadow-lg hover:shadow-xl transition-all duration-300 min-h-[280px]">
-          <CardContent className="p-6 lg:p-8 text-center h-full flex flex-col justify-between">
+        <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 shadow-lg hover:shadow-xl transition-all duration-300">
+          <CardContent className="p-6 lg:p-8 text-center">
             <div className="space-y-4">
               <Zap className="mx-auto text-green-500" size={40} />
               <div>
@@ -191,14 +179,29 @@ export function NewbornCalculator({
                 </Button>
               )}
             </div>
-            
-            {showSleepNowResults && sleepNowResultsComponent && (
-              <div className="mt-6">
-                {sleepNowResultsComponent}
-              </div>
-            )}
           </CardContent>
         </Card>
+      </div>
+
+      {/* Results Section - Outside of Grid */}
+      <div className="space-y-6">
+        {showBedtimeResults && bedtimeResultsComponent && (
+          <div className="w-full">
+            {bedtimeResultsComponent}
+          </div>
+        )}
+        
+        {showNapResults && napResultsComponent && (
+          <div className="w-full">
+            {napResultsComponent}
+          </div>
+        )}
+        
+        {showSleepNowResults && sleepNowResultsComponent && (
+          <div className="w-full">
+            {sleepNowResultsComponent}
+          </div>
+        )}
       </div>
     </div>
   );
