@@ -12,7 +12,7 @@ import Contact from "@/pages/contact";
 import Help from "@/pages/help";
 import SleepScience from "@/pages/sleep-science";
 import MoreResources from "@/pages/more-resources";
-import NotFound from "@/pages/not-found";
+import { NotFoundPage } from "@/pages/not-found";
 import AgeCalculator from '@/pages/age-calculator';
 import SleepCyclesBabies from '@/pages/sleep-cycles-babies';
 import SleepCyclesAdults from '@/pages/sleep-cycles-adults';
@@ -87,7 +87,7 @@ function Router() {
       <Route path="/blog/night-shift-sleep-cycle" component={BlogPostNightShiftSleep} />
       <Route path="/blog/2-year-old-sleep-cycle" component={BlogPost2YearOldSleepCycle} />
       {/* Fallback to 404 */}
-      <Route component={NotFound} />
+      <Route component={NotFoundPage} />
     </Switch>
   );
 }
