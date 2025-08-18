@@ -68,7 +68,7 @@ export function Footer() {
 
           {/* Support & Info */}
           <div>
-            <h4 className="font-bold text-white mb-4 text-lg">💬 Support & Info</h4>
+            <h4 className="font-bold text-white mb-4 text-lg">Support & Info</h4>
             <ul className="space-y-3 text-sm">
               <li><Link href="/about" className="text-purple-300 hover:text-purple-200 transition-colors">About Sleepcycle.io</Link></li>
               <li><Link href="/help" className="text-purple-300 hover:text-purple-200 transition-colors">Help & FAQ</Link></li>
