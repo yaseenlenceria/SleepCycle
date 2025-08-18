@@ -34,8 +34,8 @@ export default function BestSleepCalculatorByAgePage() {
             <span>Newborn to Senior</span>
             <span> Gender-Specific</span>
             <span>Age-Based Science</span>
-            <span>🎯 Personalized Results</span>
-            <span>🆓 Always FREE</span>
+            <span> Personalized Results</span>
+            <span>Always FREE</span>
           </div>
         </div>
 
