@@ -109,6 +109,15 @@ function BlogContent() {
       readTime: '8 min read',
       category: 'Sleep Science',
       image: '/blog-images/full-sleep-cycle.svg'
+    },
+    {
+      id: 'uberman-sleep-cycle',
+      title: 'What Is the Uberman Sleep Cycle?',
+      excerpt: 'The Uberman Sleep Cycle is an extreme polyphasic sleep schedule with 6-8 naps of 20-30 minutes for only 2-3 hours total sleep daily. Learn why experts don\'t recommend this risky pattern.',
+      date: 'January 18, 2025',
+      readTime: '9 min read',
+      category: 'Alternative Sleep',
+      image: '/blog-images/uberman-sleep-cycle.svg'
     }
   ];
 

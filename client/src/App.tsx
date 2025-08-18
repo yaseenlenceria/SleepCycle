@@ -39,6 +39,7 @@ import { BlogPostSleepCycleStages } from '@/pages/blog-post-sleep-cycle-stages';
 import { BlogPostNewbornSleepPatterns } from '@/pages/blog-post-newborn-sleep-patterns';
 import { BlogPostLaSleepDoctors } from '@/pages/blog-post-la-sleep-doctors';
 import { BlogPostFullSleepCycle } from '@/pages/blog-post-full-sleep-cycle';
+import { BlogPostUbermanSleepCycle } from '@/pages/blog-post-uberman-sleep-cycle';
 
 function Router() {
   return (
@@ -78,6 +79,7 @@ function Router() {
       <Route path="/blog/newborn-sleep-patterns" component={BlogPostNewbornSleepPatterns} />
       <Route path="/blog/best-sleep-doctors-los-angeles" component={BlogPostLaSleepDoctors} />
       <Route path="/blog/full-sleep-cycle-length" component={BlogPostFullSleepCycle} />
+      <Route path="/blog/uberman-sleep-cycle" component={BlogPostUbermanSleepCycle} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
