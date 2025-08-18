@@ -60,14 +60,14 @@ export function UltraSimpleHomepage({
     <div className="w-full max-w-sm mx-auto px-3 sm:max-w-lg lg:max-w-2xl sm:px-4 lg:px-6">
       {/* Hero Trust Signals */}
       <div className="text-center mb-6 sm:mb-8">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3">World's #1 Sleep Calculator</h1>
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3">#1 Sleep Calculator: 90-Minute Sleep Cycle Calculator by Age</h1>
         <p className="text-sm sm:text-base text-gray-600 mb-4">
-          FREE AI Health Assessment • 4+ Billion Sleep Sessions Analyzed • Trusted by 10M+ Users
+          FREE AI Health Assessment • Calculate: How Much Sleep Did I Get • Scientifically Best Bedtime & Wake Time • 4+ Billion Sleep Sessions Analyzed
         </p>
         <div className="flex justify-center items-center gap-4 text-xs text-gray-500">
-          <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full">✓ Completely FREE</span>
-          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full">✓ AI-Powered</span>
-          <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full">✓ Expert Approved</span>
+          <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full">✓ Best Sleep Calculator</span>
+          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full">✓ Age & Gender Based</span>
+          <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full">✓ Free Sleep Cycle Time</span>
         </div>
       </div>
       <div className="space-y-3 sm:space-y-4 lg:space-y-6">
