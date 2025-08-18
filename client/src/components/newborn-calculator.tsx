@@ -51,7 +51,7 @@ export function NewbornCalculator({
             <select
               value={hour}
               onChange={(e) => onTimeChange(e.target.value, minute, period)}
-              className="text-xl sm:text-2xl md:text-3xl font-bold border-2 border-pink-300 rounded-lg px-2 sm:px-3 py-2 sm:py-3 bg-white focus:border-pink-500 focus:outline-none w-14 sm:w-16 md:w-18 text-center pl-[9px] pr-[9px]"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold border-2 border-pink-300 rounded-lg px-3 sm:px-4 py-3 sm:py-4 bg-white focus:border-pink-500 focus:outline-none w-20 sm:w-24 md:w-28 text-center"
               data-testid="hour-selector"
             >
               {hours.map(h => (
@@ -59,12 +59,12 @@ export function NewbornCalculator({
               ))}
             </select>
             
-            <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-600">:</span>
+            <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-600">:</span>
             
             <select
               value={minute}
               onChange={(e) => onTimeChange(hour, e.target.value, period)}
-              className="text-xl sm:text-2xl md:text-3xl font-bold border-2 border-pink-300 rounded-lg px-2 sm:px-3 py-2 sm:py-3 bg-white focus:border-pink-500 focus:outline-none w-14 sm:w-16 md:w-18 text-center"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold border-2 border-pink-300 rounded-lg px-3 sm:px-4 py-3 sm:py-4 bg-white focus:border-pink-500 focus:outline-none w-20 sm:w-24 md:w-28 text-center"
               data-testid="minute-selector"
             >
               {minutes.map(m => (
@@ -75,7 +75,7 @@ export function NewbornCalculator({
             <select
               value={period}
               onChange={(e) => onTimeChange(hour, minute, e.target.value)}
-              className="text-xl sm:text-2xl md:text-3xl font-bold border-2 border-pink-300 rounded-lg px-2 sm:px-3 py-2 sm:py-3 bg-white focus:border-pink-500 focus:outline-none w-14 sm:w-16 md:w-18 text-center"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold border-2 border-pink-300 rounded-lg px-3 sm:px-4 py-3 sm:py-4 bg-white focus:border-pink-500 focus:outline-none w-20 sm:w-24 md:w-28 text-center"
               data-testid="period-selector"
             >
               {periods.map(p => (
