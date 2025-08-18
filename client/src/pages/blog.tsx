@@ -82,6 +82,15 @@ function BlogContent() {
       readTime: '8 min read',
       category: 'Baby Sleep Guide',
       image: '/blog-images/baby-naps.svg'
+    },
+    {
+      id: 'newborn-sleep-patterns',
+      title: 'Newborn and Baby Sleep Patterns: What Parents Need to Know',
+      excerpt: 'One of the biggest challenges for new parents is understanding their baby\'s sleep. Learn normal newborn sleep patterns by week and month with NHS guidelines for worried parents.',
+      date: 'January 18, 2025',
+      readTime: '10 min read',
+      category: 'Newborn Sleep Guide',
+      image: '/blog-images/newborn-sleep-patterns.svg'
     }
   ];
 
