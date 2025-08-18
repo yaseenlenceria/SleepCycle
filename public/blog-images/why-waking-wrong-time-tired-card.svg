@@ -1,0 +1,86 @@
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#eab308;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="lightSleep" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#93c5fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="deepSleep" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ade80;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22c55e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="300" fill="url(#cardGradient)" rx="12"/>
+  
+  <!-- Title -->
+  <text x="300" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="white">
+    Why Waking at the Wrong Time
+  </text>
+  <text x="300" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="white">
+    Makes You Tired
+  </text>
+  
+  <!-- Sleep Cycle Visualization -->
+  <g transform="translate(50, 90)">
+    <!-- Sleep stages -->
+    <rect x="0" y="0" width="100" height="30" fill="url(#lightSleep)" rx="4"/>
+    <text x="50" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Light Sleep</text>
+    <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Easy Wake ✓</text>
+    
+    <rect x="120" y="0" width="280" height="30" fill="url(#deepSleep)" rx="4"/>
+    <text x="260" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Deep Sleep (Sleep Inertia Zone)</text>
+    <text x="260" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Hard Wake ✗ - Grogginess</text>
+    
+    <rect x="420" y="0" width="130" height="30" fill="#fbbf24" rx="4"/>
+    <text x="485" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">REM Sleep</text>
+    <text x="485" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Dreams</text>
+  </g>
+  
+  <!-- Comparison Examples -->
+  <g transform="translate(50, 160)">
+    <!-- Wrong timing -->
+    <rect x="0" y="0" width="240" height="70" rx="8" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+    <text x="120" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+      ❌ 11:00 PM → 7:00 AM
+    </text>
+    <text x="120" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+      8 hours = 5.3 cycles
+    </text>
+    <text x="120" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+      Wake during deep sleep
+    </text>
+    <text x="120" y="63" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+      = Grogginess & fatigue
+    </text>
+    
+    <!-- Right timing -->
+    <rect x="260" y="0" width="240" height="70" rx="8" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="2"/>
+    <text x="380" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+      ✓ 11:30 PM → 7:00 AM
+    </text>
+    <text x="380" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+      7.5 hours = 5 complete cycles
+    </text>
+    <text x="380" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+      Wake during light sleep
+    </text>
+    <text x="380" y="63" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+      = Instant alertness
+    </text>
+  </g>
+  
+  <!-- Key insight -->
+  <rect x="50" y="250" width="500" height="35" rx="8" fill="rgba(255,255,255,0.25)" filter="url(#shadow)"/>
+  <text x="300" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    💡 Quality Sleep Timing Beats Quantity - Master Your 90-Minute Cycles
+  </text>
+</svg>

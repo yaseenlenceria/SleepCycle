@@ -36,7 +36,7 @@ function BlogContent() {
       date: 'January 18, 2025',
       readTime: '8 min read',
       category: 'Sleep Science',
-      image: '/blog-images/why-waking-wrong-time-tired.svg'
+      image: '/blog-images/why-waking-wrong-time-tired-card.svg'
     },
     {
       id: 'nap-calculator-science',
@@ -45,7 +45,7 @@ function BlogContent() {
       date: 'January 18, 2025',
       readTime: '9 min read',
       category: 'Sleep Optimization',
-      image: '/blog-images/nap-calculator-science.svg'
+      image: '/blog-images/nap-calculator-science-card.svg'
     },
     {
       id: 'sleep-cycles-by-age',

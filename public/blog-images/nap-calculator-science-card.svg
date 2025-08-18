@@ -1,0 +1,104 @@
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="napCardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="300" fill="url(#napCardGradient)" rx="12"/>
+  
+  <!-- Title -->
+  <text x="300" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">
+    Nap Calculator: The Science of
+  </text>
+  <text x="300" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">
+    Perfect Napping
+  </text>
+  
+  <!-- Nap Types -->
+  <g transform="translate(30, 85)">
+    
+    <!-- Power Nap -->
+    <g>
+      <rect x="0" y="0" width="170" height="90" rx="8" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+      <text x="85" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+        ⚡ Power Nap
+      </text>
+      <text x="85" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
+        20-30 Minutes
+      </text>
+      <rect x="15" y="48" width="140" height="12" fill="#93c5fd" rx="2"/>
+      <text x="85" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Light Sleep Only</text>
+      <text x="85" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+        Instant energy boost
+      </text>
+      <text x="85" y="87" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+        No grogginess
+      </text>
+    </g>
+    
+    <!-- Full Cycle -->
+    <g transform="translate(200, 0)">
+      <rect x="0" y="0" width="170" height="90" rx="8" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="2"/>
+      <text x="85" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+        🔄 Full Cycle
+      </text>
+      <text x="85" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
+        90 Minutes
+      </text>
+      <!-- Sleep stages mini visualization -->
+      <rect x="15" y="48" width="40" height="12" fill="#93c5fd" rx="2"/>
+      <rect x="60" y="48" width="70" height="12" fill="#4ade80" rx="2"/>
+      <rect x="135" y="48" width="20" height="12" fill="#fbbf24" rx="2"/>
+      <text x="85" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">Complete Sleep Cycle</text>
+      <text x="85" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+        Physical recovery
+      </text>
+      <text x="85" y="87" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+        Memory consolidation
+      </text>
+    </g>
+    
+    <!-- Danger Zone -->
+    <g transform="translate(400, 0)">
+      <rect x="0" y="0" width="170" height="90" rx="8" fill="rgba(239,68,68,0.3)" stroke="#ef4444" stroke-width="2"/>
+      <text x="85" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+        ⚠️ Danger Zone
+      </text>
+      <text x="85" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">
+        30-60 Minutes
+      </text>
+      <rect x="15" y="48" width="140" height="12" fill="#ef4444" rx="2"/>
+      <text x="85" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Deep Sleep Interruption</text>
+      <text x="85" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+        Severe grogginess
+      </text>
+      <text x="85" y="87" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+        Avoid at all costs
+      </text>
+    </g>
+  </g>
+  
+  <!-- Optimal timing -->
+  <g transform="translate(50, 195)">
+    <rect x="0" y="0" width="500" height="40" rx="8" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+    <text x="250" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+      🕐 OPTIMAL NAP WINDOW: 1:00 PM - 3:00 PM
+    </text>
+    <text x="250" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+      Post-lunch energy dip | 6+ hours before bedtime
+    </text>
+  </g>
+  
+  <!-- Pro tip -->
+  <rect x="50" y="250" width="500" height="35" rx="8" fill="rgba(255,255,255,0.25)" filter="url(#shadow)"/>
+  <text x="300" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">
+    ☕ Pro Tip: Drink caffeine before napping - it kicks in as you wake for maximum alertness!
+  </text>
+</svg>
