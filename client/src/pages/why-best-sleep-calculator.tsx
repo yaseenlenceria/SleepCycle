@@ -144,9 +144,7 @@ export default function WhyBestSleepCalculatorPage() {
         <section className="mb-16">
           <Card className="bg-gradient-to-br from-blue-50 to-purple-50 shadow-2xl">
             <CardHeader className="text-center">
-              <CardTitle className="text-3xl font-bold text-gray-800">
-                📊 How We Compare to Competitors
-              </CardTitle>
+              <CardTitle className="text-3xl font-bold text-gray-800"> How We Compare to Competitors</CardTitle>
               <p className="text-gray-600">See why millions choose Sleepcycle.io over alternatives</p>
             </CardHeader>
             <CardContent>
