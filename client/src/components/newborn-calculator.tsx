@@ -173,7 +173,7 @@ export function NewbornCalculator({
                   disabled={isCalculating !== ''}
                   data-testid="button-baby-sleep-now"
                 >
-                  ⚡ Baby Sleep Times
+                  Baby Sleep Times
                 </Button>
               )}
             </div>
