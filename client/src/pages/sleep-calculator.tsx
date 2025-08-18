@@ -10,6 +10,7 @@ import { AgeCalculator } from '@/components/age-calculator';
 import { BabyNapCalculator } from '@/components/baby-nap-calculator';
 import { SimpleHomepageNavigation } from '@/components/simple-homepage-navigation';
 import { ModernDashboardHomepage } from '@/components/modern-dashboard-homepage';
+import { UltraSimpleHomepage } from '@/components/ultra-simple-homepage';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { calculateBedtimes, calculateWakeUpTimes, calculateWakeUpTimesFromNow, getCurrentTime, SleepTime } from '@/lib/sleep-calculations';
@@ -118,16 +119,8 @@ export default function SleepCalculator() {
       <Header />
 
       <main className="px-4 py-8">
-        {/* Modern Dashboard Homepage */}
-        <ModernDashboardHomepage
-          activeTab={activeTab}
-          onTabChange={(tab) => {
-            setActiveTab(tab);
-            if (tab === 'bedtime' || tab === 'wakeup') {
-              setShowBedtimeResults(false);
-              setShowWakeupResults(false);
-            }
-          }}
+        {/* Ultra Simple Homepage */}
+        <UltraSimpleHomepage
           hour={hour}
           minute={minute}
           period={period}
@@ -136,8 +129,8 @@ export default function SleepCalculator() {
           onSleepNow={handleSleepNow}
         />
 
-        {/* Results Display for Dashboard */}
-        {(activeTab === 'bedtime' || activeTab === 'wakeup') && (showBedtimeResults || showWakeupResults || showSleepNowResults) && (
+        {/* Results Display */}
+        {(showBedtimeResults || showWakeupResults || showSleepNowResults) && (
           <div className="max-w-4xl mx-auto mt-8">
             {showBedtimeResults && (
               <SimpleSleepResults
