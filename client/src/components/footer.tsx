@@ -82,6 +82,7 @@ export function Footer() {
             <h4 className="font-bold text-white mb-4 text-lg">Support & Info</h4>
             <ul className="space-y-3 text-sm">
               <li><Link href="/about" className="text-purple-300 hover:text-purple-200 transition-colors">About Sleepcycle.io</Link></li>
+              <li><Link href="/blog" className="text-purple-300 hover:text-purple-200 transition-colors">Sleep Science Blog</Link></li>
               <li><Link href="/help" className="text-purple-300 hover:text-purple-200 transition-colors">Help & FAQ</Link></li>
               <li><Link href="/contact" className="text-purple-300 hover:text-purple-200 transition-colors">Contact Support</Link></li>
               <li><Link href="/sitemap" className="text-purple-300 hover:text-purple-200 transition-colors">Site Map</Link></li>

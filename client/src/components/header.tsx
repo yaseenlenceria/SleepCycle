@@ -76,6 +76,12 @@ export function Header() {
               >
                 Sleep Science
               </Link>
+              <Link 
+                href="/blog" 
+                className="text-gray-700 hover:text-orange-600 font-medium text-lg transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
+              >
+                Blog
+              </Link>
             </nav>
           </div>
         </div>
