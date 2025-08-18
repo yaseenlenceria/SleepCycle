@@ -5,6 +5,15 @@ import { Footer } from '@/components/footer';
 export function BlogPage() {
   const blogPosts = [
     {
+      id: 'sleep-cycle-length',
+      title: 'How Long is One Sleep Cycle? A Complete Guide',
+      excerpt: 'Sleep is divided into cycles, each made up of multiple stages. Understanding how long a sleep cycle lasts and how many cycles you need can help you wake up refreshed and improve your well-being.',
+      date: 'January 18, 2025',
+      readTime: '8 min read',
+      category: 'Sleep Fundamentals',
+      image: '/favicon.png'
+    },
+    {
       id: 'sleep-stages-guide',
       title: 'Sleep Cycle Stages: A Complete Guide to Better Sleep',
       excerpt: 'Sleep is not just about closing your eyes and resting—it\'s a structured process your body goes through every night. Understanding the stages can help improve your health and well-being.',
@@ -62,7 +71,7 @@ export function BlogPage() {
 
       {/* Blog Posts Grid */}
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {blogPosts.map((post) => (
             <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-video bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center">
