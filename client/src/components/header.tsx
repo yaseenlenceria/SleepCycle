@@ -15,7 +15,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 hover:opacity-90 transition-opacity">
             <img 
-              src="/logo.png" 
+              src="/logo.jpg" 
               alt="SleepCycle.io - World's #1 Sleep Calculator"
               className="h-12 sm:h-14 md:h-16 w-auto"
               loading="eager"
