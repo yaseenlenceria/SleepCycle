@@ -136,6 +136,15 @@ function BlogContent() {
       readTime: '12 min read',
       category: 'Shift Work Sleep',
       image: '/blog-images/night-shift-sleep.svg'
+    },
+    {
+      id: '2-year-old-sleep-cycle',
+      title: 'How Long Is a Sleep Cycle for a 2-Year-Old?',
+      excerpt: '2-year-old sleep cycles last 45-60 minutes and toddlers need 11-14 hours of daily sleep. Learn about toddler sleep patterns, common challenges, and expert tips for better sleep development.',
+      date: 'January 18, 2025',
+      readTime: '8 min read',
+      category: 'Toddler Sleep',
+      image: '/blog-images/2-year-old-sleep-cycle.svg'
     }
   ];
 

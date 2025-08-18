@@ -260,6 +260,18 @@
     </image:image>
   </url>
 
+  <!-- Blog Posts - Toddler Sleep -->
+  <url>
+    <loc>https://sleepcycle.io/blog/2-year-old-sleep-cycle</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://sleepcycle.io/blog-images/2-year-old-sleep-cycle.svg</image:loc>
+      <image:title>How Long Is a Sleep Cycle for a 2-Year-Old</image:title>
+    </image:image>
+  </url>
+
   <!-- Blog Posts - Company -->
   <url>
     <loc>https://sleepcycle.io/blog/sleepcycle-worldwide-launch</loc>
