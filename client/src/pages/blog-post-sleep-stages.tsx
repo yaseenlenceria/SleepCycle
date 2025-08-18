@@ -55,9 +55,34 @@ export function BlogPostSleepStages() {
             </p>
 
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
-              <p className="text-blue-900">
-                If you want to find the best time to go to bed or wake up, try our <Link href="/" className="text-blue-700 font-semibold hover:underline">Sleep Cycle Calculator</Link>.
+              <p className="text-blue-900 mb-4">
+                Find your optimal sleep and wake times with our specialized calculators:
               </p>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div>
+                  <p className="text-blue-800 font-medium mb-2">Sleep Calculators:</p>
+                  <ul className="text-blue-700 space-y-1 text-sm">
+                    <li>• <Link href="/" className="hover:underline">Main Sleep Calculator</Link></li>
+                    <li>• <Link href="/sleep-calculator-by-age" className="hover:underline">By Age Calculator</Link></li>
+                    <li>• <Link href="/how-much-sleep-did-i-get-calculator" className="hover:underline">Sleep Duration</Link></li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-blue-800 font-medium mb-2">Baby Sleep:</p>
+                  <ul className="text-blue-700 space-y-1 text-sm">
+                    <li>• <Link href="/baby-nap-calculator-0-12-months" className="hover:underline">0-12 Months</Link></li>
+                    <li>• <Link href="/toddler-nap-calculator" className="hover:underline">Toddler Naps</Link></li>
+                    <li>• <Link href="/blog/baby-nap-duration-guide" className="hover:underline">Baby Sleep Guide</Link></li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-blue-800 font-medium mb-2">Learn More:</p>
+                  <ul className="text-blue-700 space-y-1 text-sm">
+                    <li>• <Link href="/blog/sleep-cycle-length" className="hover:underline">Cycle Length Guide</Link></li>
+                    <li>• <Link href="/blog/sleep-cycle-myth" className="hover:underline">90-Min Myth</Link></li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
             <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6">The 4 Stages of the Sleep Cycle</h2>

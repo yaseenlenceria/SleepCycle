@@ -286,14 +286,37 @@ export function BlogPostBabyNaps() {
             Remember that healthy sleep habits take time to develop. Every baby is different, and what works for one may not work for another. Stay consistent with your approach, but remain flexible as your baby grows and their needs change.
           </p>
 
-          <div className="text-center bg-gradient-to-r from-pink-600 to-purple-600 rounded-xl p-8 text-white mb-8">
-            <h3 className="text-2xl font-bold mb-4">Get Personalized Baby Sleep Guidance</h3>
-            <p className="text-lg mb-6 opacity-90">
-              Use our scientifically-designed baby sleep calculator for age-specific recommendations
+          <div className="bg-gradient-to-r from-pink-600 to-purple-600 rounded-xl p-8 text-white mb-8">
+            <h3 className="text-2xl font-bold mb-4 text-center">Get Personalized Baby Sleep Guidance</h3>
+            <p className="text-lg mb-6 opacity-90 text-center">
+              Use our scientifically-designed calculators and guides for age-specific recommendations
             </p>
-            <Link href="/sleep-cycles-babies" className="bg-white text-pink-600 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block">
-              Try Baby Sleep Calculator
-            </Link>
+            <div className="grid md:grid-cols-3 gap-6 text-sm">
+              <div>
+                <p className="font-semibold mb-3 opacity-90">Baby Sleep Tools:</p>
+                <ul className="space-y-2 opacity-80">
+                  <li><Link href="/baby-nap-calculator-0-12-months" className="hover:underline block">→ Baby Sleep (0-12m)</Link></li>
+                  <li><Link href="/newborn-sleep-schedule-calculator" className="hover:underline block">→ Newborn Schedule</Link></li>
+                  <li><Link href="/4-month-old-baby-sleep-calculator" className="hover:underline block">→ 4-Month Sleep</Link></li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold mb-3 opacity-90">Toddler Sleep:</p>
+                <ul className="space-y-2 opacity-80">
+                  <li><Link href="/toddler-nap-calculator" className="hover:underline block">→ Toddler Nap Calculator</Link></li>
+                  <li><Link href="/2-year-old-nap-calculator" className="hover:underline block">→ 2-Year-Old Naps</Link></li>
+                  <li><Link href="/sleep-calculator-by-age" className="hover:underline block">→ Sleep by Age</Link></li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold mb-3 opacity-90">Adult Sleep:</p>
+                <ul className="space-y-2 opacity-80">
+                  <li><Link href="/" className="hover:underline block">→ Main Sleep Calculator</Link></li>
+                  <li><Link href="/blog/sleep-stages-guide" className="hover:underline block">→ Sleep Stages Guide</Link></li>
+                  <li><Link href="/blog/sleep-cycle-length" className="hover:underline block">→ Cycle Length</Link></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div className="border-t border-gray-200 pt-8 mt-12">

@@ -131,14 +131,37 @@ export function BlogPostLaunch() {
             Experience the difference that scientifically-optimized sleep can make in your life. Our platform is completely free to use, requires no registration, and works on any device.
           </p>
 
-          <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-white mb-8">
-            <h3 className="text-2xl font-bold mb-4">Start Optimizing Your Sleep Tonight</h3>
-            <p className="text-lg mb-6 opacity-90">
-              Join millions worldwide who trust SleepCycle.io for better sleep
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-white mb-8">
+            <h3 className="text-2xl font-bold mb-4 text-center">Start Optimizing Your Sleep Tonight</h3>
+            <p className="text-lg mb-6 opacity-90 text-center">
+              Join millions worldwide who trust our comprehensive sleep optimization platform
             </p>
-            <Link href="/" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block">
-              Try Sleep Calculator Now
-            </Link>
+            <div className="grid md:grid-cols-3 gap-6 text-sm">
+              <div>
+                <p className="font-semibold mb-3 opacity-90">Popular Calculators:</p>
+                <ul className="space-y-2 opacity-80">
+                  <li><Link href="/" className="hover:underline block">→ Main Sleep Calculator</Link></li>
+                  <li><Link href="/90-minute-sleep-cycle-calculator" className="hover:underline block">→ 90-Minute Calculator</Link></li>
+                  <li><Link href="/nap-calculator-for-adults" className="hover:underline block">→ Nap Calculator</Link></li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold mb-3 opacity-90">Family Sleep:</p>
+                <ul className="space-y-2 opacity-80">
+                  <li><Link href="/baby-nap-calculator-0-12-months" className="hover:underline block">→ Baby Sleep (0-12m)</Link></li>
+                  <li><Link href="/toddler-nap-calculator" className="hover:underline block">→ Toddler Sleep</Link></li>
+                  <li><Link href="/sleep-calculator-by-age" className="hover:underline block">→ Sleep by Age</Link></li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold mb-3 opacity-90">Sleep Education:</p>
+                <ul className="space-y-2 opacity-80">
+                  <li><Link href="/blog/sleep-cycle-length" className="hover:underline block">→ Cycle Length Guide</Link></li>
+                  <li><Link href="/blog/sleep-stages-guide" className="hover:underline block">→ Sleep Stages</Link></li>
+                  <li><Link href="/blog/sleep-cycle-myth" className="hover:underline block">→ 90-Minute Myth</Link></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div className="border-t border-gray-200 pt-8 mt-12">

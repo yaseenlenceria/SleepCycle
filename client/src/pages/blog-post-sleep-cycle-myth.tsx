@@ -271,14 +271,41 @@ export function BlogPostSleepCycleMyth() {
               Good sleep isn't about perfect timing—it's about creating conditions that allow your unique sleep architecture to function optimally night after night.
             </p>
 
-            <div className="text-center bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl p-8 text-white mb-8">
-              <h3 className="text-2xl font-bold mb-4">Discover Your Personal Sleep Patterns</h3>
-              <p className="text-lg mb-6 opacity-90">
-                Use our science-based sleep calculator to find optimal sleep and wake times based on evidence, not myths
+            <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl p-8 text-white mb-8">
+              <h3 className="text-2xl font-bold mb-4 text-center">Discover Your Personal Sleep Patterns</h3>
+              <p className="text-lg mb-6 opacity-90 text-center">
+                Use our science-based calculators to find optimal sleep times based on evidence, not myths
               </p>
-              <Link href="/" className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block">
-                Try Sleep Calculator Now
-              </Link>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+                <div>
+                  <p className="font-semibold mb-2 opacity-90">Main Calculators:</p>
+                  <ul className="space-y-1 opacity-80">
+                    <li><Link href="/" className="hover:underline">Sleep Cycle Calculator</Link></li>
+                    <li><Link href="/nap-calculator-for-adults" className="hover:underline">Adult Nap Calculator</Link></li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold mb-2 opacity-90">Age-Specific:</p>
+                  <ul className="space-y-1 opacity-80">
+                    <li><Link href="/sleep-calculator-by-age" className="hover:underline">By Age Calculator</Link></li>
+                    <li><Link href="/best-sleep-calculator-by-age" className="hover:underline">Best Sleep by Age</Link></li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold mb-2 opacity-90">Baby & Child:</p>
+                  <ul className="space-y-1 opacity-80">
+                    <li><Link href="/baby-nap-calculator-0-12-months" className="hover:underline">Baby Calculator</Link></li>
+                    <li><Link href="/toddler-nap-calculator" className="hover:underline">Toddler Naps</Link></li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold mb-2 opacity-90">Learn More:</p>
+                  <ul className="space-y-1 opacity-80">
+                    <li><Link href="/blog/sleep-cycle-length" className="hover:underline">Cycle Length Guide</Link></li>
+                    <li><Link href="/blog/sleep-stages-guide" className="hover:underline">Sleep Stages</Link></li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
             <div className="border-t border-gray-200 pt-8 mt-12">

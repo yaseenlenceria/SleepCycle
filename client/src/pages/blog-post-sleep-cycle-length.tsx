@@ -72,9 +72,26 @@ export function BlogPostSleepCycleLength() {
             </div>
 
             <div className="bg-green-50 border-l-4 border-green-500 p-6 mb-8">
-              <p className="text-green-900">
-                <strong>Pro Tip:</strong> If you wake up at the end of a cycle instead of in the middle, you'll feel more refreshed and alert. Try our <Link href="/" className="text-green-700 font-semibold hover:underline">Sleep Cycle Calculator</Link> to plan your optimal bedtime and wake-up times.
+              <p className="text-green-900 mb-4">
+                <strong>Pro Tip:</strong> If you wake up at the end of a cycle instead of in the middle, you'll feel more refreshed and alert.
               </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p className="text-green-800 font-medium mb-2">Try Our Calculators:</p>
+                  <ul className="text-green-700 space-y-1">
+                    <li>• <Link href="/" className="hover:underline">Sleep Cycle Calculator</Link></li>
+                    <li>• <Link href="/nap-calculator-for-adults" className="hover:underline">Nap Calculator</Link></li>
+                    <li>• <Link href="/90-minute-sleep-cycle-calculator" className="hover:underline">90-Minute Calculator</Link></li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-green-800 font-medium mb-2">Related Guides:</p>
+                  <ul className="text-green-700 space-y-1">
+                    <li>• <Link href="/blog/sleep-stages-guide" className="hover:underline">Sleep Stages Guide</Link></li>
+                    <li>• <Link href="/blog/sleep-cycle-myth" className="hover:underline">90-Minute Myth</Link></li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
             <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6">Stages of a Sleep Cycle</h2>
