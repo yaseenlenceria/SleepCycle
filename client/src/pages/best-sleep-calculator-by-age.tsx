@@ -33,7 +33,7 @@ export default function BestSleepCalculatorByAgePage() {
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 mb-8">
             <span>Newborn to Senior</span>
             <span> Gender-Specific</span>
-            <span>🧬 Age-Based Science</span>
+            <span>Age-Based Science</span>
             <span>🎯 Personalized Results</span>
             <span>🆓 Always FREE</span>
           </div>
