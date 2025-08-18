@@ -90,7 +90,7 @@ export function UltraSimpleHomepage({
               <select 
                 value={wakeHour}
                 onChange={(e) => handleWakeTimeChange(e.target.value, wakeMinute, wakePeriod)}
-                className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20 text-xl sm:text-3xl lg:text-4xl font-bold text-center border-3 border-orange-300 rounded-xl focus:border-orange-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-orange-400 transition-colors shadow-md"
+                className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 text-lg sm:text-xl lg:text-2xl font-bold text-center border-3 border-orange-300 rounded-xl focus:border-orange-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-orange-400 transition-colors shadow-md"
                 data-testid="wake-hour-select"
               >
                 {hours.map(h => (
@@ -98,13 +98,13 @@ export function UltraSimpleHomepage({
                 ))}
               </select>
 
-              <div className="text-2xl sm:text-3xl font-bold text-orange-600">:</div>
+              <div className="text-xl sm:text-2xl font-bold text-orange-600">:</div>
 
               {/* Minute */}
               <select 
                 value={wakeMinute}
                 onChange={(e) => handleWakeTimeChange(wakeHour, e.target.value, wakePeriod)}
-                className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20 text-xl sm:text-3xl lg:text-4xl font-bold text-center border-3 border-orange-300 rounded-xl focus:border-orange-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-orange-400 transition-colors shadow-md"
+                className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 text-lg sm:text-xl lg:text-2xl font-bold text-center border-3 border-orange-300 rounded-xl focus:border-orange-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-orange-400 transition-colors shadow-md"
                 data-testid="wake-minute-select"
               >
                 {minutes.map(m => (
@@ -175,7 +175,7 @@ export function UltraSimpleHomepage({
               <select 
                 value={bedHour}
                 onChange={(e) => setBedHour(e.target.value)}
-                className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20 text-xl sm:text-3xl lg:text-4xl font-bold text-center border-3 border-purple-300 rounded-xl focus:border-purple-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-purple-400 transition-colors shadow-md"
+                className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 text-lg sm:text-xl lg:text-2xl font-bold text-center border-3 border-purple-300 rounded-xl focus:border-purple-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-purple-400 transition-colors shadow-md"
                 data-testid="bed-hour-select"
               >
                 {hours.map(h => (
@@ -183,13 +183,13 @@ export function UltraSimpleHomepage({
                 ))}
               </select>
 
-              <div className="text-2xl sm:text-3xl font-bold text-purple-600">:</div>
+              <div className="text-xl sm:text-2xl font-bold text-purple-600">:</div>
 
               {/* Minute */}
               <select 
                 value={bedMinute}
                 onChange={(e) => setBedMinute(e.target.value)}
-                className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20 text-xl sm:text-3xl lg:text-4xl font-bold text-center border-3 border-purple-300 rounded-xl focus:border-purple-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-purple-400 transition-colors shadow-md"
+                className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 text-lg sm:text-xl lg:text-2xl font-bold text-center border-3 border-purple-300 rounded-xl focus:border-purple-500 focus:outline-none appearance-none bg-white cursor-pointer hover:border-purple-400 transition-colors shadow-md"
                 data-testid="bed-minute-select"
               >
                 {minutes.map(m => (
