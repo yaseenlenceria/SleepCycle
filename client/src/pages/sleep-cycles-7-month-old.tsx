@@ -82,7 +82,6 @@ export default function SleepCycles7MonthOldPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <Header />
-      
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
@@ -93,7 +92,7 @@ export default function SleepCycles7MonthOldPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
             <span>🚼 7 Month Development</span>
-            <span>🧠 AI-Powered</span>
+            <span> AI-Powered</span>
             <span>🧗 Mobility Support</span>
             <span>📊 FREE Assessment</span>
           </div>
@@ -503,7 +502,6 @@ export default function SleepCycles7MonthOldPage() {
           </div>
         </div>
       </main>
-      
       <Footer />
     </div>
   );
