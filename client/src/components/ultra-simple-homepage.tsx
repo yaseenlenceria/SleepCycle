@@ -44,7 +44,6 @@ export function UltraSimpleHomepage({
   const [bedPeriod, setBedPeriod] = useState('PM');
   
   const [selectedSleepDuration, setSelectedSleepDuration] = useState(8);
-  const [selectedAge, setSelectedAge] = useState(25);
 
   // Generate hours and minutes
   const hours = Array.from({ length: 12 }, (_, i) => String(i === 0 ? 12 : i).padStart(2, '0'));
@@ -56,101 +55,6 @@ export function UltraSimpleHomepage({
     setWakePeriod(newPeriod);
     onTimeChange(newHour, newMinute, newPeriod);
   };
-
-  // Age-specific sleep recommendations
-  const getAgeRecommendations = (age: number) => {
-    if (age < 1) {
-      return {
-        category: 'Newborn (0-3 months)',
-        sleepHours: '14-17 hours',
-        cycles: 'Short 50-60 min cycles',
-        bedtime: '8:00-9:00 PM',
-        tips: 'Multiple naps, safe sleep position',
-        bgColor: 'from-pink-100 to-pink-200',
-        textColor: 'text-pink-700',
-        emoji: '👶'
-      };
-    } else if (age <= 1) {
-      return {
-        category: 'Infant (4-11 months)',
-        sleepHours: '12-15 hours',
-        cycles: '2-3 naps + night sleep',
-        bedtime: '7:00-8:00 PM',
-        tips: 'Sleep training readiness, consistent routine',
-        bgColor: 'from-blue-100 to-blue-200',
-        textColor: 'text-blue-700',
-        emoji: '🍼'
-      };
-    } else if (age <= 3) {
-      return {
-        category: 'Toddler (1-3 years)',
-        sleepHours: '11-14 hours',
-        cycles: '1-2 naps + night sleep',
-        bedtime: '7:00-8:30 PM',
-        tips: 'Transitioning from 2 naps to 1',
-        bgColor: 'from-green-100 to-green-200',
-        textColor: 'text-green-700',
-        emoji: '🧸'
-      };
-    } else if (age <= 5) {
-      return {
-        category: 'Preschooler (3-5 years)',
-        sleepHours: '10-13 hours',
-        cycles: 'Mostly night sleep',
-        bedtime: '7:30-8:30 PM',
-        tips: 'May still need afternoon nap',
-        bgColor: 'from-purple-100 to-purple-200',
-        textColor: 'text-purple-700',
-        emoji: '🎨'
-      };
-    } else if (age <= 13) {
-      return {
-        category: 'School Age (6-13 years)',
-        sleepHours: '9-11 hours',
-        cycles: '6-7 complete 90-min cycles',
-        bedtime: '8:00-9:00 PM',
-        tips: 'Consistent bedtime routine crucial',
-        bgColor: 'from-indigo-100 to-indigo-200',
-        textColor: 'text-indigo-700',
-        emoji: '📚'
-      };
-    } else if (age <= 17) {
-      return {
-        category: 'Teen (14-17 years)',
-        sleepHours: '8-10 hours',
-        cycles: '5-6 complete 90-min cycles',
-        bedtime: '9:00-10:30 PM',
-        tips: 'Natural circadian shift - later bedtime',
-        bgColor: 'from-orange-100 to-orange-200',
-        textColor: 'text-orange-700',
-        emoji: '🎸'
-      };
-    } else if (age <= 64) {
-      return {
-        category: 'Adult (18-64 years)',
-        sleepHours: '7-9 hours',
-        cycles: '4-6 complete 90-min cycles',
-        bedtime: '10:00-11:00 PM',
-        tips: 'Optimize for work schedule and lifestyle',
-        bgColor: 'from-teal-100 to-teal-200',
-        textColor: 'text-teal-700',
-        emoji: '💼'
-      };
-    } else {
-      return {
-        category: 'Senior (65+ years)',
-        sleepHours: '7-8 hours',
-        cycles: '4-5 complete 90-min cycles',
-        bedtime: '9:00-10:00 PM',
-        tips: 'Earlier bedtime, may wake earlier',
-        bgColor: 'from-gray-100 to-gray-200',
-        textColor: 'text-gray-700',
-        emoji: '👴'
-      };
-    }
-  };
-
-  const currentRecommendation = getAgeRecommendations(selectedAge);
 
   return (
     <div className="w-full max-w-sm mx-auto px-3 sm:max-w-lg lg:max-w-2xl sm:px-4 lg:px-6">
@@ -167,76 +71,7 @@ export function UltraSimpleHomepage({
         </div>
       </div>
 
-      {/* Age Slider Section */}
-      <Card className={`bg-gradient-to-br ${currentRecommendation.bgColor} border-0 shadow-lg mb-6 sm:mb-8`}>
-        <CardContent className="p-4 sm:p-6 lg:p-8">
-          <div className="text-center mb-4">
-            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-2">
-              Sleep Calculator by Age
-            </h3>
-            <p className="text-sm text-gray-600">Personalized recommendations based on your age</p>
-          </div>
-          
-          {/* Age Slider */}
-          <div className="mb-6">
-            <div className="flex justify-between items-center mb-3">
-              <span className="text-sm font-medium text-gray-600">Age:</span>
-              <span className="text-lg font-bold text-gray-800">{selectedAge} years old</span>
-            </div>
-            <div className="relative">
-              <input
-                type="range"
-                min="0"
-                max="80"
-                value={selectedAge}
-                onChange={(e) => setSelectedAge(parseInt(e.target.value))}
-                className="w-full h-3 bg-white rounded-lg appearance-none cursor-pointer slider"
-                style={{
-                  background: `linear-gradient(to right, #3B82F6 0%, #3B82F6 ${(selectedAge / 80) * 100}%, #E5E7EB ${(selectedAge / 80) * 100}%, #E5E7EB 100%)`
-                }}
-                data-testid="age-slider"
-              />
-              <div className="flex justify-between text-xs text-gray-500 mt-1">
-                <span>Newborn</span>
-                <span>Child</span>
-                <span>Teen</span>
-                <span>Adult</span>
-                <span>Senior</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Age-Specific Recommendations */}
-          <div className={`bg-white rounded-xl p-4 sm:p-6 ${currentRecommendation.textColor}`}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <h4 className="font-bold text-lg mb-3">{currentRecommendation.category}</h4>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <span className="font-semibold">Sleep Need:</span>
-                    <span>{currentRecommendation.sleepHours}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-semibold">Sleep Cycles:</span>
-                    <span>{currentRecommendation.cycles}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-semibold">Ideal Bedtime:</span>
-                    <span>{currentRecommendation.bedtime}</span>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-2">Age-Specific Tips:</h5>
-                <p className="text-sm leading-relaxed">{currentRecommendation.tips}</p>
-                <div className="mt-3 text-xs bg-gray-50 rounded-lg p-2">
-                  <span className="font-semibold">Pro Tip:</span> Use our calculator below for personalized {selectedAge < 18 ? 'sleep schedules' : 'bedtime and wake-up times'} based on these recommendations.
-                </div>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      
 
       <div className="space-y-3 sm:space-y-4 lg:space-y-6">
         
