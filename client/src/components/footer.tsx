@@ -79,7 +79,7 @@ export function Footer() {
 
           {/* Legal & Policies */}
           <div>
-            <h4 className="font-bold text-white mb-4 text-lg">📋 Legal & Privacy</h4>
+            <h4 className="font-bold text-white mb-4 text-lg">Legal & Privacy</h4>
             <ul className="space-y-3 text-sm">
               <li><Link href="/privacy-policy" className="text-orange-300 hover:text-orange-200 transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms-of-service" className="text-orange-300 hover:text-orange-200 transition-colors">Terms of Service</Link></li>
