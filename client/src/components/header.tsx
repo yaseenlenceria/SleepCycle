@@ -10,7 +10,7 @@ export function Header() {
             <div className="flex items-center justify-center mb-2">
               {/* Custom SleepCycle.io Logo */}
               <img 
-                src="attached_assets/Best sleep cycle calculator sleepcycle.io.png" 
+                src="/logo.png" 
                 alt="SleepCycle.io - World's #1 Sleep Cycle Calculator"
                 title="SleepCycle.io - Best Sleep Calculator with AI Health Assessment"
                 className="h-10 sm:h-12 w-auto"
