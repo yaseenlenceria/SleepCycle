@@ -65,8 +65,12 @@ export function SimpleSleepResults({
       }
 
       const sleepHours = calculateSleepHours(bedtime, wakeTime);
-      const assessment = assessSleepQuality(sleepHours);
-      const recommendations = await getPersonalizedHealthRecommendations(sleepHours, userAge, userSex);
+      const assessment = assessSleepQuality(sleepHours, userAge, userSex);
+      const recommendations = await getPersonalizedHealthRecommendations({
+        sleepDuration: sleepHours,
+        age: userAge,
+        sex: userSex
+      });
 
       setSleepAssessment({
         sleepDuration: sleepHours,
@@ -148,11 +152,11 @@ export function SimpleSleepResults({
 
       {/* Health Assessment */}
       {sleepAssessment && (
-        <Card className="bg-white shadow-lg">
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h4 className="text-lg font-bold text-gray-800">
-                Your Sleep Health Assessment
+        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-lg">
+          <CardContent className="p-4 sm:p-6">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <h4 className="text-base sm:text-lg font-bold text-gray-800">
+                AI Health Assessment
               </h4>
               <div className="flex items-center space-x-2">
                 <div className={`w-3 h-3 rounded-full ${
@@ -160,70 +164,60 @@ export function SimpleSleepResults({
                   sleepAssessment.quality === 'good' ? 'bg-blue-500' :
                   sleepAssessment.quality === 'fair' ? 'bg-yellow-500' : 'bg-red-500'
                 }`}></div>
-                <span className="font-semibold text-gray-700 capitalize">
+                <span className="font-semibold text-gray-700 capitalize text-sm sm:text-base">
                   {sleepAssessment.quality}
                 </span>
               </div>
             </div>
 
-            {/* Key Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-              <div className="text-center p-3 bg-blue-50 rounded-lg">
-                <div className="text-sm text-gray-600">Sleep Duration</div>
-                <div className="text-xl font-bold text-blue-600">
-                  {sleepAssessment.sleepDuration.toFixed(1)}h
+            {/* Quick Summary */}
+            <div className="bg-white p-3 sm:p-4 rounded-lg mb-3 sm:mb-4 border border-blue-100">
+              <p className="text-sm sm:text-base text-gray-700 font-medium mb-2">
+                Sleep Duration: {sleepAssessment.sleepDuration.toFixed(1)} hours
+              </p>
+              <p className="text-xs sm:text-sm text-gray-600">
+                {sleepAssessment.quality === 'excellent' ? 'Perfect sleep duration! Your body will get optimal rest and recovery.' :
+                 sleepAssessment.quality === 'good' ? 'Good sleep duration. You should feel refreshed and alert.' :
+                 sleepAssessment.quality === 'fair' ? 'Adequate sleep, but consider adjusting for better energy.' :
+                 'This may leave you feeling tired. Consider adjusting your schedule.'}
+              </p>
+            </div>
+
+            {/* Quick Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3">
+              <Button
+                onClick={() => setShowHealthTips(!showHealthTips)}
+                variant="outline"
+                className="flex-1 bg-white hover:bg-blue-50 border-blue-200 text-blue-700 text-xs sm:text-sm"
+              >
+                {showHealthTips ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                <span className="ml-1">{showHealthTips ? 'Hide' : 'Show'} Detailed Tips</span>
+              </Button>
+              
+              <Button
+                variant="outline"
+                className="flex-1 bg-white hover:bg-green-50 border-green-200 text-green-700 text-xs sm:text-sm"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                <Zap size={16} />
+                <span className="ml-1">Try Different Time</span>
+              </Button>
+            </div>
+
+            {/* Brief Health Stats */}
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-3">
+              <div className="text-center p-2 sm:p-3 bg-white rounded-lg border border-blue-100">
+                <div className="text-xs sm:text-sm text-gray-600">Quality Score</div>
+                <div className="text-base sm:text-lg font-bold text-blue-600 capitalize">
+                  {sleepAssessment.quality}
                 </div>
               </div>
-              <div className="text-center p-3 bg-purple-50 rounded-lg">
-                <div className="text-sm text-gray-600">Bedtime</div>
-                <div className="text-lg font-semibold text-purple-600">
-                  {sleepAssessment.bedtime}
-                </div>
-              </div>
-              <div className="text-center p-3 bg-orange-50 rounded-lg">
-                <div className="text-sm text-gray-600">Wake Time</div>
-                <div className="text-lg font-semibold text-orange-600">
-                  {sleepAssessment.wakeTime}
-                </div>
-              </div>
-              <div className="text-center p-3 bg-green-50 rounded-lg">
-                <div className="text-sm text-gray-600">Health Score</div>
-                <div className="text-xl font-bold text-green-600">
+              <div className="text-center p-2 sm:p-3 bg-white rounded-lg border border-green-100">
+                <div className="text-xs sm:text-sm text-gray-600">Health Score</div>
+                <div className="text-base sm:text-lg font-bold text-green-600">
                   {sleepAssessment.healthScore}%
                 </div>
               </div>
-            </div>
-
-            {/* Quick Tips Preview */}
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 mb-4">
-              <div className="flex items-center justify-between">
-                <h5 className="font-semibold text-gray-800 flex items-center">
-                  <Zap className="mr-2 text-blue-600" size={18} />
-                  Personalized Tips for {userSex === 'female' ? 'Women' : 'Men'} Aged {userAge}
-                </h5>
-                <Button
-                  onClick={() => setShowHealthTips(!showHealthTips)}
-                  variant="outline"
-                  size="sm"
-                  className="text-blue-600 border-blue-300"
-                >
-                  {showHealthTips ? (
-                    <>
-                      Hide <ChevronUp size={16} className="ml-1" />
-                    </>
-                  ) : (
-                    <>
-                      Show Tips <ChevronDown size={16} className="ml-1" />
-                    </>
-                  )}
-                </Button>
-              </div>
-              
-              {!showHealthTips && (
-                <p className="text-sm text-gray-600 mt-2">
-                  Get {sleepAssessment.tips.length} personalized recommendations based on your sleep pattern
-                </p>
-              )}
             </div>
 
             {/* Expandable Health Tips */}

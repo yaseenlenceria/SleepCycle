@@ -228,6 +228,44 @@ export function UltraSimpleHomepage({
             </Button>
           </CardContent>
         </Card>
+
+        {/* How Does It Work Section */}
+        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+          <CardContent className="p-4 sm:p-6">
+            <div className="text-center mb-3">
+              <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2">
+                How Does It Work?
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Our AI uses 90-minute sleep cycles to find your optimal bedtime and wake-up times. 
+                You'll get personalized health assessments based on your age and sleep patterns.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 text-center">
+              <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                  <span className="text-xs sm:text-sm font-bold text-blue-600">1</span>
+                </div>
+                <p className="text-xs text-gray-600 font-medium">Pick Time</p>
+              </div>
+              
+              <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                  <span className="text-xs sm:text-sm font-bold text-purple-600">2</span>
+                </div>
+                <p className="text-xs text-gray-600 font-medium">AI Calculates</p>
+              </div>
+              
+              <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                  <span className="text-xs sm:text-sm font-bold text-green-600">3</span>
+                </div>
+                <p className="text-xs text-gray-600 font-medium">Get Results</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
         
       </div>
     </div>
