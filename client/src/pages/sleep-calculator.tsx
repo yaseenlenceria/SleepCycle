@@ -9,6 +9,7 @@ import { SleepTracker } from '@/components/sleep-tracker';
 import { AgeCalculator } from '@/components/age-calculator';
 import { BabyNapCalculator } from '@/components/baby-nap-calculator';
 import { SimpleHomepageNavigation } from '@/components/simple-homepage-navigation';
+import { ModernDashboardHomepage } from '@/components/modern-dashboard-homepage';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { calculateBedtimes, calculateWakeUpTimes, calculateWakeUpTimesFromNow, getCurrentTime, SleepTime } from '@/lib/sleep-calculations';
@@ -116,9 +117,9 @@ export default function SleepCalculator() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 animate-gradient">
       <Header />
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
-        {/* Simple Navigation */}
-        <SimpleHomepageNavigation
+      <main className="px-4 py-8">
+        {/* Modern Dashboard Homepage */}
+        <ModernDashboardHomepage
           activeTab={activeTab}
           onTabChange={(tab) => {
             setActiveTab(tab);
@@ -127,10 +128,52 @@ export default function SleepCalculator() {
               setShowWakeupResults(false);
             }
           }}
+          hour={hour}
+          minute={minute}
+          period={period}
+          onTimeChange={handleTimeChange}
+          onCalculateBedtime={handleCalculateBedtime}
+          onSleepNow={handleSleepNow}
         />
 
-        {/* Bedtime Calculator */}
-        {activeTab === 'bedtime' && (
+        {/* Results Display for Dashboard */}
+        {(activeTab === 'bedtime' || activeTab === 'wakeup') && (showBedtimeResults || showWakeupResults || showSleepNowResults) && (
+          <div className="max-w-4xl mx-auto mt-8">
+            {showBedtimeResults && (
+              <SimpleSleepResults
+                times={bedtimes}
+                type="bedtime"
+                selectedTime={selectedTimeString}
+                isLoading={isCalculating}
+                userAge={userProfile?.age}
+                userSex={userProfile?.sex}
+              />
+            )}
+            {showWakeupResults && (
+              <SimpleSleepResults
+                times={wakeupTimes}
+                type="wakeup"
+                selectedTime={selectedTimeString}
+                isLoading={isCalculating}
+                userAge={userProfile?.age}
+                userSex={userProfile?.sex}
+              />
+            )}
+            {showSleepNowResults && (
+              <SimpleSleepResults
+                times={sleepNowTimes}
+                type="wakeup"
+                selectedTime={currentTime}
+                isLoading={isCalculating}
+                userAge={userProfile?.age}
+                userSex={userProfile?.sex}
+              />
+            )}
+          </div>
+        )}
+
+        {/* Hidden Old Bedtime Calculator - Keep for other functionality */}
+        {false && activeTab === 'bedtime' && (
           <div className="space-y-8 animate-in slide-in-from-right-5 duration-500">
             <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8">
               <div className="text-center mb-8">
@@ -191,8 +234,8 @@ export default function SleepCalculator() {
           </div>
         )}
 
-        {/* Wake-up Calculator */}
-        {activeTab === 'wakeup' && (
+        {/* Hidden Old Wake-up Calculator */}
+        {false && activeTab === 'wakeup' && (
           <div className="space-y-8 animate-in slide-in-from-right-5 duration-500">
             <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8">
               <div className="text-center mb-8">
