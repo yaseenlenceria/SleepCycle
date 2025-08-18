@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, Heart, Zap, ChevronDown, ChevronUp, CheckCircle, AlertTriangle, Brain } from 'lucide-react';
+import { Clock, Heart, Zap, ChevronDown, ChevronUp, CheckCircle, AlertTriangle, Brain, Loader2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -46,6 +46,8 @@ export function SimpleSleepResults({
   const [showHealthTips, setShowHealthTips] = useState(false);
   const [isDurationChanging, setIsDurationChanging] = useState(false);
   const [loadingDuration, setLoadingDuration] = useState<number | null>(null);
+  const [dynamicTips, setDynamicTips] = useState<string[]>([]);
+  const [loadingTips, setLoadingTips] = useState(false);
 
   const [sleepAssessment, setSleepAssessment] = useState<SleepAssessment | null>(null);
 
@@ -54,6 +56,37 @@ export function SimpleSleepResults({
       generateHealthAssessment();
     }
   }, [times, selectedTime, selectedSleepDuration, type, userAge, userSex]);
+
+  // Function to fetch dynamic tips from API
+  const fetchDynamicTips = async (sleepData: any) => {
+    try {
+      setLoadingTips(true);
+      const response = await fetch('/api/sleep-tips', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ sleepData })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setDynamicTips(data.tips || []);
+      } else {
+        throw new Error('Failed to fetch tips');
+      }
+    } catch (error) {
+      console.error('Error fetching dynamic tips:', error);
+      // Fallback to static tips if API fails
+      setDynamicTips([
+        'Maintain consistent sleep-wake times for better sleep quality',
+        'Create a relaxing bedtime routine to signal your body it\'s time to sleep',
+        'Keep your bedroom cool, dark, and quiet for optimal rest'
+      ]);
+    } finally {
+      setLoadingTips(false);
+    }
+  };
 
   const generateHealthAssessment = async () => {
     if (!times[0]) return;
@@ -97,14 +130,26 @@ export function SimpleSleepResults({
         sex: userSex
       });
 
+      const healthScore = Math.round(Math.min(100, (sleepHours / 8) * 100));
+      
       setSleepAssessment({
         sleepDuration: sleepHours,
         quality: assessment.quality,
         bedtime,
         wakeTime,
         tips: assessment.tips.slice(0, 6),
-        healthScore: Math.round(Math.min(100, (sleepHours / 8) * 100)),
+        healthScore,
         recommendations: recommendations.map(r => r.description)
+      });
+
+      // Fetch dynamic tips from API
+      await fetchDynamicTips({
+        sleepDuration: sleepHours,
+        bedtime,
+        wakeTime,
+        age: userAge,
+        quality: assessment.quality,
+        healthScore
       });
     } catch (error) {
       console.error('Error generating health assessment:', error);
@@ -264,9 +309,19 @@ export function SimpleSleepResults({
                 onClick={() => setShowHealthTips(!showHealthTips)}
                 variant="outline"
                 className="flex-1 bg-white hover:bg-blue-50 border-blue-200 text-blue-700 text-xs sm:text-sm"
+                disabled={loadingTips}
               >
-                {showHealthTips ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                <span className="ml-1">{showHealthTips ? 'Hide' : 'Show'} Detailed Tips</span>
+                {loadingTips ? (
+                  <>
+                    <Loader2 size={16} className="animate-spin" />
+                    <span className="ml-1">Loading AI Tips...</span>
+                  </>
+                ) : (
+                  <>
+                    {showHealthTips ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                    <span className="ml-1">{showHealthTips ? 'Hide' : 'Show'} AI Tips</span>
+                  </>
+                )}
               </Button>
               
               <Button
@@ -295,6 +350,33 @@ export function SimpleSleepResults({
               </div>
             </div>
 
+            {/* Dynamic AI Tips Section */}
+            {showHealthTips && (
+              <div className="mt-4 bg-white p-3 sm:p-4 rounded-lg border border-blue-100">
+                <div className="flex items-center mb-3">
+                  <Brain className="w-4 h-4 text-purple-600 mr-2" />
+                  <h5 className="font-semibold text-gray-800 text-sm sm:text-base">
+                    Personalized AI Recommendations
+                  </h5>
+                </div>
+                
+                {dynamicTips.length > 0 ? (
+                  <div className="space-y-2">
+                    {dynamicTips.map((tip, index) => (
+                      <div key={index} className="flex items-start space-x-2">
+                        <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        <p className="text-sm text-gray-700 leading-relaxed">{tip}</p>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-4">
+                    <Loader2 className="w-6 h-6 animate-spin text-blue-500 mx-auto mb-2" />
+                    <p className="text-sm text-gray-600">Generating personalized tips based on your sleep data...</p>
+                  </div>
+                )}
+              </div>
+            )}
             
           </CardContent>
         </Card>
