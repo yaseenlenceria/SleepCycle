@@ -1,0 +1,88 @@
+{
+  "common": {
+    "loading": "Caricamento...",
+    "calculate": "Calcola",
+    "reset": "Ripristina",
+    "back": "Indietro",
+    "next": "Avanti",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "edit": "Modifica",
+    "delete": "Elimina",
+    "yes": "Sì",
+    "no": "No",
+    "hour": "Ora",
+    "minute": "Minuto",
+    "hours": "ore",
+    "minutes": "minuti",
+    "am": "AM",
+    "pm": "PM"
+  },
+  "navigation": {
+    "sleepCalculator": "Calcolatore del Sonno",
+    "babySleep": "Sonno del Bambino",
+    "adultSleep": "Sonno Adulto",
+    "sleepScience": "Scienza del Sonno",
+    "blog": "Blog",
+    "about": "Chi Siamo",
+    "contact": "Contatti",
+    "help": "Aiuto"
+  },
+  "header": {
+    "title": "Piattaforma di Ottimizzazione del Sonno più Affidabile al Mondo",
+    "rating": "Valutato da oltre 10M+ utenti in tutto il mondo"
+  },
+  "homepage": {
+    "title": "Calcolatore del Sonno #1: Calcolatore di Cicli del Sonno di 90 Minuti per Età",
+    "subtitle": "Valutazione Sanitaria AI GRATUITA • Calcola: Quanto Ho Dormito • Miglior Orario per Dormire e Svegliarsi Scientificamente • 4+ Miliardi di Sessioni di Sonno Analizzate",
+    "trustBadges": {
+      "bestCalculator": "✓ Miglior Calcolatore del Sonno",
+      "ageGenderBased": "✓ Basato su Età e Genere",
+      "freeSleepCycle": "✓ Tempo Ciclo Sonno Gratuito"
+    },
+    "calculateButtons": {
+      "whenToSleep": "Quando dovrei andare a dormire?",
+      "whenToWakeUp": "Quando dovrei svegliarmi?",
+      "sleepNow": "Voglio dormire ora"
+    },
+    "timeInput": {
+      "wakeUpTime": "Orario di sveglia",
+      "bedTime": "Orario di andare a letto",
+      "sleepDuration": "Durata del sonno"
+    }
+  },
+  "sleepCalculator": {
+    "title": "Calcolatore dei Cicli del Sonno",
+    "description": "Calcola i tuoi orari ottimali per andare a letto e svegliarti basati su cicli del sonno di 90 minuti",
+    "calculateBedtime": "Calcola Orario Andare a Letto",
+    "calculateWakeup": "Calcola Orario Sveglia",
+    "sleepNow": "Dormi Ora",
+    "results": {
+      "optimalBedtimes": "Orari Ottimali per Andare a Letto",
+      "optimalWakeupTimes": "Orari Ottimali di Sveglia",
+      "sleepCycles": "Cicli del Sonno",
+      "totalSleep": "Tempo Totale di Sonno",
+      "timeInBed": "Tempo a Letto"
+    }
+  },
+  "sleepResults": {
+    "bedtimeTitle": "Se vuoi svegliarti alle {{time}}, vai a letto alle:",
+    "wakeupTitle": "Se vai a letto alle {{time}}, svegliati alle:",
+    "sleepNowTitle": "Se dormi ora, svegliati alle:",
+    "cycles": "{{count}} ciclo",
+    "cycles_plural": "{{count}} cicli",
+    "hoursOfSleep": "{{hours}} ore di sonno"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語",
+    "pt": "Português",
+    "it": "Italiano",
+    "ru": "Русский",
+    "ar": "العربية"
+  }
+}

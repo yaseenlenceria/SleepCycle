@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Moon, ArrowRight, Sun, Bed } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { SEOHead } from '@/components/seo-head';
 
 interface UltraSimpleHomepageProps {
   onCalculateBedtime: () => void;
@@ -35,6 +37,7 @@ export function UltraSimpleHomepage({
   wakeupResultsComponent,
   sleepNowResultsComponent
 }: UltraSimpleHomepageProps) {
+  const { t } = useTranslation();
   const [wakeHour, setWakeHour] = useState(hour);
   const [wakeMinute, setWakeMinute] = useState(minute);
   const [wakePeriod, setWakePeriod] = useState(period);
@@ -57,19 +60,21 @@ export function UltraSimpleHomepage({
   };
 
   return (
-    <div className="w-full max-w-sm mx-auto px-4 sm:max-w-lg lg:max-w-2xl sm:px-6 lg:px-8">
-      {/* Hero Trust Signals - Mobile Optimized */}
-      <div className="text-center mb-4 sm:mb-6 lg:mb-8">
-        <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-2 sm:mb-3 leading-tight">#1 Sleep Calculator: 90-Minute Sleep Cycle Calculator by Age</h1>
-        <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
-          FREE AI Health Assessment • Calculate: How Much Sleep Did I Get • Scientifically Best Bedtime & Wake Time • 4+ Billion Sleep Sessions Analyzed
-        </p>
-        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-xs">
-          <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full whitespace-nowrap">✓ Best Sleep Calculator</span>
-          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full whitespace-nowrap">✓ Age & Gender Based</span>
-          <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full whitespace-nowrap">✓ Free Sleep Cycle Time</span>
+    <>
+      <SEOHead />
+      <div className="w-full max-w-sm mx-auto px-4 sm:max-w-lg lg:max-w-2xl sm:px-6 lg:px-8">
+        {/* Hero Trust Signals - Mobile Optimized */}
+        <div className="text-center mb-4 sm:mb-6 lg:mb-8">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-2 sm:mb-3 leading-tight">{t('homepage.title')}</h1>
+          <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
+            {t('homepage.subtitle')}
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-xs">
+            <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full whitespace-nowrap">{t('homepage.trustBadges.bestCalculator')}</span>
+            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full whitespace-nowrap">{t('homepage.trustBadges.ageGenderBased')}</span>
+            <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full whitespace-nowrap">{t('homepage.trustBadges.freeSleepCycle')}</span>
+          </div>
         </div>
-      </div>
 
       
 

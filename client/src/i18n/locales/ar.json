@@ -1,0 +1,88 @@
+{
+  "common": {
+    "loading": "جاري التحميل...",
+    "calculate": "احسب",
+    "reset": "إعادة تعيين",
+    "back": "رجوع",
+    "next": "التالي",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "edit": "تحرير",
+    "delete": "حذف",
+    "yes": "نعم",
+    "no": "لا",
+    "hour": "ساعة",
+    "minute": "دقيقة",
+    "hours": "ساعات",
+    "minutes": "دقائق",
+    "am": "ص",
+    "pm": "م"
+  },
+  "navigation": {
+    "sleepCalculator": "حاسبة النوم",
+    "babySleep": "نوم الطفل",
+    "adultSleep": "نوم البالغين",
+    "sleepScience": "علم النوم",
+    "blog": "المدونة",
+    "about": "حولنا",
+    "contact": "اتصل بنا",
+    "help": "مساعدة"
+  },
+  "header": {
+    "title": "أكثر منصات تحسين النوم موثوقية في العالم",
+    "rating": "تم تقييمها من قبل أكثر من 10 مليون+ مستخدم حول العالم"
+  },
+  "homepage": {
+    "title": "حاسبة النوم #1: حاسبة دورات النوم 90 دقيقة حسب العمر",
+    "subtitle": "تقييم صحي مجاني بالذكاء الاصطناعي • احسب: كم نمت • أفضل وقت للنوم والاستيقاظ علمياً • تم تحليل أكثر من 4 مليارات جلسة نوم",
+    "trustBadges": {
+      "bestCalculator": "✓ أفضل حاسبة نوم",
+      "ageGenderBased": "✓ حسب العمر والجنس",
+      "freeSleepCycle": "✓ وقت دورة النوم مجاني"
+    },
+    "calculateButtons": {
+      "whenToSleep": "متى يجب أن أذهب للنوم؟",
+      "whenToWakeUp": "متى يجب أن أستيقظ؟",
+      "sleepNow": "أريد أن أنام الآن"
+    },
+    "timeInput": {
+      "wakeUpTime": "وقت الاستيقاظ",
+      "bedTime": "وقت النوم",
+      "sleepDuration": "مدة النوم"
+    }
+  },
+  "sleepCalculator": {
+    "title": "حاسبة دورات النوم",
+    "description": "احسب أوقات النوم والاستيقاظ المثلى بناءً على دورات النوم 90 دقيقة",
+    "calculateBedtime": "احسب وقت النوم",
+    "calculateWakeup": "احسب وقت الاستيقاظ",
+    "sleepNow": "انم الآن",
+    "results": {
+      "optimalBedtimes": "أوقات النوم المثلى",
+      "optimalWakeupTimes": "أوقات الاستيقاظ المثلى",
+      "sleepCycles": "دورات النوم",
+      "totalSleep": "إجمالي وقت النوم",
+      "timeInBed": "الوقت في السرير"
+    }
+  },
+  "sleepResults": {
+    "bedtimeTitle": "إذا كنت تريد الاستيقاظ في {{time}}، اذهب للنوم في:",
+    "wakeupTitle": "إذا كنت تذهب للنوم في {{time}}، استيقظ في:",
+    "sleepNowTitle": "إذا كنت تنام الآن، استيقظ في:",
+    "cycles": "{{count}} دورة",
+    "cycles_plural": "{{count}} دورات",
+    "hoursOfSleep": "{{hours}} ساعات نوم"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語",
+    "pt": "Português",
+    "it": "Italiano",
+    "ru": "Русский",
+    "ar": "العربية"
+  }
+}
