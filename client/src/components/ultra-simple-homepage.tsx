@@ -87,10 +87,10 @@ export function UltraSimpleHomepage({
               <div className="flex items-center mb-2 sm:mb-0">
                 <Sun className="text-orange-500 mr-2" size={18} />
                 <h2 className="text-base sm:text-lg lg:text-xl font-bold text-gray-800">
-                  I will wake up at
+                  {t('homepage.wakeUpCard.title')}
                 </h2>
               </div>
-              <div className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs self-start sm:self-auto">AI assistant</div>
+              <div className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs self-start sm:self-auto">{t('homepage.wakeUpCard.badge')}</div>
             </div>
             
             {/* Perfect Mobile Time Selector */}
@@ -98,7 +98,7 @@ export function UltraSimpleHomepage({
               <div className="flex justify-center items-center gap-3 sm:gap-4">
                 {/* Hour Selector */}
                 <div className="flex flex-col items-center">
-                  <label className="text-xs text-gray-500 mb-1">Hour</label>
+                  <label className="text-xs text-gray-500 mb-1">{t('homepage.timeSelector.hour')}</label>
                   <select 
                     value={wakeHour}
                     onChange={(e) => handleWakeTimeChange(e.target.value, wakeMinute, wakePeriod)}
@@ -115,7 +115,7 @@ export function UltraSimpleHomepage({
 
                 {/* Minute Selector */}
                 <div className="flex flex-col items-center">
-                  <label className="text-xs text-gray-500 mb-1">Min</label>
+                  <label className="text-xs text-gray-500 mb-1">{t('homepage.timeSelector.minute')}</label>
                   <select 
                     value={wakeMinute}
                     onChange={(e) => handleWakeTimeChange(wakeHour, e.target.value, wakePeriod)}
@@ -130,7 +130,7 @@ export function UltraSimpleHomepage({
 
                 {/* AM/PM Toggle */}
                 <div className="flex flex-col items-center">
-                  <label className="text-xs text-gray-500 mb-1">Period</label>
+                  <label className="text-xs text-gray-500 mb-1">{t('homepage.timeSelector.period')}</label>
                   <div className="bg-orange-100 rounded-lg p-1 shadow-sm">
                     <button
                       onClick={() => handleWakeTimeChange(wakeHour, wakeMinute, 'AM')}
@@ -164,7 +164,7 @@ export function UltraSimpleHomepage({
               className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-lg transition-colors shadow-md hover:shadow-lg touch-manipulation"
               data-testid="button-calculate-bedtime"
             >
-              Find My Bedtime
+              {t('homepage.wakeUpCard.button')}
               <ArrowRight className="ml-2" size={16} />
             </Button>
           </CardContent>
@@ -184,10 +184,10 @@ export function UltraSimpleHomepage({
               <div className="flex items-center mb-2 sm:mb-0">
                 <Bed className="text-purple-500 mr-2" size={18} />
                 <h2 className="text-base sm:text-lg lg:text-xl font-bold text-gray-800">
-                  I will go to bed at
+                  {t('homepage.bedTimeCard.title')}
                 </h2>
               </div>
-              <div className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs self-start sm:self-auto">AI assistant</div>
+              <div className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs self-start sm:self-auto">{t('homepage.bedTimeCard.badge')}</div>
             </div>
             
             {/* Perfect Mobile Time Selector */}
@@ -195,7 +195,7 @@ export function UltraSimpleHomepage({
               <div className="flex justify-center items-center gap-3 sm:gap-4">
                 {/* Hour Selector */}
                 <div className="flex flex-col items-center">
-                  <label className="text-xs text-gray-500 mb-1">Hour</label>
+                  <label className="text-xs text-gray-500 mb-1">{t('homepage.timeSelector.hour')}</label>
                   <select 
                     value={bedHour}
                     onChange={(e) => setBedHour(e.target.value)}
@@ -212,7 +212,7 @@ export function UltraSimpleHomepage({
 
                 {/* Minute Selector */}
                 <div className="flex flex-col items-center">
-                  <label className="text-xs text-gray-500 mb-1">Min</label>
+                  <label className="text-xs text-gray-500 mb-1">{t('homepage.timeSelector.minute')}</label>
                   <select 
                     value={bedMinute}
                     onChange={(e) => setBedMinute(e.target.value)}
@@ -227,7 +227,7 @@ export function UltraSimpleHomepage({
 
                 {/* AM/PM Toggle */}
                 <div className="flex flex-col items-center">
-                  <label className="text-xs text-gray-500 mb-1">Period</label>
+                  <label className="text-xs text-gray-500 mb-1">{t('homepage.timeSelector.period')}</label>
                   <div className="bg-purple-100 rounded-lg p-1 shadow-sm">
                     <button
                       onClick={() => setBedPeriod('AM')}
@@ -264,7 +264,7 @@ export function UltraSimpleHomepage({
               className="w-full bg-purple-500 hover:bg-purple-600 active:bg-purple-700 text-white py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-lg transition-colors shadow-md hover:shadow-lg touch-manipulation"
               data-testid="button-calculate-wakeup"
             >
-              Find My Wake Time
+              {t('homepage.bedTimeCard.button')}
               <ArrowRight className="ml-2" size={16} />
             </Button>
           </CardContent>
@@ -284,14 +284,14 @@ export function UltraSimpleHomepage({
               <div className="flex items-center mb-2 sm:mb-0">
                 <Moon className="text-green-500 mr-2" size={18} />
                 <h2 className="text-base sm:text-lg lg:text-xl font-bold text-gray-800">
-                  Sleep Now
+                  {t('homepage.sleepNowCard.title')}
                 </h2>
               </div>
-              <div className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs self-start sm:self-auto">Quick sleep</div>
+              <div className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs self-start sm:self-auto">{t('homepage.sleepNowCard.badge')}</div>
             </div>
             
             <div className="mb-4 sm:mb-5">
-              <p className="text-xs sm:text-sm text-gray-600 mb-3 text-center">Choose your sleep duration:</p>
+              <p className="text-xs sm:text-sm text-gray-600 mb-3 text-center">{t('homepage.sleepNowCard.chooseDuration')}</p>
               <div className="grid grid-cols-4 gap-2 sm:gap-3">
                 {[6, 7, 8, 9].map(hours => (
                   <button
@@ -315,7 +315,7 @@ export function UltraSimpleHomepage({
               className="w-full bg-green-500 hover:bg-green-600 active:bg-green-700 text-white py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-lg transition-colors shadow-md hover:shadow-lg touch-manipulation"
               data-testid="button-sleep-now"
             >
-              Sleep Now ({selectedSleepDuration}h)
+              {t('homepage.sleepNowCard.button', { duration: selectedSleepDuration })}
               <ArrowRight className="ml-2" size={16} />
             </Button>
           </CardContent>
@@ -333,11 +333,10 @@ export function UltraSimpleHomepage({
           <CardContent className="p-3 sm:p-4 lg:p-6">
             <div className="text-center mb-4">
               <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2">
-                How Does It Work?
+                {t('homepage.howItWorks.title')}
               </h3>
               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Our AI uses 90-minute sleep cycles to find your optimal bedtime and wake-up times. 
-                You'll get personalized health assessments based on your age and sleep patterns.
+                {t('homepage.howItWorks.description')}
               </p>
             </div>
             
@@ -346,21 +345,21 @@ export function UltraSimpleHomepage({
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
                   <span className="text-sm sm:text-base font-bold text-blue-600">1</span>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600 font-medium">Pick Time</p>
+                <p className="text-xs sm:text-sm text-gray-600 font-medium">{t('homepage.howItWorks.steps.pickTime')}</p>
               </div>
               
               <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
                   <span className="text-sm sm:text-base font-bold text-purple-600">2</span>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600 font-medium">AI Calculates</p>
+                <p className="text-xs sm:text-sm text-gray-600 font-medium">{t('homepage.howItWorks.steps.aiCalculates')}</p>
               </div>
               
               <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
                   <span className="text-sm sm:text-base font-bold text-green-600">3</span>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600 font-medium">Get Results</p>
+                <p className="text-xs sm:text-sm text-gray-600 font-medium">{t('homepage.howItWorks.steps.getResults')}</p>
               </div>
             </div>
           </CardContent>
@@ -369,18 +368,18 @@ export function UltraSimpleHomepage({
         {/* Trust Signals and Social Proof - Mobile Optimized */}
         <Card className="bg-gradient-to-br from-green-50 to-blue-50 border-green-200 shadow-lg">
           <CardContent className="p-3 sm:p-4 lg:p-6 text-center">
-            <h4 className="text-sm sm:text-base font-bold text-gray-800 mb-3">Trusted by Sleep Experts Worldwide</h4>
+            <h4 className="text-sm sm:text-base font-bold text-gray-800 mb-3">{t('homepage.trustSignals.title')}</h4>
             <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
               <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
-                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-600">4+ Billion</div>
-                <div className="text-xs sm:text-sm text-gray-600">Sleep Sessions Analyzed</div>
+                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-600">{t('homepage.trustSignals.stats.sessionsAnalyzed')}</div>
+                <div className="text-xs sm:text-sm text-gray-600">{t('homepage.trustSignals.stats.sessionsLabel')}</div>
               </div>
               <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
-                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-green-600">10M+</div>
-                <div className="text-xs sm:text-sm text-gray-600">Happy Users</div>
+                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-green-600">{t('homepage.trustSignals.stats.happyUsers')}</div>
+                <div className="text-xs sm:text-sm text-gray-600">{t('homepage.trustSignals.stats.happyUsersLabel')}</div>
               </div>
             </div>
-            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">96.8% accuracy rate • Recommended by doctors • ⭐ #1 rated by users</p>
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{t('homepage.trustSignals.description')}</p>
           </CardContent>
         </Card>
         

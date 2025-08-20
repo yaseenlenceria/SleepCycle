@@ -49,6 +49,46 @@
       "wakeUpTime": "Orario di sveglia",
       "bedTime": "Orario di andare a letto",
       "sleepDuration": "Durata del sonno"
+    },
+    "wakeUpCard": {
+      "title": "Mi sveglierò alle",
+      "badge": "Assistente IA",
+      "button": "Trova il Mio Orario per Andare a Letto"
+    },
+    "bedTimeCard": {
+      "title": "Andrò a letto alle",
+      "badge": "Assistente IA",
+      "button": "Trova il Mio Orario di Sveglia"
+    },
+    "sleepNowCard": {
+      "title": "Dormi Ora",
+      "badge": "Sonno veloce",
+      "chooseDuration": "Scegli la durata del tuo sonno:",
+      "button": "Dormi Ora ({{duration}}h)"
+    },
+    "timeSelector": {
+      "hour": "Ora",
+      "minute": "Min",
+      "period": "Periodo"
+    },
+    "howItWorks": {
+      "title": "Come Funziona?",
+      "description": "La nostra IA usa cicli del sonno di 90 minuti per trovare i tuoi orari ottimali per andare a letto e svegliarti. Ricevi valutazioni sanitarie personalizzate basate sulla tua età e sui tuoi schemi del sonno.",
+      "steps": {
+        "pickTime": "Scegli Orario",
+        "aiCalculates": "L'IA Calcola",
+        "getResults": "Ottieni Risultati"
+      }
+    },
+    "trustSignals": {
+      "title": "Fidato da Esperti del Sonno Mondiali",
+      "stats": {
+        "sessionsAnalyzed": "4+ Miliardi",
+        "sessionsLabel": "Sessioni di Sonno Analizzate",
+        "happyUsers": "10M+",
+        "happyUsersLabel": "Utenti Soddisfatti"
+      },
+      "description": "96,8% di precisione • Raccomandato dai medici • ⭐ #1 valutato dagli utenti"
     }
   },
   "sleepCalculator": {

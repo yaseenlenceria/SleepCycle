@@ -49,6 +49,46 @@
       "wakeUpTime": "Horário de acordar",
       "bedTime": "Horário de dormir",
       "sleepDuration": "Duração do sono"
+    },
+    "wakeUpCard": {
+      "title": "Vou acordar às",
+      "badge": "Assistente IA",
+      "button": "Encontrar Meu Horário de Dormir"
+    },
+    "bedTimeCard": {
+      "title": "Vou dormir às",
+      "badge": "Assistente IA",
+      "button": "Encontrar Meu Horário de Acordar"
+    },
+    "sleepNowCard": {
+      "title": "Dormir Agora",
+      "badge": "Sono rápido",
+      "chooseDuration": "Escolha a duração do seu sono:",
+      "button": "Dormir Agora ({{duration}}h)"
+    },
+    "timeSelector": {
+      "hour": "Hora",
+      "minute": "Min",
+      "period": "Período"
+    },
+    "howItWorks": {
+      "title": "Como Funciona?",
+      "description": "Nossa IA usa ciclos de sono de 90 minutos para encontrar seus horários ótimos de dormir e acordar. Você recebe avaliações personalizadas de saúde baseadas na sua idade e padrões de sono.",
+      "steps": {
+        "pickTime": "Escolher Hora",
+        "aiCalculates": "IA Calcula",
+        "getResults": "Obter Resultados"
+      }
+    },
+    "trustSignals": {
+      "title": "Confiado por Especialistas em Sono Mundial",
+      "stats": {
+        "sessionsAnalyzed": "4+ Bilhões",
+        "sessionsLabel": "Sessões de Sono Analisadas",
+        "happyUsers": "10M+",
+        "happyUsersLabel": "Usuários Satisfeitos"
+      },
+      "description": "96,8% de precisão • Recomendado por médicos • ⭐ #1 avaliado por usuários"
     }
   },
   "sleepCalculator": {

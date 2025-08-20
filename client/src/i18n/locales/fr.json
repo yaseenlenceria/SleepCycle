@@ -49,6 +49,46 @@
       "wakeUpTime": "Heure de réveil",
       "bedTime": "Heure du coucher",
       "sleepDuration": "Durée du sommeil"
+    },
+    "wakeUpCard": {
+      "title": "Je me réveillerai à",
+      "badge": "Assistant IA",
+      "button": "Trouver Mon Heure de Coucher"
+    },
+    "bedTimeCard": {
+      "title": "Je me coucherai à",
+      "badge": "Assistant IA",
+      "button": "Trouver Mon Heure de Réveil"
+    },
+    "sleepNowCard": {
+      "title": "Dormir Maintenant",
+      "badge": "Sommeil rapide",
+      "chooseDuration": "Choisissez la durée de votre sommeil :",
+      "button": "Dormir Maintenant ({{duration}}h)"
+    },
+    "timeSelector": {
+      "hour": "Heure",
+      "minute": "Min",
+      "period": "Période"
+    },
+    "howItWorks": {
+      "title": "Comment Ça Marche ?",
+      "description": "Notre IA utilise les cycles de sommeil de 90 minutes pour trouver vos heures optimales de coucher et réveil. Vous obtenez des évaluations de santé personnalisées basées sur votre âge et vos habitudes de sommeil.",
+      "steps": {
+        "pickTime": "Choisir l'Heure",
+        "aiCalculates": "L'IA Calcule",
+        "getResults": "Obtenir les Résultats"
+      }
+    },
+    "trustSignals": {
+      "title": "Approuvé par les Experts du Sommeil Mondiaux",
+      "stats": {
+        "sessionsAnalyzed": "4+ Milliards",
+        "sessionsLabel": "Sessions de Sommeil Analysées",
+        "happyUsers": "10M+",
+        "happyUsersLabel": "Utilisateurs Satisfaits"
+      },
+      "description": "96,8% de précision • Recommandé par les médecins • ⭐ #1 noté par les utilisateurs"
     }
   },
   "sleepCalculator": {

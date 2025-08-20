@@ -49,6 +49,46 @@
       "wakeUpTime": "起床时间",
       "bedTime": "就寝时间",
       "sleepDuration": "睡眠时长"
+    },
+    "wakeUpCard": {
+      "title": "我将在以下时间起床",
+      "badge": "AI助手",
+      "button": "找到我的就寝时间"
+    },
+    "bedTimeCard": {
+      "title": "我将在以下时间就寝",
+      "badge": "AI助手",
+      "button": "找到我的起床时间"
+    },
+    "sleepNowCard": {
+      "title": "现在睡觉",
+      "badge": "快速睡眠",
+      "chooseDuration": "选择您的睡眠时长：",
+      "button": "现在睡觉 ({{duration}}小时)"
+    },
+    "timeSelector": {
+      "hour": "时",
+      "minute": "分",
+      "period": "时段"
+    },
+    "howItWorks": {
+      "title": "如何工作？",
+      "description": "我们的AI使用90分钟睡眠周期来找到您最佳的就寝和起床时间。您将根据年龄和睡眠模式获得个性化健康评估。",
+      "steps": {
+        "pickTime": "选择时间",
+        "aiCalculates": "AI计算",
+        "getResults": "获得结果"
+      }
+    },
+    "trustSignals": {
+      "title": "受到全球睡眠专家信赖",
+      "stats": {
+        "sessionsAnalyzed": "40多亿",
+        "sessionsLabel": "睡眠会话分析",
+        "happyUsers": "1000万+",
+        "happyUsersLabel": "满意用户"
+      },
+      "description": "96.8%准确率 • 医生推荐 • ⭐ 用户评分第一"
     }
   },
   "sleepCalculator": {

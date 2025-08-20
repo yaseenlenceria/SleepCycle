@@ -49,6 +49,46 @@
       "wakeUpTime": "Wake up time",
       "bedTime": "Bed time",
       "sleepDuration": "Sleep duration"
+    },
+    "wakeUpCard": {
+      "title": "I will wake up at",
+      "badge": "AI assistant",
+      "button": "Find My Bedtime"
+    },
+    "bedTimeCard": {
+      "title": "I will go to bed at",
+      "badge": "AI assistant", 
+      "button": "Find My Wake Time"
+    },
+    "sleepNowCard": {
+      "title": "Sleep Now",
+      "badge": "Quick sleep",
+      "chooseDuration": "Choose your sleep duration:",
+      "button": "Sleep Now ({{duration}}h)"
+    },
+    "timeSelector": {
+      "hour": "Hour",
+      "minute": "Min", 
+      "period": "Period"
+    },
+    "howItWorks": {
+      "title": "How Does It Work?",
+      "description": "Our AI uses 90-minute sleep cycles to find your optimal bedtime and wake-up times. You'll get personalized health assessments based on your age and sleep patterns.",
+      "steps": {
+        "pickTime": "Pick Time",
+        "aiCalculates": "AI Calculates", 
+        "getResults": "Get Results"
+      }
+    },
+    "trustSignals": {
+      "title": "Trusted by Sleep Experts Worldwide",
+      "stats": {
+        "sessionsAnalyzed": "4+ Billion",
+        "sessionsLabel": "Sleep Sessions Analyzed",
+        "happyUsers": "10M+",
+        "happyUsersLabel": "Happy Users"
+      },
+      "description": "96.8% accuracy rate • Recommended by doctors • ⭐ #1 rated by users"
     }
   },
   "sleepCalculator": {

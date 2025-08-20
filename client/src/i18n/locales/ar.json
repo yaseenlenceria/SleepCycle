@@ -49,6 +49,46 @@
       "wakeUpTime": "وقت الاستيقاظ",
       "bedTime": "وقت النوم",
       "sleepDuration": "مدة النوم"
+    },
+    "wakeUpCard": {
+      "title": "سأستيقظ في",
+      "badge": "مساعد ذكي",
+      "button": "ابحث عن وقت نومي"
+    },
+    "bedTimeCard": {
+      "title": "سأنام في",
+      "badge": "مساعد ذكي",
+      "button": "ابحث عن وقت استيقاظي"
+    },
+    "sleepNowCard": {
+      "title": "انم الآن",
+      "badge": "نوم سريع",
+      "chooseDuration": "اختر مدة نومك:",
+      "button": "انم الآن ({{duration}} ساعات)"
+    },
+    "timeSelector": {
+      "hour": "ساعة",
+      "minute": "دقيقة",
+      "period": "الفترة"
+    },
+    "howItWorks": {
+      "title": "كيف يعمل؟",
+      "description": "يستخدم الذكاء الاصطناعي دورات النوم التي تستغرق 90 دقيقة للعثور على أوقات النوم والاستيقاظ المثلى. ستحصل على تقييمات صحية شخصية بناءً على عمرك وأنماط نومك.",
+      "steps": {
+        "pickTime": "اختر الوقت",
+        "aiCalculates": "الذكاء الاصطناعي يحسب",
+        "getResults": "احصل على النتائج"
+      }
+    },
+    "trustSignals": {
+      "title": "موثوق من قبل خبراء النوم العالميين",
+      "stats": {
+        "sessionsAnalyzed": "4+ مليارات",
+        "sessionsLabel": "جلسات نوم تم تحليلها",
+        "happyUsers": "10 مليون+",
+        "happyUsersLabel": "مستخدم راضي"
+      },
+      "description": "96.8% معدل دقة • موصى به من الأطباء • ⭐ #1 مقيم من قبل المستخدمين"
     }
   },
   "sleepCalculator": {

@@ -49,6 +49,46 @@
       "wakeUpTime": "Aufwachzeit",
       "bedTime": "Schlafenszeit",
       "sleepDuration": "Schlafdauer"
+    },
+    "wakeUpCard": {
+      "title": "Ich werde aufwachen um",
+      "badge": "KI-Assistent",
+      "button": "Meine Schlafenszeit Finden"
+    },
+    "bedTimeCard": {
+      "title": "Ich werde schlafen gehen um",
+      "badge": "KI-Assistent",
+      "button": "Meine Aufwachzeit Finden"
+    },
+    "sleepNowCard": {
+      "title": "Jetzt Schlafen",
+      "badge": "Schneller Schlaf",
+      "chooseDuration": "Wählen Sie Ihre Schlafdauer:",
+      "button": "Jetzt Schlafen ({{duration}}h)"
+    },
+    "timeSelector": {
+      "hour": "Std",
+      "minute": "Min",
+      "period": "Zeit"
+    },
+    "howItWorks": {
+      "title": "Wie Funktioniert Es?",
+      "description": "Unsere KI nutzt 90-Minuten-Schlafzyklen, um Ihre optimalen Schlafens- und Aufwachzeiten zu finden. Sie erhalten personalisierte Gesundheitsbewertungen basierend auf Ihrem Alter und Schlafmustern.",
+      "steps": {
+        "pickTime": "Zeit Wählen",
+        "aiCalculates": "KI Berechnet",
+        "getResults": "Ergebnisse Erhalten"
+      }
+    },
+    "trustSignals": {
+      "title": "Vertraut von Schlafexperten Weltweit",
+      "stats": {
+        "sessionsAnalyzed": "4+ Milliarden",
+        "sessionsLabel": "Analysierte Schlafsessionen",
+        "happyUsers": "10M+",
+        "happyUsersLabel": "Zufriedene Nutzer"
+      },
+      "description": "96,8% Genauigkeitsrate • Von Ärzten empfohlen • ⭐ #1 von Nutzern bewertet"
     }
   },
   "sleepCalculator": {

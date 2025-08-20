@@ -49,6 +49,46 @@
       "wakeUpTime": "起床時間",
       "bedTime": "就寝時間",
       "sleepDuration": "睡眠時間"
+    },
+    "wakeUpCard": {
+      "title": "私は以下の時間に起きます",
+      "badge": "AIアシスタント",
+      "button": "私の就寝時間を見つける"
+    },
+    "bedTimeCard": {
+      "title": "私は以下の時間に寝ます",
+      "badge": "AIアシスタント",
+      "button": "私の起床時間を見つける"
+    },
+    "sleepNowCard": {
+      "title": "今眠る",
+      "badge": "クイック睡眠",
+      "chooseDuration": "睡眠時間を選択してください：",
+      "button": "今眠る ({{duration}}時間)"
+    },
+    "timeSelector": {
+      "hour": "時",
+      "minute": "分",
+      "period": "午前/午後"
+    },
+    "howItWorks": {
+      "title": "どのように機能しますか？",
+      "description": "私たちのAIは90分の睡眠サイクルを使用して、あなたの最適な就寝時間と起床時間を見つけます。年齢と睡眠パターンに基づいてパーソナライズされた健康評価を受けることができます。",
+      "steps": {
+        "pickTime": "時間を選ぶ",
+        "aiCalculates": "AIが計算",
+        "getResults": "結果を取得"
+      }
+    },
+    "trustSignals": {
+      "title": "世界の睡眠専門家に信頼される",
+      "stats": {
+        "sessionsAnalyzed": "40億以上",
+        "sessionsLabel": "睡眠セッション分析",
+        "happyUsers": "1000万+",
+        "happyUsersLabel": "満足ユーザー"
+      },
+      "description": "96.8%の精度率 • 医師推奨 • ⭐ ユーザー評価第1位"
     }
   },
   "sleepCalculator": {
