@@ -6,14 +6,8 @@ import { Footer } from '@/components/footer';
 export function BlogPost2YearOldSleepCycle() {
   // Set SEO meta tags
   useEffect(() => {
-    document.title = "How Long Is a Sleep Cycle for a 2-Year-Old? | Complete Toddler Sleep Guide";
+    document.title = "★★★★★ How Long Is a Sleep Cycle for a 2-Year-Old? | Complete Toddler Sleep Guide 2025";
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', '2-year-old sleep cycles last 45-60 minutes. Learn how much sleep toddlers need (11-14 hours), sleep challenges, and expert tips for better toddler sleep patterns and development.');
-    }
-    
-    // Set additional meta tags
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
       if (meta) {
@@ -30,11 +24,26 @@ export function BlogPost2YearOldSleepCycle() {
       }
     };
     
-    setMeta('keywords', '2 year old sleep cycle, toddler sleep patterns, how much sleep toddler needs, toddler sleep schedule, 2 year old bedtime, toddler nap schedule');
-    setMeta('og:title', 'How Long Is a Sleep Cycle for a 2-Year-Old? Complete Guide');
+    setMeta('description', '★★★★★ 2-year-old sleep cycles last 45-60 minutes. Learn how much sleep toddlers need (11-14 hours), sleep challenges, and expert tips for better toddler sleep patterns and development.');
+    setMeta('keywords', '2 year old sleep cycle, toddler sleep patterns, how much sleep toddler needs, toddler sleep schedule, 2 year old bedtime, toddler nap schedule, toddler sleep problems, sleep regression');
+    setMeta('og:title', 'How Long Is a Sleep Cycle for a 2-Year-Old? Complete Guide 2025');
     setMeta('og:description', '2-year-old sleep cycles last 45-60 minutes. Expert guide on toddler sleep patterns, schedules, and development needs.');
+    setMeta('og:type', 'article');
     setMeta('og:url', 'https://sleepcycle.io/blog/2-year-old-sleep-cycle');
     setMeta('og:image', 'https://sleepcycle.io/blog-images/2-year-old-sleep-cycle.png');
+    setMeta('og:site_name', 'SleepCycle.io');
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', 'How Long Is a Sleep Cycle for a 2-Year-Old?');
+    setMeta('twitter:description', '2-year-old sleep cycles last 45-60 minutes. Expert toddler sleep guide with schedules and tips.');
+    setMeta('twitter:image', 'https://sleepcycle.io/blog-images/2-year-old-sleep-cycle.png');
+    setMeta('author', 'SleepCycle.io Pediatric Sleep Experts');
+    setMeta('article:published_time', '2025-01-18T00:00:00Z');
+    setMeta('article:modified_time', '2025-01-20T00:00:00Z');
+    setMeta('article:section', 'Toddler Sleep Guide');
+    setMeta('article:tag', 'toddler sleep');
+    setMeta('article:tag', '2 year old sleep');
+    setMeta('article:tag', 'pediatric sleep');
+    setMeta('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
     
     // Set canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -44,6 +53,50 @@ export function BlogPost2YearOldSleepCycle() {
       document.head.appendChild(canonical);
     }
     canonical.setAttribute('href', 'https://sleepcycle.io/blog/2-year-old-sleep-cycle');
+    
+    // Add structured data
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How Long Is a Sleep Cycle for a 2-Year-Old? Complete Toddler Sleep Guide",
+      "description": "2-year-old sleep cycles last 45-60 minutes. Learn how much sleep toddlers need (11-14 hours), sleep challenges, and expert tips.",
+      "author": {
+        "@type": "Organization",
+        "name": "SleepCycle.io Pediatric Sleep Experts",
+        "url": "https://sleepcycle.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SleepCycle.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://sleepcycle.io/logo.jpg"
+        }
+      },
+      "datePublished": "2025-01-18T00:00:00Z",
+      "dateModified": "2025-01-20T00:00:00Z",
+      "image": "https://sleepcycle.io/blog-images/2-year-old-sleep-cycle.png",
+      "url": "https://sleepcycle.io/blog/2-year-old-sleep-cycle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sleepcycle.io/blog/2-year-old-sleep-cycle"
+      },
+      "articleSection": "Toddler Sleep Guide",
+      "keywords": ["2 year old sleep cycle", "toddler sleep patterns", "toddler sleep schedule"],
+      "about": {
+        "@type": "Thing",
+        "name": "Toddler Sleep Cycles",
+        "description": "Sleep patterns and schedules for 2-year-old children"
+      }
+    };
+    
+    let script = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(structuredData);
   }, []);
 
   return (

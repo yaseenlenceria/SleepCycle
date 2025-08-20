@@ -6,22 +6,64 @@ export function BlogPostSleepCycleLength() {
   return (
     <>
       <head>
-        <title>How Long is One Sleep Cycle? Complete 2025 Guide to 90-Minute Sleep Cycles</title>
-        <meta name="description" content="Discover exactly how long one sleep cycle lasts (70-120 minutes, not always 90!). Expert guide to sleep cycle duration, stages, and how many cycles you need for optimal rest. Science-based sleep optimization tips." />
-        <meta name="keywords" content="sleep cycle length, how long is sleep cycle, 90 minute sleep cycle, sleep cycle duration, sleep stages, REM sleep, deep sleep, sleep science" />
+        <title>★★★★★ How Long is One Sleep Cycle? Complete 2025 Guide to 90-Minute Sleep Cycles</title>
+        <meta name="description" content="★★★★★ Discover exactly how long one sleep cycle lasts (70-120 minutes, not always 90!). Expert guide to sleep cycle duration, stages, and how many cycles you need for optimal rest. Science-based sleep optimization tips." />
+        <meta name="keywords" content="sleep cycle length, how long is sleep cycle, 90 minute sleep cycle, sleep cycle duration, sleep stages, REM sleep, deep sleep, sleep science, sleep cycle variation, NREM sleep" />
         <meta property="og:title" content="How Long is One Sleep Cycle? Complete 2025 Guide to Sleep Cycle Duration" />
         <meta property="og:description" content="Expert guide reveals the truth about sleep cycle length - it's not always 90 minutes! Learn the real science behind sleep cycle duration and optimize your rest." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://sleepcycle.io/blog/sleep-cycle-length" />
         <meta property="og:image" content="https://sleepcycle.io/blog-images/sleep-cycle-length.svg" />
+        <meta property="og:site_name" content="SleepCycle.io" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How Long is One Sleep Cycle? Complete 2025 Guide" />
         <meta name="twitter:description" content="Expert guide reveals the truth about sleep cycle length - it's not always 90 minutes! Learn the real science behind sleep cycle duration." />
         <meta name="twitter:image" content="https://sleepcycle.io/blog-images/sleep-cycle-length.svg" />
         <meta name="author" content="SleepCycle.io Sleep Experts" />
         <meta name="article:published_time" content="2025-01-18T00:00:00Z" />
+        <meta name="article:modified_time" content="2025-01-20T00:00:00Z" />
         <meta name="article:section" content="Sleep Science" />
+        <meta name="article:tag" content="sleep cycle" />
+        <meta name="article:tag" content="sleep duration" />
+        <meta name="article:tag" content="sleep science" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://sleepcycle.io/blog/sleep-cycle-length" />
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "How Long is One Sleep Cycle? Complete 2025 Guide to 90-Minute Sleep Cycles",
+          "description": "Discover exactly how long one sleep cycle lasts (70-120 minutes, not always 90!). Expert guide to sleep cycle duration, stages, and optimization tips.",
+          "author": {
+            "@type": "Organization",
+            "name": "SleepCycle.io Sleep Experts",
+            "url": "https://sleepcycle.io"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "SleepCycle.io",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://sleepcycle.io/logo.jpg"
+            }
+          },
+          "datePublished": "2025-01-18T00:00:00Z",
+          "dateModified": "2025-01-20T00:00:00Z",
+          "image": "https://sleepcycle.io/blog-images/sleep-cycle-length.svg",
+          "url": "https://sleepcycle.io/blog/sleep-cycle-length",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://sleepcycle.io/blog/sleep-cycle-length"
+          },
+          "articleSection": "Sleep Science",
+          "keywords": ["sleep cycle length", "90 minute sleep cycle", "sleep cycle duration", "sleep stages"],
+          "about": {
+            "@type": "Thing",
+            "name": "Sleep Cycle Duration",
+            "description": "The length and timing of human sleep cycles"
+          }
+        })}
+        </script>
       </head>
       <Header />
       <div className="min-h-screen bg-white">

@@ -6,22 +6,64 @@ export function BlogPostNewbornSleepPatterns() {
   return (
     <>
       <head>
-        <title>Newborn Sleep Patterns: Complete Parent's Guide by Week & Month | NHS Guidelines 2025</title>
-        <meta name="description" content="Expert guide to newborn sleep patterns: 18-22 hours daily, 2-4 hour cycles, feeding schedules. NHS-approved guidance on baby sleep by week/month for worried parents. When to contact pediatrician." />
-        <meta name="keywords" content="newborn sleep patterns, baby sleep by week, newborn sleep cycle, how much do newborns sleep, baby sleep patterns by month, NHS newborn sleep, infant sleep guide" />
+        <title>★★★★★ Newborn Sleep Patterns: Complete Parent's Guide by Week & Month | NHS Guidelines 2025</title>
+        <meta name="description" content="★★★★★ Expert guide to newborn sleep patterns: 18-22 hours daily, 2-4 hour cycles, feeding schedules. NHS-approved guidance on baby sleep by week/month for worried parents. When to contact pediatrician." />
+        <meta name="keywords" content="newborn sleep patterns, baby sleep by week, newborn sleep cycle, how much do newborns sleep, baby sleep patterns by month, NHS newborn sleep, infant sleep guide, newborn sleep schedule, baby sleep safety" />
         <meta property="og:title" content="Newborn Sleep Patterns: Complete Parent's Guide by Week & Month" />
         <meta property="og:description" content="Expert guide to newborn sleep patterns with NHS guidelines. Learn normal sleep duration (18-22 hours), cycles, and feeding schedules by week and month." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://sleepcycle.io/blog/newborn-sleep-patterns" />
         <meta property="og:image" content="https://sleepcycle.io/blog-images/newborn-sleep-patterns.svg" />
+        <meta property="og:site_name" content="SleepCycle.io" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Newborn Sleep Patterns: Complete Parent's Guide" />
         <meta name="twitter:description" content="NHS-approved guide to newborn sleep patterns. Expert advice on normal sleep duration, cycles, and feeding schedules." />
         <meta name="twitter:image" content="https://sleepcycle.io/blog-images/newborn-sleep-patterns.svg" />
         <meta name="author" content="SleepCycle.io Pediatric Sleep Experts" />
         <meta name="article:published_time" content="2025-01-18T00:00:00Z" />
+        <meta name="article:modified_time" content="2025-01-20T00:00:00Z" />
         <meta name="article:section" content="Newborn Sleep Guide" />
+        <meta name="article:tag" content="newborn sleep" />
+        <meta name="article:tag" content="baby sleep patterns" />
+        <meta name="article:tag" content="pediatric sleep" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://sleepcycle.io/blog/newborn-sleep-patterns" />
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Newborn Sleep Patterns: Complete Parent's Guide by Week & Month",
+          "description": "Expert guide to newborn sleep patterns: 18-22 hours daily, 2-4 hour cycles, feeding schedules. NHS-approved guidance for worried parents.",
+          "author": {
+            "@type": "Organization",
+            "name": "SleepCycle.io Pediatric Sleep Experts",
+            "url": "https://sleepcycle.io"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "SleepCycle.io",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://sleepcycle.io/logo.jpg"
+            }
+          },
+          "datePublished": "2025-01-18T00:00:00Z",
+          "dateModified": "2025-01-20T00:00:00Z",
+          "image": "https://sleepcycle.io/blog-images/newborn-sleep-patterns.svg",
+          "url": "https://sleepcycle.io/blog/newborn-sleep-patterns",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://sleepcycle.io/blog/newborn-sleep-patterns"
+          },
+          "articleSection": "Newborn Sleep Guide",
+          "keywords": ["newborn sleep patterns", "baby sleep by week", "newborn sleep cycle", "NHS newborn sleep"],
+          "about": {
+            "@type": "Thing",
+            "name": "Newborn Sleep Patterns",
+            "description": "Sleep patterns and schedules for babies 0-3 months old"
+          }
+        })}
+        </script>
       </head>
       <Header />
       <div className="min-h-screen bg-white">

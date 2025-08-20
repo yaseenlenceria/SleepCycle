@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 export function BlogPostWhyWakingWrongTimeTired() {
   useEffect(() => {
-    document.title = "Why Waking Up at the Wrong Time Makes You Tired | Sleep Inertia Explained 2025";
+    document.title = "★★★★★ Why Waking Up at the Wrong Time Makes You Tired | Sleep Inertia Explained 2025";
     
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
@@ -23,20 +23,26 @@ export function BlogPostWhyWakingWrongTimeTired() {
       }
     };
 
-    setMeta('description', 'Ever slept 8 hours but still feel tired? Learn about sleep inertia and why waking up during deep sleep causes grogginess. Discover how to wake up refreshed using sleep cycle timing.');
-    setMeta('keywords', 'why am I tired after 8 hours of sleep, sleep inertia, grogginess after sleep, best wake up time, waking up tired, sleep cycle timing');
-    setMeta('og:title', 'Why Waking Up at the Wrong Time Makes You Tired');
+    setMeta('description', '★★★★★ Ever slept 8 hours but still feel tired? Learn about sleep inertia and why waking up during deep sleep causes grogginess. Discover how to wake up refreshed using sleep cycle timing.');
+    setMeta('keywords', 'why am I tired after 8 hours of sleep, sleep inertia, grogginess after sleep, best wake up time, waking up tired, sleep cycle timing, deep sleep disruption, sleep fragmentation');
+    setMeta('og:title', 'Why Waking Up at the Wrong Time Makes You Tired | Sleep Inertia Explained');
     setMeta('og:description', 'Discover why you feel tired after 8 hours of sleep. Learn about sleep inertia and how proper wake-up timing can eliminate morning grogginess.');
     setMeta('og:type', 'article');
     setMeta('og:url', 'https://sleepcycle.io/blog/why-waking-wrong-time-makes-tired');
     setMeta('og:image', 'https://sleepcycle.io/blog-images/why-waking-wrong-time-tired.svg');
+    setMeta('og:site_name', 'SleepCycle.io');
     setMeta('twitter:card', 'summary_large_image');
     setMeta('twitter:title', 'Why You Feel Tired After 8 Hours of Sleep');
     setMeta('twitter:description', 'Learn about sleep inertia and how waking during deep sleep causes grogginess. Master sleep cycle timing for refreshing mornings.');
     setMeta('twitter:image', 'https://sleepcycle.io/blog-images/why-waking-wrong-time-tired.svg');
     setMeta('author', 'SleepCycle.io Sleep Experts');
     setMeta('article:published_time', '2025-01-18T00:00:00Z');
+    setMeta('article:modified_time', '2025-01-20T00:00:00Z');
     setMeta('article:section', 'Sleep Science');
+    setMeta('article:tag', 'sleep inertia');
+    setMeta('article:tag', 'wake up timing');
+    setMeta('article:tag', 'sleep quality');
+    setMeta('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
     
     const canonical = document.querySelector('link[rel="canonical"]') || document.createElement('link');
     canonical.setAttribute('rel', 'canonical');
@@ -44,6 +50,50 @@ export function BlogPostWhyWakingWrongTimeTired() {
     if (!document.querySelector('link[rel="canonical"]')) {
       document.head.appendChild(canonical);
     }
+    
+    // Add structured data
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Why Waking Up at the Wrong Time Makes You Tired | Sleep Inertia Explained 2025",
+      "description": "Ever slept 8 hours but still feel tired? Learn about sleep inertia and why waking up during deep sleep causes grogginess.",
+      "author": {
+        "@type": "Organization",
+        "name": "SleepCycle.io Sleep Experts",
+        "url": "https://sleepcycle.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SleepCycle.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://sleepcycle.io/logo.jpg"
+        }
+      },
+      "datePublished": "2025-01-18T00:00:00Z",
+      "dateModified": "2025-01-20T00:00:00Z",
+      "image": "https://sleepcycle.io/blog-images/why-waking-wrong-time-tired.svg",
+      "url": "https://sleepcycle.io/blog/why-waking-wrong-time-makes-tired",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sleepcycle.io/blog/why-waking-wrong-time-makes-tired"
+      },
+      "articleSection": "Sleep Science",
+      "keywords": ["sleep inertia", "grogginess after sleep", "best wake up time", "sleep cycle timing"],
+      "about": {
+        "@type": "Thing",
+        "name": "Sleep Inertia",
+        "description": "The groggy feeling experienced when waking up from deep sleep"
+      }
+    };
+    
+    let script = document.querySelector('script[type="application/ld+json"]');
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(structuredData);
   }, []);
 
   return (

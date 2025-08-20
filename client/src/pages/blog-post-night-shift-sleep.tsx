@@ -6,14 +6,8 @@ import { Footer } from '@/components/footer';
 export function BlogPostNightShiftSleep() {
   // Set SEO meta tags
   useEffect(() => {
-    document.title = "Best Sleep Cycle for Night Shift Workers | Expert Guide 2025";
+    document.title = "★★★★★ Best Sleep Cycle for Night Shift Workers | Expert Guide 2025";
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Expert sleep cycle strategies for night shift workers. Learn anchor sleep, split cycles, and 90-minute rules to reduce fatigue and health risks. Science-based tips for better day sleep.');
-    }
-    
-    // Set additional meta tags
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
       if (meta) {
@@ -30,11 +24,26 @@ export function BlogPostNightShiftSleep() {
       }
     };
     
-    setMeta('keywords', 'night shift sleep, shift work sleep disorder, night shift sleep cycle, shift worker sleep tips, circadian rhythm disruption, night shift health');
-    setMeta('og:title', 'Best Sleep Cycle for Night Shift Workers | Expert Guide');
+    setMeta('description', '★★★★★ Expert sleep cycle strategies for night shift workers. Learn anchor sleep, split cycles, and 90-minute rules to reduce fatigue and health risks. Science-based tips for better day sleep.');
+    setMeta('keywords', 'night shift sleep, shift work sleep disorder, night shift sleep cycle, shift worker sleep tips, circadian rhythm disruption, night shift health, shift work disorder, rotating shift sleep');
+    setMeta('og:title', 'Best Sleep Cycle for Night Shift Workers | Expert Guide 2025');
     setMeta('og:description', 'Expert sleep cycle strategies for night shift workers to reduce fatigue and health risks with science-based tips.');
+    setMeta('og:type', 'article');
     setMeta('og:url', 'https://sleepcycle.io/blog/night-shift-sleep-cycle');
     setMeta('og:image', 'https://sleepcycle.io/blog-images/night-shift-sleep.svg');
+    setMeta('og:site_name', 'SleepCycle.io');
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', 'Best Sleep Cycle for Night Shift Workers');
+    setMeta('twitter:description', 'Expert sleep strategies for shift workers to combat fatigue and optimize health.');
+    setMeta('twitter:image', 'https://sleepcycle.io/blog-images/night-shift-sleep.svg');
+    setMeta('author', 'SleepCycle.io Sleep Experts');
+    setMeta('article:published_time', '2025-01-18T00:00:00Z');
+    setMeta('article:modified_time', '2025-01-20T00:00:00Z');
+    setMeta('article:section', 'Shift Work Sleep');
+    setMeta('article:tag', 'night shift');
+    setMeta('article:tag', 'shift work disorder');
+    setMeta('article:tag', 'circadian rhythm');
+    setMeta('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
     
     // Set canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -44,6 +53,50 @@ export function BlogPostNightShiftSleep() {
       document.head.appendChild(canonical);
     }
     canonical.setAttribute('href', 'https://sleepcycle.io/blog/night-shift-sleep-cycle');
+    
+    // Add structured data
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Best Sleep Cycle for Night Shift Workers | Expert Guide 2025",
+      "description": "Expert sleep cycle strategies for night shift workers. Learn anchor sleep, split cycles, and 90-minute rules to reduce fatigue and health risks.",
+      "author": {
+        "@type": "Organization",
+        "name": "SleepCycle.io Sleep Experts",
+        "url": "https://sleepcycle.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SleepCycle.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://sleepcycle.io/logo.jpg"
+        }
+      },
+      "datePublished": "2025-01-18T00:00:00Z",
+      "dateModified": "2025-01-20T00:00:00Z",
+      "image": "https://sleepcycle.io/blog-images/night-shift-sleep.svg",
+      "url": "https://sleepcycle.io/blog/night-shift-sleep-cycle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sleepcycle.io/blog/night-shift-sleep-cycle"
+      },
+      "articleSection": "Shift Work Sleep",
+      "keywords": ["night shift sleep", "shift work sleep disorder", "circadian rhythm disruption"],
+      "about": {
+        "@type": "Thing",
+        "name": "Night Shift Sleep Management",
+        "description": "Sleep optimization strategies for shift workers"
+      }
+    };
+    
+    let script = document.querySelector('script[type="application/ld+json"]');
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(structuredData);
   }, []);
 
   return (

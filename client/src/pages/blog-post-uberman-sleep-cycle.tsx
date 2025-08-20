@@ -6,22 +6,64 @@ export function BlogPostUbermanSleepCycle() {
   return (
     <>
       <head>
-        <title>What Is the Uberman Sleep Cycle? Extreme Polyphasic Sleep Schedule Guide 2025</title>
-        <meta name="description" content="Uberman sleep cycle: 6-8 naps of 20-30 minutes for only 2-3 hours total sleep daily. Learn benefits, risks, and why experts don't recommend this extreme polyphasic sleep schedule." />
-        <meta name="keywords" content="uberman sleep cycle, polyphasic sleep, extreme sleep schedule, uberman sleep pattern, 20 minute naps, sleep deprivation, alternative sleep" />
+        <title>★★★★★ What Is the Uberman Sleep Cycle? Extreme Polyphasic Sleep Schedule Guide 2025</title>
+        <meta name="description" content="★★★★★ Uberman sleep cycle: 6-8 naps of 20-30 minutes for only 2-3 hours total sleep daily. Learn benefits, risks, and why experts don't recommend this extreme polyphasic sleep schedule." />
+        <meta name="keywords" content="uberman sleep cycle, polyphasic sleep, extreme sleep schedule, uberman sleep pattern, 20 minute naps, sleep deprivation, alternative sleep, polyphasic sleep dangers" />
         <meta property="og:title" content="What Is the Uberman Sleep Cycle? Extreme Polyphasic Sleep Schedule" />
         <meta property="og:description" content="Complete guide to the extreme Uberman sleep cycle: 6-8 daily naps totaling just 2-3 hours of sleep. Learn the risks and why experts recommend normal sleep cycles." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://sleepcycle.io/blog/uberman-sleep-cycle" />
         <meta property="og:image" content="https://sleepcycle.io/blog-images/uberman-sleep-cycle.svg" />
+        <meta property="og:site_name" content="SleepCycle.io" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="What Is the Uberman Sleep Cycle? Complete Guide" />
         <meta name="twitter:description" content="Extreme polyphasic sleep: 6-8 naps of 20-30 minutes daily. Learn why experts don't recommend this risky sleep pattern." />
         <meta name="twitter:image" content="https://sleepcycle.io/blog-images/uberman-sleep-cycle.svg" />
         <meta name="author" content="SleepCycle.io Sleep Experts" />
         <meta name="article:published_time" content="2025-01-18T00:00:00Z" />
+        <meta name="article:modified_time" content="2025-01-20T00:00:00Z" />
         <meta name="article:section" content="Alternative Sleep" />
+        <meta name="article:tag" content="polyphasic sleep" />
+        <meta name="article:tag" content="uberman cycle" />
+        <meta name="article:tag" content="sleep health" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://sleepcycle.io/blog/uberman-sleep-cycle" />
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "What Is the Uberman Sleep Cycle? Extreme Polyphasic Sleep Schedule Guide 2025",
+          "description": "Uberman sleep cycle: 6-8 naps of 20-30 minutes for only 2-3 hours total sleep daily. Learn benefits, risks, and why experts don't recommend this extreme polyphasic sleep schedule.",
+          "author": {
+            "@type": "Organization",
+            "name": "SleepCycle.io Sleep Experts",
+            "url": "https://sleepcycle.io"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "SleepCycle.io",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://sleepcycle.io/logo.jpg"
+            }
+          },
+          "datePublished": "2025-01-18T00:00:00Z",
+          "dateModified": "2025-01-20T00:00:00Z",
+          "image": "https://sleepcycle.io/blog-images/uberman-sleep-cycle.svg",
+          "url": "https://sleepcycle.io/blog/uberman-sleep-cycle",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://sleepcycle.io/blog/uberman-sleep-cycle"
+          },
+          "articleSection": "Alternative Sleep",
+          "keywords": ["uberman sleep cycle", "polyphasic sleep", "extreme sleep schedule"],
+          "about": {
+            "@type": "Thing",
+            "name": "Uberman Sleep Cycle",
+            "description": "Extreme polyphasic sleep schedule with multiple short naps"
+          }
+        })}
+        </script>
       </head>
       <Header />
       <div className="min-h-screen bg-white">

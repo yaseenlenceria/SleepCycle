@@ -5,14 +5,8 @@ import { useEffect } from 'react';
 
 export function BlogPostHowManySleepCycles() {
   useEffect(() => {
-    document.title = "How Many Sleep Cycles Do You Need Per Night? Complete Guide 2025";
+    document.title = "★★★★★ How Many Sleep Cycles Do You Need Per Night? Complete Guide 2025";
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Adults need 4-6 sleep cycles per night (6-9 hours). Learn why 5 cycles (7.5 hours) is optimal and how to wake up refreshed by timing your sleep cycles correctly.');
-    }
-    
-    // Set additional meta tags
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
       if (meta) {
@@ -29,19 +23,26 @@ export function BlogPostHowManySleepCycles() {
       }
     };
     
-    setMeta('keywords', 'how many sleep cycles per night, adult sleep cycles, optimal sleep duration, sleep cycle calculator, 90 minute sleep cycles, deep sleep stages');
-    setMeta('og:title', 'How Many Sleep Cycles Do You Need Per Night? Complete Guide');
+    setMeta('description', '★★★★★ Adults need 4-6 sleep cycles per night (6-9 hours). Learn why 5 cycles (7.5 hours) is optimal and how to wake up refreshed by timing your sleep cycles correctly.');
+    setMeta('keywords', 'how many sleep cycles per night, adult sleep cycles, optimal sleep duration, sleep cycle calculator, 90 minute sleep cycles, deep sleep stages, sleep efficiency, sleep quality');
+    setMeta('og:title', 'How Many Sleep Cycles Do You Need Per Night? Complete Guide 2025');
     setMeta('og:description', 'Adults need 4-6 sleep cycles per night for optimal rest. Discover why 5 cycles (7.5 hours) is ideal and how to wake up refreshed.');
     setMeta('og:type', 'article');
     setMeta('og:url', 'https://sleepcycle.io/blog/how-many-sleep-cycles-per-night');
     setMeta('og:image', 'https://sleepcycle.io/blog-images/sleep-cycles-per-night.png');
+    setMeta('og:site_name', 'SleepCycle.io');
     setMeta('twitter:card', 'summary_large_image');
     setMeta('twitter:title', 'How Many Sleep Cycles Do You Need Per Night?');
     setMeta('twitter:description', 'Adults need 4-6 sleep cycles per night. Learn the optimal duration and timing for refreshing sleep.');
     setMeta('twitter:image', 'https://sleepcycle.io/blog-images/sleep-cycles-per-night.png');
     setMeta('author', 'SleepCycle.io Sleep Experts');
     setMeta('article:published_time', '2025-01-18T00:00:00Z');
+    setMeta('article:modified_time', '2025-01-20T00:00:00Z');
     setMeta('article:section', 'Sleep Science');
+    setMeta('article:tag', 'sleep cycles');
+    setMeta('article:tag', 'sleep duration');
+    setMeta('article:tag', 'sleep optimization');
+    setMeta('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
     
     const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
     canonicalLink.setAttribute('rel', 'canonical');
@@ -49,6 +50,50 @@ export function BlogPostHowManySleepCycles() {
     if (!document.querySelector('link[rel="canonical"]')) {
       document.head.appendChild(canonicalLink);
     }
+    
+    // Add structured data
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How Many Sleep Cycles Do You Need Per Night? Complete Guide 2025",
+      "description": "Adults need 4-6 sleep cycles per night (6-9 hours). Learn why 5 cycles (7.5 hours) is optimal and how to wake up refreshed.",
+      "author": {
+        "@type": "Organization",
+        "name": "SleepCycle.io Sleep Experts",
+        "url": "https://sleepcycle.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SleepCycle.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://sleepcycle.io/logo.jpg"
+        }
+      },
+      "datePublished": "2025-01-18T00:00:00Z",
+      "dateModified": "2025-01-20T00:00:00Z",
+      "image": "https://sleepcycle.io/blog-images/sleep-cycles-per-night.png",
+      "url": "https://sleepcycle.io/blog/how-many-sleep-cycles-per-night",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sleepcycle.io/blog/how-many-sleep-cycles-per-night"
+      },
+      "articleSection": "Sleep Science",
+      "keywords": ["how many sleep cycles per night", "adult sleep cycles", "optimal sleep duration"],
+      "about": {
+        "@type": "Thing",
+        "name": "Sleep Cycle Requirements",
+        "description": "Optimal number of sleep cycles needed per night for adults"
+      }
+    };
+    
+    let script = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(structuredData);
   }, []);
 
   return (

@@ -6,22 +6,64 @@ export function BlogPostSleepStages() {
   return (
     <>
       <head>
-        <title>Sleep Cycle Stages: Complete 2025 Guide to 4 Stages of Sleep (NREM & REM)</title>
-        <meta name="description" content="Master the 4 sleep cycle stages: Light Sleep (Stage 1&2), Deep Sleep (Stage 3), and REM Sleep. Learn duration, benefits, and how to optimize each stage for better rest and health." />
-        <meta name="keywords" content="sleep stages, sleep cycle stages, REM sleep, NREM sleep, deep sleep, light sleep, sleep phase, sleep science, sleep quality" />
+        <title>★★★★★ Sleep Cycle Stages: Complete 2025 Guide to 4 Stages of Sleep (NREM & REM)</title>
+        <meta name="description" content="★★★★★ Master the 4 sleep cycle stages: Light Sleep (Stage 1&2), Deep Sleep (Stage 3), and REM Sleep. Learn duration, benefits, and how to optimize each stage for better rest and health." />
+        <meta name="keywords" content="sleep stages, sleep cycle stages, REM sleep, NREM sleep, deep sleep, light sleep, sleep phase, sleep science, sleep quality, sleep stage optimization" />
         <meta property="og:title" content="Sleep Cycle Stages: Complete Guide to 4 Stages of Sleep" />
         <meta property="og:description" content="Master the 4 sleep cycle stages: Light Sleep, Deep Sleep, and REM. Learn duration, benefits, and optimization tips for each stage." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://sleepcycle.io/blog/sleep-stages-guide" />
         <meta property="og:image" content="https://sleepcycle.io/blog-images/sleep-stages.svg" />
+        <meta property="og:site_name" content="SleepCycle.io" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Sleep Cycle Stages: Complete Guide to Better Sleep" />
         <meta name="twitter:description" content="Master the 4 sleep cycle stages: Light Sleep, Deep Sleep, and REM. Expert guide to sleep stage optimization." />
         <meta name="twitter:image" content="https://sleepcycle.io/blog-images/sleep-stages.svg" />
         <meta name="author" content="SleepCycle.io Sleep Experts" />
         <meta name="article:published_time" content="2025-01-18T00:00:00Z" />
+        <meta name="article:modified_time" content="2025-01-20T00:00:00Z" />
         <meta name="article:section" content="Sleep Education" />
+        <meta name="article:tag" content="sleep stages" />
+        <meta name="article:tag" content="REM sleep" />
+        <meta name="article:tag" content="deep sleep" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://sleepcycle.io/blog/sleep-stages-guide" />
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Sleep Cycle Stages: Complete 2025 Guide to 4 Stages of Sleep (NREM & REM)",
+          "description": "Master the 4 sleep cycle stages: Light Sleep (Stage 1&2), Deep Sleep (Stage 3), and REM Sleep. Learn duration, benefits, and how to optimize each stage.",
+          "author": {
+            "@type": "Organization",
+            "name": "SleepCycle.io Sleep Experts",
+            "url": "https://sleepcycle.io"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "SleepCycle.io",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://sleepcycle.io/logo.jpg"
+            }
+          },
+          "datePublished": "2025-01-18T00:00:00Z",
+          "dateModified": "2025-01-20T00:00:00Z",
+          "image": "https://sleepcycle.io/blog-images/sleep-stages.svg",
+          "url": "https://sleepcycle.io/blog/sleep-stages-guide",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://sleepcycle.io/blog/sleep-stages-guide"
+          },
+          "articleSection": "Sleep Education",
+          "keywords": ["sleep stages", "REM sleep", "NREM sleep", "deep sleep", "light sleep"],
+          "about": {
+            "@type": "Thing",
+            "name": "Sleep Cycle Stages",
+            "description": "The different phases of sleep including NREM and REM stages"
+          }
+        })}
+        </script>
       </head>
       <Header />
       <div className="min-h-screen bg-white">

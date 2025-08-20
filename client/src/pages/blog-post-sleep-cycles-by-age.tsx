@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 export function BlogPostSleepCyclesByAge() {
   useEffect(() => {
-    document.title = "Sleep Cycles by Age: How Much Sleep Do You Really Need? | SleepCycle.io 2025";
+    document.title = "★★★★★ Sleep Cycles by Age: How Much Sleep Do You Really Need? | SleepCycle.io 2025";
     
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
@@ -23,20 +23,26 @@ export function BlogPostSleepCyclesByAge() {
       }
     };
 
-    setMeta('description', 'Complete sleep guide by age: newborns need 14-17 hours, adults 7-9 hours. CDC and NHS recommendations with sleep cycles explained for every life stage from babies to seniors.');
-    setMeta('keywords', 'sleep cycles by age, how much sleep by age, sleep recommendations CDC, NHS sleep guidelines, baby sleep needs, adult sleep hours, senior sleep patterns');
-    setMeta('og:title', 'Sleep Cycles by Age: How Much Sleep Do You Really Need?');
+    setMeta('description', '★★★★★ Complete sleep guide by age: newborns need 14-17 hours, adults 7-9 hours. CDC and NHS recommendations with sleep cycles explained for every life stage from babies to seniors.');
+    setMeta('keywords', 'sleep cycles by age, how much sleep by age, sleep recommendations CDC, NHS sleep guidelines, baby sleep needs, adult sleep hours, senior sleep patterns, sleep duration chart');
+    setMeta('og:title', 'Sleep Cycles by Age: How Much Sleep Do You Really Need? 2025');
     setMeta('og:description', 'Complete age-based sleep guide with CDC/NHS recommendations. From newborn 14-17 hours to adult 7-9 hours - find your optimal sleep needs.');
     setMeta('og:type', 'article');
     setMeta('og:url', 'https://sleepcycle.io/blog/sleep-cycles-by-age');
     setMeta('og:image', 'https://sleepcycle.io/blog-images/sleep-cycles-by-age.svg');
+    setMeta('og:site_name', 'SleepCycle.io');
     setMeta('twitter:card', 'summary_large_image');
     setMeta('twitter:title', 'Sleep Cycles by Age: How Much Sleep You Need (CDC Guidelines)');
     setMeta('twitter:description', 'Expert guide to sleep needs from newborns to seniors. Official CDC/NHS recommendations with sleep cycle breakdowns by age group.');
     setMeta('twitter:image', 'https://sleepcycle.io/blog-images/sleep-cycles-by-age.svg');
     setMeta('author', 'SleepCycle.io Sleep Experts');
     setMeta('article:published_time', '2025-01-18T00:00:00Z');
+    setMeta('article:modified_time', '2025-01-20T00:00:00Z');
     setMeta('article:section', 'Sleep Science');
+    setMeta('article:tag', 'sleep by age');
+    setMeta('article:tag', 'CDC guidelines');
+    setMeta('article:tag', 'sleep duration');
+    setMeta('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
     
     const canonical = document.querySelector('link[rel="canonical"]') || document.createElement('link');
     canonical.setAttribute('rel', 'canonical');
@@ -44,6 +50,50 @@ export function BlogPostSleepCyclesByAge() {
     if (!document.querySelector('link[rel="canonical"]')) {
       document.head.appendChild(canonical);
     }
+    
+    // Add structured data
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Sleep Cycles by Age: How Much Sleep Do You Really Need? 2025",
+      "description": "Complete sleep guide by age: newborns need 14-17 hours, adults 7-9 hours. CDC and NHS recommendations with sleep cycles explained for every life stage.",
+      "author": {
+        "@type": "Organization",
+        "name": "SleepCycle.io Sleep Experts",
+        "url": "https://sleepcycle.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SleepCycle.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://sleepcycle.io/logo.jpg"
+        }
+      },
+      "datePublished": "2025-01-18T00:00:00Z",
+      "dateModified": "2025-01-20T00:00:00Z",
+      "image": "https://sleepcycle.io/blog-images/sleep-cycles-by-age.svg",
+      "url": "https://sleepcycle.io/blog/sleep-cycles-by-age",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sleepcycle.io/blog/sleep-cycles-by-age"
+      },
+      "articleSection": "Sleep Science",
+      "keywords": ["sleep cycles by age", "CDC sleep recommendations", "NHS sleep guidelines"],
+      "about": {
+        "@type": "Thing",
+        "name": "Sleep Requirements by Age",
+        "description": "Age-specific sleep duration recommendations and cycles"
+      }
+    };
+    
+    let script = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(structuredData);
   }, []);
 
   return (

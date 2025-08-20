@@ -6,22 +6,64 @@ export function BlogPostLaunch() {
   return (
     <>
       <head>
-        <title>SleepCycle.io Launches Worldwide: #1 AI Sleep Calculator with 10M+ Users</title>
-        <meta name="description" content="SleepCycle.io officially launches globally! Join 10M+ users using the world's most accurate AI-powered sleep cycle calculator. Free personalized health assessments and science-based sleep optimization." />
-        <meta name="keywords" content="SleepCycle.io launch, AI sleep calculator, sleep cycle calculator, sleep optimization platform, best sleep app, sleep health assessment" />
+        <title>★★★★★ SleepCycle.io Launches Worldwide: #1 AI Sleep Calculator with 10M+ Users</title>
+        <meta name="description" content="★★★★★ SleepCycle.io officially launches globally! Join 10M+ users using the world's most accurate AI-powered sleep cycle calculator. Free personalized health assessments and science-based sleep optimization." />
+        <meta name="keywords" content="SleepCycle.io launch, AI sleep calculator, sleep cycle calculator, sleep optimization platform, best sleep app, sleep health assessment, sleep technology, sleep research" />
         <meta property="og:title" content="SleepCycle.io Launches Worldwide: #1 AI Sleep Calculator" />
         <meta property="og:description" content="Join 10M+ users on the world's most accurate AI-powered sleep cycle calculator. Free personalized health assessments and science-based optimization." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://sleepcycle.io/blog/sleepcycle-worldwide-launch" />
         <meta property="og:image" content="https://sleepcycle.io/blog-images/company-launch.svg" />
+        <meta property="og:site_name" content="SleepCycle.io" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="SleepCycle.io Launches Worldwide: #1 AI Sleep Calculator" />
         <meta name="twitter:description" content="Join 10M+ users on the world's most trusted sleep optimization platform. AI-powered calculations and free health assessments." />
         <meta name="twitter:image" content="https://sleepcycle.io/blog-images/company-launch.svg" />
         <meta name="author" content="SleepCycle.io Team" />
         <meta name="article:published_time" content="2025-01-18T00:00:00Z" />
+        <meta name="article:modified_time" content="2025-01-20T00:00:00Z" />
         <meta name="article:section" content="Company News" />
+        <meta name="article:tag" content="sleep technology" />
+        <meta name="article:tag" content="AI sleep calculator" />
+        <meta name="article:tag" content="sleep optimization" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://sleepcycle.io/blog/sleepcycle-worldwide-launch" />
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "SleepCycle.io Launches Worldwide: #1 AI Sleep Calculator with 10M+ Users",
+          "description": "SleepCycle.io officially launches globally! Join 10M+ users using the world's most accurate AI-powered sleep cycle calculator.",
+          "author": {
+            "@type": "Organization",
+            "name": "SleepCycle.io Team",
+            "url": "https://sleepcycle.io"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "SleepCycle.io",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://sleepcycle.io/logo.jpg"
+            }
+          },
+          "datePublished": "2025-01-18T00:00:00Z",
+          "dateModified": "2025-01-20T00:00:00Z",
+          "image": "https://sleepcycle.io/blog-images/company-launch.svg",
+          "url": "https://sleepcycle.io/blog/sleepcycle-worldwide-launch",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://sleepcycle.io/blog/sleepcycle-worldwide-launch"
+          },
+          "articleSection": "Company News",
+          "keywords": ["SleepCycle.io launch", "AI sleep calculator", "sleep cycle calculator", "sleep optimization platform"],
+          "about": {
+            "@type": "Thing",
+            "name": "Sleep Cycle Calculator",
+            "description": "AI-powered sleep optimization platform"
+          }
+        })}
+        </script>
       </head>
       <Header />
       <div className="min-h-screen bg-white">
