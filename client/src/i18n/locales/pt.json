@@ -1,0 +1,174 @@
+{
+  "common": {
+    "loading": "Carregando...",
+    "calculate": "Calcular",
+    "reset": "Redefinir",
+    "back": "Voltar",
+    "next": "Próximo",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "yes": "Sim",
+    "no": "Não",
+    "hour": "Hora",
+    "minute": "Minuto",
+    "hours": "horas",
+    "minutes": "minutos",
+    "am": "AM",
+    "pm": "PM"
+  },
+  "navigation": {
+    "sleepCalculator": "Calculadora de Sono",
+    "babySleep": "Sono do Bebê",
+    "adultSleep": "Sono Adulto",
+    "sleepScience": "Ciência do Sono",
+    "blog": "Blog",
+    "about": "Sobre",
+    "contact": "Contato",
+    "help": "Ajuda"
+  },
+  "header": {
+    "title": "Plataforma de Otimização do Sono Mais Confiável do Mundo",
+    "rating": "Avaliado por mais de 10M+ usuários em todo o mundo"
+  },
+  "homepage": {
+    "title": "Calculadora de Sono #1: Calculadora de Ciclos de Sono de 90 Minutos por Idade",
+    "subtitle": "Avaliação de Saúde AI GRATUITA • Calcular: Quanto Dormi • Melhor Horário para Dormir e Acordar Cientificamente • 4+ Bilhões de Sessões de Sono Analisadas",
+    "trustBadges": {
+      "bestCalculator": "✓ Melhor Calculadora de Sono",
+      "ageGenderBased": "✓ Baseada em Idade e Gênero",
+      "freeSleepCycle": "✓ Tempo de Ciclo de Sono Gratuito"
+    },
+    "calculateButtons": {
+      "whenToSleep": "Quando devo ir dormir?",
+      "whenToWakeUp": "Quando devo acordar?",
+      "sleepNow": "Quero dormir agora"
+    },
+    "timeInput": {
+      "wakeUpTime": "Horário de acordar",
+      "bedTime": "Horário de dormir",
+      "sleepDuration": "Duração do sono"
+    }
+  },
+  "sleepCalculator": {
+    "title": "Calculadora de Ciclos de Sono",
+    "description": "Calcule seu horário ótimo para dormir e acordar baseado em ciclos de sono de 90 minutos",
+    "calculateBedtime": "Calcular Horário de Dormir",
+    "calculateWakeup": "Calcular Horário de Acordar",
+    "sleepNow": "Dormir Agora",
+    "results": {
+      "optimalBedtimes": "Horários Ótimos para Dormir",
+      "optimalWakeupTimes": "Horários Ótimos para Acordar",
+      "sleepCycles": "Ciclos de Sono",
+      "totalSleep": "Tempo Total de Sono",
+      "timeInBed": "Tempo na Cama"
+    }
+  },
+  "sleepResults": {
+    "bedtimeTitle": "Se você quer acordar às {{time}}, vá dormir às:",
+    "wakeupTitle": "Se você for dormir às {{time}}, acorde às:",
+    "sleepNowTitle": "Se você dormir agora, acorde às:",
+    "cycles": "{{count}} ciclo",
+    "cycles_plural": "{{count}} ciclos",
+    "hoursOfSleep": "{{hours}} horas de sono"
+  },
+  "ageCalculator": {
+    "title": "Calculadora de Sono Específica por Idade",
+    "description": "Obtenha recomendações personalizadas de sono baseadas na sua idade e estilo de vida",
+    "ageInput": "Sua Idade",
+    "genderInput": "Gênero",
+    "male": "Masculino",
+    "female": "Feminino",
+    "other": "Outro"
+  },
+  "babySleep": {
+    "title": "Calculadora de Sono do Bebê",
+    "newbornTitle": "Sono do Recém-nascido (0-3 meses)",
+    "infantTitle": "Sono do Bebê (4-11 meses)",
+    "toddlerTitle": "Sono da Criança (1-3 anos)",
+    "babyAge": "Idade do Bebê",
+    "weeks": "semanas",
+    "months": "meses",
+    "years": "anos"
+  },
+  "healthAssessment": {
+    "title": "Avaliação de Saúde AI GRATUITA",
+    "description": "Obtenha recomendações personalizadas de sono baseadas no seu perfil de saúde",
+    "questions": {
+      "age": "Qual é a sua idade?",
+      "gender": "Qual é o seu gênero?",
+      "sleepIssues": "Você tem problemas de sono?",
+      "lifestyle": "Como você descreveria seu estilo de vida?",
+      "bedtime": "A que horas você costuma ir dormir?",
+      "wakeupTime": "A que horas você costuma acordar?"
+    },
+    "recommendations": {
+      "title": "Suas Recomendações Personalizadas de Sono",
+      "optimalBedtime": "Horário Ótimo para Dormir",
+      "optimalWakeup": "Horário Ótimo para Acordar",
+      "sleepDuration": "Duração de Sono Recomendada",
+      "tips": "Dicas Personalizadas"
+    }
+  },
+  "sleepScience": {
+    "title": "Ciência e Educação do Sono",
+    "sleepCycles": "Ciclos de Sono",
+    "remSleep": "Sono REM",
+    "deepSleep": "Sono Profundo",
+    "sleepStages": "Estágios do Sono",
+    "circadianRhythm": "Ritmo Circadiano"
+  },
+  "blog": {
+    "title": "Blog e Pesquisa sobre Sono",
+    "latestPosts": "Posts Recentes",
+    "categories": {
+      "sleepScience": "Ciência do Sono",
+      "babySleep": "Sono do Bebê",
+      "sleepDisorders": "Distúrbios do Sono",
+      "sleepTips": "Dicas de Sono"
+    }
+  },
+  "contact": {
+    "title": "Contate-nos",
+    "description": "Entre em contato com nossos especialistas em sono",
+    "name": "Nome",
+    "email": "Email",
+    "subject": "Assunto",
+    "message": "Mensagem",
+    "send": "Enviar Mensagem"
+  },
+  "footer": {
+    "tagline": "Melhor Sono, Melhor Vida",
+    "quickLinks": "Links Rápidos",
+    "sleepTools": "Ferramentas de Sono",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Serviço",
+    "copyright": "© {{year}} SleepCycle.io. Todos os direitos reservados."
+  },
+  "seo": {
+    "defaultTitle": "Calculadora de Ciclos de Sono - Otimize seu Sono com Ciência",
+    "defaultDescription": "Calculadora de sono #1 do mundo com avaliação de saúde AI. Calcule horários ótimos para dormir e acordar usando ciclos de sono de 90 minutos. Otimização gratuita do sono para todas as idades.",
+    "keywords": "calculadora de sono, ciclo de sono, calculadora horário dormir, horário acordar, otimização sono, ciência sono"
+  },
+  "errors": {
+    "pageNotFound": "Página Não Encontrada",
+    "somethingWentWrong": "Algo deu errado",
+    "tryAgain": "Tentar Novamente",
+    "backToHome": "Voltar ao Início"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語",
+    "pt": "Português",
+    "it": "Italiano",
+    "ru": "Русский",
+    "ar": "العربية"
+  }
+}

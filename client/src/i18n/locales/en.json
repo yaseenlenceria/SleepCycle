@@ -1,0 +1,174 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "calculate": "Calculate",
+    "reset": "Reset",
+    "back": "Back",
+    "next": "Next",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "yes": "Yes",
+    "no": "No",
+    "hour": "Hour",
+    "minute": "Minute",
+    "hours": "hours",
+    "minutes": "minutes",
+    "am": "AM",
+    "pm": "PM"
+  },
+  "navigation": {
+    "sleepCalculator": "Sleep Calculator",
+    "babySleep": "Baby Sleep",
+    "adultSleep": "Adult Sleep",
+    "sleepScience": "Sleep Science",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "help": "Help"
+  },
+  "header": {
+    "title": "World's Most Trusted Sleep Optimization Platform",
+    "rating": "Rated by 10M+ users worldwide"
+  },
+  "homepage": {
+    "title": "#1 Sleep Calculator: 90-Minute Sleep Cycle Calculator by Age",
+    "subtitle": "FREE AI Health Assessment • Calculate: How Much Sleep Did I Get • Scientifically Best Bedtime & Wake Time • 4+ Billion Sleep Sessions Analyzed",
+    "trustBadges": {
+      "bestCalculator": "✓ Best Sleep Calculator",
+      "ageGenderBased": "✓ Age & Gender Based",
+      "freeSleepCycle": "✓ Free Sleep Cycle Time"
+    },
+    "calculateButtons": {
+      "whenToSleep": "When should I go to sleep?",
+      "whenToWakeUp": "When should I wake up?",
+      "sleepNow": "I want to sleep now"
+    },
+    "timeInput": {
+      "wakeUpTime": "Wake up time",
+      "bedTime": "Bed time",
+      "sleepDuration": "Sleep duration"
+    }
+  },
+  "sleepCalculator": {
+    "title": "Sleep Cycle Calculator",
+    "description": "Calculate your optimal bedtime and wake-up time based on 90-minute sleep cycles",
+    "calculateBedtime": "Calculate Bedtime",
+    "calculateWakeup": "Calculate Wake Time",
+    "sleepNow": "Sleep Now",
+    "results": {
+      "optimalBedtimes": "Optimal Bedtimes",
+      "optimalWakeupTimes": "Optimal Wake-up Times",
+      "sleepCycles": "Sleep Cycles",
+      "totalSleep": "Total Sleep Time",
+      "timeInBed": "Time in Bed"
+    }
+  },
+  "sleepResults": {
+    "bedtimeTitle": "If you want to wake up at {{time}}, go to bed at:",
+    "wakeupTitle": "If you go to bed at {{time}}, wake up at:",
+    "sleepNowTitle": "If you sleep now, wake up at:",
+    "cycles": "{{count}} cycle",
+    "cycles_plural": "{{count}} cycles",
+    "hoursOfSleep": "{{hours}} hours of sleep"
+  },
+  "ageCalculator": {
+    "title": "Age-Specific Sleep Calculator",
+    "description": "Get personalized sleep recommendations based on your age and lifestyle",
+    "ageInput": "Your Age",
+    "genderInput": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other"
+  },
+  "babySleep": {
+    "title": "Baby Sleep Calculator",
+    "newbornTitle": "Newborn Sleep (0-3 months)",
+    "infantTitle": "Infant Sleep (4-11 months)",
+    "toddlerTitle": "Toddler Sleep (1-3 years)",
+    "babyAge": "Baby's Age",
+    "weeks": "weeks",
+    "months": "months",
+    "years": "years"
+  },
+  "healthAssessment": {
+    "title": "FREE AI Health Assessment",
+    "description": "Get personalized sleep recommendations based on your health profile",
+    "questions": {
+      "age": "What is your age?",
+      "gender": "What is your gender?",
+      "sleepIssues": "Do you have any sleep issues?",
+      "lifestyle": "How would you describe your lifestyle?",
+      "bedtime": "What time do you usually go to bed?",
+      "wakeupTime": "What time do you usually wake up?"
+    },
+    "recommendations": {
+      "title": "Your Personalized Sleep Recommendations",
+      "optimalBedtime": "Optimal Bedtime",
+      "optimalWakeup": "Optimal Wake-up Time",
+      "sleepDuration": "Recommended Sleep Duration",
+      "tips": "Personalized Tips"
+    }
+  },
+  "sleepScience": {
+    "title": "Sleep Science & Education",
+    "sleepCycles": "Sleep Cycles",
+    "remSleep": "REM Sleep",
+    "deepSleep": "Deep Sleep",
+    "sleepStages": "Sleep Stages",
+    "circadianRhythm": "Circadian Rhythm"
+  },
+  "blog": {
+    "title": "Sleep Blog & Research",
+    "latestPosts": "Latest Posts",
+    "categories": {
+      "sleepScience": "Sleep Science",
+      "babySleep": "Baby Sleep",
+      "sleepDisorders": "Sleep Disorders",
+      "sleepTips": "Sleep Tips"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our sleep experts",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message"
+  },
+  "footer": {
+    "tagline": "Better Sleep, Better Life",
+    "quickLinks": "Quick Links",
+    "sleepTools": "Sleep Tools",
+    "resources": "Resources",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "© {{year}} SleepCycle.io. All rights reserved."
+  },
+  "seo": {
+    "defaultTitle": "Sleep Cycle Calculator - Optimize Your Sleep with Science",
+    "defaultDescription": "World's #1 sleep calculator with AI health assessment. Calculate optimal bedtime & wake-up times using 90-minute sleep cycles. Free sleep optimization for all ages.",
+    "keywords": "sleep calculator, sleep cycle, bedtime calculator, wake up time, sleep optimization, sleep science"
+  },
+  "errors": {
+    "pageNotFound": "Page Not Found",
+    "somethingWentWrong": "Something went wrong",
+    "tryAgain": "Try Again",
+    "backToHome": "Back to Home"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語",
+    "pt": "Português",
+    "it": "Italiano",
+    "ru": "Русский",
+    "ar": "العربية"
+  }
+}

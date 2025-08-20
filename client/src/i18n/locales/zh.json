@@ -1,0 +1,174 @@
+{
+  "common": {
+    "loading": "加载中...",
+    "calculate": "计算",
+    "reset": "重置",
+    "back": "返回",
+    "next": "下一步",
+    "cancel": "取消",
+    "save": "保存",
+    "edit": "编辑",
+    "delete": "删除",
+    "yes": "是",
+    "no": "否",
+    "hour": "小时",
+    "minute": "分钟",
+    "hours": "小时",
+    "minutes": "分钟",
+    "am": "上午",
+    "pm": "下午"
+  },
+  "navigation": {
+    "sleepCalculator": "睡眠计算器",
+    "babySleep": "婴儿睡眠",
+    "adultSleep": "成人睡眠",
+    "sleepScience": "睡眠科学",
+    "blog": "博客",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "help": "帮助"
+  },
+  "header": {
+    "title": "全球最值得信赖的睡眠优化平台",
+    "rating": "全球超过1000万用户评价"
+  },
+  "homepage": {
+    "title": "#1睡眠计算器：按年龄分类的90分钟睡眠周期计算器",
+    "subtitle": "免费AI健康评估 • 计算：我睡了多少 • 科学最佳就寝和起床时间 • 分析超过40亿次睡眠会话",
+    "trustBadges": {
+      "bestCalculator": "✓ 最佳睡眠计算器",
+      "ageGenderBased": "✓ 基于年龄和性别",
+      "freeSleepCycle": "✓ 免费睡眠周期时间"
+    },
+    "calculateButtons": {
+      "whenToSleep": "我应该什么时候睡觉？",
+      "whenToWakeUp": "我应该什么时候起床？",
+      "sleepNow": "我现在想睡觉"
+    },
+    "timeInput": {
+      "wakeUpTime": "起床时间",
+      "bedTime": "就寝时间",
+      "sleepDuration": "睡眠时长"
+    }
+  },
+  "sleepCalculator": {
+    "title": "睡眠周期计算器",
+    "description": "基于90分钟睡眠周期计算您的最佳就寝和起床时间",
+    "calculateBedtime": "计算就寝时间",
+    "calculateWakeup": "计算起床时间",
+    "sleepNow": "现在睡觉",
+    "results": {
+      "optimalBedtimes": "最佳就寝时间",
+      "optimalWakeupTimes": "最佳起床时间",
+      "sleepCycles": "睡眠周期",
+      "totalSleep": "总睡眠时间",
+      "timeInBed": "在床时间"
+    }
+  },
+  "sleepResults": {
+    "bedtimeTitle": "如果您想在{{time}}起床，请在以下时间就寝：",
+    "wakeupTitle": "如果您在{{time}}就寝，请在以下时间起床：",
+    "sleepNowTitle": "如果您现在睡觉，请在以下时间起床：",
+    "cycles": "{{count}}个周期",
+    "cycles_plural": "{{count}}个周期",
+    "hoursOfSleep": "{{hours}}小时睡眠"
+  },
+  "ageCalculator": {
+    "title": "年龄特定睡眠计算器",
+    "description": "根据您的年龄和生活方式获得个性化睡眠建议",
+    "ageInput": "您的年龄",
+    "genderInput": "性别",
+    "male": "男性",
+    "female": "女性",
+    "other": "其他"
+  },
+  "babySleep": {
+    "title": "婴儿睡眠计算器",
+    "newbornTitle": "新生儿睡眠（0-3个月）",
+    "infantTitle": "婴儿睡眠（4-11个月）",
+    "toddlerTitle": "幼儿睡眠（1-3岁）",
+    "babyAge": "宝宝年龄",
+    "weeks": "周",
+    "months": "个月",
+    "years": "岁"
+  },
+  "healthAssessment": {
+    "title": "免费AI健康评估",
+    "description": "根据您的健康档案获得个性化睡眠建议",
+    "questions": {
+      "age": "您的年龄是？",
+      "gender": "您的性别是？",
+      "sleepIssues": "您有睡眠问题吗？",
+      "lifestyle": "您如何描述您的生活方式？",
+      "bedtime": "您通常什么时候睡觉？",
+      "wakeupTime": "您通常什么时候起床？"
+    },
+    "recommendations": {
+      "title": "您的个性化睡眠建议",
+      "optimalBedtime": "最佳就寝时间",
+      "optimalWakeup": "最佳起床时间",
+      "sleepDuration": "推荐睡眠时长",
+      "tips": "个性化建议"
+    }
+  },
+  "sleepScience": {
+    "title": "睡眠科学与教育",
+    "sleepCycles": "睡眠周期",
+    "remSleep": "快速眼动睡眠",
+    "deepSleep": "深度睡眠",
+    "sleepStages": "睡眠阶段",
+    "circadianRhythm": "昼夜节律"
+  },
+  "blog": {
+    "title": "睡眠博客与研究",
+    "latestPosts": "最新文章",
+    "categories": {
+      "sleepScience": "睡眠科学",
+      "babySleep": "婴儿睡眠",
+      "sleepDisorders": "睡眠障碍",
+      "sleepTips": "睡眠建议"
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "description": "联系我们的睡眠专家",
+    "name": "姓名",
+    "email": "邮箱",
+    "subject": "主题",
+    "message": "消息",
+    "send": "发送消息"
+  },
+  "footer": {
+    "tagline": "更好的睡眠，更好的生活",
+    "quickLinks": "快速链接",
+    "sleepTools": "睡眠工具",
+    "resources": "资源",
+    "legal": "法律",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "copyright": "© {{year}} SleepCycle.io. 保留所有权利。"
+  },
+  "seo": {
+    "defaultTitle": "睡眠周期计算器 - 用科学优化您的睡眠",
+    "defaultDescription": "全球#1睡眠计算器，配备AI健康评估。使用90分钟睡眠周期计算最佳就寝和起床时间。所有年龄段的免费睡眠优化。",
+    "keywords": "睡眠计算器, 睡眠周期, 就寝时间计算器, 起床时间, 睡眠优化, 睡眠科学"
+  },
+  "errors": {
+    "pageNotFound": "页面未找到",
+    "somethingWentWrong": "出现问题",
+    "tryAgain": "重试",
+    "backToHome": "返回首页"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語",
+    "pt": "Português",
+    "it": "Italiano",
+    "ru": "Русский",
+    "ar": "العربية"
+  }
+}

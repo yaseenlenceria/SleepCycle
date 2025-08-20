@@ -1,0 +1,174 @@
+{
+  "common": {
+    "loading": "読み込み中...",
+    "calculate": "計算",
+    "reset": "リセット",
+    "back": "戻る",
+    "next": "次へ",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "edit": "編集",
+    "delete": "削除",
+    "yes": "はい",
+    "no": "いいえ",
+    "hour": "時間",
+    "minute": "分",
+    "hours": "時間",
+    "minutes": "分",
+    "am": "午前",
+    "pm": "午後"
+  },
+  "navigation": {
+    "sleepCalculator": "睡眠計算機",
+    "babySleep": "赤ちゃんの睡眠",
+    "adultSleep": "大人の睡眠",
+    "sleepScience": "睡眠科学",
+    "blog": "ブログ",
+    "about": "私たちについて",
+    "contact": "お問い合わせ",
+    "help": "ヘルプ"
+  },
+  "header": {
+    "title": "世界で最も信頼される睡眠最適化プラットフォーム",
+    "rating": "世界中の1000万人以上のユーザーに評価されています"
+  },
+  "homepage": {
+    "title": "#1睡眠計算機：年齢別90分睡眠サイクル計算機",
+    "subtitle": "無料AI健康評価 • 計算：どれくらい眠ったか • 科学的に最適な就寝・起床時間 • 40億以上の睡眠セッションを分析",
+    "trustBadges": {
+      "bestCalculator": "✓ 最高の睡眠計算機",
+      "ageGenderBased": "✓ 年齢・性別ベース",
+      "freeSleepCycle": "✓ 無料睡眠サイクル時間"
+    },
+    "calculateButtons": {
+      "whenToSleep": "いつ寝るべきですか？",
+      "whenToWakeUp": "いつ起きるべきですか？",
+      "sleepNow": "今眠りたい"
+    },
+    "timeInput": {
+      "wakeUpTime": "起床時間",
+      "bedTime": "就寝時間",
+      "sleepDuration": "睡眠時間"
+    }
+  },
+  "sleepCalculator": {
+    "title": "睡眠サイクル計算機",
+    "description": "90分睡眠サイクルに基づいて最適な就寝・起床時間を計算します",
+    "calculateBedtime": "就寝時間を計算",
+    "calculateWakeup": "起床時間を計算",
+    "sleepNow": "今眠る",
+    "results": {
+      "optimalBedtimes": "最適な就寝時間",
+      "optimalWakeupTimes": "最適な起床時間",
+      "sleepCycles": "睡眠サイクル",
+      "totalSleep": "総睡眠時間",
+      "timeInBed": "ベッドにいる時間"
+    }
+  },
+  "sleepResults": {
+    "bedtimeTitle": "{{time}}に起きたい場合は、以下の時間に就寝してください：",
+    "wakeupTitle": "{{time}}に就寝する場合は、以下の時間に起床してください：",
+    "sleepNowTitle": "今眠る場合は、以下の時間に起床してください：",
+    "cycles": "{{count}}サイクル",
+    "cycles_plural": "{{count}}サイクル",
+    "hoursOfSleep": "{{hours}}時間の睡眠"
+  },
+  "ageCalculator": {
+    "title": "年齢別睡眠計算機",
+    "description": "年齢とライフスタイルに基づいたパーソナライズされた睡眠推奨を取得します",
+    "ageInput": "あなたの年齢",
+    "genderInput": "性別",
+    "male": "男性",
+    "female": "女性",
+    "other": "その他"
+  },
+  "babySleep": {
+    "title": "赤ちゃん睡眠計算機",
+    "newbornTitle": "新生児の睡眠（0-3か月）",
+    "infantTitle": "乳児の睡眠（4-11か月）",
+    "toddlerTitle": "幼児の睡眠（1-3歳）",
+    "babyAge": "赤ちゃんの年齢",
+    "weeks": "週",
+    "months": "か月",
+    "years": "歳"
+  },
+  "healthAssessment": {
+    "title": "無料AI健康評価",
+    "description": "健康プロフィールに基づいたパーソナライズされた睡眠推奨を取得します",
+    "questions": {
+      "age": "あなたの年齢は？",
+      "gender": "あなたの性別は？",
+      "sleepIssues": "睡眠の問題はありますか？",
+      "lifestyle": "あなたのライフスタイルをどう表現しますか？",
+      "bedtime": "普段何時に寝ますか？",
+      "wakeupTime": "普段何時に起きますか？"
+    },
+    "recommendations": {
+      "title": "あなたのパーソナライズされた睡眠推奨",
+      "optimalBedtime": "最適な就寝時間",
+      "optimalWakeup": "最適な起床時間",
+      "sleepDuration": "推奨睡眠時間",
+      "tips": "パーソナライズされたヒント"
+    }
+  },
+  "sleepScience": {
+    "title": "睡眠科学と教育",
+    "sleepCycles": "睡眠サイクル",
+    "remSleep": "レム睡眠",
+    "deepSleep": "深い眠り",
+    "sleepStages": "睡眠段階",
+    "circadianRhythm": "概日リズム"
+  },
+  "blog": {
+    "title": "睡眠ブログと研究",
+    "latestPosts": "最新の投稿",
+    "categories": {
+      "sleepScience": "睡眠科学",
+      "babySleep": "赤ちゃんの睡眠",
+      "sleepDisorders": "睡眠障害",
+      "sleepTips": "睡眠のヒント"
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "睡眠専門家にご連絡ください",
+    "name": "名前",
+    "email": "メール",
+    "subject": "件名",
+    "message": "メッセージ",
+    "send": "メッセージを送信"
+  },
+  "footer": {
+    "tagline": "より良い睡眠、より良い人生",
+    "quickLinks": "クイックリンク",
+    "sleepTools": "睡眠ツール",
+    "resources": "リソース",
+    "legal": "法的",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約",
+    "copyright": "© {{year}} SleepCycle.io. 無断転載を禁じます。"
+  },
+  "seo": {
+    "defaultTitle": "睡眠サイクル計算機 - 科学で睡眠を最適化",
+    "defaultDescription": "AI健康評価付きの世界#1睡眠計算機。90分睡眠サイクルを使用して最適な就寝・起床時間を計算。全年齢向けの無料睡眠最適化。",
+    "keywords": "睡眠計算機, 睡眠サイクル, 就寝時間計算機, 起床時間, 睡眠最適化, 睡眠科学"
+  },
+  "errors": {
+    "pageNotFound": "ページが見つかりません",
+    "somethingWentWrong": "何かが間違っています",
+    "tryAgain": "再試行",
+    "backToHome": "ホームに戻る"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文",
+    "ja": "日本語",
+    "pt": "Português",
+    "it": "Italiano",
+    "ru": "Русский",
+    "ar": "العربية"
+  }
+}
