@@ -1,19 +1,83 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calculator, Clock, TrendingUp, Award } from 'lucide-react';
-import { UltraSimpleHomepage } from '@/components/ultra-simple-homepage';
+import { Calculator, Clock, TrendingUp, Award, BarChart3, Brain } from 'lucide-react';
+import { Link } from 'wouter';
 
 export default function HowMuchSleepDidIGetCalculatorPage() {
+  const [bedHour, setBedHour] = useState('11');
+  const [bedMinute, setBedMinute] = useState('00');
+  const [bedPeriod, setBedPeriod] = useState('PM');
+  const [wakeHour, setWakeHour] = useState('7');
+  const [wakeMinute, setWakeMinute] = useState('00');
+  const [wakePeriod, setWakePeriod] = useState('AM');
+  const [results, setResults] = useState<any>(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "★★★★★ How Much Sleep Did I Get Calculator - Track Sleep Hours by Age | FREE AI Assessment - Sleepcycle.io";
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', '★★★★★ #1 How Much Sleep Did I Get Calculator by age & gender. Track sleep hours, quality, and cycles. FREE AI health assessment! Calculate total sleep, deep sleep phases, and optimization tips.');
+    const setMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
+      if (meta) {
+        meta.setAttribute('content', content);
+      } else {
+        meta = document.createElement('meta');
+        if (name.startsWith('og:') || name.startsWith('twitter:')) {
+          meta.setAttribute('property', name);
+        } else {
+          meta.setAttribute('name', name);
+        }
+        meta.setAttribute('content', content);
+        document.head.appendChild(meta);
+      }
+    };
+
+    setMeta('description', '★★★★★ #1 How Much Sleep Did I Get Calculator by age & gender. Track sleep hours, quality, and cycles. FREE AI health assessment! Calculate total sleep, deep sleep phases, and optimization tips.');
+    setMeta('keywords', 'how much sleep did I get calculator, sleep hours calculator, sleep duration tracker, sleep cycle calculator, sleep quality analysis, sleep tracker');
+    setMeta('og:title', 'How Much Sleep Did I Get Calculator | Track Sleep Hours & Quality');
+    setMeta('og:description', 'Calculate exactly how much sleep you got with our advanced sleep tracking calculator. Analyze sleep cycles, quality, and get personalized recommendations.');
+    setMeta('og:type', 'website');
+    setMeta('og:url', 'https://sleepcycle.io/how-much-sleep-did-i-get-calculator');
+    setMeta('og:image', 'https://sleepcycle.io/logo.jpg');
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', 'How Much Sleep Did I Get Calculator');
+    setMeta('twitter:description', 'Track and analyze your sleep duration with our comprehensive sleep calculator.');
+    setMeta('twitter:image', 'https://sleepcycle.io/logo.jpg');
+    
+    // Set canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
     }
+    canonical.setAttribute('href', 'https://sleepcycle.io/how-much-sleep-did-i-get-calculator');
+    
+    // Add Sleep Tracker schema
+    const trackerSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "How Much Sleep Did I Get Calculator",
+      "description": "Track and analyze your sleep duration, cycles, and quality with our advanced sleep calculator",
+      "url": "https://sleepcycle.io/how-much-sleep-did-i-get-calculator",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    };
+    
+    let script = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(trackerSchema);
   }, []);
 
   return (
@@ -39,7 +103,96 @@ export default function HowMuchSleepDidIGetCalculatorPage() {
         </div>
 
         {/* Interactive Calculator */}
-        <UltraSimpleHomepage />
+        <div className="bg-white rounded-2xl shadow-xl p-8 mb-16">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Calculate Your Sleep Duration</h2>
+            <p className="text-gray-600">Enter your bedtime and wake-up time to analyze your sleep</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4">Bedtime</h3>
+              <div className="flex justify-center items-center space-x-2">
+                <select 
+                  value={bedHour} 
+                  onChange={(e) => setBedHour(e.target.value)}
+                  className="border rounded-lg px-3 py-2 text-lg"
+                >
+                  {Array.from({length: 12}, (_, i) => (
+                    <option key={i} value={String(i === 0 ? 12 : i).padStart(2, '0')}>
+                      {String(i === 0 ? 12 : i).padStart(2, '0')}
+                    </option>
+                  ))}
+                </select>
+                <span className="text-lg">:</span>
+                <select 
+                  value={bedMinute} 
+                  onChange={(e) => setBedMinute(e.target.value)}
+                  className="border rounded-lg px-3 py-2 text-lg"
+                >
+                  {Array.from({length: 12}, (_, i) => (
+                    <option key={i} value={String(i * 5).padStart(2, '0')}>
+                      {String(i * 5).padStart(2, '0')}
+                    </option>
+                  ))}
+                </select>
+                <select 
+                  value={bedPeriod} 
+                  onChange={(e) => setBedPeriod(e.target.value)}
+                  className="border rounded-lg px-3 py-2 text-lg"
+                >
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4">Wake-up Time</h3>
+              <div className="flex justify-center items-center space-x-2">
+                <select 
+                  value={wakeHour} 
+                  onChange={(e) => setWakeHour(e.target.value)}
+                  className="border rounded-lg px-3 py-2 text-lg"
+                >
+                  {Array.from({length: 12}, (_, i) => (
+                    <option key={i} value={String(i === 0 ? 12 : i).padStart(2, '0')}>
+                      {String(i === 0 ? 12 : i).padStart(2, '0')}
+                    </option>
+                  ))}
+                </select>
+                <span className="text-lg">:</span>
+                <select 
+                  value={wakeMinute} 
+                  onChange={(e) => setWakeMinute(e.target.value)}
+                  className="border rounded-lg px-3 py-2 text-lg"
+                >
+                  {Array.from({length: 12}, (_, i) => (
+                    <option key={i} value={String(i * 5).padStart(2, '0')}>
+                      {String(i * 5).padStart(2, '0')}
+                    </option>
+                  ))}
+                </select>
+                <select 
+                  value={wakePeriod} 
+                  onChange={(e) => setWakePeriod(e.target.value)}
+                  className="border rounded-lg px-3 py-2 text-lg"
+                >
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <Link href="/sleep-calculator?tab=tracker">
+              <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Calculate Sleep Duration
+              </button>
+            </Link>
+          </div>
+        </div>
 
         {/* Sleep Tracking Features */}
         <div className="mt-16 mb-12">

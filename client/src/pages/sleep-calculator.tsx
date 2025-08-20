@@ -355,7 +355,7 @@ export default function SleepCalculator() {
 
               <div className="text-center space-y-6">
                 <Button
-                  onClick={handleCalculateWakeup}
+                  onClick={() => handleCalculateWakeup()}
                   className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                   data-testid="button-calculate-wakeup"
                 >
@@ -367,7 +367,7 @@ export default function SleepCalculator() {
                 <div className="text-center">
                   <div className="text-lg font-semibold text-gray-700 mb-2">Or</div>
                   <Button
-                    onClick={handleSleepNow}
+                    onClick={() => handleSleepNow()}
                     variant="outline"
                     className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white border-0 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                     data-testid="button-sleep-now"

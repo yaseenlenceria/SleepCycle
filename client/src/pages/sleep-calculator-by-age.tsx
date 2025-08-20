@@ -33,10 +33,72 @@ export default function SleepCalculatorByAgePage() {
     window.scrollTo(0, 0);
     document.title = "★★★★★ Sleep Calculator by Age - FREE AI-Powered Age-Specific Sleep Optimization - Sleepcycle.io";
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', '★★★★★ Sleep Calculator by Age - FREE AI-powered sleep optimization for every age. From newborns to seniors, get personalized sleep schedules based on age-specific science. Trusted by millions worldwide.');
+    const setMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
+      if (meta) {
+        meta.setAttribute('content', content);
+      } else {
+        meta = document.createElement('meta');
+        if (name.startsWith('og:') || name.startsWith('twitter:')) {
+          meta.setAttribute('property', name);
+        } else {
+          meta.setAttribute('name', name);
+        }
+        meta.setAttribute('content', content);
+        document.head.appendChild(meta);
+      }
+    };
+
+    setMeta('description', '★★★★★ Sleep Calculator by Age - FREE AI-powered sleep optimization for every age. From newborns to seniors, get personalized sleep schedules based on age-specific science. Trusted by millions worldwide.');
+    setMeta('keywords', 'sleep calculator by age, age specific sleep calculator, newborn sleep calculator, toddler sleep schedule, adult sleep needs, senior sleep patterns, sleep by age');
+    setMeta('og:title', 'Sleep Calculator by Age | Personalized for Every Life Stage');
+    setMeta('og:description', 'Get age-specific sleep recommendations from newborns to seniors. AI-powered calculator with personalized schedules based on developmental sleep science.');
+    setMeta('og:type', 'website');
+    setMeta('og:url', 'https://sleepcycle.io/sleep-calculator-by-age');
+    setMeta('og:image', 'https://sleepcycle.io/logo.jpg');
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', 'Sleep Calculator by Age | Personalized Sleep Schedules');
+    setMeta('twitter:description', 'Age-specific sleep recommendations for optimal development and health at every life stage.');
+    setMeta('twitter:image', 'https://sleepcycle.io/logo.jpg');
+    
+    // Set canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
     }
+    canonical.setAttribute('href', 'https://sleepcycle.io/sleep-calculator-by-age');
+    
+    // Add age-specific calculator schema
+    const ageCalculatorSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Sleep Calculator by Age",
+      "description": "Age-specific sleep calculator providing personalized recommendations for every life stage from newborns to seniors",
+      "url": "https://sleepcycle.io/sleep-calculator-by-age",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Age-specific sleep recommendations",
+        "Personalized sleep schedules",
+        "Development-appropriate timing",
+        "Health risk assessments"
+      ]
+    };
+    
+    let script = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(ageCalculatorSchema);
   }, []);
 
   // Age-specific sleep recommendations

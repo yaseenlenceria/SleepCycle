@@ -7,12 +7,76 @@ import { useEffect } from 'react';
 export default function Contact() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Contact Support - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
+    document.title = "Contact Sleep Calculator Support | SleepCycle.io | 24/7 Expert Help";
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Contact Sleep Cycle customer support. Get help with the world\'s best sleep app using sound analysis, 4 billion sleep sessions, and 13 years of science.');
+    const setMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
+      if (meta) {
+        meta.setAttribute('content', content);
+      } else {
+        meta = document.createElement('meta');
+        if (name.startsWith('og:') || name.startsWith('twitter:')) {
+          meta.setAttribute('property', name);
+        } else {
+          meta.setAttribute('name', name);
+        }
+        meta.setAttribute('content', content);
+        document.head.appendChild(meta);
+      }
+    };
+
+    setMeta('description', 'Contact SleepCycle.io support for help with our free sleep cycle calculator. Expert assistance with bedtime calculations, sleep optimization, and technical issues. Response within 24 hours.');
+    setMeta('keywords', 'sleep calculator support, contact sleep cycle, sleep calculator help, SleepCycle.io support, bedtime calculator assistance');
+    setMeta('og:title', 'Contact Sleep Calculator Support | SleepCycle.io');
+    setMeta('og:description', 'Get expert help with our sleep cycle calculator. 24/7 support for all your sleep optimization needs.');
+    setMeta('og:type', 'website');
+    setMeta('og:url', 'https://sleepcycle.io/contact');
+    setMeta('og:image', 'https://sleepcycle.io/logo.jpg');
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', 'Contact Sleep Calculator Support');
+    setMeta('twitter:description', 'Expert help with our free sleep cycle calculator and optimization tools.');
+    setMeta('twitter:image', 'https://sleepcycle.io/logo.jpg');
+    
+    // Set canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
     }
+    canonical.setAttribute('href', 'https://sleepcycle.io/contact');
+    
+    // Add structured data for organization contact info
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "SleepCycle.io",
+        "url": "https://sleepcycle.io",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "support@sleepcycle.io",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Aspazijas bulvāris 20",
+          "addressLocality": "Rīga",
+          "postalCode": "LV-1050",
+          "addressCountry": "LV"
+        }
+      }
+    };
+    
+    let script = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(structuredData);
   }, []);
 
   return (
@@ -33,7 +97,7 @@ export default function Contact() {
 
           <div className="grid md:grid-cols-2 gap-12 mb-12">
             <div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Get in Touch</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">How to Contact Our Sleep Calculator Support Team</h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <Mail className="text-sleep-blue-600 mt-1" size={24} />
@@ -66,7 +130,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Quick Help Topics</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">Common Sleep Calculator Questions & Support Topics</h2>
               <div className="space-y-4">
                 <div className="bg-gradient-to-br from-sleep-blue-50 to-sleep-purple-50 rounded-lg p-4">
                   <h3 className="font-semibold text-gray-800 mb-2">Sleep Calculator Issues</h3>

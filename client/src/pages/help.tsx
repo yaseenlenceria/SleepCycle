@@ -7,12 +7,76 @@ import { useEffect } from 'react';
 export default function Help() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Help & FAQ - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
+    document.title = "Sleep Calculator Help & FAQ | Complete Guide | SleepCycle.io 2025";
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Get help with Sleep Cycle, the world\'s best sleep app. FAQ, guides & support using sound analysis, 4 billion sleep sessions, and 13 years of science.');
+    const setMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
+      if (meta) {
+        meta.setAttribute('content', content);
+      } else {
+        meta = document.createElement('meta');
+        if (name.startsWith('og:') || name.startsWith('twitter:')) {
+          meta.setAttribute('property', name);
+        } else {
+          meta.setAttribute('name', name);
+        }
+        meta.setAttribute('content', content);
+        document.head.appendChild(meta);
+      }
+    };
+
+    setMeta('description', 'Complete help guide for SleepCycle.io sleep calculator. FAQ, tutorials, and expert tips for optimal bedtime calculation, wake-up timing, nap planning, and sleep optimization.');
+    setMeta('keywords', 'sleep calculator help, sleep cycle FAQ, bedtime calculator guide, wake up calculator tutorial, nap calculator help, baby sleep calculator FAQ');
+    setMeta('og:title', 'Sleep Calculator Help & FAQ | Complete Guide');
+    setMeta('og:description', 'Expert help guide for using our sleep cycle calculators. Complete FAQ and tutorials for optimal sleep timing.');
+    setMeta('og:type', 'website');
+    setMeta('og:url', 'https://sleepcycle.io/help');
+    setMeta('og:image', 'https://sleepcycle.io/logo.jpg');
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', 'Sleep Calculator Help & FAQ');
+    setMeta('twitter:description', 'Complete guide and FAQ for our sleep cycle calculators and optimization tools.');
+    setMeta('twitter:image', 'https://sleepcycle.io/logo.jpg');
+    
+    // Set canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
     }
+    canonical.setAttribute('href', 'https://sleepcycle.io/help');
+    
+    // Add FAQ schema markup
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the sleep cycle calculator work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our sleep cycle calculator uses scientifically proven 90-minute sleep cycles to determine optimal bedtimes and wake-up times. It accounts for the average 15 minutes it takes to fall asleep and calculates 4-6 complete sleep cycles for optimal rest."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "What are 90-minute sleep cycles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sleep cycles are recurring stages of sleep that last approximately 90 minutes each. Each cycle includes light sleep, deep sleep, and REM sleep. Waking up at the end of a complete cycle helps you feel more refreshed and alert."
+          }
+        }
+      ]
+    };
+    
+    let script = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(faqSchema);
   }, []);
 
   return (
@@ -24,7 +88,7 @@ export default function Help() {
           <div className="text-center mb-12">
             <HelpCircle className="mx-auto mb-4 text-sleep-blue-600" size={48} />
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Help & FAQ
+              Sleep Calculator Help & FAQ Guide
             </h1>
             <p className="text-gray-600 max-w-3xl mx-auto text-lg">
               Everything you need to know about using our sleep cycle calculator and optimizing your sleep
@@ -33,7 +97,7 @@ export default function Help() {
 
           {/* Calculator Guide Section */}
           <div className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">How to Use Our Sleep Calculators</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">Complete Guide: How to Use Our Sleep Calculators for Optimal Rest</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-gradient-to-br from-sleep-blue-50 to-sleep-purple-50 rounded-xl p-6">
                 <Clock className="text-sleep-blue-600 mb-4" size={32} />

@@ -27,12 +27,43 @@ export default function SleepCyclesNewbornsPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "AI Sleep Calculator for Newborns - FREE Baby Sleep Assessment | Best Sleep Times for 0-3 Months";
+    document.title = "★★★★★ AI Sleep Calculator for Newborns (0-3 Months) - FREE Baby Sleep Assessment";
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'FREE AI sleep calculator for newborns 0-3 months. Get personalized baby sleep schedules, safe sleep guidance, and expert recommendations for healthy newborn sleep patterns.');
+    const setMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
+      if (meta) {
+        meta.setAttribute('content', content);
+      } else {
+        meta = document.createElement('meta');
+        if (name.startsWith('og:') || name.startsWith('twitter:')) {
+          meta.setAttribute('property', name);
+        } else {
+          meta.setAttribute('name', name);
+        }
+        meta.setAttribute('content', content);
+        document.head.appendChild(meta);
+      }
+    };
+
+    setMeta('description', '★★★★★ FREE AI sleep calculator for newborns 0-3 months. Get personalized baby sleep schedules, safe sleep guidance, and expert recommendations for healthy newborn sleep patterns.');
+    setMeta('keywords', 'newborn sleep calculator, baby sleep schedule 0-3 months, newborn sleep patterns, baby sleep tracker, safe sleep for newborns, newborn nap calculator');
+    setMeta('og:title', 'AI Sleep Calculator for Newborns (0-3 Months) | FREE Assessment');
+    setMeta('og:description', 'Personalized newborn sleep schedules with AI assessment. Safe sleep guidance for babies 0-3 months.');
+    setMeta('og:type', 'website');
+    setMeta('og:url', 'https://sleepcycle.io/sleep-cycles-newborns');
+    setMeta('og:image', 'https://sleepcycle.io/logo.jpg');
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', 'Newborn Sleep Calculator | 0-3 Months');
+    setMeta('twitter:description', 'AI-powered sleep schedules for newborns with expert guidance.');
+    setMeta('twitter:image', 'https://sleepcycle.io/logo.jpg');
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
     }
+    canonical.setAttribute('href', 'https://sleepcycle.io/sleep-cycles-newborns');
   }, []);
 
   const handleTimeChange = (newHour: string, newMinute: string, newPeriod: string) => {
@@ -149,7 +180,7 @@ export default function SleepCyclesNewbornsPage() {
                         times={bedtimes}
                         type="bedtime"
                         selectedTime={`${hour}:${minute} ${period}`}
-                        isLoading={isCalculating}
+                        isLoading={isCalculating === 'bedtime'}
                         babyAgeWeeks={babyAgeWeeks}
                       />
                       <div className="mt-4 text-center">
@@ -172,7 +203,7 @@ export default function SleepCyclesNewbornsPage() {
                         times={wakeupTimes}
                         type="nap-schedule"
                         selectedTime={`${hour}:${minute} ${period}`}
-                        isLoading={isCalculating}
+                        isLoading={isCalculating === 'nap'}
                         babyAgeWeeks={babyAgeWeeks}
                       />
                       <div className="mt-4 text-center">
@@ -195,7 +226,7 @@ export default function SleepCyclesNewbornsPage() {
                         times={sleepNowTimes}
                         type="sleepNow"
                         selectedTime={currentTime}
-                        isLoading={isCalculating}
+                        isLoading={isCalculating === 'sleepnow'}
                         babyAgeWeeks={babyAgeWeeks}
                       />
                       <div className="mt-4 text-center">
