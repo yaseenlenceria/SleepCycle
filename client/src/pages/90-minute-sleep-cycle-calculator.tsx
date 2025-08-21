@@ -93,13 +93,10 @@ export default function NinetyMinuteSleepCycleCalculatorPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <Header />
-      
       <main className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Hero Section with AI-Focused SEO Content */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            ★★★★★ Best 90-Minute Sleep Cycle Calculator Online with AI
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Best 90-Minute Sleep Cycle Calculator Online with AI</h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-6">
             <strong>FREE AI-Powered 90-Minute Sleep Cycle Optimization</strong> – Calculate your scientifically perfect bedtime and wake time based on 90-minute REM sleep cycles. AI-powered recommendations for optimal sleep scheduling. 10M+ users trust our AI sleep optimization technology.
           </p>
@@ -251,7 +248,6 @@ export default function NinetyMinuteSleepCycleCalculatorPage() {
           </p>
         </div>
       </main>
-      
       <Footer />
     </div>
   );
