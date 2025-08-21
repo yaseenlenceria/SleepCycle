@@ -100,20 +100,20 @@ export function Footer() {
           </div>
         </div>
 
-        {/* SEO Keywords Section */}
+        {/* Popular Sleep Calculator Searches - Linked */}
         <div className="bg-gray-800 rounded-xl p-6 mb-8">
           <h4 className="font-bold text-white mb-3 text-center">Popular Sleep Calculator Searches</h4>
           <div className="flex flex-wrap justify-center gap-2 text-xs">
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-full">sleep calculator</span>
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-full">90 minute sleep cycle calculator</span>
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-full">sleep cycle calculator age</span>
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-full">best sleep calculator by age</span>
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-full">how much sleep did i get</span>
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-full">scientifically best time to sleep</span>
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-full">nap calculator</span>
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-full">baby sleep calculator</span>
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-full">free sleep cycle calculator</span>
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-full">sleep cycle time</span>
+            <Link href="/" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">sleep calculator</Link>
+            <Link href="/90-minute-sleep-cycle-calculator" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">90 minute sleep cycle calculator</Link>
+            <Link href="/sleep-calculator-by-age" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">sleep cycle calculator age</Link>
+            <Link href="/sleep-calculator-by-age" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">best sleep calculator by age</Link>
+            <Link href="/how-much-sleep-did-i-get-calculator" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">how much sleep did i get</Link>
+            <Link href="/sleep-science" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">scientifically best time to sleep</Link>
+            <Link href="/sleep-cycles-naps" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">nap calculator</Link>
+            <Link href="/sleep-cycles-babies" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">baby sleep calculator</Link>
+            <Link href="/" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">free sleep cycle calculator</Link>
+            <Link href="/90-minute-sleep-cycle-calculator" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">sleep cycle time</Link>
           </div>
         </div>
 
