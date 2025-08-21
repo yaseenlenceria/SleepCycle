@@ -112,7 +112,7 @@ export default function SleepCalculatorByAgePage() {
         tips: 'Sleep when tired, safe sleep position, room sharing',
         bgColor: 'from-pink-100 to-pink-200',
         textColor: 'text-pink-700',
-        emoji: '👶',
+        emoji: '',
         description: 'Newborns have irregular sleep patterns with frequent waking for feeding.',
         healthBenefits: ['Rapid brain development', 'Growth hormone release', 'Immune system development'],
         risks: ['SIDS risk with insufficient sleep', 'Feeding difficulties', 'Developmental delays']
@@ -126,7 +126,7 @@ export default function SleepCalculatorByAgePage() {
         tips: 'Sleep training readiness, consistent routine, longer sleep stretches',
         bgColor: 'from-blue-100 to-blue-200',
         textColor: 'text-blue-700',
-        emoji: '🍼',
+        emoji: '',
         description: 'Sleep patterns begin to consolidate with longer nighttime sleep.',
         healthBenefits: ['Memory consolidation', 'Physical growth', 'Emotional regulation'],
         risks: ['Sleep regression periods', 'Overtiredness', 'Night waking habits']
@@ -140,7 +140,7 @@ export default function SleepCalculatorByAgePage() {
         tips: 'Transitioning from 2 naps to 1, consistent bedtime routine',
         bgColor: 'from-green-100 to-green-200',
         textColor: 'text-green-700',
-        emoji: '🧸',
+        emoji: '',
         description: 'Major sleep transitions as naps consolidate and independence grows.',
         healthBenefits: ['Language development', 'Motor skill enhancement', 'Behavioral regulation'],
         risks: ['Nap transition difficulties', 'Bedtime resistance', 'Night terrors']
@@ -154,7 +154,7 @@ export default function SleepCalculatorByAgePage() {
         tips: 'May still need quiet time, consistent sleep schedule',
         bgColor: 'from-purple-100 to-purple-200',
         textColor: 'text-purple-700',
-        emoji: '🎨',
+        emoji: '',
         description: 'Most children drop naps and consolidate to nighttime sleep only.',
         healthBenefits: ['Cognitive development', 'Attention span', 'Social skills'],
         risks: ['Difficulty falling asleep', 'Nightmares', 'Behavioral issues']
@@ -168,7 +168,7 @@ export default function SleepCalculatorByAgePage() {
         tips: 'Consistent bedtime crucial for school performance',
         bgColor: 'from-indigo-100 to-indigo-200',
         textColor: 'text-indigo-700',
-        emoji: '📚',
+        emoji: '',
         description: 'Sleep directly impacts academic performance and behavior.',
         healthBenefits: ['Learning consolidation', 'Academic performance', 'Growth spurts'],
         risks: ['Poor grades', 'ADHD-like symptoms', 'Mood problems']
@@ -182,7 +182,7 @@ export default function SleepCalculatorByAgePage() {
         tips: 'Natural circadian shift - biologically later bedtime',
         bgColor: 'from-orange-100 to-orange-200',
         textColor: 'text-orange-700',
-        emoji: '🎓',
+        emoji: '',
         description: 'Hormonal changes cause natural delay in sleep timing.',
         healthBenefits: ['Brain maturation', 'Emotional stability', 'Physical development'],
         risks: ['Depression risk', 'Poor academic performance', 'Risk-taking behavior']
@@ -196,7 +196,7 @@ export default function SleepCalculatorByAgePage() {
         tips: 'Peak sleep efficiency, establish good habits for life',
         bgColor: 'from-cyan-100 to-cyan-200',
         textColor: 'text-cyan-700',
-        emoji: '🎯',
+        emoji: '',
         description: 'Peak years for sleep efficiency and recovery.',
         healthBenefits: ['Peak performance', 'Stress management', 'Optimal recovery'],
         risks: ['Poor lifestyle habits', 'Stress-related insomnia', 'Academic/work impairment']
@@ -210,7 +210,7 @@ export default function SleepCalculatorByAgePage() {
         tips: 'Maintain consistent schedule despite life demands',
         bgColor: 'from-teal-100 to-teal-200',
         textColor: 'text-teal-700',
-        emoji: '💼',
+        emoji: '',
         description: 'Balance work, family, and sleep health during prime adult years.',
         healthBenefits: ['Career performance', 'Immune function', 'Mental health'],
         risks: ['Chronic disease risk', 'Mental health issues', 'Reduced productivity']
@@ -224,7 +224,7 @@ export default function SleepCalculatorByAgePage() {
         tips: 'Earlier bedtime natural, may need naps, lighter sleep',
         bgColor: 'from-amber-100 to-amber-200',
         textColor: 'text-amber-700',
-        emoji: '🌅',
+        emoji: '',
         description: 'Natural changes in sleep architecture with age.',
         healthBenefits: ['Cognitive preservation', 'Physical health', 'Quality of life'],
         risks: ['Increased disease risk', 'Cognitive decline', 'Fall risk']
@@ -288,38 +288,21 @@ export default function SleepCalculatorByAgePage() {
       <Header />
       
       <main className="container mx-auto px-4 py-8 max-w-6xl">
-        {/* Hero Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            ★★★★★ Sleep Calculator by Age
+        {/* Ultra-Minimal Hero */}
+        <div className="text-center mb-6">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
+            Sleep Calculator by Age
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-6">
-            <strong>The World's Most Accurate Age-Specific Sleep Calculator</strong> – Get personalized sleep schedules optimized for your exact age. Based on the latest sleep science research and trusted by millions worldwide.
+          <p className="text-sm text-gray-600 max-w-2xl mx-auto">
+            Get personalized sleep schedules optimized for your exact age
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 mb-8">
-            <span>👶 Newborn to Senior</span>
-            <span>🧬 Age-Based Science</span>
-            <span>🎯 Personalized Results</span>
-            <span>⚡ Instant Calculation</span>
-            <span>🆓 Always FREE</span>
-          </div>
         </div>
 
-        {/* Age-Specific Calculator */}
-        <Card className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl border-0 mb-8">
-          <CardHeader className="text-center pb-6">
-            <CardTitle className="text-2xl font-bold text-gray-800 flex items-center justify-center gap-3">
-              <Clock className="text-blue-600" size={28} />
-              Calculate Your Optimal Sleep by Age
-            </CardTitle>
-            <p className="text-gray-600 mt-2">
-              Enter your age and wake-up time to get personalized sleep recommendations
-            </p>
-          </CardHeader>
-          
-          <CardContent className="space-y-6">
-            {/* Age Input */}
-            <div className="text-center mb-6">
+        {/* Ultra-Minimal Calculator */}
+        <Card className="bg-white shadow-lg border-0 mb-8 max-w-2xl mx-auto">
+          <CardContent className="p-6 space-y-6">
+            {/* Age Input - Moved to TOP */}
+            <div className="text-center">
               <label className="block text-lg font-semibold text-gray-700 mb-3">
                 Your Age
               </label>
@@ -336,43 +319,39 @@ export default function SleepCalculatorByAgePage() {
                   data-testid="input-age"
                 />
               </div>
-              <p className="text-sm text-gray-500 mt-2">
-                Use decimals for babies (e.g., 0.5 for 6 months, 0.25 for 3 months)
+              <p className="text-xs text-gray-500 mt-2">
+                Use decimals for babies (e.g., 0.5 = 6 months)
               </p>
             </div>
 
-            {/* Current Age Recommendation Preview */}
-            <div className={`bg-gradient-to-r ${recommendation.bgColor} p-6 rounded-xl text-center`}>
-              <div className="text-4xl mb-2">{recommendation.emoji}</div>
-              <h3 className={`text-xl font-bold ${recommendation.textColor} mb-2`}>
+            {/* Simplified Age Preview */}
+            <div className="bg-gray-50 p-4 rounded-lg text-center">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
                 {recommendation.category}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-600">
                 <div>
-                  <strong>Sleep Duration:</strong><br />
-                  {recommendation.sleepHours}
+                  <strong>Sleep:</strong> {recommendation.sleepHours}
                 </div>
                 <div>
-                  <strong>Sleep Pattern:</strong><br />
-                  {recommendation.cycles}
+                  <strong>Pattern:</strong> {recommendation.cycles}
                 </div>
                 <div>
-                  <strong>Typical Bedtime:</strong><br />
-                  {recommendation.bedtime}
+                  <strong>Bedtime:</strong> {recommendation.bedtime}
                 </div>
               </div>
             </div>
 
             {/* Wake Time Input */}
-            <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Hour
-                </label>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-3 text-center">
+                What time do you want to wake up?
+              </label>
+              <div className="grid grid-cols-3 gap-3 max-w-sm mx-auto">
                 <select
                   value={wakeHour}
                   onChange={(e) => setWakeHour(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-md text-center text-lg font-semibold"
+                  className="p-3 border border-gray-300 rounded-md text-center font-semibold"
                   data-testid="select-wake-hour"
                 >
                   {Array.from({ length: 12 }, (_, i) => (
@@ -381,16 +360,11 @@ export default function SleepCalculatorByAgePage() {
                     </option>
                   ))}
                 </select>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Minute
-                </label>
+                
                 <select
                   value={wakeMinute}
                   onChange={(e) => setWakeMinute(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-md text-center text-lg font-semibold"
+                  className="p-3 border border-gray-300 rounded-md text-center font-semibold"
                   data-testid="select-wake-minute"
                 >
                   {Array.from({ length: 12 }, (_, i) => (
@@ -399,16 +373,11 @@ export default function SleepCalculatorByAgePage() {
                     </option>
                   ))}
                 </select>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  AM/PM
-                </label>
+                
                 <select
                   value={wakePeriod}
                   onChange={(e) => setWakePeriod(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-md text-center text-lg font-semibold"
+                  className="p-3 border border-gray-300 rounded-md text-center font-semibold"
                   data-testid="select-wake-period"
                 >
                   <option value="AM">AM</option>
@@ -420,11 +389,10 @@ export default function SleepCalculatorByAgePage() {
             <div className="text-center">
               <Button
                 onClick={calculateOptimalSleep}
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold"
                 data-testid="button-calculate-sleep"
               >
-                <Moon className="mr-2" size={24} />
-                Calculate My Optimal Sleep
+                Calculate Sleep Schedule
               </Button>
             </div>
           </CardContent>
