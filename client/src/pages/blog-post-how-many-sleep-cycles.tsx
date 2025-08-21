@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 export function BlogPostHowManySleepCycles() {
   useEffect(() => {
-    document.title = "★★★★★ How Many Sleep Cycles Do You Need Per Night? Complete Guide 2025";
+    document.title = "★★★★★ How Many Sleep Cycles Per Night: AI Calculator Guide 2025 | Best Sleep Online Calculator with AI";
     
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
@@ -23,19 +23,19 @@ export function BlogPostHowManySleepCycles() {
       }
     };
     
-    setMeta('description', '★★★★★ Adults need 4-6 sleep cycles per night (6-9 hours). Learn why 5 cycles (7.5 hours) is optimal and how to wake up refreshed by timing your sleep cycles correctly.');
-    setMeta('keywords', 'how many sleep cycles per night, adult sleep cycles, optimal sleep duration, sleep cycle calculator, 90 minute sleep cycles, deep sleep stages, sleep efficiency, sleep quality');
-    setMeta('og:title', 'How Many Sleep Cycles Do You Need Per Night? Complete Guide 2025');
-    setMeta('og:description', 'Adults need 4-6 sleep cycles per night for optimal rest. Discover why 5 cycles (7.5 hours) is ideal and how to wake up refreshed.');
+    setMeta('description', '★★★★★ AI sleep calculator reveals adults need 4-6 cycles per night (6-9 hours). Best Sleep Online Calculator with AI shows why 5 cycles (7.5 hours) is optimal for refreshed mornings!');
+    setMeta('keywords', 'AI sleep cycles per night calculator, best sleep online calculator with AI cycles, AI adult sleep cycles, AI optimal sleep duration, AI sleep cycle calculator, AI 90 minute sleep cycles, AI sleep efficiency');
+    setMeta('og:title', 'How Many Sleep Cycles Per Night: AI Calculator Guide | Best Sleep Online Calculator with AI');
+    setMeta('og:description', 'AI calculator reveals adults need 4-6 sleep cycles per night. Best Sleep Online Calculator with AI shows why 5 cycles (7.5 hours) is ideal!');
     setMeta('og:type', 'article');
     setMeta('og:url', 'https://sleepcycle.io/blog/how-many-sleep-cycles-per-night');
     setMeta('og:image', 'https://sleepcycle.io/blog-images/sleep-cycles-per-night.png');
     setMeta('og:site_name', 'SleepCycle.io');
     setMeta('twitter:card', 'summary_large_image');
-    setMeta('twitter:title', 'How Many Sleep Cycles Do You Need Per Night?');
-    setMeta('twitter:description', 'Adults need 4-6 sleep cycles per night. Learn the optimal duration and timing for refreshing sleep.');
+    setMeta('twitter:title', 'AI Sleep Cycles Calculator: How Many Per Night? | Best Sleep Online Calculator with AI');
+    setMeta('twitter:description', 'AI reveals adults need 4-6 sleep cycles per night. Best Sleep Online Calculator with AI optimizes duration for refreshing sleep!');
     setMeta('twitter:image', 'https://sleepcycle.io/blog-images/sleep-cycles-per-night.png');
-    setMeta('author', 'SleepCycle.io Sleep Experts');
+    setMeta('author', 'SleepCycle.io - Best Sleep Online Calculator with AI Experts');
     setMeta('article:published_time', '2025-01-18T00:00:00Z');
     setMeta('article:modified_time', '2025-01-20T00:00:00Z');
     setMeta('article:section', 'Sleep Science');

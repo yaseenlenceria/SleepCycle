@@ -6,7 +6,7 @@ import { Footer } from '@/components/footer';
 export function BlogPost2YearOldSleepCycle() {
   // Set SEO meta tags
   useEffect(() => {
-    document.title = "★★★★★ How Long Is a Sleep Cycle for a 2-Year-Old? | Complete Toddler Sleep Guide 2025";
+    document.title = "★★★★★ 2-Year-Old Sleep Cycle: AI Toddler Calculator 2025 | Best Sleep Online Calculator with AI";
     
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
@@ -24,19 +24,19 @@ export function BlogPost2YearOldSleepCycle() {
       }
     };
     
-    setMeta('description', '★★★★★ 2-year-old sleep cycles last 45-60 minutes. Learn how much sleep toddlers need (11-14 hours), sleep challenges, and expert tips for better toddler sleep patterns and development.');
-    setMeta('keywords', '2 year old sleep cycle, toddler sleep patterns, how much sleep toddler needs, toddler sleep schedule, 2 year old bedtime, toddler nap schedule, toddler sleep problems, sleep regression');
-    setMeta('og:title', 'How Long Is a Sleep Cycle for a 2-Year-Old? Complete Guide 2025');
-    setMeta('og:description', '2-year-old sleep cycles last 45-60 minutes. Expert guide on toddler sleep patterns, schedules, and development needs.');
+    setMeta('description', '★★★★★ AI toddler sleep calculator: 2-year-old cycles last 45-60 minutes, need 11-14 hours sleep. Best Sleep Online Calculator with AI provides expert tips for better toddler sleep patterns!');
+    setMeta('keywords', 'AI 2 year old sleep cycle calculator, best sleep online calculator with AI toddler, AI toddler sleep patterns, AI toddler sleep schedule, AI 2 year old bedtime calculator, AI toddler nap calculator');
+    setMeta('og:title', '2-Year-Old Sleep Cycle: AI Toddler Calculator | Best Sleep Online Calculator with AI');
+    setMeta('og:description', 'AI calculator: 2-year-old sleep cycles last 45-60 minutes. Best Sleep Online Calculator with AI provides expert toddler sleep optimization!');
     setMeta('og:type', 'article');
     setMeta('og:url', 'https://sleepcycle.io/blog/2-year-old-sleep-cycle');
     setMeta('og:image', 'https://sleepcycle.io/blog-images/2-year-old-sleep-cycle.png');
     setMeta('og:site_name', 'SleepCycle.io');
     setMeta('twitter:card', 'summary_large_image');
-    setMeta('twitter:title', 'How Long Is a Sleep Cycle for a 2-Year-Old?');
-    setMeta('twitter:description', '2-year-old sleep cycles last 45-60 minutes. Expert toddler sleep guide with schedules and tips.');
+    setMeta('twitter:title', 'AI 2-Year-Old Sleep Cycle Calculator | Best Sleep Online Calculator with AI');
+    setMeta('twitter:description', 'AI calculator: 2-year-old cycles last 45-60 minutes. Best Sleep Online Calculator with AI optimizes toddler sleep!');
     setMeta('twitter:image', 'https://sleepcycle.io/blog-images/2-year-old-sleep-cycle.png');
-    setMeta('author', 'SleepCycle.io Pediatric Sleep Experts');
+    setMeta('author', 'SleepCycle.io - Best Sleep Online Calculator with AI Pediatric Experts');
     setMeta('article:published_time', '2025-01-18T00:00:00Z');
     setMeta('article:modified_time', '2025-01-20T00:00:00Z');
     setMeta('article:section', 'Toddler Sleep Guide');

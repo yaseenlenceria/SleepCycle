@@ -6,19 +6,19 @@ export function BlogPostSleepCycleMyth() {
   return (
     <>
       <head>
-        <title>90-Minute Sleep Cycle Myth Debunked: What Science Really Says About Sleep Duration</title>
-        <meta name="description" content="MYTH BUSTED: Sleep cycles aren't always 90 minutes! Science reveals cycles range 70-120 minutes. Get the facts about sleep cycle duration and why individual variation matters more than the myth." />
-        <meta name="keywords" content="90 minute sleep cycle myth, sleep cycle myth debunked, sleep cycle duration, sleep science facts, sleep cycle variation, sleep research" />
-        <meta property="og:title" content="90-Minute Sleep Cycle Myth Debunked: What Science Really Says" />
-        <meta property="og:description" content="MYTH BUSTED: Sleep cycles aren't always 90 minutes! Science reveals the truth about sleep cycle duration and individual variation." />
+        <title>★★★★★ AI Debunks 90-Minute Sleep Cycle Myth: Real Science 2025 | Best Sleep Online Calculator with AI</title>
+        <meta name="description" content="★★★★★ AI MYTH BUSTER: Sleep cycles aren't always 90 minutes! Best Sleep Online Calculator with AI reveals cycles range 70-120 minutes. Get real science facts about individual sleep variation!" />
+        <meta name="keywords" content="AI 90 minute sleep cycle myth debunked, best sleep online calculator with AI myth buster, AI sleep cycle duration facts, AI sleep science research, AI sleep cycle variation calculator" />
+        <meta property="og:title" content="AI Debunks 90-Minute Sleep Cycle Myth | Best Sleep Online Calculator with AI" />
+        <meta property="og:description" content="AI MYTH BUSTER: Sleep cycles aren't always 90 minutes! Best Sleep Online Calculator with AI reveals real science about duration variation." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://sleepcycle.io/blog/sleep-cycle-myth" />
         <meta property="og:image" content="https://sleepcycle.io/blog-images/sleep-myth.svg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="90-Minute Sleep Cycle Myth Debunked by Science" />
-        <meta name="twitter:description" content="MYTH BUSTED: Sleep cycles aren't always 90 minutes! Get the science-backed facts about sleep cycle duration." />
+        <meta name="twitter:title" content="AI Debunks 90-Minute Sleep Cycle Myth | Best Sleep Online Calculator with AI" />
+        <meta name="twitter:description" content="AI MYTH BUSTER: Cycles aren't always 90 minutes! Best Sleep Online Calculator with AI reveals real science facts." />
         <meta name="twitter:image" content="https://sleepcycle.io/blog-images/sleep-myth.svg" />
-        <meta name="author" content="SleepCycle.io Sleep Experts" />
+        <meta name="author" content="SleepCycle.io - Best Sleep Online Calculator with AI Experts" />
         <meta name="article:published_time" content="2025-01-18T00:00:00Z" />
         <meta name="article:section" content="Sleep Science" />
         <link rel="canonical" href="https://sleepcycle.io/blog/sleep-cycle-myth" />

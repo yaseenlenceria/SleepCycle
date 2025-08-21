@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 export function BlogPostBestTimeSleepWakeUp() {
   useEffect(() => {
-    document.title = "The Best Time to Go to Sleep and Wake Up According to Science | SleepCycle.io";
+    document.title = "★★★★★ Best Time to Sleep & Wake Up: AI-Powered Calculator 2025 | Best Sleep Online Calculator with AI";
     
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
@@ -23,18 +23,18 @@ export function BlogPostBestTimeSleepWakeUp() {
       }
     };
 
-    setMeta('description', 'Discover the scientifically proven best bedtimes for 6 AM, 7 AM, and 8 AM wake times. Learn why 90-minute sleep cycles matter and how to wake up refreshed every morning.');
-    setMeta('keywords', 'best time to sleep, best time to wake up, sleep schedule, 90-minute sleep cycles, bedtime calculator, wake up refreshed');
-    setMeta('og:title', 'The Best Time to Go to Sleep and Wake Up According to Science');
-    setMeta('og:description', 'Science-backed bedtime recommendations for popular wake times. Learn the 90-minute cycle secret to waking up refreshed.');
+    setMeta('description', '★★★★★ AI-powered bedtime calculator reveals scientifically best sleep & wake times for 6 AM, 7 AM, 8 AM schedules. Best Sleep Online Calculator with AI optimizes your 90-minute cycles for refreshed mornings!');
+    setMeta('keywords', 'best sleep online calculator with AI, AI bedtime calculator, AI wake up time calculator, best time to sleep AI, AI sleep schedule optimizer, AI-powered 90-minute sleep cycles, AI sleep timing');
+    setMeta('og:title', 'Best Time to Sleep & Wake Up: AI-Powered Calculator | Best Sleep Online Calculator with AI');
+    setMeta('og:description', 'AI-powered bedtime calculator reveals optimal sleep & wake times. Best Sleep Online Calculator with AI optimizes your schedule for perfect mornings!');
     setMeta('og:type', 'article');
     setMeta('og:url', 'https://sleepcycle.io/blog/best-time-sleep-wake-up');
     setMeta('og:image', 'https://sleepcycle.io/blog-images/best-time-sleep-wake-up.svg');
     setMeta('twitter:card', 'summary_large_image');
-    setMeta('twitter:title', 'Best Time to Sleep and Wake Up According to Science');
-    setMeta('twitter:description', 'Science-backed bedtime guide for 6 AM, 7 AM, 8 AM wake times. Master 90-minute cycles for better mornings.');
+    setMeta('twitter:title', 'AI-Powered Sleep & Wake Time Calculator | Best Sleep Online Calculator with AI');
+    setMeta('twitter:description', 'AI-powered calculator reveals optimal bedtime for 6 AM, 7 AM, 8 AM wake times. Best Sleep Online Calculator with AI optimizes your rest!');
     setMeta('twitter:image', 'https://sleepcycle.io/blog-images/best-time-sleep-wake-up.svg');
-    setMeta('author', 'SleepCycle.io Sleep Experts');
+    setMeta('author', 'SleepCycle.io - Best Sleep Online Calculator with AI Experts');
     setMeta('article:published_time', '2025-01-18T00:00:00Z');
     setMeta('article:section', 'Sleep Optimization');
     
