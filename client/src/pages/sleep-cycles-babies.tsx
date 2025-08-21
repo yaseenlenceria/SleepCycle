@@ -50,13 +50,10 @@ export default function SleepCyclesBabiesPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <Header />
-      
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Hero Section with AI-Focused Content */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            ★★★★★ Best Baby Sleep Calculator Online with AI
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Best Baby Sleep Calculator Online with AI</h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
             <strong>FREE AI-Powered Baby Sleep Optimization</strong> – Get personalized baby & toddler sleep schedules with AI recommendations. Science-backed, AI-driven advice that adapts to your baby's unique needs from 0-12 months. 5M+ parents trust our AI for better baby sleep!
           </p>
@@ -276,7 +273,6 @@ export default function SleepCyclesBabiesPage() {
           </div>
         </div>
       </main>
-      
       <Footer />
     </div>
   );
