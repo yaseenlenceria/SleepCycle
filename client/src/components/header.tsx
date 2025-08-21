@@ -87,6 +87,12 @@ export function Header() {
                   {t('navigation.sleepCalculator')}
                 </Link>
                 <Link 
+                  href="/sleep-calculator-by-age" 
+                  className="text-gray-700 hover:text-teal-600 font-medium text-sm lg:text-base transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
+                >
+                  By Age
+                </Link>
+                <Link 
                   href="/sleep-cycles-babies" 
                   className="text-gray-700 hover:text-pink-600 font-medium text-sm lg:text-base transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
                 >
