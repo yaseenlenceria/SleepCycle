@@ -32,7 +32,7 @@ export function Footer() {
               <span className="text-sm font-semibold">100% FREE Forever</span>
             </div>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">★★★★★ Best Sleep Online Calculator with AI</h3>
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Best Sleep Online Calculator with AI</h3>
           <p className="text-gray-300 text-sm sm:text-base">Trusted by 10M+ users worldwide for AI-powered sleep cycle optimization</p>
         </div>
 
