@@ -102,7 +102,7 @@ export function Footer() {
 
         {/* Popular AI Sleep Calculator Searches - Linked */}
         <div className="bg-gray-800 rounded-xl p-6 mb-8">
-          <h4 className="font-bold text-white mb-3 text-center">★★★★★ Popular AI Sleep Calculator Searches</h4>
+          <h4 className="font-bold text-white mb-3 text-center">Popular AI Sleep Calculator Searches</h4>
           <div className="flex flex-wrap justify-center gap-2 text-xs">
             <Link href="/" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">best sleep online calculator with AI</Link>
             <Link href="/" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">AI sleep calculator</Link>
