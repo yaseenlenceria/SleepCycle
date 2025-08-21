@@ -50,13 +50,10 @@ export default function SleepCyclesAdultsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <Header />
-      
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Hero Section with AI-Focused Content */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            ★★★★★ Best Adult Sleep Calculator Online with AI
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Best Adult Sleep Calculator Online with AI</h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
             <strong>FREE AI-Powered Adult Sleep Cycle Optimization</strong> – Master REM and non-REM patterns with personalized AI recommendations. AI-driven sleep stages analysis and optimal wake-up times. 8M+ adults trust our AI for refreshing mornings!
           </p>
@@ -302,7 +299,6 @@ export default function SleepCyclesAdultsPage() {
           </div>
         </div>
       </main>
-      
       <Footer />
     </div>
   );
