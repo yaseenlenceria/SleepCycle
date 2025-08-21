@@ -63,16 +63,15 @@ export function UltraSimpleHomepage({
     <>
       <SEOHead />
       <div className="w-full max-w-sm mx-auto px-4 sm:max-w-lg lg:max-w-2xl sm:px-6 lg:px-8">
-        {/* Hero Trust Signals - Mobile Optimized */}
-        <div className="text-center mb-4 sm:mb-6 lg:mb-8">
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-2 sm:mb-3 leading-tight">{t('homepage.title')}</h1>
-          <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
-            {t('homepage.subtitle')}
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-xs">
-            <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full whitespace-nowrap">{t('homepage.trustBadges.bestCalculator')}</span>
-            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full whitespace-nowrap">{t('homepage.trustBadges.ageGenderBased')}</span>
-            <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full whitespace-nowrap">{t('homepage.trustBadges.freeSleepCycle')}</span>
+        {/* Ultra-Minimal Hero */}
+        <div className="text-center mb-3 sm:mb-4">
+          <h1 className="text-base sm:text-lg font-semibold text-gray-800 mb-1">{t('homepage.title')}</h1>
+          <div className="flex flex-wrap justify-center items-center gap-1 text-xs">
+            <span className="text-green-600 font-medium">{t('homepage.trustBadges.bestCalculator')}</span>
+            <span className="text-gray-400">•</span>
+            <span className="text-blue-600 font-medium">{t('homepage.trustBadges.ageGenderBased')}</span>
+            <span className="text-gray-400">•</span>
+            <span className="text-purple-600 font-medium">{t('homepage.trustBadges.freeSleepCycle')}</span>
           </div>
         </div>
 
