@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 export default function Contact() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Contact Sleep Calculator Support | SleepCycle.io | 24/7 Expert Help";
+    document.title = "Contact SleepCycle.io - Best Sleep Online Calculator with AI Support | 24/7 AI-Powered Expert Help";
     
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
@@ -25,10 +25,10 @@ export default function Contact() {
       }
     };
 
-    setMeta('description', 'Contact SleepCycle.io support for help with our free sleep cycle calculator. Expert assistance with bedtime calculations, sleep optimization, and technical issues. Response within 24 hours.');
-    setMeta('keywords', 'sleep calculator support, contact sleep cycle, sleep calculator help, SleepCycle.io support, bedtime calculator assistance');
-    setMeta('og:title', 'Contact Sleep Calculator Support | SleepCycle.io');
-    setMeta('og:description', 'Get expert help with our sleep cycle calculator. 24/7 support for all your sleep optimization needs.');
+    setMeta('description', 'Contact SleepCycle.io - Best Sleep Online Calculator with AI Support! Get expert help with our AI-powered sleep cycle calculators. AI-assisted support for bedtime calculations, sleep optimization & technical issues. 24/7 response.');
+    setMeta('keywords', 'contact sleepcycle.io AI support, best sleep calculator with AI support, AI sleep calculator help, sleep cycle calculator AI support, AI-powered sleep assistance');
+    setMeta('og:title', 'Contact SleepCycle.io - Best Sleep Online Calculator with AI Support');
+    setMeta('og:description', 'Get expert help with our AI-powered sleep cycle calculators. 24/7 AI-assisted support for all your sleep optimization needs.');
     setMeta('og:type', 'website');
     setMeta('og:url', 'https://sleepcycle.io/contact');
     setMeta('og:image', 'https://sleepcycle.io/logo.jpg');

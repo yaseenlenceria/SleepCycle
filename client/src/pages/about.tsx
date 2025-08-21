@@ -7,12 +7,35 @@ import { useEffect } from 'react';
 export default function About() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "About Sleep Cycle — The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
+    document.title = "About SleepCycle.io - Best Sleep Online Calculator with AI | Our AI-Powered Sleep Optimization Mission";
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Learn about Sleep Cycle, the world\'s best sleep app. Formerly the Sleepytime Sleep Cycle Calculator, we use sound analysis, 4 billion sleep sessions, and 13 years of science to help millions sleep better.');
-    }
+    const setMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
+      if (meta) {
+        meta.setAttribute('content', content);
+      } else {
+        meta = document.createElement('meta');
+        if (name.startsWith('og:') || name.startsWith('twitter:')) {
+          meta.setAttribute('property', name);
+        } else {
+          meta.setAttribute('name', name);
+        }
+        meta.setAttribute('content', content);
+        document.head.appendChild(meta);
+      }
+    };
+
+    setMeta('description', 'About SleepCycle.io - Best Sleep Online Calculator with AI! Learn about our mission to help 10M+ users achieve better sleep through AI-powered 90-minute sleep cycle optimization. Scientific accuracy meets AI innovation for optimal sleep health.');
+    setMeta('keywords', 'about sleepcycle.io, best sleep calculator with AI, AI sleep optimization company, sleep cycle calculator team, AI sleep technology, sleep optimization mission, AI-powered sleep science');
+    setMeta('og:title', 'About SleepCycle.io - Best Sleep Online Calculator with AI | Our AI-Powered Mission');
+    setMeta('og:description', 'Learn about SleepCycle.io - Best Sleep Online Calculator with AI! Our mission to help 10M+ users achieve better sleep through AI-powered optimization.');
+    setMeta('og:type', 'website');
+    setMeta('og:url', 'https://sleepcycle.io/about');
+    setMeta('og:image', 'https://sleepcycle.io/favicon.jpg');
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', 'About SleepCycle.io - Best Sleep Online Calculator with AI');
+    setMeta('twitter:description', 'Learn about our AI-powered mission to help 10M+ users achieve better sleep through scientific optimization.');
+    setMeta('twitter:image', 'https://sleepcycle.io/favicon.jpg');
   }, []);
 
   return (
@@ -24,10 +47,10 @@ export default function About() {
           <div className="text-center mb-12">
             <Heart className="mx-auto mb-4 text-sleep-blue-600" size={48} />
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              About SleepCycle.io
+              About SleepCycle.io - Best Sleep Online Calculator with AI
             </h1>
             <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-              Your trusted companion for optimal sleep optimization using scientifically-backed 90-minute sleep cycles
+              Your trusted AI-powered companion for optimal sleep optimization using scientifically-backed 90-minute sleep cycles and advanced AI recommendations
             </p>
           </div>
 

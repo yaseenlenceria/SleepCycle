@@ -7,12 +7,44 @@ import { Coffee, Clock, Zap, Sun, Battery } from 'lucide-react';
 export default function SleepCyclesNapsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Nap Calculator - Optimal Nap Duration with AI Health Assessment | Sleepcycle.io";
+    document.title = "★★★★★ Best Nap Calculator Online with AI | FREE AI-Powered Power Nap Optimization 2025 - SleepCycle.io";
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'AI Nap Calculator with FREE Health Assessment. Get optimal nap duration and timing personalized for your age and lifestyle. Science-backed power nap recommendations. Not just another calculator – AI that optimizes YOUR energy.');
+    const setMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
+      if (meta) {
+        meta.setAttribute('content', content);
+      } else {
+        meta = document.createElement('meta');
+        if (name.startsWith('og:') || name.startsWith('twitter:')) {
+          meta.setAttribute('property', name);
+        } else {
+          meta.setAttribute('name', name);
+        }
+        meta.setAttribute('content', content);
+        document.head.appendChild(meta);
+      }
+    };
+
+    setMeta('description', '★★★★★ Best Nap Calculator Online with AI! FREE AI-powered power nap optimization. Get optimal nap duration & timing personalized for your age & lifestyle. Science-backed AI recommendations to avoid sleep inertia. 6M+ users boost energy with our AI!');
+    setMeta('keywords', 'best nap calculator online with AI, AI nap calculator, power nap calculator, nap duration calculator, optimal nap time calculator, AI nap optimization, power nap calculator AI, energy boost calculator, AI nap timing');
+    setMeta('og:title', '★★★★★ Best Nap Calculator Online with AI | FREE AI-Powered Power Nap Optimization');
+    setMeta('og:description', '★★★★★ Best Nap Calculator Online with AI! FREE AI-powered power nap optimization. 6M+ users boost energy with our AI recommendations!');
+    setMeta('og:type', 'website');
+    setMeta('og:url', 'https://sleepcycle.io/sleep-cycles-naps');
+    setMeta('og:image', 'https://sleepcycle.io/favicon.jpg');
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', '★★★★★ Best Nap Calculator Online with AI | FREE AI-Powered Power Nap Optimization');
+    setMeta('twitter:description', '★★★★★ Best Nap Calculator Online with AI! FREE AI-powered power nap optimization. 6M+ users boost energy with our AI!');
+    setMeta('twitter:image', 'https://sleepcycle.io/favicon.jpg');
+    
+    // Set canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
     }
+    canonical.setAttribute('href', 'https://sleepcycle.io/sleep-cycles-naps');
   }, []);
 
   return (
@@ -20,19 +52,19 @@ export default function SleepCyclesNapsPage() {
       <Header />
       
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Hero Section */}
+        {/* Hero Section with AI-Focused Content */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            AI Nap Calculator - Optimal Duration
+            ★★★★★ Best Nap Calculator Online with AI
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            <strong>Fix Your Energy with AI</strong> – Get personalized nap timing and duration with FREE health assessment. Science-backed power nap recommendations that adapt to YOUR schedule and energy needs.
+            <strong>FREE AI-Powered Energy Optimization</strong> – Get personalized nap timing and duration with AI health assessment. Science-backed AI power nap recommendations that adapt to YOUR schedule and energy needs. 6M+ users boost productivity with our AI!
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-            <span>⚡ Power Naps</span>
-            <span>🧠 Cognitive Boost</span>
-            <span>⏰ Perfect Timing</span>
-            <span>🚫 Avoid Sleep Inertia</span>
+            <span>🤖 AI-Powered Power Naps</span>
+            <span>🧠 AI Cognitive Boost Analysis</span>
+            <span>⏰ AI Perfect Timing Optimization</span>
+            <span>🚫 AI Sleep Inertia Prevention</span>
           </div>
         </div>
 

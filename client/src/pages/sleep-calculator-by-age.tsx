@@ -31,7 +31,7 @@ export default function SleepCalculatorByAgePage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "★★★★★ Sleep Calculator by Age - FREE AI-Powered Age-Specific Sleep Optimization - Sleepcycle.io";
+    document.title = "★★★★★ Best AI Sleep Calculator by Age Online | FREE Age-Specific Sleep Optimization 2025 - SleepCycle.io";
     
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
@@ -49,17 +49,17 @@ export default function SleepCalculatorByAgePage() {
       }
     };
 
-    setMeta('description', '★★★★★ Sleep Calculator by Age - FREE AI-powered sleep optimization for every age. From newborns to seniors, get personalized sleep schedules based on age-specific science. Trusted by millions worldwide.');
-    setMeta('keywords', 'sleep calculator by age, age specific sleep calculator, newborn sleep calculator, toddler sleep schedule, adult sleep needs, senior sleep patterns, sleep by age');
-    setMeta('og:title', 'Sleep Calculator by Age | Personalized for Every Life Stage');
-    setMeta('og:description', 'Get age-specific sleep recommendations from newborns to seniors. AI-powered calculator with personalized schedules based on developmental sleep science.');
+    setMeta('description', '★★★★★ Best AI Sleep Calculator by Age Online! FREE AI-powered age-specific sleep optimization from newborns (0-3mo) to seniors (65+). Get personalized sleep schedules, bedtime calculations & wake-up times based on scientific age-specific sleep cycles. 10M+ users trust our AI recommendations!');
+    setMeta('keywords', 'best AI sleep calculator by age online, age specific sleep calculator, AI sleep calculator by age, newborn sleep calculator, baby sleep calculator, toddler sleep schedule, adult sleep needs, senior sleep patterns, sleep by age, age-based sleep calculator, sleep calculator for all ages');
+    setMeta('og:title', '★★★★★ Best AI Sleep Calculator by Age Online | FREE Age-Specific Sleep Optimization');
+    setMeta('og:description', '★★★★★ Best AI Sleep Calculator by Age Online! FREE AI-powered age-specific sleep optimization from newborns to seniors. 10M+ users trust our scientifically-based sleep recommendations!');
     setMeta('og:type', 'website');
     setMeta('og:url', 'https://sleepcycle.io/sleep-calculator-by-age');
-    setMeta('og:image', 'https://sleepcycle.io/logo.jpg');
+    setMeta('og:image', 'https://sleepcycle.io/favicon.jpg');
     setMeta('twitter:card', 'summary_large_image');
-    setMeta('twitter:title', 'Sleep Calculator by Age | Personalized Sleep Schedules');
-    setMeta('twitter:description', 'Age-specific sleep recommendations for optimal development and health at every life stage.');
-    setMeta('twitter:image', 'https://sleepcycle.io/logo.jpg');
+    setMeta('twitter:title', '★★★★★ Best AI Sleep Calculator by Age Online | FREE Age-Specific Sleep Optimization');
+    setMeta('twitter:description', '★★★★★ Best AI Sleep Calculator by Age Online! FREE AI-powered age-specific sleep optimization from newborns to seniors. 10M+ users trust our AI recommendations!');
+    setMeta('twitter:image', 'https://sleepcycle.io/favicon.jpg');
     
     // Set canonical link
     let canonical = document.querySelector('link[rel="canonical"]');

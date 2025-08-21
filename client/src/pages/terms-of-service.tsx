@@ -7,11 +7,11 @@ import { useEffect } from 'react';
 export default function TermsOfService() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Terms of Service - Sleep Cycle: The World's Best Sleep App | Legal Terms & Service Policies";
+    document.title = "Terms of Service - SleepCycle.io Best Sleep Online Calculator with AI | AI Sleep Technology Legal Terms";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Read Sleep Cycle Terms of Service for the world\'s best sleep app. Legal terms, user agreements & service policies using sound analysis and 13 years of science.');
+      metaDescription.setAttribute('content', 'Terms of Service - SleepCycle.io Best Sleep Online Calculator with AI. Legal terms, user agreements & service policies for AI-powered sleep optimization technology. AI sleep calculator terms & conditions.');
     }
   }, []);
 

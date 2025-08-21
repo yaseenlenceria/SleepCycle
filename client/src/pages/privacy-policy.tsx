@@ -7,11 +7,11 @@ import { useEffect } from 'react';
 export default function PrivacyPolicy() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Privacy Policy - Sleep Cycle: The World's Best Sleep App | GDPR Compliant Sleep Calculator";
+    document.title = "Privacy Policy - SleepCycle.io Best Sleep Online Calculator with AI | GDPR Compliant AI Sleep Technology";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Sleep Cycle Privacy Policy. GDPR compliant privacy protection for the world\'s best sleep app using sound analysis, 4 billion sleep sessions, and 13 years of science.');
+      metaDescription.setAttribute('content', 'Privacy Policy - SleepCycle.io Best Sleep Online Calculator with AI. GDPR compliant privacy protection for AI-powered sleep optimization. Learn how we protect your data while providing AI recommendations for 10M+ users.');
     }
   }, []);
 

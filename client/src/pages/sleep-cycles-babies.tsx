@@ -7,12 +7,44 @@ import { Baby, Clock, Moon, Sun, Heart } from 'lucide-react';
 export default function SleepCyclesBabiesPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Baby & Toddler Nap Calculator - AI Sleep Cycles for Babies (0-12 Months) | Sleepcycle.io";
+    document.title = "★★★★★ Best Baby Sleep Calculator Online with AI | FREE AI-Powered Baby Sleep Schedules 2025 - SleepCycle.io";
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'AI-powered Baby Sleep Calculator with FREE Health Assessment. Get personalized nap schedules for babies 0-12 months. Evidence-based recommendations from pediatric experts. Not just another calculator – AI that adapts to your baby\'s needs.');
+    const setMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
+      if (meta) {
+        meta.setAttribute('content', content);
+      } else {
+        meta = document.createElement('meta');
+        if (name.startsWith('og:') || name.startsWith('twitter:')) {
+          meta.setAttribute('property', name);
+        } else {
+          meta.setAttribute('name', name);
+        }
+        meta.setAttribute('content', content);
+        document.head.appendChild(meta);
+      }
+    };
+
+    setMeta('description', '★★★★★ Best Baby Sleep Calculator Online with AI! FREE AI-powered baby & toddler sleep schedules for ages 0-12 months. Get personalized nap times, bedtime routines & safe sleep guidance. 5M+ parents trust our AI recommendations for better baby sleep!');
+    setMeta('keywords', 'best baby sleep calculator online with AI, AI baby sleep calculator, baby sleep schedule calculator, baby nap calculator, toddler sleep calculator, baby sleep tracker, AI baby sleep schedules, baby sleep patterns, infant sleep calculator');
+    setMeta('og:title', '★★★★★ Best Baby Sleep Calculator Online with AI | FREE AI-Powered Baby Sleep Schedules');
+    setMeta('og:description', '★★★★★ Best Baby Sleep Calculator Online with AI! FREE AI-powered baby & toddler sleep schedules. 5M+ parents trust our AI recommendations for better baby sleep!');
+    setMeta('og:type', 'website');
+    setMeta('og:url', 'https://sleepcycle.io/sleep-cycles-babies');
+    setMeta('og:image', 'https://sleepcycle.io/favicon.jpg');
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', '★★★★★ Best Baby Sleep Calculator Online with AI | FREE AI-Powered Baby Sleep Schedules');
+    setMeta('twitter:description', '★★★★★ Best Baby Sleep Calculator Online with AI! FREE AI-powered baby sleep schedules. 5M+ parents trust our AI recommendations!');
+    setMeta('twitter:image', 'https://sleepcycle.io/favicon.jpg');
+    
+    // Set canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
     }
+    canonical.setAttribute('href', 'https://sleepcycle.io/sleep-cycles-babies');
   }, []);
 
   return (
@@ -20,19 +52,19 @@ export default function SleepCyclesBabiesPage() {
       <Header />
       
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Hero Section */}
+        {/* Hero Section with AI-Focused Content */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            AI Baby & Toddler Nap Calculator
+            ★★★★★ Best Baby Sleep Calculator Online with AI
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            <strong>Fix Your Baby's Sleep with AI</strong> – Get personalized nap schedules and sleep recommendations with FREE health assessment. Science-backed, AI-driven advice that adapts to your baby's unique needs from 0-12 months.
+            <strong>FREE AI-Powered Baby Sleep Optimization</strong> – Get personalized baby & toddler sleep schedules with AI recommendations. Science-backed, AI-driven advice that adapts to your baby's unique needs from 0-12 months. 5M+ parents trust our AI for better baby sleep!
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-            <span>👶 Newborn Sleep Patterns</span>
-            <span>😴 Safe Sleep Guidelines</span>
-            <span>⏰ Age-Specific Schedules</span>
-            <span>🌙 Night Sleep Tips</span>
+            <span>🤖 AI-Powered Baby Sleep Schedules</span>
+            <span>😴 AI Safe Sleep Guidelines</span>
+            <span>⏰ Age-Specific AI Recommendations</span>
+            <span>🌙 AI Night Sleep Optimization</span>
           </div>
         </div>
 

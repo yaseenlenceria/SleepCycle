@@ -32,8 +32,8 @@ export function Footer() {
               <span className="text-sm font-semibold">100% FREE Forever</span>
             </div>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">★★★★★ World's #1 Sleep Calculator Platform</h3>
-          <p className="text-gray-300 text-sm sm:text-base">Trusted by millions worldwide for scientifically accurate sleep optimization</p>
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">★★★★★ Best Sleep Online Calculator with AI</h3>
+          <p className="text-gray-300 text-sm sm:text-base">Trusted by 10M+ users worldwide for AI-powered sleep cycle optimization</p>
         </div>
 
         {/* Main Footer Navigation */}
@@ -100,20 +100,20 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Popular Sleep Calculator Searches - Linked */}
+        {/* Popular AI Sleep Calculator Searches - Linked */}
         <div className="bg-gray-800 rounded-xl p-6 mb-8">
-          <h4 className="font-bold text-white mb-3 text-center">Popular Sleep Calculator Searches</h4>
+          <h4 className="font-bold text-white mb-3 text-center">★★★★★ Popular AI Sleep Calculator Searches</h4>
           <div className="flex flex-wrap justify-center gap-2 text-xs">
-            <Link href="/" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">sleep calculator</Link>
-            <Link href="/90-minute-sleep-cycle-calculator" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">90 minute sleep cycle calculator</Link>
-            <Link href="/sleep-calculator-by-age" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">sleep cycle calculator age</Link>
-            <Link href="/sleep-calculator-by-age" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">best sleep calculator by age</Link>
-            <Link href="/how-much-sleep-did-i-get-calculator" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">how much sleep did i get</Link>
-            <Link href="/sleep-science" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">scientifically best time to sleep</Link>
-            <Link href="/sleep-cycles-naps" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">nap calculator</Link>
-            <Link href="/sleep-cycles-babies" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">baby sleep calculator</Link>
-            <Link href="/" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">free sleep cycle calculator</Link>
-            <Link href="/90-minute-sleep-cycle-calculator" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">sleep cycle time</Link>
+            <Link href="/" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">best sleep online calculator with AI</Link>
+            <Link href="/" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">AI sleep calculator</Link>
+            <Link href="/90-minute-sleep-cycle-calculator" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">90 minute sleep cycle calculator AI</Link>
+            <Link href="/sleep-calculator-by-age" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">AI sleep calculator by age</Link>
+            <Link href="/sleep-cycles-babies" className="bg-gradient-to-r from-pink-600 to-red-600 hover:from-pink-500 hover:to-red-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">best baby sleep calculator with AI</Link>
+            <Link href="/sleep-cycles-adults" className="bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-500 hover:to-teal-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">AI adult sleep calculator</Link>
+            <Link href="/sleep-cycles-naps" className="bg-gradient-to-r from-orange-600 to-yellow-600 hover:from-orange-500 hover:to-yellow-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">AI nap calculator</Link>
+            <Link href="/" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">free AI sleep calculator</Link>
+            <Link href="/sleep-cycles-newborns" className="bg-gradient-to-r from-pink-600 to-red-600 hover:from-pink-500 hover:to-red-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">AI newborn sleep calculator</Link>
+            <Link href="/" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-3 py-1 rounded-full transition-colors cursor-pointer">AI sleep optimization</Link>
           </div>
         </div>
 

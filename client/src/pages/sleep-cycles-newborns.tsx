@@ -27,7 +27,7 @@ export default function SleepCyclesNewbornsPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "★★★★★ AI Sleep Calculator for Newborns (0-3 Months) - FREE Baby Sleep Assessment";
+    document.title = "★★★★★ Best Newborn Sleep Calculator Online with AI | FREE AI Sleep Schedules for 0-3 Months 2025 - SleepCycle.io";
     
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
@@ -45,17 +45,17 @@ export default function SleepCyclesNewbornsPage() {
       }
     };
 
-    setMeta('description', '★★★★★ FREE AI sleep calculator for newborns 0-3 months. Get personalized baby sleep schedules, safe sleep guidance, and expert recommendations for healthy newborn sleep patterns.');
-    setMeta('keywords', 'newborn sleep calculator, baby sleep schedule 0-3 months, newborn sleep patterns, baby sleep tracker, safe sleep for newborns, newborn nap calculator');
-    setMeta('og:title', 'AI Sleep Calculator for Newborns (0-3 Months) | FREE Assessment');
-    setMeta('og:description', 'Personalized newborn sleep schedules with AI assessment. Safe sleep guidance for babies 0-3 months.');
+    setMeta('description', '★★★★★ Best Newborn Sleep Calculator Online with AI! FREE AI-powered sleep schedules for newborns 0-3 months. Get personalized baby sleep patterns, safe sleep guidance & expert recommendations. 3M+ parents trust our AI for healthy newborn sleep!');
+    setMeta('keywords', 'best newborn sleep calculator online with AI, AI newborn sleep calculator, newborn sleep schedule calculator, baby sleep calculator 0-3 months, newborn sleep patterns, baby sleep tracker, safe sleep for newborns, AI newborn sleep schedules');
+    setMeta('og:title', '★★★★★ Best Newborn Sleep Calculator Online with AI | FREE AI Sleep Schedules for 0-3 Months');
+    setMeta('og:description', '★★★★★ Best Newborn Sleep Calculator Online with AI! FREE AI-powered sleep schedules for newborns 0-3 months. 3M+ parents trust our AI recommendations!');
     setMeta('og:type', 'website');
     setMeta('og:url', 'https://sleepcycle.io/sleep-cycles-newborns');
-    setMeta('og:image', 'https://sleepcycle.io/logo.jpg');
+    setMeta('og:image', 'https://sleepcycle.io/favicon.jpg');
     setMeta('twitter:card', 'summary_large_image');
-    setMeta('twitter:title', 'Newborn Sleep Calculator | 0-3 Months');
-    setMeta('twitter:description', 'AI-powered sleep schedules for newborns with expert guidance.');
-    setMeta('twitter:image', 'https://sleepcycle.io/logo.jpg');
+    setMeta('twitter:title', '★★★★★ Best Newborn Sleep Calculator Online with AI | FREE AI Sleep Schedules');
+    setMeta('twitter:description', '★★★★★ Best Newborn Sleep Calculator Online with AI! FREE AI-powered sleep schedules for newborns 0-3 months. 3M+ parents trust our AI!');
+    setMeta('twitter:image', 'https://sleepcycle.io/favicon.jpg');
     
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {

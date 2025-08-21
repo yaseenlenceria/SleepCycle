@@ -7,12 +7,44 @@ import { User, Clock, Brain, Moon, Zap } from 'lucide-react';
 export default function SleepCyclesAdultsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Adult Sleep Cycles - Sleep Cycle: The World's Best Sleep App | Sleep Calculator: Your Personalized Tool for Sleep";
+    document.title = "★★★★★ Best Adult Sleep Calculator Online with AI | FREE AI-Powered Sleep Cycle Optimization 2025 - SleepCycle.io";
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Sleep Cycle helps adults master REM and non-REM patterns using sound analysis, 4 billion sleep sessions, and 13 years of science. Find your ideal bedtime and wake up times for optimal sleep.');
+    const setMeta = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
+      if (meta) {
+        meta.setAttribute('content', content);
+      } else {
+        meta = document.createElement('meta');
+        if (name.startsWith('og:') || name.startsWith('twitter:')) {
+          meta.setAttribute('property', name);
+        } else {
+          meta.setAttribute('name', name);
+        }
+        meta.setAttribute('content', content);
+        document.head.appendChild(meta);
+      }
+    };
+
+    setMeta('description', '★★★★★ Best Adult Sleep Calculator Online with AI! FREE AI-powered sleep cycle optimization for adults. Master REM & non-REM patterns with personalized AI recommendations. 8M+ adults trust our AI for better sleep cycles & wake-up times!');
+    setMeta('keywords', 'best adult sleep calculator online with AI, AI adult sleep calculator, adult sleep cycle calculator, sleep calculator for adults, REM sleep calculator, adult sleep optimization, AI sleep cycles adults, sleep cycle optimization adults');
+    setMeta('og:title', '★★★★★ Best Adult Sleep Calculator Online with AI | FREE AI-Powered Sleep Cycle Optimization');
+    setMeta('og:description', '★★★★★ Best Adult Sleep Calculator Online with AI! FREE AI-powered sleep cycle optimization for adults. 8M+ adults trust our AI for better sleep!');
+    setMeta('og:type', 'website');
+    setMeta('og:url', 'https://sleepcycle.io/sleep-cycles-adults');
+    setMeta('og:image', 'https://sleepcycle.io/favicon.jpg');
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', '★★★★★ Best Adult Sleep Calculator Online with AI | FREE AI-Powered Sleep Cycle Optimization');
+    setMeta('twitter:description', '★★★★★ Best Adult Sleep Calculator Online with AI! FREE AI-powered sleep cycle optimization for adults. 8M+ adults trust our AI!');
+    setMeta('twitter:image', 'https://sleepcycle.io/favicon.jpg');
+    
+    // Set canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
     }
+    canonical.setAttribute('href', 'https://sleepcycle.io/sleep-cycles-adults');
   }, []);
 
   return (
@@ -20,19 +52,19 @@ export default function SleepCyclesAdultsPage() {
       <Header />
       
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Hero Section */}
+        {/* Hero Section with AI-Focused Content */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Sleep Cycles for Adults
+            ★★★★★ Best Adult Sleep Calculator Online with AI
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            Optimize your sleep with scientific understanding of adult sleep cycles. Learn about REM and non-REM patterns, sleep stages, and how to wake up feeling refreshed every morning.
+            <strong>FREE AI-Powered Adult Sleep Cycle Optimization</strong> – Master REM and non-REM patterns with personalized AI recommendations. AI-driven sleep stages analysis and optimal wake-up times. 8M+ adults trust our AI for refreshing mornings!
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-            <span>🧠 REM & Non-REM Cycles</span>
-            <span>😴 Sleep Stages</span>
-            <span>⚡ Energy Optimization</span>
-            <span>🎯 Wake Time Strategy</span>
+            <span>🤖 AI-Powered REM & Non-REM Analysis</span>
+            <span>😴 AI Sleep Stages Optimization</span>
+            <span>⚡ AI Energy Optimization</span>
+            <span>🎯 AI Perfect Wake Time Strategy</span>
           </div>
         </div>
 

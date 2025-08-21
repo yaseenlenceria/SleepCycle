@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 export default function Help() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Sleep Calculator Help & FAQ | Complete Guide | SleepCycle.io 2025";
+    document.title = "Help & FAQ - Best Sleep Online Calculator with AI | Complete AI-Powered Sleep Guide 2025 - SleepCycle.io";
     
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
@@ -25,10 +25,10 @@ export default function Help() {
       }
     };
 
-    setMeta('description', 'Complete help guide for SleepCycle.io sleep calculator. FAQ, tutorials, and expert tips for optimal bedtime calculation, wake-up timing, nap planning, and sleep optimization.');
-    setMeta('keywords', 'sleep calculator help, sleep cycle FAQ, bedtime calculator guide, wake up calculator tutorial, nap calculator help, baby sleep calculator FAQ');
-    setMeta('og:title', 'Sleep Calculator Help & FAQ | Complete Guide');
-    setMeta('og:description', 'Expert help guide for using our sleep cycle calculators. Complete FAQ and tutorials for optimal sleep timing.');
+    setMeta('description', 'Help & FAQ - Best Sleep Online Calculator with AI! Complete AI-powered sleep guide with FAQ, tutorials & expert tips. AI-assisted bedtime calculations, wake-up timing, nap planning & sleep optimization. 10M+ users helped!');
+    setMeta('keywords', 'help best sleep calculator with AI, AI sleep calculator FAQ, AI sleep guide, sleep calculator AI help, AI-powered sleep optimization help, sleep cycle calculator AI tutorial');
+    setMeta('og:title', 'Help & FAQ - Best Sleep Online Calculator with AI | Complete AI-Powered Sleep Guide');
+    setMeta('og:description', 'Complete AI-powered sleep guide with FAQ, tutorials & expert tips for optimal AI-assisted sleep timing. 10M+ users helped!');
     setMeta('og:type', 'website');
     setMeta('og:url', 'https://sleepcycle.io/help');
     setMeta('og:image', 'https://sleepcycle.io/logo.jpg');

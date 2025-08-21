@@ -33,12 +33,12 @@
     "rating": "Rated by 10M+ users worldwide"
   },
   "homepage": {
-    "title": "#1 Sleep Calculator: 90-Minute Sleep Cycle Calculator by Age",
-    "subtitle": "FREE AI Health Assessment • Calculate: How Much Sleep Did I Get • Scientifically Best Bedtime & Wake Time • 4+ Billion Sleep Sessions Analyzed",
+    "title": "★★★★★ Best Sleep Online Calculator with AI",
+    "subtitle": "FREE AI-Powered Sleep Optimization • Calculate: Perfect Bedtime & Wake Time • 90-Minute Sleep Cycles by Age • 10M+ Users Trust Our AI Recommendations",
     "trustBadges": {
-      "bestCalculator": "✓ Best Sleep Calculator",
-      "ageGenderBased": "✓ Age & Gender Based",
-      "freeSleepCycle": "✓ Free Sleep Cycle Time"
+      "bestCalculator": "✓ AI-Powered Sleep Calculator",
+      "ageGenderBased": "✓ Personalized by Age & Gender",
+      "freeSleepCycle": "✓ FREE 90-Min Cycle Optimization"
     },
     "calculateButtons": {
       "whenToSleep": "When should I go to sleep?",
@@ -52,13 +52,13 @@
     },
     "wakeUpCard": {
       "title": "I will wake up at",
-      "badge": "AI assistant",
-      "button": "Find My Bedtime"
+      "badge": "AI Powered",
+      "button": "Find My Perfect Bedtime with AI"
     },
     "bedTimeCard": {
       "title": "I will go to bed at",
-      "badge": "AI assistant", 
-      "button": "Find My Wake Time"
+      "badge": "AI Powered", 
+      "button": "Find My Perfect Wake Time with AI"
     },
     "sleepNowCard": {
       "title": "Sleep Now",
