@@ -5,7 +5,6 @@ Disallow: /api/
 
 # Sitemaps
 Sitemap: https://sleepcycle.io/sitemap.xml
-Sitemap: https://sleepcycle.io/sitemap-images.xml
 
 # Main pages for crawling
 Allow: /sleep-calculator

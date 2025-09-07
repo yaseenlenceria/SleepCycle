@@ -1,9 +1,9 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import SleepCalculator from "@/pages/sleep-calculator";
 import TermsOfService from "@/pages/terms-of-service";
 import PrivacyPolicy from "@/pages/privacy-policy";
@@ -103,6 +103,31 @@ function Router() {
 }
 
 function App() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    // Sanitize any accidental garbled characters in critical meta tags
+    const hasGarbled = (s: string | null | undefined) => !!s && /\uFFFD|�/.test(s);
+
+    if (hasGarbled(document.title)) {
+      document.title = "Sleep Cycle Calculator - Optimize Your Sleep with Science | SleepCycle.io";
+    }
+
+    const fixMeta = (selector: string, fallback: string) => {
+      const el = document.querySelector(selector) as HTMLMetaElement | null;
+      const content = el?.getAttribute("content") || "";
+      if (hasGarbled(content) && el) {
+        el.setAttribute("content", fallback);
+      }
+    };
+
+    fixMeta('meta[name="description"]', 'Calculate optimal bedtimes and wake times using 90-minute sleep cycles. Free and easy for all ages.');
+    fixMeta('meta[property="og:title"]', 'Sleep Cycle Calculator - SleepCycle.io');
+    fixMeta('meta[property="og:description"]', 'Calculate optimal bedtimes and wake times using 90-minute sleep cycles.');
+    fixMeta('meta[name="twitter:title"]', 'Sleep Cycle Calculator - SleepCycle.io');
+    fixMeta('meta[name="twitter:description"]', 'Calculate optimal bedtimes and wake times using 90-minute sleep cycles.');
+  }, [location]);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
