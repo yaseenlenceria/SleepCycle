@@ -72,7 +72,8 @@ function Router() {
       <Route path="/sleep-cycles-2-year-olds" component={SleepCycles2YearOlds} />
       <Route path="/sitemap" component={SitemapPage} />
       <Route path="/why-best-sleep-calculator" component={WhyBestSleepCalculatorPage} />
-      <Route path="/90-minute-sleep-cycle-calculator" component={NinetyMinuteSleepCycleCalculatorPage} />
+      {/* Route 90-minute page to the working calculator UI so users can calculate on-page */}
+      <Route path="/90-minute-sleep-cycle-calculator" component={SleepCalculator} />
       <Route path="/how-much-sleep-did-i-get-calculator" component={HowMuchSleepDidIGetCalculatorPage} />
       <Route path="/best-sleep-calculator-by-age" component={BestSleepCalculatorByAgePage} />
       <Route path="/sleep-calculator-by-age" component={SleepCalculatorByAgePage} />
