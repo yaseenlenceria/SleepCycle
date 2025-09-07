@@ -65,7 +65,13 @@ export function UltraSimpleHomepage({
       <div className="w-full max-w-sm mx-auto px-4 sm:max-w-lg lg:max-w-2xl sm:px-6 lg:px-8">
         {/* Ultra-Minimal Hero */}
         <div className="text-center mb-3 sm:mb-4">
-          <h1 className="text-base sm:text-lg font-semibold text-gray-800 mb-1">{t('homepage.title')}</h1>
+            <h1 className="text-base sm:text-lg font-semibold text-gray-800 mb-1">Sleep Cycle Calculator (Free)</h1>
+            <p className="text-gray-600 text-xs sm:text-sm">Calculate the best time to sleep and wake up using 90‑minute sleep cycles.</p>
+            <div className="flex flex-wrap justify-center items-center gap-2 mt-2 text-[11px] sm:text-xs">
+              <span className="bg-green-50 text-green-700 px-2 py-1 rounded-full">90‑minute cycles</span>
+              <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded-full">Age‑based guidance</span>
+              <span className="bg-purple-50 text-purple-700 px-2 py-1 rounded-full">Nap calculator</span>
+            </div>
           <div className="flex flex-wrap justify-center items-center gap-1 text-xs">
             <span className="text-green-600 font-medium">{t('homepage.trustBadges.bestCalculator')}</span>
             <span className="text-gray-400">•</span>

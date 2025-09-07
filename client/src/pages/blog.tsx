@@ -1,25 +1,18 @@
 import { Link } from 'wouter';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { SEOHead } from '@/components/seo-head';
 
 export function BlogPage() {
   return (
     <>
-      <head>
-        <title>Sleep Science Blog: Expert Guides & Research from SleepCycle.io | 2025</title>
-        <meta name="description" content="Expert sleep science blog with research-backed guides on sleep cycles, stages, optimization tips, and baby sleep advice. Join 10M+ users getting better sleep with SleepCycle.io's trusted insights." />
-        <meta name="keywords" content="sleep science blog, sleep cycle guide, sleep stages, baby sleep advice, sleep optimization, sleep research, sleep calculator blog" />
-        <meta property="og:title" content="Sleep Science Blog: Expert Guides & Research from SleepCycle.io" />
-        <meta property="og:description" content="Research-backed sleep guides, optimization tips, and expert advice from the world's #1 sleep platform. Trusted by 10M+ users worldwide." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://sleepcycle.io/blog" />
-        <meta property="og:image" content="https://sleepcycle.io/logo.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Sleep Science Blog from SleepCycle.io" />
-        <meta name="twitter:description" content="Expert sleep guides, research, and optimization tips from the world's most trusted sleep platform." />
-        <meta name="twitter:image" content="https://sleepcycle.io/logo.jpg" />
-        <link rel="canonical" href="https://sleepcycle.io/blog" />
-      </head>
+      <SEOHead
+        title="Sleep Science Blog: Expert Guides & Research | SleepCycle.io"
+        description="Research-backed sleep guides on cycles, stages, naps and timing. Expert tips for better sleep for adults, babies and teens."
+        keywords="sleep science blog, sleep cycle guide, sleep stages, baby sleep advice, nap science, sleep optimization"
+        canonical="https://sleepcycle.io/blog"
+        ogImage="/logo.jpg"
+      />
       <Header />
       <BlogContent />
       <Footer />

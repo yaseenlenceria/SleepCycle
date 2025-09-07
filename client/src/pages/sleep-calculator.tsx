@@ -129,8 +129,17 @@ export default function SleepCalculator() {
       aiSchema.setAttribute('data-schema', 'ai');
       document.head.appendChild(aiSchema);
     }
-    aiSchema.textContent = JSON.stringify(aiSchemaMarkup);
-  }, []);
+      aiSchema.textContent = JSON.stringify(aiSchemaMarkup);
+    }, []);
+
+    // Normalize SEO: ensure clean, non-spammy title/description
+    useEffect(() => {
+      document.title = 'Sleep Cycle Calculator — Calculate Optimal Bed & Wake Times | SleepCycle.io';
+      const md = document.querySelector('meta[name="description"]');
+      if (md) {
+        md.setAttribute('content', 'Free 90-minute sleep cycle calculator. Find bedtime and wake-up times using complete sleep cycles. Works for all ages.');
+      }
+    }, [location]);
 
   // Update tab from URL
   useEffect(() => {
