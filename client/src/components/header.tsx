@@ -80,47 +80,41 @@ export function Header() {
             {/* Desktop Navigation Links */}
             <div className="text-center mt-6 lg:mt-8">
               <nav className="flex flex-wrap items-center justify-center gap-4 lg:gap-6">
-                <Link 
-                  href="/" 
+                <Link
+                  href="/"
                   className="text-gray-700 hover:text-blue-600 font-medium text-sm lg:text-base transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
                 >
-                  {t('navigation.sleepCalculator')}
+                  Calculator
                 </Link>
-                <Link 
-                  href="/sleep-calculator-by-age" 
-                  className="text-gray-700 hover:text-teal-600 font-medium text-sm lg:text-base transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
-                >
-                  By Age
-                </Link>
-                <Link 
-                  href="/sleep-cycles-babies" 
+                <Link
+                  href="/sleep-cycles-babies"
                   className="text-gray-700 hover:text-pink-600 font-medium text-sm lg:text-base transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
                 >
                   {t('navigation.babySleep')}
                 </Link>
-                <Link 
-                  href="/90-minute-sleep-cycle-calculator" 
-                  className="text-gray-700 hover:text-purple-600 font-medium text-sm lg:text-base transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
-                >
-                  90-Min Cycles
-                </Link>
-                <Link 
-                  href="/sleep-cycles-adults" 
+                <Link
+                  href="/sleep-cycles-adults"
                   className="text-gray-700 hover:text-green-600 font-medium text-sm lg:text-base transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
                 >
                   {t('navigation.adultSleep')}
                 </Link>
-                <Link 
-                  href="/sleep-science" 
+                <Link
+                  href="/sleep-science"
                   className="text-gray-700 hover:text-indigo-600 font-medium text-sm lg:text-base transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
                 >
                   Sleep Science
                 </Link>
-                <Link 
-                  href="/blog" 
+                <Link
+                  href="/blog"
                   className="text-gray-700 hover:text-orange-600 font-medium text-sm lg:text-base transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
                 >
                   Blog
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-gray-700 hover:text-purple-600 font-medium text-sm lg:text-base transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/50"
+                >
+                  Contact
                 </Link>
               </nav>
             </div>

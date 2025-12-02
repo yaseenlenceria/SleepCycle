@@ -40,17 +40,7 @@ export default function SitemapPage() {
     setMeta('robots', 'index, follow');
   }, []);
 
-  const sleepCalculators = [
-    { title: 'Sleep Cycle Calculator', path: '/', desc: 'Main sleep calculator with bedtime and wake-up optimization' },
-    { title: 'Sleep Calculator', path: '/sleep-calculator', desc: 'Comprehensive sleep optimization tool' },
-    { title: '90-Minute Sleep Cycle Calculator', path: '/90-minute-sleep-cycle-calculator', desc: 'Calculate optimal wake times using 90-minute cycles' },
-    { title: 'How Much Sleep Did I Get Calculator', path: '/how-much-sleep-did-i-get-calculator', desc: 'Track and calculate your actual sleep duration' },
-    { title: 'Sleep Calculator by Age', path: '/sleep-calculator-by-age', desc: 'Age-specific sleep recommendations and calculators' },
-    { title: 'Best Sleep Calculator by Age', path: '/best-sleep-calculator-by-age', desc: 'Optimized calculators for different age groups' },
-    { title: 'Nap Calculator', path: '/nap-calculator', desc: 'Calculate optimal nap duration and timing' },
-    { title: 'Baby Nap Calculator (0-12 months)', path: '/baby-nap-calculator-0-12-months', desc: 'Specialized nap calculator for infants' }
-  ];
-
+  
   const babyToddlerSleep = [
     { title: 'Newborn Sleep Cycles (0-3 months)', path: '/sleep-cycles-newborns', desc: 'Sleep patterns for newborns' },
     { title: '4-Month-Old Sleep Cycles', path: '/sleep-cycles-4-month-old', desc: 'Sleep regression and development at 4 months' },
@@ -63,9 +53,8 @@ export default function SitemapPage() {
 
   const adultSleepGuides = [
     { title: 'Adult Sleep Cycles', path: '/sleep-cycles-adults', desc: 'Complete guide to adult sleep patterns' },
-    { title: 'Nap Calculator Guide', path: '/sleep-cycles-naps', desc: 'Optimal nap duration and timing for adults' },
-    { title: 'Sleep Science', path: '/sleep-science', desc: 'The science behind sleep cycles and optimization' },
-    { title: 'Why Best Sleep Calculator', path: '/why-best-sleep-calculator', desc: 'What makes our calculator the best choice' }
+    { title: 'Naps and Sleep Timing', path: '/sleep-cycles-naps', desc: 'Optimal nap duration and timing for adults' },
+    { title: 'Sleep Science', path: '/sleep-science', desc: 'The science behind sleep cycles and optimization' }
   ];
 
   const blogPosts = [
@@ -90,10 +79,9 @@ export default function SitemapPage() {
   ];
 
   const utilityPages = [
-    { title: 'Age Calculator', path: '/age-calculator', desc: 'Calculate exact age for sleep recommendations' },
     { title: 'Blog', path: '/blog', desc: 'Expert sleep science articles and guides' },
     { title: 'About Us', path: '/about', desc: 'About SleepCycle.io and our mission' },
-    { title: 'Help & Support', path: '/help', desc: 'Get help with our calculators and tools' },
+    { title: 'Help & Support', path: '/help', desc: 'Get help and support' },
     { title: 'Contact', path: '/contact', desc: 'Contact our sleep experts' },
     { title: 'More Resources', path: '/more-resources', desc: 'Additional sleep optimization resources' }
   ];
@@ -119,7 +107,6 @@ export default function SitemapPage() {
           <div className="bg-white rounded-lg p-6 shadow-lg inline-block">
             <p className="text-lg font-semibold text-gray-800 mb-2">Quick Navigation</p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <a href="#calculators" className="text-blue-600 hover:text-blue-800">Sleep Calculators</a>
               <a href="#baby-sleep" className="text-purple-600 hover:text-purple-800">Baby & Toddler</a>
               <a href="#adult-sleep" className="text-green-600 hover:text-green-800">Adult Sleep</a>
               <a href="#blog" className="text-orange-600 hover:text-orange-800">Blog Posts</a>
@@ -127,25 +114,6 @@ export default function SitemapPage() {
             </div>
           </div>
         </div>
-
-        {/* Sleep Calculators */}
-        <section id="calculators" className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Sleep Calculators & Tools</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {sleepCalculators.map((calc, index) => (
-              <Card key={index} className="bg-white hover:shadow-lg transition-shadow duration-200">
-                <CardContent className="p-5">
-                  <h3 className="text-lg font-semibold mb-2">
-                    <Link href={calc.path} className="text-blue-600 hover:text-blue-800 transition-colors">
-                      {calc.title}
-                    </Link>
-                  </h3>
-                  <p className="text-gray-600 text-sm">{calc.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
 
         {/* Baby & Toddler Sleep */}
         <section id="baby-sleep" className="mb-12">

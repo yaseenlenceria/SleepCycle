@@ -17,13 +17,12 @@ export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigationLinks = [
-    { href: '/', label: t('navigation.sleepCalculator'), color: 'text-blue-600' },
-    { href: '/sleep-calculator-by-age', label: 'Sleep Calculator by Age', color: 'text-teal-600' },
+    { href: '/', label: 'Calculator', color: 'text-blue-600' },
     { href: '/sleep-cycles-babies', label: t('navigation.babySleep'), color: 'text-pink-600' },
-    { href: '/90-minute-sleep-cycle-calculator', label: '90-Min Cycles', color: 'text-purple-600' },
     { href: '/sleep-cycles-adults', label: t('navigation.adultSleep'), color: 'text-green-600' },
     { href: '/sleep-science', label: 'Sleep Science', color: 'text-indigo-600' },
     { href: '/blog', label: 'Blog', color: 'text-orange-600' },
+    { href: '/contact', label: 'Contact', color: 'text-purple-600' },
   ];
 
   return (

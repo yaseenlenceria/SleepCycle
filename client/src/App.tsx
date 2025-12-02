@@ -4,7 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Suspense, useEffect } from "react";
-import SleepCalculator from "@/pages/sleep-calculator";
+import HomePage from "@/pages/home";
 import TermsOfService from "@/pages/terms-of-service";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import About from "@/pages/about";
@@ -13,7 +13,6 @@ import Help from "@/pages/help";
 import SleepScience from "@/pages/sleep-science";
 import MoreResources from "@/pages/more-resources";
 import { NotFoundPage } from "@/pages/not-found";
-import AgeCalculator from '@/pages/age-calculator';
 import SleepCyclesBabies from '@/pages/sleep-cycles-babies';
 import SleepCyclesAdults from '@/pages/sleep-cycles-adults';
 import SleepCyclesNaps from '@/pages/sleep-cycles-naps';
@@ -24,11 +23,6 @@ import SleepCycles6MonthOld from '@/pages/sleep-cycles-6-month-old';
 import SleepCycles7MonthOld from '@/pages/sleep-cycles-7-month-old';
 import SleepCycles2YearOlds from '@/pages/sleep-cycles-2-year-olds';
 import SitemapPage from '@/pages/sitemap';
-import WhyBestSleepCalculatorPage from '@/pages/why-best-sleep-calculator';
-import NinetyMinuteSleepCycleCalculatorPage from '@/pages/90-minute-sleep-cycle-calculator';
-import HowMuchSleepDidIGetCalculatorPage from '@/pages/how-much-sleep-did-i-get-calculator';
-import BestSleepCalculatorByAgePage from '@/pages/best-sleep-calculator-by-age';
-import SleepCalculatorByAgePage from '@/pages/sleep-calculator-by-age';
 import { BlogPage } from '@/pages/blog';
 import { BlogPostLaunch } from '@/pages/blog-post-launch';
 import { BlogPostBabyNaps } from '@/pages/blog-post-baby-naps';
@@ -52,7 +46,7 @@ import { BlogPostWhyWakingWrongTimeTired } from '@/pages/blog-post-why-waking-wr
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={SleepCalculator} />
+      <Route path="/" component={HomePage} />
       <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/about" component={About} />
@@ -60,7 +54,6 @@ function Router() {
       <Route path="/help" component={Help} />
       <Route path="/sleep-science" component={SleepScience} />
       <Route path="/more-resources" component={MoreResources} />
-      <Route path="/age-calculator" component={AgeCalculator} />
       <Route path="/sleep-cycles-babies" component={SleepCyclesBabies} />
       <Route path="/sleep-cycles-adults" component={SleepCyclesAdults} />
       <Route path="/sleep-cycles-naps" component={SleepCyclesNaps} />
@@ -71,13 +64,6 @@ function Router() {
       <Route path="/sleep-cycles-7-month-old" component={SleepCycles7MonthOld} />
       <Route path="/sleep-cycles-2-year-olds" component={SleepCycles2YearOlds} />
       <Route path="/sitemap" component={SitemapPage} />
-      <Route path="/why-best-sleep-calculator" component={WhyBestSleepCalculatorPage} />
-      {/* Route 90-minute page to the working calculator UI so users can calculate on-page */}
-      <Route path="/90-minute-sleep-cycle-calculator" component={SleepCalculator} />
-      <Route path="/how-much-sleep-did-i-get-calculator" component={HowMuchSleepDidIGetCalculatorPage} />
-      <Route path="/best-sleep-calculator-by-age" component={BestSleepCalculatorByAgePage} />
-      <Route path="/sleep-calculator-by-age" component={SleepCalculatorByAgePage} />
-      <Route path="/sleep-calculator" component={SleepCalculator} />
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/sleep-cycle-length" component={BlogPostSleepCycleLength} />
       <Route path="/blog/sleep-stages-guide" component={BlogPostSleepStages} />

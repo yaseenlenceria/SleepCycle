@@ -1,443 +1,193 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Baby, Clock, Moon, Sun, Calendar } from 'lucide-react';
-import { NewbornCalculator } from '@/components/newborn-calculator';
-import { NewbornSleepResults } from '@/components/newborn-sleep-results';
-import { calculateNewbornBedtimes, calculateNewbornNapTimes, calculateNewbornSleepNow } from '@/lib/newborn-sleep-calculations';
+import { Baby, Clock, Moon, AlertCircle, Star } from 'lucide-react';
 
 export default function SleepCycles4MonthOldPage() {
-  // Calculator state
-  const [hour, setHour] = useState('7');
-  const [minute, setMinute] = useState('00');
-  const [period, setPeriod] = useState('AM');
-  const [bedtimes, setBedtimes] = useState<any[]>([]);
-  const [wakeupTimes, setWakeupTimes] = useState<any[]>([]);
-  const [sleepNowTimes, setSleepNowTimes] = useState<any[]>([]);
-  const [currentTime, setCurrentTime] = useState('');
-  const [isCalculating, setIsCalculating] = useState('');
-  const [showBedtimeResults, setShowBedtimeResults] = useState(false);
-  const [showNapResults, setShowNapResults] = useState(false);
-  const [showSleepNowResults, setShowSleepNowResults] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "AI Sleep Calculator for 4 Month Old Babies | Fix Sleep Regression - Sleepcycle.io";
-    
+    document.title = "4-Month Old Sleep Patterns - SleepCycle.io";
+
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'AI Sleep Calculator with FREE Health Assessment for 4-month babies. Fix sleep regression with personalized recommendations based on 4-billion sleep sessions. Calculate optimal bedtimes now.');
+      metaDescription.setAttribute('content', 'Understanding 4-month old sleep patterns, sleep regression, and development. Learn about sleep schedules and tips for better sleep at 4 months.');
     }
   }, []);
 
-  const handleTimeChange = (newHour: string, newMinute: string, newPeriod: string) => {
-    setHour(newHour);
-    setMinute(newMinute);
-    setPeriod(newPeriod);
-  };
-
-  const handleCalculateBedtime = () => {
-    setIsCalculating('bedtime');
-    setShowNapResults(false);
-    setShowSleepNowResults(false);
-    
-    setTimeout(() => {
-      const wakeTime = `${hour}:${minute} ${period}`;
-      const result = calculateNewbornBedtimes(wakeTime);
-      setBedtimes(result);
-      setIsCalculating('');
-      setShowBedtimeResults(true);
-    }, 1500);
-  };
-
-  const handleCalculateNapSchedule = () => {
-    setIsCalculating('nap');
-    setShowBedtimeResults(false);
-    setShowSleepNowResults(false);
-    
-    setTimeout(() => {
-      const napStartTime = `${hour}:${minute} ${period}`;
-      const result = calculateNewbornNapTimes(napStartTime);
-      setWakeupTimes(result);
-      setIsCalculating('');
-      setShowNapResults(true);
-    }, 1500);
-  };
-
-  const handleSleepNow = () => {
-    setIsCalculating('sleepnow');
-    setShowBedtimeResults(false);
-    setShowNapResults(false);
-    
-    setTimeout(() => {
-      const {times, currentTime: liveTime} = calculateNewbornSleepNow();
-      setSleepNowTimes(times);
-      setCurrentTime(liveTime);
-      setIsCalculating('');
-      setShowSleepNowResults(true);
-    }, 1500);
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
       <Header />
-      
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
+
+      <main className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            AI Sleep Calculator for 4 Month Old Babies
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            FREE personalized sleep calculator for 4-month babies. Navigate sleep regression with AI-powered recommendations based on age-specific sleep cycles and developmental milestones.
+          <div className="flex justify-center items-center mb-6">
+            <Baby className="text-purple-500 mr-3" size={48} />
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              4-Month Old Sleep Patterns
+            </h1>
+          </div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Understanding sleep development and the famous 4-month sleep regression
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-            <span>🍼 4-Month Development</span>
-            <span>🧠 AI-Powered</span>
-            <span>😴 Sleep Regression Fix</span>
-            <span>📊 FREE Assessment</span>
-          </div>
         </div>
 
-        {/* 4-Month Sleep Calculator */}
-        <div className="mb-12">
-          <Card className="bg-gradient-to-br from-pink-50 to-purple-50 border-pink-200 shadow-xl">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl font-bold text-gray-800 flex items-center justify-center gap-2">
-                <Baby className="text-pink-500" size={28} />
-                4-Month Sleep Calculator
-              </CardTitle>
-              <p className="text-gray-600">Specialized timing for 4-month development (60-70 minute cycles)</p>
-              <div className="mt-3 flex justify-center gap-2">
-                <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-medium">4 Months Old</span>
-                <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">Sleep Regression Support</span>
-              </div>
-            </CardHeader>
-            <CardContent className="p-6">
-              <NewbornCalculator
-                hour={hour}
-                minute={minute}
-                period={period}
-                onTimeChange={handleTimeChange}
-                onCalculateBedtime={handleCalculateBedtime}
-                onCalculateNapSchedule={handleCalculateNapSchedule}
-                onSleepNow={handleSleepNow}
-                isCalculating={isCalculating}
-                showBedtimeResults={showBedtimeResults}
-                showNapResults={showNapResults}
-                showSleepNowResults={showSleepNowResults}
-              />
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Results Section */}
-        {(showBedtimeResults || showNapResults || showSleepNowResults) && (
-          <div className="mb-12">
-            {showBedtimeResults && (
-              <NewbornSleepResults
-                times={bedtimes}
-                type="bedtime"
-                babyAgeWeeks={16} // 4 months = 16 weeks
-              />
-            )}
-            {showNapResults && (
-              <NewbornSleepResults
-                times={wakeupTimes}
-                type="napSchedule"
-                babyAgeWeeks={16}
-              />
-            )}
-            {showSleepNowResults && (
-              <NewbornSleepResults
-                times={sleepNowTimes}
-                type="sleepNow"
-                babyAgeWeeks={16}
-              />
-            )}
-          </div>
-        )}
-
-        {/* Quick Reference Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <Card className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl border-0">
-            <CardHeader className="text-center pb-4">
-              <Clock className="mx-auto text-blue-500 mb-2" size={32} />
-              <CardTitle className="text-lg">Total Sleep</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <div className="text-2xl font-bold text-blue-600 mb-2">14-15 hours</div>
-              <p className="text-sm text-gray-600">Including naps and nighttime sleep</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl border-0">
-            <CardHeader className="text-center pb-4">
-              <Moon className="mx-auto text-indigo-500 mb-2" size={32} />
-              <CardTitle className="text-lg">Night Sleep</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <div className="text-2xl font-bold text-indigo-600 mb-2">10-12 hours</div>
-              <p className="text-sm text-gray-600">With 1-2 night feedings</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl border-0">
-            <CardHeader className="text-center pb-4">
-              <Sun className="mx-auto text-orange-500 mb-2" size={32} />
-              <CardTitle className="text-lg">Daytime Naps</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <div className="text-2xl font-bold text-orange-600 mb-2">3-4 naps</div>
-              <p className="text-sm text-gray-600">30 minutes to 2 hours each</p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Detailed Information */}
-        <div className="space-y-8">
-          <Card className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl border-0">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3">
-                <Baby className="text-pink-500" />
-                4-Month Sleep Development
+        {/* Key Information Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <Card className="bg-white hover:shadow-lg transition-shadow duration-200">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-lg font-semibold text-gray-900 flex items-center">
+                <Clock className="text-blue-500 mr-2" size={20} />
+                Sleep Duration
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                At 4 months, babies need 12-16 hours of sleep per day. This typically includes
+                10-12 hours at night and 3-4 hours across 2-3 naps.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white hover:shadow-lg transition-shadow duration-200">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-lg font-semibold text-gray-900 flex items-center">
+                <Moon className="text-indigo-500 mr-2" size={20} />
+                Sleep Cycles
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Sleep cycles mature to 60-90 minutes. Babies start developing more adult-like
+                sleep patterns with deeper non-REM sleep stages.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white hover:shadow-lg transition-shadow duration-200">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-lg font-semibold text-gray-900 flex items-center">
+                <Star className="text-yellow-500 mr-2" size={20} />
+                Development
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Babies become more social and aware. Motor skills develop, making sleep
+                more challenging but also more predictable.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* The 4-Month Regression */}
+        <Card className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 mb-8">
+          <CardHeader className="bg-gradient-to-r from-orange-100 to-red-100">
+            <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
+              <AlertCircle className="text-orange-600 mr-2" size={24} />
+              The 4-Month Sleep Regression
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-6">
+            <p className="text-gray-700 mb-4">
+              The 4-month sleep regression is a normal developmental phase where your baby's sleep patterns change
+              dramatically. This is actually a positive sign that your baby's brain is developing!
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
               <div>
-                <h3 className="text-xl font-semibold mb-4">What's Happening at 4 Months</h3>
-                <p className="text-gray-600 mb-4">
-                  At 4 months, babies undergo significant neurological development that affects their sleep patterns. Their sleep cycles begin to mature, becoming more like adult sleep with distinct stages.
-                </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
-                    <h4 className="font-semibold text-green-800 mb-2">Sleep Cycle Changes</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Cycles lengthen from 50 to 60 minutes</li>
-                      <li>• Distinct sleep stages develop</li>
-                      <li>• More predictable patterns emerge</li>
-                      <li>• Ability to connect sleep cycles</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-                    <h4 className="font-semibold text-blue-800 mb-2">Developmental Milestones</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Increased alertness during wake times</li>
-                      <li>• Better day/night distinction</li>
-                      <li>• Longer attention spans</li>
-                      <li>• Social smiling and interaction</li>
-                    </ul>
-                  </div>
-                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">What Causes It?</h4>
+                <ul className="space-y-1 text-sm text-gray-600">
+                  <li>• Sleep cycles mature and become more adult-like</li>
+                  <li>• Babies develop self-soothing skills</li>
+                  <li>• Increased awareness and sensory development</li>
+                  <li>• Growth spurts and developmental leaps</li>
+                </ul>
               </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl border-0">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3">
-                <Calendar className="text-purple-500" />
-                Sample 4-Month Sleep Schedule
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
-                <h4 className="font-semibold text-purple-800 mb-4">Typical Daily Schedule</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center p-2 bg-white rounded">
-                      <span className="font-medium">6:00-7:00 AM</span>
-                      <span className="text-green-600">Wake & Feed</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 bg-white rounded">
-                      <span className="font-medium">8:00-9:30 AM</span>
-                      <span className="text-blue-600">Morning Nap</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 bg-white rounded">
-                      <span className="font-medium">9:30 AM</span>
-                      <span className="text-green-600">Feed & Play</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 bg-white rounded">
-                      <span className="font-medium">11:30 AM-1:00 PM</span>
-                      <span className="text-blue-600">Midday Nap</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 bg-white rounded">
-                      <span className="font-medium">1:00 PM</span>
-                      <span className="text-green-600">Feed & Play</span>
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center p-2 bg-white rounded">
-                      <span className="font-medium">2:30-4:00 PM</span>
-                      <span className="text-blue-600">Afternoon Nap</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 bg-white rounded">
-                      <span className="font-medium">4:00 PM</span>
-                      <span className="text-green-600">Feed & Play</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 bg-white rounded">
-                      <span className="font-medium">5:30-6:00 PM</span>
-                      <span className="text-blue-600">Catnap (Optional)</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 bg-white rounded">
-                      <span className="font-medium">7:00-8:00 PM</span>
-                      <span className="text-purple-600">Bedtime Routine</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 bg-white rounded">
-                      <span className="font-medium">8:00 PM</span>
-                      <span className="text-indigo-600">Night Sleep</span>
-                    </div>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-600 mt-4 italic">
-                  Note: This is a sample schedule. Every baby is different, and timing may vary by ±30 minutes.
-                </p>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2">Signs to Watch For</h4>
+                <ul className="space-y-1 text-sm text-gray-600">
+                  <li>• Frequent night waking (every 1-2 hours)</li>
+                  <li>• Shorter naps (30-45 minutes)</li>
+                  <li>• Difficulty falling asleep</li>
+                  <li>• Increased fussiness and clinginess</li>
+                </ul>
               </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl border-0">
-            <CardHeader>
-              <CardTitle>The 4-Month Sleep Regression</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="p-4 bg-red-50 rounded-lg border border-red-200">
-                <h4 className="font-semibold text-red-800 mb-3">What is Sleep Regression?</h4>
-                <p className="text-gray-600 mb-3">
-                  The 4-month sleep regression is a permanent change in sleep patterns due to neurological development. It's not actually a regression but a progression to more mature sleep patterns.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <h5 className="font-medium text-gray-800 mb-2">Signs of Sleep Regression:</h5>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Frequent night wakings</li>
-                      <li>• Shorter naps (30-45 minutes)</li>
-                      <li>• Difficulty falling asleep</li>
-                      <li>• More fussiness at bedtime</li>
-                      <li>• Early morning wake-ups</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h5 className="font-medium text-gray-800 mb-2">Why It Happens:</h5>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Brain development changes sleep architecture</li>
-                      <li>• Learning to connect sleep cycles</li>
-                      <li>• Increased awareness of surroundings</li>
-                      <li>• Development of circadian rhythm</li>
-                      <li>• Physical growth spurts</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-                <h4 className="font-semibold text-green-800 mb-3">How to Handle Sleep Regression</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <h5 className="font-medium text-gray-800 mb-2">Do:</h5>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>✓ Maintain consistent routines</li>
-                      <li>✓ Practice good sleep hygiene</li>
-                      <li>✓ Allow time for adjustment</li>
-                      <li>✓ Consider sleep training methods</li>
-                      <li>✓ Be patient and consistent</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h5 className="font-medium text-gray-800 mb-2">Avoid:</h5>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>✗ Creating new sleep associations</li>
-                      <li>✗ Abandoning good habits</li>
-                      <li>✗ Expecting it to resolve overnight</li>
-                      <li>✗ Increasing feeds unnecessarily</li>
-                      <li>✗ Co-sleeping as a quick fix</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl border-0">
-            <CardHeader>
-              <CardTitle>Sleep Training Considerations at 4 Months</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="p-4 bg-blue-50 rounded-lg border border-blue-200 mb-6">
-                <h4 className="font-semibold text-blue-800 mb-3">Is 4 Months the Right Time?</h4>
-                <p className="text-gray-600 mb-3">
-                  Many experts consider 4-6 months the ideal window to begin sleep training, as babies have developed more predictable patterns but haven't formed strong sleep associations yet.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="p-4 bg-green-50 rounded-lg">
-                    <h5 className="font-semibold text-green-800 mb-2">Gentle Methods</h5>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Gradual extinction (Ferber method)</li>
-                      <li>• Chair method (camping out)</li>
-                      <li>• Pick-up-put-down technique</li>
-                      <li>• Fading methods</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="p-4 bg-orange-50 rounded-lg">
-                    <h5 className="font-semibold text-orange-800 mb-2">Before You Start</h5>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Ensure baby is healthy</li>
-                      <li>• Establish consistent routine</li>
-                      <li>• Choose the right timing</li>
-                      <li>• Have realistic expectations</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="mt-12 bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">Frequently Asked Questions</h2>
-          
-          <div className="space-y-6">
-            <div className="border-b border-gray-200 pb-4">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">How long does the 4-month sleep regression last?</h3>
-              <p className="text-gray-600">
-                The 4-month regression typically lasts 2-6 weeks. It's actually a permanent developmental change, but babies usually adjust to their new sleep patterns within this timeframe.
-              </p>
             </div>
+          </CardContent>
+        </Card>
 
-            <div className="border-b border-gray-200 pb-4">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Should I start sleep training during a regression?</h3>
-              <p className="text-gray-600">
-                Many experts recommend starting sleep training after 4 months, even during regression. Consistent methods can help babies learn to navigate their new sleep cycles.
-              </p>
+        {/* Sleep Schedule Example */}
+        <Card className="bg-white shadow-lg mb-8">
+          <CardHeader className="bg-gradient-to-r from-purple-50 to-blue-50">
+            <CardTitle className="text-2xl font-bold text-gray-900">
+              Sample 4-Month Sleep Schedule
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-6">
+            <div className="space-y-3">
+              <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
+                <span className="font-medium text-gray-900">Morning Wake-up</span>
+                <span className="text-purple-600 font-semibold">6:00 - 7:00 AM</span>
+              </div>
+              <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                <span className="font-medium text-gray-900">First Nap</span>
+                <span className="text-blue-600 font-semibold">8:30 - 10:00 AM</span>
+              </div>
+              <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                <span className="font-medium text-gray-900">Second Nap</span>
+                <span className="text-green-600 font-semibold">12:30 - 2:00 PM</span>
+              </div>
+              <div className="flex justify-between items-center p-3 bg-yellow-50 rounded-lg">
+                <span className="font-medium text-gray-900">Third Nap (catnap)</span>
+                <span className="text-yellow-600 font-semibold">4:30 - 5:00 PM</span>
+              </div>
+              <div className="flex justify-between items-center p-3 bg-indigo-50 rounded-lg">
+                <span className="font-medium text-gray-900">Bedtime</span>
+                <span className="text-indigo-600 font-semibold">6:30 - 7:30 PM</span>
+              </div>
             </div>
+            <p className="text-sm text-gray-500 mt-4 italic">
+              *This is a sample schedule - adjust based on your baby's individual needs and wake windows
+            </p>
+          </CardContent>
+        </Card>
 
-            <div className="border-b border-gray-200 pb-4">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Why are my 4-month-old's naps so short?</h3>
-              <p className="text-gray-600">
-                Short naps (30-45 minutes) are common at 4 months as babies learn to connect sleep cycles. This often improves with consistency and time.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">How many night feeds does a 4-month-old need?</h3>
-              <p className="text-gray-600">
-                Most 4-month-olds need 1-2 night feeds, though some may sleep through the night. Consult your pediatrician about your baby's specific nutritional needs.
-              </p>
-            </div>
-          </div>
-        </div>
+        {/* Tips for Success */}
+        <Card className="bg-gradient-to-r from-green-50 to-teal-50 border border-green-200">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-lg font-semibold text-gray-900">
+              Tips for Managing the 4-Month Regression
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Stay consistent with your routine - babies thrive on predictability
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Focus on wake windows: 1.5-2 hours between sleep periods
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Create a calming bedtime routine (bath, massage, story, song)
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Practice safe sleep guidelines: back to sleep, firm mattress, no loose bedding
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Be patient - this phase typically lasts 2-6 weeks
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
       </main>
-      
+
       <Footer />
     </div>
   );

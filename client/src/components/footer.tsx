@@ -37,19 +37,7 @@ export function Footer() {
         </div>
 
         {/* Main Footer Navigation */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          
-          {/* Top Sleep Calculators */}
-          <div>
-            <h4 className="font-bold text-white mb-4 text-lg">Top Sleep Calculators</h4>
-            <ul className="space-y-3 text-sm">
-              <li><Link href="/" className="text-blue-300 hover:text-blue-200 transition-colors">Sleep Calculator (Main)</Link></li>
-              <li><Link href="/90-minute-sleep-cycle-calculator" className="text-blue-300 hover:text-blue-200 transition-colors">90-Minute Sleep Cycle Calculator</Link></li>
-              <li><Link href="/how-much-sleep-did-i-get-calculator" className="text-blue-300 hover:text-blue-200 transition-colors">How Much Sleep Did I Get?</Link></li>
-              <li><Link href="/best-sleep-calculator-by-age" className="text-blue-300 hover:text-blue-200 transition-colors">Best Sleep Calculator by Age</Link></li>
-              <li><Link href="/sleep-cycles-naps" className="text-blue-300 hover:text-blue-200 transition-colors">Nap Calculator</Link></li>
-            </ul>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
 
           {/* Baby & Child Sleep */}
           <div>
@@ -71,9 +59,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li><Link href="/sleep-cycles-adults" className="text-green-300 hover:text-green-200 transition-colors">Adult Sleep Cycles</Link></li>
               <li><Link href="/sleep-science" className="text-green-300 hover:text-green-200 transition-colors">Sleep Science Research</Link></li>
-              <li><Link href="/age-calculator" className="text-green-300 hover:text-green-200 transition-colors">Age Calculator</Link></li>
               <li><Link href="/more-resources" className="text-green-300 hover:text-green-200 transition-colors">Sleep Resources</Link></li>
-              <li><Link href="/why-best-sleep-calculator" className="text-green-300 hover:text-green-200 transition-colors">Why We're the Best</Link></li>
             </ul>
           </div>
 

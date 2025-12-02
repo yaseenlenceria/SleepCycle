@@ -1,0 +1,5 @@
+{
+  "name": "SleepCycle.io Calculator",
+  "description": "A smart sleep cycle calculator that helps you determine the best times to wake up or go to sleep based on 90-minute sleep cycles.",
+  "requestFramePermissions": []
+}
