@@ -8,6 +8,9 @@ export default function About() {
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "About SleepCycle.io - Best Sleep Online Calculator with AI | Our AI-Powered Sleep Optimization Mission";
+
+    // Add dark theme class to body
+    document.body.classList.add('dark-theme');
     
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);

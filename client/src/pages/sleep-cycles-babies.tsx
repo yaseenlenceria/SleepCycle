@@ -8,6 +8,9 @@ export default function SleepCyclesBabiesPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "★★★★★ Best Baby Sleep Calculator Online with AI | FREE AI-Powered Baby Sleep Schedules 2025 - SleepCycle.io";
+
+    // Add dark theme class to body
+    document.body.classList.add('dark-theme');
     
     const setMeta = (name: string, content: string) => {
       let meta = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
